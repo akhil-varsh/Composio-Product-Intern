@@ -1,5 +1,8 @@
 # App Research Agent — 100-app toolkit-buildability study
 
+## Live Demo
+https://composio-product-intern.vercel.app/
+
 An agent pipeline that researches 100 SaaS apps and answers, for each: what it does,
 how its API authenticates, whether a developer can self-serve credentials, how broad the
 API surface is, whether an MCP server exists, and whether an agent toolkit could be built
