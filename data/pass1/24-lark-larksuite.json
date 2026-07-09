@@ -1,0 +1,48 @@
+{
+  "id": 24,
+  "name": "Lark (Larksuite)",
+  "category": "Communications & Messaging",
+  "buildable": "yes",
+  "api_notes": "Lark provides extensive REST APIs for core features including Messenger, Calendar, Docs, Tasks, and organizational management, supported by official SDKs.",
+  "one_liner": "Lark is a comprehensive collaboration and productivity suite that offers an open platform for developers to integrate their business systems and build custom internal or public applications.",
+  "mcp_notes": "No official or well-known community Model Context Protocol (MCP) server was identified in the provided documentation.",
+  "evidence": [
+    {
+      "claim": "Developers can access the Lark Open Platform to create and develop apps using their Lark organization account.",
+      "url": "https://www.youtube.com/watch?v=GLiZ0PvEMCE"
+    },
+    {
+      "claim": "The Lark API uses Bearer token authentication.",
+      "url": "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/directory-v1/department/filter"
+    },
+    {
+      "claim": "Lark provides broad integration capabilities for enterprise applications, including Messenger, Docs, Calendar, and more.",
+      "url": "https://www.larksuite.com/hc/en-US/articles/831091963734-overview-of-lark-developer"
+    },
+    {
+      "claim": "Official SDKs are available for Node.js and other languages to facilitate API calls.",
+      "url": "https://github.com/larksuite/oapi-sdk-nodejs"
+    }
+  ],
+  "confidence": "high",
+  "api_type": [
+    "REST",
+    "SDK-only"
+  ],
+  "auth_notes": "Uses Bearer token authentication with tenant_access_token or user_access_token. SDKs abstract the token management process.",
+  "blocker": null,
+  "auth_methods": [
+    "Bearer token"
+  ],
+  "access": "self_serve_free",
+  "access_notes": "Developers can access the Lark Open Platform and create apps in the developer console using their organization account. While ISV (Independent Software Vendor) status for publishing to the Marketplace requires a review process, internal/custom app development is self-serve.",
+  "mcp": "none_found",
+  "api_breadth": "broad",
+  "search_sources": [
+    "https://open.larksuite.com/",
+    "https://open.larksuite.com/document/ugTOwEjL4kDMx4CO5ATM/uMzMyYjLzMjM24yMzIjN",
+    "https://open.larksuite.com/document/ukTMukTMukTM/uEzN0YjLxcDN24SM3QjN/search_wiki"
+  ],
+  "researched_at": "2026-07-09T04:51:43.767Z",
+  "model": "exa-answer"
+}

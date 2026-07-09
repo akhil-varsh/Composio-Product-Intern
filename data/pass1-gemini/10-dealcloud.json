@@ -1,0 +1,59 @@
+{
+  "id": 10,
+  "name": "DealCloud",
+  "category": "CRM & Sales",
+  "one_liner": "DealCloud is an end-to-end lead and relationship management platform designed for financial and professional services firms, helping them track deals, manage relationships, and streamline workflows throughout the deal lifecycle.",
+  "auth_methods": [
+    "OAuth2",
+    "Bearer token"
+  ],
+  "auth_notes": "DealCloud uses the OAuth2 Client Credentials flow to generate a bearer token. This token is obtained by sending a POST request to the token endpoint with a client_id and an apiKey (which functions as the client secret). The bearer token is then used in the HTTP Authorization header for subsequent API requests.",
+  "access": "paid_plan",
+  "access_notes": "API access requires an existing DealCloud subscription and administrative approval within the organization's DealCloud instance. A user must be assigned to a user group with appropriate permissions, which an administrator enables. The API key is then obtained from the user's profile. DealCloud is an enterprise platform with custom pricing, typically ranging from $15,000 to $40,000+ per user per year, plus significant implementation costs. There is no indication of free developer accounts or trial access for the API.",
+  "api_type": [
+    "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "DealCloud offers a comprehensive set of REST APIs covering various functional areas, including Authentication, User Management, Schema, Data (create, retrieve, update, delete records across objects like deals, contacts, companies), Backups, Publications (real-time events), and Relationship Intelligence. The documentation provides detailed guidance, examples, and best practices. A Python SDK is also available.",
+  "mcp": "none_found",
+  "mcp_notes": "While there's a Workato integration mentioning 'Deal Cloud and MCP (Model Context Protocol) integration,' Workato is an integration platform, not an official or community-endorsed MCP server from DealCloud. No official or well-known community-built MCP server for DealCloud was found in the search results.",
+  "buildable": "with_caveats",
+  "blocker": "Composio cannot self-serve free or trial API access for development and testing; access requires an existing paid enterprise plan and administrative approval from a DealCloud customer or direct partnership with Intapp.",
+  "evidence": [
+    {
+      "claim": "DealCloud is an end-to-end lead and relationship management platform for financial and professional services firms.",
+      "url": "https://www.capterra.com/p/146001/DealCloud/"
+    },
+    {
+      "claim": "The DealCloud API uses OAuth2 Client Credentials flow to generate a bearer token, which is then used in the HTTP Authentication header for API requests.",
+      "url": "https://api.docs.dealcloud.com/docs/requesting-an-oauth2-bearer-token"
+    },
+    {
+      "claim": "API access requires a user to be assigned to a user group with appropriate permissions, which an administrator enables, and the API key is obtained from the user's profile.",
+      "url": "https://api.docs.dealcloud.com/docs/obtaining-an-api-key"
+    },
+    {
+      "claim": "DealCloud is an enterprise platform with custom pricing, typically ranging from $15,000 to $40,000+ per user per year, plus significant implementation costs.",
+      "url": "https://vendr.com/insights/dealcloud-pricing-how-much-does-it-cost"
+    },
+    {
+      "claim": "The DealCloud API documentation provides a comprehensive overview of its REST APIs, covering functional areas like User Management, Schema, Data, Backups, Publications, and Relationship Intelligence.",
+      "url": "https://api.docs.dealcloud.com/docs"
+    }
+  ],
+  "confidence": "high",
+  "search_sources": [
+    "https://api.docs.dealcloud.com/docs/token",
+    "https://developers.anduintransact.com/docs/step-1-retrieve-credentials-of-3rd-party-apps-7",
+    "https://api.docs.dealcloud.com/docs/apikeys",
+    "https://www.vendr.com/buyer-guides/dealcloud",
+    "https://pipelineroad.com/compare/pipelineroad-vs-dealcloud",
+    "https://api.docs.dealcloud.com/docs",
+    "https://api.docs.dealcloud.com/docs/data",
+    "https://api.docs.dealcloud.com/docs/relintel",
+    "https://api.docs.dealcloud.com/docs/management",
+    "https://pypi.org/project/dealcloud-sdk/"
+  ],
+  "researched_at": "2026-07-09T04:17:15.656Z",
+  "model": "gemini-2.5-flash"
+}

@@ -1,0 +1,49 @@
+{
+  "id": 30,
+  "name": "Vonage",
+  "category": "Communications & Messaging",
+  "auth_methods": [
+    "API key",
+    "JWT"
+  ],
+  "buildable": "yes",
+  "api_breadth": "broad",
+  "api_type": [
+    "REST",
+    "SDK-only"
+  ],
+  "mcp_notes": "Vonage has released two official MCP servers: the Vonage Documentation MCP Server and the Vonage MCP Tooling Server.",
+  "blocker": null,
+  "mcp": "official",
+  "auth_notes": "Authentication typically involves API keys/secrets for server-side management and JWT-based tokens for individual sessions or client-side authentication.",
+  "confidence": "high",
+  "api_notes": "The platform provides a comprehensive suite of REST APIs supported by extensive server-side SDKs (Node, PHP, Java, .NET, Python, Ruby) and client-side SDKs.",
+  "access_notes": "Developers can sign up for a free account on the Vonage Developer Portal, which includes free credits to evaluate the APIs.",
+  "access": "self_serve_free",
+  "evidence": [
+    {
+      "claim": "Vonage provides free developer accounts with evaluation credits to access their communications APIs.",
+      "url": "https://www.vonage.com/communications-apis/"
+    },
+    {
+      "claim": "Vonage offers official Model Context Protocol (MCP) servers for documentation and tooling.",
+      "url": "https://www.vonage.com/about-us/newsroom/press-releases/Vonage-Expands-Developer-Ecosystem-to-Accelerate-the-Next-Era-of-Enterprise-Digital-Transformation/19b6d04d-2cb0-41b7-a921-30a1cb95192a/"
+    },
+    {
+      "claim": "The platform includes both REST APIs and comprehensive SDKs for various server and client environments.",
+      "url": "https://tokbox.com/developer/guides/basics/"
+    },
+    {
+      "claim": "Search citation: Getting Started with the Vonage Video API",
+      "url": "https://www.youtube.com/watch?v=8Y0tUi_tFa8"
+    }
+  ],
+  "one_liner": "Vonage provides a suite of programmable communications APIs for integrating voice, messaging, video, and identity verification into applications.",
+  "search_sources": [
+    "https://www.vonage.com/communications-apis/platform/",
+    "https://developer.vonage.com/en/documentation",
+    "https://api.support.vonage.com/hc/en-us/articles/15527392937116-Vonage-API-Solutions"
+  ],
+  "researched_at": "2026-07-09T04:52:12.664Z",
+  "model": "exa-answer"
+}

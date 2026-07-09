@@ -1,0 +1,45 @@
+{
+  "id": 28,
+  "name": "WhatsApp Business",
+  "category": "Communications & Messaging",
+  "access": "self_serve_free",
+  "api_breadth": "broad",
+  "blocker": null,
+  "mcp_notes": "No official or well-known community Model Context Protocol (MCP) server was identified in the provided sources.",
+  "access_notes": "Developers can access the platform, test numbers, and a sandbox for free through the official Meta Developer portal.",
+  "auth_notes": "The API uses Bearer token authentication (System User tokens or temporary access tokens) via the Meta Graph API.",
+  "confidence": "high",
+  "evidence": [
+    {
+      "claim": "The WhatsApp Business Platform allows developers to get started quickly and test for free with access to test numbers and a sandbox.",
+      "url": "https://whatsappbusiness.com/developers/developer-hub/"
+    },
+    {
+      "claim": "The API uses RESTful calls via the Meta Graph API for messaging and account management, authenticated with Bearer tokens.",
+      "url": "https://medium.com/@hamzas2401/how-i-registered-my-whatsapp-business-number-on-meta-b175a290a451"
+    },
+    {
+      "claim": "Search citation: WhatsApp Business API Setup 2026 (Step-by-Step) + Permanent Access Token + n8n Integration",
+      "url": "https://www.youtube.com/watch?v=2C99NvvOg_k"
+    },
+    {
+      "claim": "Search citation: Mastering WhatsApp Business API: Complete Guide with Node.js Integration - End-to-End Tutorial",
+      "url": "https://www.youtube.com/watch?v=ROt9sXIQDm4"
+    }
+  ],
+  "auth_methods": [
+    "Bearer token"
+  ],
+  "buildable": "yes",
+  "api_type": [
+    "REST"
+  ],
+  "one_liner": "The WhatsApp Business Platform is a messaging API that allows businesses to automate, integrate, and send high-quality messages to customers at scale.",
+  "api_notes": "The WhatsApp Business Platform (Cloud API) is built on the Meta Graph API. It covers extensive functionality including messaging, registration, and business management.",
+  "mcp": "none_found",
+  "search_sources": [
+    "https://360dialog.com/whatsapp-api"
+  ],
+  "researched_at": "2026-07-09T04:52:03.025Z",
+  "model": "exa-answer"
+}

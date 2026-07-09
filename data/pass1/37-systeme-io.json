@@ -1,0 +1,48 @@
+{
+  "id": 37,
+  "name": "systeme.io",
+  "category": "Marketing, Ads, Email & Social",
+  "api_type": [
+    "REST"
+  ],
+  "evidence": [
+    {
+      "claim": "Systeme.io offers a public API that enables developers to perform contact, subscription, and newsletter operations.",
+      "url": "https://help.systeme.io/article/2329-how-to-use-systeme-io-public-api"
+    },
+    {
+      "claim": "The integration method utilizes an API key found in the Systeme.io workspace settings.",
+      "url": "https://readme.anytrack.io/docs/systemeio"
+    },
+    {
+      "claim": "Search citation: Systeme io - Techscribe",
+      "url": "https://techscribe.in/business-ai-tools/systemeio/"
+    },
+    {
+      "claim": "Search citation: Systeme.io Integration API ❇️ Connect Systeme.io to Anything!",
+      "url": "https://www.youtube.com/watch?v=r9CUU5uEXE4"
+    }
+  ],
+  "access": "self_serve_free",
+  "one_liner": "Systeme.io is an all-in-one marketing platform that integrates funnel building, email marketing, course hosting, and automation tools.",
+  "api_notes": "The API provides access to core contact management, subscription operations, and newsletter management, as well as the ability to trigger internal automations.",
+  "mcp": "none_found",
+  "confidence": "high",
+  "blocker": null,
+  "auth_notes": "Authentication is performed using an API key managed within the user's workspace settings.",
+  "auth_methods": [
+    "API key"
+  ],
+  "api_breadth": "moderate",
+  "access_notes": "The public API feature is available to users; developers can access API keys through the systeme.io workspace settings.",
+  "buildable": "yes",
+  "mcp_notes": "No official or well-known community MCP server was identified in the documentation or search results.",
+  "search_sources": [
+    "https://integrately.com/integrations/systeme-io",
+    "https://www.youtube.com/watch?v=DFaKrGNln2o",
+    "https://www.make.com/en/integrations/systeme-io",
+    "https://medium.com/@thebrilliantwriter/the-systeme-io-funnel-strategy-that-scaled-a-tiny-community-to-8-000-month-6ae1710324bd"
+  ],
+  "researched_at": "2026-07-09T04:52:45.685Z",
+  "model": "exa-answer"
+}

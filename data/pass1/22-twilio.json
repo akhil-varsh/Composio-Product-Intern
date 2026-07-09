@@ -1,0 +1,49 @@
+{
+  "id": 22,
+  "name": "Twilio",
+  "category": "Communications & Messaging",
+  "api_breadth": "broad",
+  "mcp_notes": "There is no official or prominent community-led Model Context Protocol (MCP) server identified in the provided documentation; Twilio focuses on REST APIs, SDKs, and OpenAPI specifications.",
+  "blocker": null,
+  "api_type": [
+    "REST",
+    "SDK-only"
+  ],
+  "buildable": "yes",
+  "one_liner": "Twilio is a cloud communications platform that provides APIs for developers to programmatically build, scale, and manage voice, messaging, email, and identity verification services.",
+  "evidence": [
+    {
+      "claim": "Twilio offers developers and businesses powerful APIs to build communication workflows including voice, video, SMS, WhatsApp, email, and chat.",
+      "url": "https://www.mo.agency/blog/what-is-twilio"
+    },
+    {
+      "claim": "Twilio uses REST APIs and provides helper libraries for many programming languages.",
+      "url": "https://www.twilio.com/docs/glossary/what-is-an-api"
+    },
+    {
+      "claim": "Twilio provides a barrier-free, self-serve signup process for developers to get started immediately.",
+      "url": "https://www.twilio.com/en-us"
+    },
+    {
+      "claim": "Search citation: Docs: API Reference, Tutorials, and Integration | Twilio",
+      "url": "https://www.twilio.com/docs"
+    }
+  ],
+  "api_notes": "Twilio is an API-first platform providing a comprehensive set of REST APIs for voice, messaging, email, and identity verification, supplemented by official SDKs for multiple programming languages.",
+  "confidence": "high",
+  "access_notes": "Developers can sign up for a free Twilio account to get immediate access to API credentials without needing a credit card or admin approval. The platform offers pay-as-you-go pricing for production usage.",
+  "access": "self_serve_free",
+  "auth_methods": [
+    "Basic"
+  ],
+  "auth_notes": "Twilio primarily uses Basic Authentication with an Account SID and Auth Token. Documentation notes that requests should be made securely.",
+  "mcp": "none_found",
+  "search_sources": [
+    "https://medium.com/every-developer/how-twilio-became-the-twilio-of-sms-and-voice-1e8f215f9d0c",
+    "https://www.youtube.com/watch?v=hTMuAPaKMI4",
+    "https://investors.twilio.com/news-releases/news-release-details/twilio-announces-integration-openais-realtime-api-building/",
+    "https://www.youtube.com/watch?v=bSirTbyT2Zw"
+  ],
+  "researched_at": "2026-07-09T04:51:31.495Z",
+  "model": "exa-answer"
+}

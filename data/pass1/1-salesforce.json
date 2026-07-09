@@ -2,50 +2,51 @@
   "id": 1,
   "name": "Salesforce",
   "category": "CRM & Sales",
-  "one_liner": "Salesforce is a cloud-based customer relationship management (CRM) platform that helps businesses manage customer data, track sales, automate business processes, and unify operations using AI and various applications.",
-  "auth_methods": [
-    "OAuth2",
-    "Bearer token",
-    "other"
-  ],
-  "auth_notes": "OAuth 2.0 is the most commonly used authentication mechanism, exchanging bearer tokens for secure data sharing. Traditional Salesforce user account credentials (username/password, often with 2FA) can also be used, particularly for SOAP API login calls. SAML is supported for single sign-on (SSO) solutions.",
-  "access": "self_serve_free",
-  "access_notes": "Developers can sign up for a free Salesforce Developer Edition account, which provides a fully-featured development environment with unrestricted access to Salesforce APIs for building and testing applications. This account is permanent, though it has data storage limitations suitable for development purposes.",
   "api_type": [
     "REST",
+    "GraphQL",
     "SOAP",
-    "GraphQL"
+    "gRPC"
   ],
+  "access": "self_serve_free",
+  "mcp_notes": "No official Model Context Protocol server was found in the documentation; Salesforce APIs primarily use standard web protocols like REST, SOAP, and GraphQL.",
   "api_breadth": "broad",
-  "api_notes": "Salesforce offers a comprehensive suite of APIs including REST API (for modern web/mobile apps, supports JSON/XML), SOAP API (for structured, secure enterprise integrations, XML-based), and GraphQL API (for efficient queries and schema introspection). Other APIs like Bulk API, Connect REST API, Analytics REST API, Apex REST/SOAP API, User Interface API, Pub/Sub API, Tooling API, and Metadata API provide extensive control over most product functionalities.",
-  "mcp": "official",
-  "mcp_notes": "Salesforce actively promotes and discusses the Model Context Protocol (MCP) as an open standard for AI models to securely and intelligently interact with external systems and data. There are discussions and resources from Salesforce and related entities about 'Salesforce MCP servers' designed to give AI agents real-time access to CRM context.",
+  "one_liner": "Salesforce is an integrated CRM platform that provides applications for sales, service, marketing, commerce, and IT, accessible via extensive web APIs.",
   "buildable": "yes",
+  "auth_methods": [
+    "OAuth2",
+    "Bearer token"
+  ],
+  "auth_notes": "OAuth 2.0 is the recommended standard for authentication. External Client Applications or Connected Apps are used to manage authentication and authorization.",
+  "access_notes": "Developers can sign up for a free Salesforce Developer Edition account to access APIs for testing and development.",
+  "mcp": "none_found",
   "blocker": null,
+  "confidence": "high",
   "evidence": [
     {
-      "claim": "Salesforce is a cloud-based customer relationship management (CRM) platform.",
-      "url": "https://www.salesforce.com/products/what-is-salesforce/"
+      "claim": "Developers can create a free Salesforce Developer Account to test custom applications and integrations.",
+      "url": "https://www.getknit.dev/blog/salesforce-api-integration-in-depth"
     },
     {
-      "claim": "Salesforce APIs support OAuth 2.0, which uses bearer tokens, and also traditional user account authentication and SAML.",
-      "url": "https://www.flosum.com/blog/securing-your-salesforce-data-using-api-authentication"
+      "claim": "OAuth 2.0 is the primary method for authentication in Salesforce integrations.",
+      "url": "https://architect.salesforce.com/docs/architect/decision-guides/guide/data-integration.html"
     },
     {
-      "claim": "Developers can obtain a free Salesforce Developer Edition account with full API access for testing and development.",
-      "url": "https://s2-labs.com/blog/set-up-free-salesforce-developer-edition-account/"
+      "claim": "Search citation: Salesforce APIs and Integration Capabilities: The Pocket Guide | by Dave Norris | Geek Culture",
+      "url": "https://medium.com/geekculture/salesforce-apis-and-integration-capabilities-the-pocket-guide-2a1a8e97603d"
     },
     {
-      "claim": "Salesforce offers REST, SOAP, and GraphQL APIs, among others, providing broad control over its product functionality.",
+      "claim": "Search citation: API Library | Salesforce Developers",
       "url": "https://developer.salesforce.com/docs/apis"
-    },
-    {
-      "claim": "Salesforce is actively involved with and promotes the Model Context Protocol (MCP) for AI agent integration.",
-      "url": "https://www.salesforce.com/agentforce/mcp-support/model-context-protocol/"
     }
   ],
-  "confidence": "high",
-  "search_sources": [],
-  "researched_at": "2026-07-09T04:14:45.401Z",
-  "model": "gemini-2.5-flash"
+  "api_notes": "Salesforce provides a comprehensive suite of APIs including REST, SOAP, GraphQL, Bulk, Streaming, and Metadata APIs, covering the vast majority of CRM objects and platform configurations.",
+  "search_sources": [
+    "https://nordicapis.com/the-salesforce-api-journey-a-deep-dive/",
+    "https://www.salesforce.com/",
+    "https://architect.salesforce.com/docs/architect/fundamentals/guide/integration-patterns.html",
+    "https://quizlet.com/1059826773/sf-ia-flash-cards/"
+  ],
+  "researched_at": "2026-07-09T04:49:34.786Z",
+  "model": "exa-answer"
 }

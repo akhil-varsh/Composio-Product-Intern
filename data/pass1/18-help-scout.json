@@ -1,0 +1,49 @@
+{
+  "id": 18,
+  "name": "Help Scout",
+  "category": "Support & Helpdesk",
+  "access_notes": "API access is gated by the Help Scout plan level; the Free plan does not include access to the API or integrations.",
+  "buildable": "with_caveats",
+  "auth_notes": "The Mailbox API uses OAuth2, while the Docs API uses API keys passed via HTTP Basic Authentication.",
+  "evidence": [
+    {
+      "claim": "The Free plan does not include access to the API or integrations.",
+      "url": "https://docs.helpscout.com/article/1140-mailbox-api"
+    },
+    {
+      "claim": "The Docs API uses API keys, while the Mailbox API uses OAuth 2.0.",
+      "url": "https://developer.helpscout.com/docs-api/"
+    },
+    {
+      "claim": "Help Scout provides Inbox and Docs APIs for read/write operations.",
+      "url": "https://developer.helpscout.com/"
+    },
+    {
+      "claim": "Search citation: Help Scout User Management API Guide | Stitchflow",
+      "url": "https://www.stitchflow.com/user-management/help-scout/api"
+    }
+  ],
+  "mcp": "none_found",
+  "blocker": "Access is blocked for users on the Free plan.",
+  "one_liner": "Help Scout provides customer service software featuring a shared inbox, knowledge base tools, and live chat capabilities.",
+  "api_notes": "The API covers core objects including Mailbox (conversations, customers, etc.) and Docs management. Reporting endpoints are restricted to higher-tier paid plans.",
+  "auth_methods": [
+    "OAuth2",
+    "Bearer token"
+  ],
+  "api_type": [
+    "REST"
+  ],
+  "confidence": "high",
+  "api_breadth": "moderate",
+  "mcp_notes": "No official or widely recognized community Model Context Protocol server was identified in the provided documentation or open-source listings.",
+  "access": "paid_plan",
+  "search_sources": [
+    "https://developer.helpscout.com/open-source/",
+    "https://www.helpscout.com/",
+    "https://articles.helpscout.com/blog/help-scout-api/",
+    "https://docs.helpscout.com/article/1141-docs-api"
+  ],
+  "researched_at": "2026-07-09T04:51:12.601Z",
+  "model": "exa-answer"
+}

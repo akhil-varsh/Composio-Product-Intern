@@ -2,59 +2,48 @@
   "id": 3,
   "name": "Pipedrive",
   "category": "CRM & Sales",
-  "one_liner": "Pipedrive is a sales CRM software designed to help businesses manage their sales pipeline, optimize leads, track activities, and automate sales processes.",
-  "auth_methods": [
-    "OAuth2",
-    "API key"
-  ],
-  "auth_notes": "The Pipedrive API supports both OAuth 2.0 for public apps and integrations, and API tokens for direct integrations. API tokens are tied to a specific user and company. OAuth 2.0 is necessary for apps available in the Pipedrive Marketplace.",
-  "access": "self_serve_trial",
-  "access_notes": "Developers can request a free developer sandbox account for testing and development. API access using an API token is included with every paid Pipedrive plan. Pipedrive offers a 14-day free trial (which can be extended to 30 days via partners) that provides full access to the platform's features, including API access. Public apps for the Pipedrive Marketplace require an app review process.",
-  "api_type": [
-    "REST",
-    "SDK-only"
-  ],
   "api_breadth": "broad",
-  "api_notes": "Pipedrive offers a well-documented RESTful API that uses JSON format for output. The API covers a broad range of core product functionalities, including deals, leads, organizations, activities, persons, products, and users. Official client libraries (SDKs) are available for Node.js and PHP. While GraphQL has been in internal development, it is not yet a standardized or stable public API.",
-  "mcp": "official",
-  "mcp_notes": "Pipedrive launched its native Model Context Protocol (MCP) server on June 30, 2026. This official server allows AI assistants to securely connect to Pipedrive CRM data in real-time, respecting user permissions, and is available to customers on all Pipedrive plans.",
   "buildable": "yes",
-  "blocker": null,
+  "one_liner": "Pipedrive is a sales-first CRM platform that helps teams organize pipelines, automate workflows, and manage leads and deals.",
+  "api_type": [
+    "REST"
+  ],
+  "auth_methods": [
+    "API key",
+    "OAuth2"
+  ],
   "evidence": [
     {
-      "claim": "Pipedrive is a sales CRM software that helps businesses manage their sales pipeline, optimize leads, track activities, and automate sales processes.",
-      "url": "https://www.pipedrive.com/"
-    },
-    {
-      "claim": "Pipedrive's API supports OAuth 2.0 and API tokens for authentication.",
-      "url": "https://pipedrive.readme.io/docs/core-api-concepts-about-pipedrive-api"
-    },
-    {
-      "claim": "Developers can get a free developer sandbox account, and API access is included with every paid Pipedrive plan. A free trial of the main product is also available.",
-      "url": "https://www.pipedrive.com/en/features/crm-api"
-    },
-    {
-      "claim": "Pipedrive has a documented public RESTful API that covers a broad range of core product functionalities, with official Node.js and PHP SDKs.",
+      "claim": "Pipedrive provides a RESTful API with extensive documentation covering core functionality.",
       "url": "https://developers.pipedrive.com/docs/api/v1"
     },
     {
-      "claim": "Pipedrive launched its native Model Context Protocol (MCP) server on June 30, 2026, which is an official vendor-built solution.",
-      "url": "https://www.pipedrive.com/en/newsroom/pipedrive-launches-native-mcp-server-bringing-crm-workflows-directly-into-ai-assistants"
+      "claim": "API access is included for free with every Pipedrive plan.",
+      "url": "https://www.pipedrive.com/en/features/crm-api"
+    },
+    {
+      "claim": "Search citation: ",
+      "url": "https://saleshive.com/vendors/pipedrive"
+    },
+    {
+      "claim": "Search citation: Pipedrive API Integration - Build & Ship Faster with Merge",
+      "url": "https://www.merge.dev/integrations/pipedrive"
     }
   ],
+  "auth_notes": "Authentication is handled via personal API tokens or OAuth 2.0.",
+  "mcp_notes": "Merge.dev provides a Pipedrive MCP server implementation. No official server from Pipedrive was found.",
   "confidence": "high",
+  "access": "self_serve_free",
+  "api_notes": "The API is RESTful, uses JSON, and covers the majority of core product functionality. Official SDKs exist for Node.js and PHP.",
+  "mcp": "community",
+  "blocker": null,
+  "access_notes": "Every Pipedrive plan includes an API token for free; developers can also request a separate sandbox account for testing.",
   "search_sources": [
-    "https://pipedrive.readme.io/docs/core-api-concepts-about-pipedrive-api",
-    "https://blog.coupler.io/pipedrive-api-guide/",
-    "https://www.pipedrive.com/en/features/crm-api",
-    "https://developers.pipedrive.com/docs/api/v1/Oauth",
-    "https://pipedrive.readme.io/docs/core-api-concepts-authentication",
-    "https://developers.pipedrive.com/docs/api/v1",
-    "https://endgrate.com/blog/using-the-pipedrive-api-to-create-or-update-organizations-(with-python-examples)",
-    "https://pipedrive.readme.io/docs/developer-sandbox-account",
-    "https://www.pipedrive.com/",
-    "https://www.processculture.com.au/30-day-pipedrive-free-trial"
+    "https://www.youtube.com/watch?v=xrF69utcBkI",
+    "https://devcommunity.pipedrive.com/t/getting-all-open-deals/4798",
+    "https://www.pipedrive.com/en/newsroom/pipedrive-api-included-in-the-list-of-most-popular-apis-this-year-by-postman",
+    "https://apix-drive.com/en/blog/other/pipedrive-api-integration"
   ],
-  "researched_at": "2026-07-09T04:14:00.076Z",
-  "model": "gemini-2.5-flash"
+  "researched_at": "2026-07-09T04:49:39.790Z",
+  "model": "exa-answer"
 }

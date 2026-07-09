@@ -1,0 +1,60 @@
+{
+  "id": 12,
+  "name": "Intercom",
+  "category": "Support & Helpdesk",
+  "one_liner": "Intercom is an AI-powered customer service platform that facilitates communication between businesses and their customers through live chat, chatbots, automated messaging, and support ticketing.",
+  "auth_methods": [
+    "OAuth2",
+    "API key",
+    "other"
+  ],
+  "auth_notes": "Intercom's API supports Access Tokens (functioning as API keys) for private apps accessing data within your own Intercom workspace, and OAuth 2.0 for public apps that need to access other people's Intercom data. JWT is also used for securing the Messenger SDK for client-side authentication.",
+  "access": "paid_plan",
+  "access_notes": "API access requires an active Intercom workspace. An Access Token (API key) is provided as soon as you create an app within your workspace in the Developer Hub. Intercom offers various paid plans (Essential, Advanced, Expert), and while the API is a core building block, access to a workspace to generate credentials is tied to these plans.",
+  "api_type": [
+    "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Intercom provides a documented public REST API that offers programmatic access to a wide range of its platform's features, including messages, conversations, contacts, companies, users, leads, events, attributes, and AI content. The API reference is auto-generated from an OpenAPI specification.",
+  "mcp": "official",
+  "mcp_notes": "Intercom hosts an official Model Context Protocol (MCP) server that enables AI tools and applications to securely connect with Intercom's data and services in a standardized way. This server provides tools for AI agents to interact with the Intercom API, including universal search, and is currently supported only in US hosted workspaces.",
+  "buildable": "yes",
+  "blocker": null,
+  "evidence": [
+    {
+      "claim": "Intercom is a customer messaging platform that facilitates direct communication between companies and their customers through various tools like live chat, automated messaging, and support ticketing.",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfANa1-Tze3QU6a8Fbvq9Aj795z13-lWLG751Na8seoOdWlXOyWALLDPNzTfwRL1EYddS2bAszvbuSTCGeFWBgivFt8IqBQa3xjHCUQdSxe05xLbA9_5HuNhwiTr5_8FElaXXLwcEB7u6-ZCQHaz6q8jvWUJoPq9gdLfSLG5Ne7HB6A2qoia-r_i7tALDE-CrdEyqXzEFwCDXM8nT4lhy2yg=="
+    },
+    {
+      "claim": "To access the Intercom API, you have two authentication options depending on whether you app is public or private. An Access Token is for if you're using the API to access data in your own Intercom workspace, in other words, building a private app. OAuth is for if you're building a public app that accesses other people's Intercom data.",
+      "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication"
+    },
+    {
+      "claim": "We provide you with an Access Token as soon as you create an app on your workspace. You can find your Access Token in the Configure > Authentication section in your app within the Developer Hub.",
+      "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication"
+    },
+    {
+      "claim": "The Intercom API provides programmatic access to Intercom's platform, including endpoints for messages, conversations, contacts, companies, and automation. Using this OpenAPI specification, developers can: Generate SDKs or client libraries using tools such as OpenAPI Generator. Explore schemas and models for Intercom's API objects. Build, test, and validate integrations in a consistent and language-agnostic way.",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4kLMJUG9KLmFjPAQ99YC3I-ARUYgXx5zagcNK9EQjR83TWqzkFW720l49oCKiDFCnpgOrieA_0C_S1cap7USM3T__NlKr4IFZYlwSdNMiMwEu5rIaoD362wlNVK9pUMp3N2pogjcF"
+    },
+    {
+      "claim": "Intercom hosts a remote MCP server that follows the authenticated remote MCP specification (docs). This server handles requests from AI tools and provides access to Intercom data through a secure interface.",
+      "url": "https://developers.intercom.com/docs/guides/mcp"
+    }
+  ],
+  "confidence": "high",
+  "search_sources": [
+    "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+    "https://klamp.ai/blog/intercom-api",
+    "https://www.merge.dev/blog/intercom-api-key",
+    "https://developers.intercom.com/installing-intercom/ios/secure-your-messenger",
+    "https://www.youtube.com/watch?v=33z1mucuVx8",
+    "https://www.voiceflow.com/blog/intercom-pricing",
+    "https://www.knock-ai.com/blog/intercom-pricing",
+    "https://www.spurnow.com/en/blogs/intercom-pricing",
+    "https://github.com/intercom/Intercom-OpenAPI",
+    "https://developers.intercom.com/docs/references/rest-api/api.intercom.io"
+  ],
+  "researched_at": "2026-07-09T04:17:45.814Z",
+  "model": "gemini-2.5-flash"
+}

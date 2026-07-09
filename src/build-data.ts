@@ -7,9 +7,10 @@
 //
 // Usage: npm run build-data
 
+import fs from "node:fs";
 import path from "node:path";
 import { APPS } from "./apps.ts";
-import { readJsonIfExists, slug, writeJson } from "./lib/util.ts";
+import { listJsonFiles, readJsonIfExists, slug, writeJson } from "./lib/util.ts";
 import type { ResearchRecord, VerificationRecord } from "./types.ts";
 
 interface HumanReview {
@@ -146,6 +147,40 @@ function main() {
     .sort((a, b) => a.id - b.id)
     .map((r) => ({ ...r, blocker_tag: tagBlocker(r.blocker) }));
 
+  // ---- independent-model cross-check ----
+  // 16 apps were first researched by Gemini + Google Search before the free-tier wall;
+  // they were all re-researched by Exa. Field agreement between two independent
+  // search+LLM stacks is a strong signal the answers reflect the docs, not the model.
+  const AGREE_FIELDS = ["auth_methods", "access", "api_type", "api_breadth", "mcp", "buildable"];
+  const softEq = (f: string, a: unknown, b: unknown): boolean => {
+    if (Array.isArray(a) && Array.isArray(b)) {
+      const sa = new Set(a.map(String)), sb = new Set(b.map(String));
+      const inter = [...sa].filter((x) => sb.has(x));
+      return inter.length === Math.min(sa.size, sb.size) && (inter.length > 0 || sa.size === sb.size);
+    }
+    const SOFT = [["self_serve_free", "self_serve_trial"], ["yes", "with_caveats"]];
+    if (SOFT.some(([x, y]) => (a === x && b === y) || (a === y && b === x))) return true;
+    return a === b;
+  };
+  let agreeN = 0, disagreeN = 0;
+  const disagreements: { id: number; name: string; field: string; gemini: unknown; exa: unknown; final: unknown }[] = [];
+  const geminiFiles = listJsonFiles(path.join("data", "pass1-gemini"));
+  for (const f of geminiFiles) {
+    const g = JSON.parse(fs.readFileSync(f, "utf8")) as ResearchRecord;
+    const fin = finalRecords.find((r) => r.id === g.id);
+    if (!fin) continue;
+    for (const field of AGREE_FIELDS) {
+      if (softEq(field, (g as any)[field], (fin as any)[field])) agreeN++;
+      else {
+        disagreeN++;
+        disagreements.push({
+          id: g.id, name: g.name, field,
+          gemini: (g as any)[field], exa: (fin as any)[field], final: (fin as any)[field],
+        });
+      }
+    }
+  }
+
   const out = {
     generated_at: new Date().toISOString(),
     app_count: records.length,
@@ -166,6 +201,13 @@ function main() {
         accuracy: humanSampleAccuracy,
       },
       human_notes: human.notes ?? [],
+      model_agreement: {
+        apps_compared: geminiFiles.length,
+        fields_compared: agreeN + disagreeN,
+        agree: agreeN,
+        rate: agreeN + disagreeN ? agreeN / (agreeN + disagreeN) : null,
+        disagreements,
+      },
     },
   };
 

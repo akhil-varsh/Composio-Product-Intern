@@ -1,0 +1,48 @@
+{
+  "id": 54,
+  "name": "MrScraper",
+  "category": "Data, SEO & Scraping",
+  "auth_notes": "Authentication is handled via an 'x-api-token' header or a Bearer token in the Authorization header.",
+  "api_notes": "The API surface allows for triggering AI-powered scrapers created in the dashboard, running custom scrapers, and performing generic AI-based extractions via specific endpoints. It is moderate in breadth as it is primarily focused on triggering and managing scraping jobs rather than full administrative control of the entire product platform.",
+  "access": "self_serve_free",
+  "api_type": [
+    "REST"
+  ],
+  "access_notes": "Users can start for free, as the platform offers a free trial with tokens and states no credit card is required.",
+  "confidence": "high",
+  "evidence": [
+    {
+      "claim": "MrScraper is a web scraping API and proxy infrastructure platform designed to extract data from websites reliably and at scale.",
+      "url": "https://mrscraper.com/about"
+    },
+    {
+      "claim": "MrScraper lets you run any scraper you've created directly through an API endpoint.",
+      "url": "https://docs.mrscraper.com/docs/features/activating-api"
+    },
+    {
+      "claim": "The API requires an 'x-api-token' and uses Bearer token authentication.",
+      "url": "https://mrscraper.com/webscraperapi"
+    },
+    {
+      "claim": "Search citation: Scrape Any Website with AI & Proxies | MrScraper",
+      "url": "https://mrscraper.com/"
+    }
+  ],
+  "blocker": null,
+  "api_breadth": "moderate",
+  "one_liner": "MrScraper is a web scraping API and proxy infrastructure platform that extracts structured data from websites using AI-powered automation and headless browser environments.",
+  "mcp": "none_found",
+  "buildable": "yes",
+  "auth_methods": [
+    "API key",
+    "Bearer token"
+  ],
+  "mcp_notes": "No official or well-known community Model Context Protocol server was found in the provided documentation.",
+  "search_sources": [
+    "https://docs.mrscraper.com/docs/getting-started/overview",
+    "https://www.scraperapi.com/",
+    "https://medium.com/@Mrscraper/how-to-use-mrscraper-scrapegpt-with-pagination-a-comparison-with-manual-scraping-fc93d4db0fcd"
+  ],
+  "researched_at": "2026-07-09T04:54:14.972Z",
+  "model": "exa-answer"
+}

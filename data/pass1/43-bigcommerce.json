@@ -1,0 +1,50 @@
+{
+  "id": 43,
+  "name": "BigCommerce",
+  "category": "Ecommerce",
+  "confidence": "high",
+  "api_breadth": "broad",
+  "one_liner": "BigCommerce is an e-commerce platform that provides a comprehensive suite of REST and GraphQL APIs for managing storefronts, product catalogs, orders, and customer data.",
+  "api_type": [
+    "REST",
+    "GraphQL"
+  ],
+  "mcp": "official",
+  "api_notes": "The API supports both REST (v2 and v3) and GraphQL. The documentation is extensive and covers core store objects including products, orders, customers, and store settings.",
+  "auth_notes": "V3 APIs utilize OAuth 2.0 (access tokens passed via X-Auth-Token header), while older V2 APIs use API keys.",
+  "access_notes": "Developers can sign up for a free BigCommerce trial store to access the control panel and generate API credentials.",
+  "evidence": [
+    {
+      "claim": "BigCommerce provides REST and GraphQL APIs to manage products, orders, customers, and store settings.",
+      "url": "https://docs.bigcommerce.com/"
+    },
+    {
+      "claim": "Search citation: BigCommerce Product API Guide for Developers",
+      "url": "https://ecommerce.folio3.com/blog/bigcommerce-product-api/"
+    },
+    {
+      "claim": "Search citation: BigCommerce System and API Integration Capabilities | Americaneagle.com",
+      "url": "https://www.americaneagle.com/insights/blog/post/bigcommerce-system-api-integration-capabilities"
+    },
+    {
+      "claim": "Search citation: Bigcommerce API - API2Cart",
+      "url": "https://api2cart.com/api-technology/a-foreword-to-bigcommerce-api/"
+    }
+  ],
+  "buildable": "yes",
+  "mcp_notes": "There is an official MCP server provided specifically for interacting with the BigCommerce developer documentation (https://docs.bigcommerce.com/_mcp/server).",
+  "access": "self_serve_free",
+  "blocker": null,
+  "auth_methods": [
+    "OAuth2",
+    "API key"
+  ],
+  "search_sources": [
+    "https://support.bigcommerce.com/s/question/0D54O00006IKcBESA1/setting-up-an-api-to-import-and-update-products-from-supplier?language=en_US",
+    "https://www.bigcommerce.com/product/api/",
+    "https://www.youtube.com/watch?v=Bmm-OE9yXvM",
+    "https://support.bigcommerce.com/s/question/0D54O00006i1RyCSAU/how-to-get-the-list-of-product-ids-from-the-orderconfirmationhtml-page-using-storefront-api?language=en_US"
+  ],
+  "researched_at": "2026-07-09T04:53:15.340Z",
+  "model": "exa-answer"
+}

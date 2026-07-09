@@ -1,0 +1,49 @@
+{
+  "id": 19,
+  "name": "Gorgias",
+  "category": "Support & Helpdesk",
+  "blocker": null,
+  "api_type": [
+    "REST"
+  ],
+  "mcp": "official",
+  "auth_notes": "The official Gorgias MCP server uses OAuth2. HTTP integrations support both Header-based (Bearer token) and OAuth2 authentication.",
+  "mcp_notes": "Gorgias provides an official MCP server in open beta for paid plan customers, accessible via mcp.gorgias.com.",
+  "access_notes": "Access to Gorgias APIs and the ability to create HTTP integrations requires a paid Gorgias subscription.",
+  "api_notes": "Gorgias provides a REST API for integrations. While documentation for a comprehensive public REST API is managed via their platform, HTTP integrations allow external systems to communicate with Gorgias events and data.",
+  "one_liner": "Gorgias is a conversational commerce and helpdesk platform for e-commerce brands that unifies customer support channels and AI agents with store data.",
+  "confidence": "high",
+  "access": "paid_plan",
+  "evidence": [
+    {
+      "claim": "Gorgias supports building HTTP integrations using the third-party's public API or via a REST-based connection, available on all helpdesk plans (which are paid).",
+      "url": "https://docs.gorgias.com/en-US/connect-external-apps-to-gorgias-and-create-sidebar-widgets-81822"
+    },
+    {
+      "claim": "Gorgias provides an official Model Context Protocol (MCP) server for paid plan customers.",
+      "url": "https://www.gorgias.com/blog/gorgias-mcp"
+    },
+    {
+      "claim": "Search citation: The Conversational AI platform for Ecommerce | Gorgias",
+      "url": "https://www.gorgias.com/"
+    },
+    {
+      "claim": "Search citation: Gorgias API Integration - Build & Ship Faster with Merge",
+      "url": "https://www.merge.dev/integrations/gorgias"
+    }
+  ],
+  "api_breadth": "broad",
+  "auth_methods": [
+    "OAuth2",
+    "Bearer token"
+  ],
+  "buildable": "yes",
+  "search_sources": [
+    "https://www.gorgias.com/llm-info",
+    "https://www.youtube.com/watch?v=nl0jeGuyw6c",
+    "https://docs.gorgias.com/en-US/security-and-privacy-faq-for-gorgias-ai-agent-1997987",
+    "https://docs.gorgias.com/en-US/ai-agents-by-eesel-969145"
+  ],
+  "researched_at": "2026-07-09T04:51:17.267Z",
+  "model": "exa-answer"
+}

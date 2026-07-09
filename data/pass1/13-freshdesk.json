@@ -2,58 +2,48 @@
   "id": 13,
   "name": "Freshdesk",
   "category": "Support & Helpdesk",
-  "one_liner": "Freshdesk is a cloud-based customer support software that centralizes customer interactions from various channels into a unified ticketing system, offering features like automation, self-service, and AI assistance to streamline support operations.",
+  "access_notes": "API access is only available on paid Freshdesk plans. Free plans do not provide access to the REST API.",
   "auth_methods": [
     "API key",
     "Basic"
   ],
-  "auth_notes": "Freshdesk's public API primarily uses API Key authentication, implemented via Basic Access Authorization. The API key is used as the username, and any dummy string (e.g., 'X') serves as the password, which is then Base64 encoded for the Authorization header. While OAuth 2.0 is mentioned for Freshdesk Marketplace apps to integrate with third-party applications, the Freshdesk API itself does not directly support OAuth for authentication.",
-  "access": "self_serve_trial",
-  "access_notes": "Developers can obtain API credentials by signing up for a free trial or a free plan. The API key is readily available in the user's profile settings after logging in. However, the free plan has a rate limit of 0 API calls per minute, while trial accounts are limited to 50 API calls per minute. Full functional API usage with higher rate limits typically requires a paid plan.",
-  "api_type": [
-    "REST"
-  ],
-  "api_breadth": "broad",
-  "api_notes": "Freshdesk offers a well-documented public REST API (v2) that allows for comprehensive management of helpdesk data. The API surface includes endpoints for core resources such as tickets, conversations, agents, contacts, time entries, and ticket forms, enabling extensive control over product functionalities.",
-  "mcp": "official",
-  "mcp_notes": "Freshworks provides an official Model Context Protocol (MCP) server for Freshdesk, currently in an Early Access Program (EAP). This server enables AI tools to securely connect and interact with Freshdesk, exposing capabilities like ticket creation using public APIs and API key authentication.",
-  "buildable": "yes",
-  "blocker": null,
+  "mcp_notes": "The search results mention a Merge Agent Handler's Freshdesk MCP server, but this refers to a third-party integration platform's implementation rather than an official server provided by Freshdesk. No official Freshdesk MCP server was found.",
+  "access": "paid_plan",
+  "confidence": "high",
+  "buildable": "with_caveats",
+  "api_notes": "The API covers major objects including tickets, contacts, companies, agents, and custom objects. It is a RESTful API. Documentation specifies authentication via API key or basic auth.",
+  "one_liner": "Freshdesk is a cloud-based customer support platform that manages ticket workflows across multiple channels, including email, phone, chat, and social media.",
   "evidence": [
     {
-      "claim": "Freshdesk is a cloud-based customer support software that centralizes customer interactions into a unified ticketing system.",
-      "url": "https://www.breezythemes.com/blogs/blog/what-is-freshdesk"
-    },
-    {
-      "claim": "The Freshdesk API uses Basic Access Authorization with an API key as the primary authentication method, which can be found in profile settings.",
+      "claim": "Freshdesk provides a REST API for performing operations like read, modify, add, or delete data.",
       "url": "https://developer.freshdesk.com/api/v1"
     },
     {
-      "claim": "Developers can get API credentials by starting a free trial or logging into their account, but the free plan has a 0 API call limit, while trial accounts have 50 calls/minute.",
-      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUISUX5e4iB_6EkpMJH5YOHytYM7-prxKJKeh1YexrchiRT7zbbDmr6YG53bidscjx4-ucNOZb-LmhBart7ZE2bD99O49yQz7QyiRYAfQ8="
+      "claim": "The REST API is only available on paid plans, not on the free plan.",
+      "url": "https://community.freshworks.com/api-and-webhooks-11406/freshdesk-api-for-free-users-available-35254"
     },
     {
-      "claim": "Freshdesk's APIs are RESTful (v2) and allow operations like reading, modifying, adding, or deleting data from the helpdesk, covering various resources like tickets, conversations, and agents.",
-      "url": "https://developers.freshdesk.com/api/"
+      "claim": "Authentication is supported via API key or Basic Auth.",
+      "url": "https://support.freshdesk.com/support/solutions/articles/215517-how-to-find-your-api-key"
     },
     {
-      "claim": "An official Freshworks Model Context Protocol (MCP) server exists for Freshdesk (in EAP) to enable AI tools to connect and interact with the platform.",
-      "url": "https://support.freshdesk.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk-eap-"
+      "claim": "Search citation: Freshdesk API Integration - Build & Ship Faster with Merge",
+      "url": "https://www.merge.dev/integrations/freshdesk"
     }
   ],
-  "confidence": "high",
-  "search_sources": [
-    "https://developer.freshdesk.com/api/v1",
-    "https://mixedanalytics.com/knowledge-base/get-your-freshdesk-api-credentials/",
-    "https://www.stitchflow.com/user-management/freshdesk/api",
-    "https://truto.one/blog/how-to-integrate-with-the-freshdesk-api-2026-engineering-guide/",
-    "https://developers-staging.freshworks.com/docs/app-sdk/v2.3/freshdesk/oauth/",
-    "https://community.freshworks.dev/t/how-to-use-oauth-authentication-mechanism-for-freshdesk-api/1691",
-    "https://www.merge.dev/blog/freshdesk-api-key",
-    "https://support.freshdesk.com/support/solutions/articles/215517-how-to-find-your-api-key",
-    "https://developers.freshdesk.com/api/",
-    "https://mcpservers.org/servers/Enreign/freshdeck-mcp"
+  "blocker": "API access requires a paid subscription.",
+  "auth_notes": "Supports API key (using the key as the username with a dummy password) or standard Basic Auth with email and password.",
+  "mcp": "none_found",
+  "api_breadth": "broad",
+  "api_type": [
+    "REST"
   ],
-  "researched_at": "2026-07-09T04:18:04.111Z",
-  "model": "gemini-2.5-flash"
+  "search_sources": [
+    "https://developers.freshdesk.com/api/",
+    "https://exalate.com/blog/asana-freshdesk-integration/",
+    "https://community.freshworks.dev/t/freshdesk-integrations-with-other-systems/2877",
+    "https://apix-drive.com/en/freshdesk-api"
+  ],
+  "researched_at": "2026-07-09T04:50:39.861Z",
+  "model": "exa-answer"
 }

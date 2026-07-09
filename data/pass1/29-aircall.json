@@ -1,0 +1,50 @@
+{
+  "id": 29,
+  "name": "Aircall",
+  "category": "Communications & Messaging",
+  "one_liner": "Aircall is a cloud-based business phone system and customer conversation platform that integrates with various CRM and helpdesk tools.",
+  "api_type": [
+    "REST"
+  ],
+  "api_notes": "The REST API provides broad control over core objects like calls, contacts, users, and tags, and includes webhook support for event-driven workflows.",
+  "blocker": "The primary blocker is that API access requires an active Aircall subscription. There is no publicly available free sandbox environment for developers without an account.",
+  "access_notes": "Aircall is a commercial product. While there is no specific 'developer sandbox' mentioned for free, developers can use Basic Auth for their own account or OAuth if they are official partners. Access is typically tied to having an active Aircall account, which is a paid business phone system.",
+  "auth_methods": [
+    "OAuth2",
+    "Basic",
+    "API key"
+  ],
+  "mcp_notes": "There is no official or well-known community MCP server listed in the documentation or API resources.",
+  "access": "paid_plan",
+  "mcp": "none_found",
+  "buildable": "yes",
+  "api_breadth": "moderate",
+  "confidence": "high",
+  "evidence": [
+    {
+      "claim": "Aircall provides a public REST API that allows developers to retrieve and manage Aircall data.",
+      "url": "https://developer.aircall.io/api-references"
+    },
+    {
+      "claim": "Search citation: Developers | Aircall",
+      "url": "https://developer.aircall.io/"
+    },
+    {
+      "claim": "Search citation: ",
+      "url": "https://aircall.io/blog/news/aircall-for-developers-public-api/"
+    },
+    {
+      "claim": "Search citation: ",
+      "url": "https://aircall.io/product-overview/"
+    }
+  ],
+  "auth_notes": "The documentation specifies OAuth2 for partners/marketplace apps and Basic Auth for customers building for their own accounts. Source [7] also mentions API keys.",
+  "search_sources": [
+    "https://apitracker.io/a/aircall",
+    "https://www.youtube.com/watch?v=CC-oKp3yEgE",
+    "https://aircall.io/call-center-software-integrations/",
+    "https://www.flowmondo.com/integrate-automate/aircall"
+  ],
+  "researched_at": "2026-07-09T04:52:08.001Z",
+  "model": "exa-answer"
+}

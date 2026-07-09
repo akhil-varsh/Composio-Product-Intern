@@ -1,0 +1,48 @@
+{
+  "id": 20,
+  "name": "Gladly",
+  "category": "Support & Helpdesk",
+  "api_notes": "The API surface includes a REST API for core platform actions and a Lookup API for integrating custom data sources into the agent experience. Documentation includes standard endpoints for resources like Agents, Customers, and conversations.",
+  "api_type": [
+    "REST"
+  ],
+  "access": "paid_plan",
+  "confidence": "high",
+  "one_liner": "Gladly is an AI-driven customer service platform that unifies customer communication channels into a single, lifelong conversation history.",
+  "auth_methods": [
+    "Basic"
+  ],
+  "evidence": [
+    {
+      "claim": "Gladly provides a REST API and a Lookup API for integrations.",
+      "url": "https://developer.gladly.com/rest/"
+    },
+    {
+      "claim": "API tokens are created within the Gladly UI by users with specific permissions.",
+      "url": "https://help.gladly.com/implementation/docs/get-your-api-tokens"
+    },
+    {
+      "claim": "Search citation: Main Home - Gladly Developer",
+      "url": "https://developer.gladly.com/"
+    },
+    {
+      "claim": "Search citation: Introduction to App Platform",
+      "url": "https://help.gladly.com/developer-tutorials/docs/app-platform-overview"
+    }
+  ],
+  "mcp_notes": "No official or community-maintained Model Context Protocol (MCP) server was identified in the provided documentation.",
+  "api_breadth": "broad",
+  "access_notes": "API access is a feature of the Gladly platform. A developer needs to log into a configured Gladly instance and be assigned the specific \"API User\" role by a Gladly Administrator to generate tokens. There is no self-serve public developer sign-up for free API access.",
+  "auth_notes": "Uses token-based Basic Authentication where the token acts as the password. API tokens are associated with a specific Gladly user account.",
+  "buildable": "with_caveats",
+  "blocker": "The requirement for an existing paid Gladly subscription and manual assignment of the 'API User' permission by an administrator prevents open self-serve access.",
+  "mcp": "none_found",
+  "search_sources": [
+    "https://help.gladly.com/docs/api-export-tool",
+    "https://help.gladly.com/docs/get-started-with-gladly",
+    "https://help.gladly.com/developer-tutorials/docs/developer-tutorials",
+    "https://help.gladly.com/implementation/docs/other-integrations"
+  ],
+  "researched_at": "2026-07-09T04:51:22.043Z",
+  "model": "exa-answer"
+}

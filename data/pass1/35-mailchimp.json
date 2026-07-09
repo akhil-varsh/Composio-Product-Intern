@@ -1,0 +1,50 @@
+{
+  "id": 35,
+  "name": "Mailchimp",
+  "category": "Marketing, Ads, Email & Social",
+  "auth_methods": [
+    "OAuth2",
+    "Basic",
+    "Bearer token"
+  ],
+  "api_type": [
+    "REST"
+  ],
+  "access_notes": "Developers can create a free Mailchimp account and generate API keys via the account dashboard settings. No paid plan or partnership is required to access the API.",
+  "evidence": [
+    {
+      "claim": "The Mailchimp Marketing API allows developers to manage audiences, sync email activity, and handle campaign analytics.",
+      "url": "https://mailchimp.com/developer/marketing/docs/fundamentals/"
+    },
+    {
+      "claim": "Developers can sign up for a free Mailchimp account to access the API.",
+      "url": "https://mailchimp.com/developer/marketing/"
+    },
+    {
+      "claim": "Search citation: Mailchimp api integration in php",
+      "url": "https://stackoverflow.com/questions/67202277/mailchimp-api-integration-in-php"
+    },
+    {
+      "claim": "Search citation: Lists/Audiences | Mailchimp Marketing API Reference | Mailchimp Developer",
+      "url": "https://mailchimp.com/developer/marketing/api/lists/"
+    }
+  ],
+  "api_notes": "The Marketing API provides broad coverage for managing audiences, campaigns, automation, and contact data. It is documented using OpenAPI and provides client libraries.",
+  "confidence": "high",
+  "one_liner": "Mailchimp is a marketing platform that provides a REST API for programmatically managing email campaigns, audience lists, and contact data.",
+  "blocker": null,
+  "buildable": "yes",
+  "access": "self_serve_free",
+  "auth_notes": "The API supports both API key-based authentication (using HTTP Basic or Bearer schemes) and OAuth2 for third-party integrations.",
+  "api_breadth": "broad",
+  "mcp": "none_found",
+  "mcp_notes": "No official or community-maintained Model Context Protocol (MCP) server was identified in the provided documentation.",
+  "search_sources": [
+    "https://www.merge.dev/blog/mailchimp-api-key",
+    "https://mailchimp.com/help/about-api-keys/",
+    "https://www.youtube.com/watch?v=7AlPMGdrdX4",
+    "https://www.youtube.com/watch?v=zm1dX-7rquA"
+  ],
+  "researched_at": "2026-07-09T04:52:35.489Z",
+  "model": "exa-answer"
+}

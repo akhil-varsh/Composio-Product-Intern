@@ -1,0 +1,48 @@
+{
+  "id": 40,
+  "name": "SendGrid",
+  "category": "Marketing, Ads, Email & Social",
+  "auth_methods": [
+    "API key"
+  ],
+  "mcp": "none_found",
+  "api_type": [
+    "REST"
+  ],
+  "auth_notes": "The primary method for authenticating to the Web API v3 is via API keys, which are managed through the Twilio SendGrid UI.",
+  "api_notes": "The SendGrid API is extensive, covering mail sending, subuser management, contact/marketing management, and analytics/event webhooks. It primarily uses RESTful architecture (Web API v3).",
+  "evidence": [
+    {
+      "claim": "SendGrid is a cloud-based email delivery platform that allows businesses to send transactional and marketing emails programmatically via its API.",
+      "url": "https://www.twilio.com/en-us/products/email-api/explore-ai"
+    },
+    {
+      "claim": "The SendGrid Web API v3 uses API keys for authentication and provides comprehensive endpoints for managing emails, contacts, and account settings.",
+      "url": "https://github.com/sendgrid/sendgrid-csharp"
+    },
+    {
+      "claim": "Search citation: ",
+      "url": "https://ahoy.sendgrid.com/rs/294-TKB-300/images/SendGrid_API_Guide.pdf"
+    },
+    {
+      "claim": "Search citation: What are the requirements when using SendGrid as send method? : Customer Support Portal",
+      "url": "https://support.outreach.io/support/solutions/articles/159000425717-what-are-the-requirements-when-using-sendgrid-as-send-method-"
+    }
+  ],
+  "confidence": "high",
+  "access": "self_serve_free",
+  "access_notes": "Developers can sign up for a free trial or free tier account themselves and generate API keys through the user dashboard. While the free tier limitations have changed over time, it remains a self-serve process.",
+  "buildable": "yes",
+  "blocker": null,
+  "api_breadth": "broad",
+  "one_liner": "SendGrid is a cloud-based email delivery platform that enables businesses to programmatically send and manage transactional and marketing emails at scale.",
+  "mcp_notes": "No official or widely recognized community-maintained Model Context Protocol (MCP) server was found.",
+  "search_sources": [
+    "https://pangea.app/glossary/sendgrid-a3dea",
+    "https://meta.stackoverflow.com/questions/433918/why-was-my-question-about-the-sendgrid-api-closed-as-not-about-programming",
+    "https://www.agentmail.to/blog/5-best-email-api-for-developers-compared-2026",
+    "https://technologychecker.io/technology/sendgrid"
+  ],
+  "researched_at": "2026-07-09T04:53:00.943Z",
+  "model": "exa-answer"
+}

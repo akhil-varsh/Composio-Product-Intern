@@ -14,22 +14,25 @@ as a single self-contained HTML case study.
 src/apps.ts            the 100-app research set (fixed input)
         │
         ▼
-npm run research       PASS 1 — research agent. One search-grounded Gemini call per app
-        │              → strict JSON record → checkpointed to data/pass1/*.json
+npm run research       PASS 1 — research agent. One Exa /answer call per app (web search +
+        │              synthesis in one request), locked to a JSON schema → checkpointed
+        │              to data/pass1/*.json. (data/pass1-gemini/ holds 16 records from the
+        │              original Gemini+grounding engine — kept as an independent cross-check.)
         ▼
-npm run composio       Composio registry cross-check via @composio/core SDK:
+npm run composio       Composio registry cross-check via @composio/core SDK + v3 API:
         │              does a toolkit already exist, and what auth does Composio record?
         ▼
-npm run verify         PASS 2 — verification loop. Fetches the evidence URLs pass 1 cited,
-        │              strips them to text, and a second (search-free) model call judges
-        │              each field against those primary sources only:
-        │              confirmed / contradicted (+correction) / not verifiable.
+npm run verify         PASS 2 — verification loop, two layers.
+        │              Layer 1 (deterministic, free): fetch every cited evidence URL; dead
+        │              citations are flagged; page text keyword-corroborates each claim.
+        │              Layer 2 (re-ask): every unsettled field becomes ONE narrow,
+        │              schema-locked Exa question; disagreement overturns the field.
         ▼
 data/human-review.json PASS 3 — human. Random sample hand-checked against live docs;
         │              corrections recorded here (human > verifier > agent precedence).
         ▼
-npm run build-data     Merge all passes, apply corrections, compute accuracy numbers
-        │              → site/data.json
+npm run build-data     Merge all passes, apply corrections, compute accuracy numbers and
+        │              the Gemini↔Exa two-engine agreement rate → site/data.json
         ▼
 npm run site           Inject data into the case-study page → site/index.html
 ```
@@ -38,10 +41,10 @@ npm run site           Inject data into the case-study page → site/index.html
 
 ```bash
 npm install
-cp .env.example .env   # fill in GEMINI_API_KEY and COMPOSIO_API_KEY
-npm run research       # ~15 min for 100 apps (paced for free-tier rate limits)
+cp .env.example .env   # fill in EXA_API_KEY and COMPOSIO_API_KEY (GEMINI_API_KEY optional)
+npm run research       # ~12 min for 100 apps, ~$0.50 in Exa credits
 npm run composio
-npm run verify         # ~20 min (fetches evidence pages + one model call per app)
+npm run verify         # ~25 min: fetches all evidence pages + re-asks unsettled fields
 npm run build-data
 npm run site
 ```
@@ -55,12 +58,15 @@ for layout review — needs `npx playwright install chromium` once.
 
 ## Design choices
 
-- **Plain `fetch` for Gemini, no SDK** — the whole request path is ~60 lines and debuggable.
+- **Plain `fetch` for Exa and Gemini, no SDKs** — each client is ~50 lines and debuggable.
+  (The Composio SDK is used where it's the point: reading Composio's own registry.)
 - **Closed enums, free-text notes** — every clusterable field is a fixed enum so the
   pattern analysis is real; nuance lives in `*_notes`.
-- **Verification is adversarial by design** — pass 2 gets *no search access*, only the
-  cited pages. If the agent hallucinated a URL, the fetch fails and the app is flagged;
-  if the page doesn't support the claim, the field is contradicted.
+- **Verification is adversarial by design** — layer 1 of pass 2 re-fetches the agent's own
+  citations: a hallucinated or dead URL fails loudly, and absence of corroborating text
+  escalates the field. Absence alone never overturns a claim; only an independent re-ask can.
+- **Two engines beat one** — 16 apps researched by both Gemini+Google and Exa give a
+  measurable inter-engine agreement rate on top of the verification loops.
 - **Human is the last pass, not the first** — the machine does 100 apps; the human
   samples, corrects, and handles the apps that defeated the pipeline.
 

@@ -1,0 +1,46 @@
+{
+  "id": 23,
+  "name": "Zoho Cliq",
+  "category": "Communications & Messaging",
+  "access": "self_serve_free",
+  "blocker": null,
+  "mcp_notes": "No official or well-known community MCP server was found for Zoho Cliq in the provided sources.",
+  "access_notes": "Developers can sign up for a Zoho account for free and register applications in the Zoho Developer Console to obtain OAuth credentials.",
+  "api_breadth": "moderate",
+  "one_liner": "Zoho Cliq is a team collaboration and chat application that provides a developer platform for building integrations, bots, commands, and automating workflows.",
+  "evidence": [
+    {
+      "claim": "Zoho Cliq's REST API is designed based on RESTful architecture principles, enabling seamless communication between your applications and Zoho Cliq.",
+      "url": "https://www.zoho.com/cliq/help/restapi/v3/introduction/"
+    },
+    {
+      "claim": "Zoho Cliq API is organized around REST, and follows HTTP rules. Cliq REST APIs are authenticated with an OAuth token. Register as a new client in Zoho's Developer Console.",
+      "url": "https://www.zoho.com/cliq/help/platform/faq.html"
+    },
+    {
+      "claim": "Sign Up For Free (Zoho Developer REST APIs).",
+      "url": "https://www.zoho.com/developer/rest-api.html"
+    },
+    {
+      "claim": "Search citation: Getting Started with Zoho Cliq Developer Platform",
+      "url": "https://www.zoho.com/cliq/help/platform/getting-started-with-cliq-platform.html"
+    }
+  ],
+  "api_type": [
+    "REST"
+  ],
+  "buildable": "yes",
+  "mcp": "none_found",
+  "confidence": "high",
+  "auth_notes": "The primary authentication method is OAuth 2.0. The documentation also mentions API tokens for integration components created within the platform.",
+  "api_notes": "The API provides moderate coverage, focusing on integration with chat functionalities (bots, channels, commands) and business automation. While it covers core messaging and automation, it is not a complete mirror of every internal UI action.",
+  "auth_methods": [
+    "OAuth2"
+  ],
+  "search_sources": [
+    "https://www.zoho.com/cliq/help/developers.html",
+    "https://www.youtube.com/watch?v=1wYpA_4nX-Q"
+  ],
+  "researched_at": "2026-07-09T04:51:38.826Z",
+  "model": "exa-answer"
+}

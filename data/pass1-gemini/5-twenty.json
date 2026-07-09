@@ -1,0 +1,61 @@
+{
+  "id": 5,
+  "name": "Twenty",
+  "category": "CRM & Sales",
+  "one_liner": "Twenty is an open-source, highly customizable CRM platform designed for modern teams, offering flexible data models, workflow automation, and extensive API capabilities for managing customer relationships.",
+  "auth_methods": [
+    "API key",
+    "Bearer token"
+  ],
+  "auth_notes": "API keys are generated from the Twenty app's API settings page and are used as secret tokens in the request header. Some examples show the API key being used as a Bearer token in the Authorization header.",
+  "access": "self_serve_free",
+  "access_notes": "Twenty is open-source and can be self-hosted, allowing developers to get working API credentials for free. For the cloud version, a free trial is available, and API access is included.",
+  "api_type": [
+    "REST",
+    "GraphQL",
+    "SDK-only"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Twenty offers both REST and GraphQL APIs, including a Core API for CRUD operations on records (people, companies, opportunities, custom objects) and a Metadata API for schema management (create/modify/delete objects, fields, relations). The API is generated from the workspace schema, meaning custom objects and fields automatically get API endpoints, indicating broad control over the product. A `twenty-sdk` is also available for application development.",
+  "mcp": "community",
+  "mcp_notes": "Multiple community-driven Model Context Protocol (MCP) servers exist for Twenty CRM, enabling integration with AI assistants like Claude. These projects expose Twenty's GraphQL and REST APIs as MCP tools.",
+  "buildable": "yes",
+  "blocker": null,
+  "evidence": [
+    {
+      "claim": "Twenty is an open-source CRM that provides a flexible, customizable platform for managing customer relationships.",
+      "url": "https://docs.twenty.com/user-guide/getting-started/capabilities/what-is-twenty"
+    },
+    {
+      "claim": "The API uses API keys for authentication, which are generated from the app's settings and included in the request header.",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9uWlb_9d5Z56Ezamj4noxRdxZJBgmv2Jn9WRgT__06biYaFyAsscgjOYYllwCHYcxwF9-o96vGVjDk6k5VOKoTKu0pGTshnRS4gBtpUVmCh5itnKXRmWWT2eClXGmh4bDJWcqnyiAMr-N"
+    },
+    {
+      "claim": "Twenty offers both REST and GraphQL APIs, covering core CRM data and metadata for schema management.",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPwrm8ZB-dhFHaC0pgqiTm6shOLrMcrZORXNWbE0BvGvXROJ82iTe6zaN-Z-WfW05h2vfKWqnQZBVh5stouk19ZVkqqmzUhNEGt8apRr6NMur1vKpToh0A7CODZ4ojx8GRDCGWqRkBxg=="
+    },
+    {
+      "claim": "The API is generated from the workspace schema, meaning custom objects and fields automatically get API endpoints.",
+      "url": "https://www.taskrhino.ca/blog/twenty-crm-vs-salesforce/"
+    },
+    {
+      "claim": "Community-driven Model Context Protocol (MCP) servers exist for Twenty CRM, enabling AI assistant integration.",
+      "url": "https://lobehub.com/mcp/igorwarzocha-twenty-mcp-server"
+    }
+  ],
+  "confidence": "high",
+  "search_sources": [
+    "https://lobehub.com/mcp/igorwarzocha-twenty-mcp-server",
+    "https://glama.ai/mcp/servers/High-Impact-Athletes/hia-twenty-mcp",
+    "https://github.com/twentyhq/twenty/issues/10283",
+    "https://docs.twenty.com/developers/extend/api",
+    "https://github.com/mhenry3164/twenty-crm-mcp-server",
+    "https://hyteck.de/post/trying-twenty/",
+    "https://twentyhq-twenty.mintlify.app/introduction",
+    "https://twenty.com/",
+    "https://twenty.com/partners",
+    "https://dev.to/raju_gangitla_91920e1427f/self-hosting-twenty-crm-a-complete-guide-559n"
+  ],
+  "researched_at": "2026-07-09T04:15:44.428Z",
+  "model": "gemini-2.5-flash"
+}

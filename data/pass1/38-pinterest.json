@@ -1,0 +1,48 @@
+{
+  "id": 38,
+  "name": "Pinterest",
+  "category": "Marketing, Ads, Email & Social",
+  "access_notes": "Access requires a manual review process. All apps start with Trial access upon approval, and upgrading to Standard access for production use requires submitting a video demo for manual review.",
+  "one_liner": "The Pinterest API (v5) allows developers to build applications that interact with Pinterest platform features such as Pins, boards, advertising, and analytics.",
+  "blocker": "The primary barrier is the mandatory manual review process, which includes a requirement to submit a video demo of the app's OAuth flow and integration before obtaining even Trial access or upgrading to Standard access.",
+  "auth_methods": [
+    "OAuth2"
+  ],
+  "api_breadth": "broad",
+  "evidence": [
+    {
+      "claim": "Apps are approved for Trial access and may upgrade to Standard access; both require compliance with developer guidelines.",
+      "url": "https://developers.pinterest.com/docs/key-concepts/access-tiers/"
+    },
+    {
+      "claim": "Standard access requires a manual video-demo review process with no fixed timeline.",
+      "url": "https://www.blotato.com/blog/pinterest-api-pricing"
+    },
+    {
+      "claim": "Search citation: Pinterest Developers",
+      "url": "https://developers.pinterest.com/blog/2022/04/12/introducing-pinterest-api-v5/"
+    },
+    {
+      "claim": "Search citation: Pinterest Developers",
+      "url": "https://developers.pinterest.com/docs/api/v5/"
+    }
+  ],
+  "api_notes": "The API covers a broad range of functionality including Pins, boards, ads, catalogs, analytics, and trends. It is a RESTful API.",
+  "mcp": "none_found",
+  "auth_notes": "The API uses OAuth2 for user authentication. The documentation specifically requires apps to obtain OAuth access tokens and explicitly discourages other methods.",
+  "buildable": "with_caveats",
+  "mcp_notes": "There is no official MCP server provided by Pinterest. While third-party tools like Blotato may offer unofficial solutions, none are official.",
+  "confidence": "high",
+  "api_type": [
+    "REST"
+  ],
+  "access": "admin_approval",
+  "search_sources": [
+    "https://community.pinterest.biz/t/listing-boards-using-api-from-n8n-returns-only-1-board/39151",
+    "https://developers.pinterest.com/terms/",
+    "https://www.youtube.com/watch?v=4MSGXHtcpsM",
+    "https://www.adweek.com/social-marketing/pinterest-api-v5-brings-open-access-to-developers-for-the-first-time/"
+  ],
+  "researched_at": "2026-07-09T04:52:50.625Z",
+  "model": "exa-answer"
+}

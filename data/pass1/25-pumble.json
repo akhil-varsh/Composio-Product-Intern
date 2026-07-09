@@ -1,0 +1,48 @@
+{
+  "id": 25,
+  "name": "Pumble",
+  "category": "Communications & Messaging",
+  "one_liner": "Pumble is a team chat and collaboration tool that provides unlimited message history and team communication features.",
+  "api_type": [
+    "REST"
+  ],
+  "access_notes": "API access is available on all plans. Developers can install the API addon and generate keys via the Pumble workspace interface themselves.",
+  "confidence": "high",
+  "api_breadth": "narrow",
+  "evidence": [
+    {
+      "claim": "The Pumble API is available on all plans and allows interaction via API keys generated after installing the API addon.",
+      "url": "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration/"
+    },
+    {
+      "claim": "The Pumble API is publicly available for anyone to explore, and documentation is provided.",
+      "url": "https://pumble.com/integrations"
+    },
+    {
+      "claim": "Search citation: Pumble vs Slack: Which Team Chat Tool Actually Fits Your Team?",
+      "url": "https://trueconf.com/blog/reviews-comparisons/pumble-vs-slack"
+    },
+    {
+      "claim": "Search citation: Pumble AI Assistant - Connect Your Apps with Pumble",
+      "url": "https://pumble.com/integrations/ai-assistant"
+    }
+  ],
+  "auth_methods": [
+    "API key"
+  ],
+  "mcp_notes": "No official or well-known community Model Context Protocol (MCP) server was found. Pumble provides standard REST API documentation via Swagger.",
+  "access": "self_serve_free",
+  "auth_notes": "Authentication is performed by generating an API key via the API addon within the Pumble workspace. The key is used in HTTP requests and for authorization in Swagger documentation.",
+  "buildable": "yes",
+  "mcp": "none_found",
+  "blocker": null,
+  "api_notes": "The API is primarily focused on messaging operations (sending messages, reactions, replies, deletions, and listing channels/messages). It does not expose the entire product functionality.",
+  "search_sources": [
+    "https://apps.make.com/pumble-zqpuu6",
+    "https://pumble.com/help/integrations/automation-workflow-integrations/pumble-ai-assistant-addon/",
+    "https://www.activepieces.com/blog/third-party-integrations",
+    "https://kontent.ai/blog/what-is-api-how-it-works-types-of-apis/"
+  ],
+  "researched_at": "2026-07-09T04:51:48.072Z",
+  "model": "exa-answer"
+}

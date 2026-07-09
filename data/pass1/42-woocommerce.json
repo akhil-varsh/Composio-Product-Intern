@@ -1,0 +1,48 @@
+{
+  "id": 42,
+  "name": "WooCommerce",
+  "category": "Ecommerce",
+  "api_notes": "The API provides comprehensive endpoints for managing core WooCommerce objects including products, orders, customers, and coupons.",
+  "buildable": "yes",
+  "access": "self_serve_free",
+  "api_type": [
+    "REST"
+  ],
+  "auth_methods": [
+    "Basic"
+  ],
+  "confidence": "high",
+  "access_notes": "A developer can generate API keys directly from their own WooCommerce store dashboard settings without any approval or cost.",
+  "one_liner": "WooCommerce REST API allows external systems to interact with a store by programmatically creating, reading, updating, and deleting objects like products, orders, and customers.",
+  "auth_notes": "Authentication uses a consumer key as the username and a consumer secret as the password via Basic Authentication. The keys can also be provided as query string parameters.",
+  "evidence": [
+    {
+      "claim": "API access is self-serve, allowing developers to generate their own keys within the WooCommerce store settings.",
+      "url": "https://woocommerce.com/document/woocommerce-rest-api/"
+    },
+    {
+      "claim": "The API uses Basic Authentication with a consumer key and secret.",
+      "url": "https://developer.woocommerce.com/docs/apis/rest-api/"
+    },
+    {
+      "claim": "Search citation: WooCommerce REST API: Advanced Strategies for Successful Integration - Codeable",
+      "url": "https://www.codeable.io/blog/why-the-woocommerce-rest-api-matters/"
+    },
+    {
+      "claim": "Search citation: WooCommerce API for your online shop",
+      "url": "https://raidboxes.io/en/blog/ecommerce/woocommerce-api/"
+    }
+  ],
+  "mcp_notes": "No official or well-known community Model Context Protocol server was found in the provided documentation.",
+  "api_breadth": "broad",
+  "blocker": null,
+  "mcp": "none_found",
+  "search_sources": [
+    "https://developer.woocommerce.com/2026/05/08/new-woo-rest-api-docs/",
+    "https://www.youtube.com/watch?v=x7_uk0CWS_o",
+    "https://community.weweb.io/t/get-all-products-from-woocommerce-rest-api/16563",
+    "https://github.com/woocommerce/woocommerce-rest-api"
+  ],
+  "researched_at": "2026-07-09T04:53:10.412Z",
+  "model": "exa-answer"
+}

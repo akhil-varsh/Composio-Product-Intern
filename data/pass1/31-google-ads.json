@@ -1,0 +1,49 @@
+{
+  "id": 31,
+  "name": "Google Ads",
+  "category": "Marketing, Ads, Email & Social",
+  "access_notes": "Developers can access the API by having a Google Ads manager account (MCC) and obtaining a developer token. The 'Explorer' access tier allows for instant access without an application or review process.",
+  "evidence": [
+    {
+      "claim": "The Google Ads API is a programmatic interface for managing large or complex Google Ads accounts and campaigns.",
+      "url": "https://developers.google.com/google-ads/api/docs/get-started/introduction"
+    },
+    {
+      "claim": "The 'Explorer' access tier provides instant production access for developers with a manager account (MCC) without an application or review process.",
+      "url": "https://ppc.io/blog/google-ads-api"
+    },
+    {
+      "claim": "Search citation: Google Ads API - Google Ads Help",
+      "url": "https://support.google.com/google-ads/answer/15235?hl=en"
+    },
+    {
+      "claim": "Search citation: [Live Demo] Building a Google Ads API Web App - Part 1: What we’re Building",
+      "url": "https://www.youtube.com/watch?v=R7WbvRLqW64"
+    }
+  ],
+  "buildable": "yes",
+  "mcp": "official",
+  "api_notes": "The API provides comprehensive programmatic control over accounts, campaigns, keywords, reporting, and billing. It uses Google Ads Query Language (GAQL) for queries. Documentation is extensive.",
+  "confidence": "high",
+  "api_breadth": "broad",
+  "mcp_notes": "Google provides an official MCP server that allows AI tools to execute read-only GAQL queries and list accessible customers.",
+  "api_type": [
+    "REST",
+    "gRPC"
+  ],
+  "auth_notes": "The API primarily uses OAuth2 for authentication. Applications use OAuth2 flows to obtain tokens tied to the authenticated user's permissions on the Google Ads account.",
+  "access": "self_serve_free",
+  "one_liner": "The Google Ads API is a programmatic interface that allows developers to manage, report on, and automate Google Ads accounts and campaigns.",
+  "blocker": null,
+  "auth_methods": [
+    "OAuth2"
+  ],
+  "search_sources": [
+    "https://github.com/airbytehq/airbyte/issues/3457",
+    "https://groups.google.com/g/adwords-api",
+    "https://www.youtube.com/watch?v=AKVBhjrKwAc",
+    "https://www.openbridge.com/google-ads/"
+  ],
+  "researched_at": "2026-07-09T04:52:17.320Z",
+  "model": "exa-answer"
+}

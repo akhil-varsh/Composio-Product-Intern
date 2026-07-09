@@ -1,0 +1,44 @@
+{
+  "id": 32,
+  "name": "Meta Ads",
+  "category": "Marketing, Ads, Email & Social",
+  "auth_notes": "Uses OAuth2 for authorization; developers must manage short-lived and long-lived access tokens. Persistent system user tokens are also possible.",
+  "mcp": "none_found",
+  "evidence": [
+    {
+      "claim": "Accessing the Meta Marketing API requires creating a Meta Developer App, undergoing business verification, and gaining app approval.",
+      "url": "https://developers.facebook.com/docs/marketing-apis/"
+    },
+    {
+      "claim": "The API surface is vast but notorious for poor documentation and maintenance burdens.",
+      "url": "https://admanage.ai/blog/meta-marketing-api-challenges-and-fix"
+    },
+    {
+      "claim": "Authentication involves OAuth2 workflows and managing tokens via the Meta Developer portal.",
+      "url": "https://www.youtube.com/watch?v=2FVSTWqxHig"
+    },
+    {
+      "claim": "Search citation: Facebook Marketing API Not working when using Exactly what they are asking for?",
+      "url": "https://stackoverflow.com/questions/77141022/facebook-marketing-api-not-working-when-using-exactly-what-they-are-asking-for"
+    }
+  ],
+  "access": "admin_approval",
+  "access_notes": "Access requires a Meta Developer App, which must undergo business verification and app review processes before gaining production access.",
+  "one_liner": "The Meta Marketing API allows developers to programmatically create, manage, and retrieve performance data for advertising campaigns across Facebook and Instagram.",
+  "api_breadth": "broad",
+  "blocker": "The main blockers are the rigorous business verification and multi-step app review/permission approval processes required to move from development to production.",
+  "api_notes": "The API covers a vast surface for managing ad campaigns, accounts, and performance data, but is noted for being complex, poorly documented, and having frequent version deprecations.",
+  "auth_methods": [
+    "OAuth2",
+    "Bearer token"
+  ],
+  "api_type": [
+    "REST"
+  ],
+  "buildable": "with_caveats",
+  "mcp_notes": "No official or well-known community MCP server was identified in the provided documentation or search results.",
+  "confidence": "high",
+  "search_sources": [],
+  "researched_at": "2026-07-09T04:52:21.567Z",
+  "model": "exa-answer"
+}

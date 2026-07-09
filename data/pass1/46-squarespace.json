@@ -1,0 +1,49 @@
+{
+  "id": 46,
+  "name": "Squarespace",
+  "category": "Ecommerce",
+  "one_liner": "Squarespace is a website building and commerce platform that provides APIs for managing commerce features such as orders, products, inventory, and customer data.",
+  "evidence": [
+    {
+      "claim": "Squarespace provides REST-based Commerce APIs to manage merchant site data including products, orders, inventory, and transactions.",
+      "url": "https://developers.squarespace.com/commerce-apis/overview"
+    },
+    {
+      "claim": "Authentication for the API is handled via Bearer tokens (API keys or OAuth access tokens) in the Authorization header.",
+      "url": "https://dlthub.com/context/source/squarespace"
+    },
+    {
+      "claim": "Developers can generate API keys within the Squarespace developer tools panel in their account settings.",
+      "url": "https://apix-drive.com/en/blog/other/squarespace-api-integration"
+    },
+    {
+      "claim": "Search citation: Squarespace Overview: Key Features, Benefits | RapidDev",
+      "url": "https://www.rapidevelopers.com/does-saas-have-an-api/does-squarespace-have-an-api"
+    }
+  ],
+  "auth_methods": [
+    "OAuth2",
+    "Bearer token"
+  ],
+  "auth_notes": "API requests require an Authorization header with a Bearer token, which can be an API key or an OAuth access token.",
+  "mcp": "none_found",
+  "api_type": [
+    "REST"
+  ],
+  "access": "self_serve_free",
+  "buildable": "yes",
+  "confidence": "high",
+  "access_notes": "Developers can generate API keys directly within their Squarespace account settings under Developer Tools.",
+  "api_notes": "The API is primarily focused on commerce functions (orders, products, inventory, transactions) and customer/contact management rather than full site-building control.",
+  "blocker": null,
+  "api_breadth": "moderate",
+  "mcp_notes": "No official or known community MCP server exists for Squarespace.",
+  "search_sources": [
+    "https://support.squarespace.com/hc/en-us/articles/236297987-Squarespace-API-keys",
+    "https://engineering.squarespace.com/blog/2026/the-importance-of-documentation-in-b2b-api-adoption",
+    "https://stackoverflow.com/questions/51054392/how-do-you-add-products-to-squarespace-with-the-api",
+    "https://runalloy.com/squarespace-api-integration/"
+  ],
+  "researched_at": "2026-07-09T04:53:30.626Z",
+  "model": "exa-answer"
+}

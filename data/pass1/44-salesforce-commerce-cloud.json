@@ -1,0 +1,49 @@
+{
+  "id": 44,
+  "name": "Salesforce Commerce Cloud",
+  "category": "Ecommerce",
+  "buildable": "blocked",
+  "api_breadth": "broad",
+  "access": "paid_plan",
+  "blocker": "The primary blocker is the lack of open, self-serve access to the commerce instances required to generate API credentials. Access to instances and Account Manager is restricted to Salesforce customers/partners.",
+  "one_liner": "Salesforce Commerce Cloud is an enterprise e-commerce platform that provides headless and open APIs (SCAPI and OCAPI) to build, customize, and manage online storefronts and commerce experiences.",
+  "mcp_notes": "There is no official or prominent community Model Context Protocol server for Salesforce Commerce Cloud. The platform provides SDKs, CLI tools, and Postman collections, but these do not constitute an MCP server.",
+  "confidence": "high",
+  "access_notes": "The platform requires access to a B2C Commerce instance (a paid enterprise infrastructure). While developers can use sandbox instances for development, these are managed within the context of a customer's organization/realm, not through a free, public self-serve signup.",
+  "api_type": [
+    "REST"
+  ],
+  "api_notes": "The API surface is broad, encompassing the B2C Commerce API (SCAPI) for headless/composable commerce and the Open Commerce API (OCAPI) for legacy and specific backend integrations.",
+  "auth_methods": [
+    "OAuth2",
+    "JWT"
+  ],
+  "auth_notes": "Authentication is handled via OAuth2 (often including Client Credentials flow). The platform supports JWT-based access tokens.",
+  "evidence": [
+    {
+      "claim": "Salesforce Commerce Cloud provides the B2C Commerce API (SCAPI) and Open Commerce API (OCAPI) for integrating and building custom storefronts.",
+      "url": "https://developer.salesforce.com/developer-centers/commerce-cloud"
+    },
+    {
+      "claim": "API access requires OAuth2 client credentials generated within the Salesforce Commerce Cloud Account Manager for an existing organization/instance.",
+      "url": "https://help.smartling.com/hc/en-us/articles/11786957510171-Required-Configuration-To-Connect-The-Salesforce-Commerce-Cloud-Connector"
+    },
+    {
+      "claim": "B2C Commerce instances are managed infrastructure (sandboxes, staging, production) within a realm, not available for free, public self-serve signups.",
+      "url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/get-started.html"
+    },
+    {
+      "claim": "Search citation: API Library | Salesforce Developers",
+      "url": "https://developer.salesforce.com/docs/apis"
+    }
+  ],
+  "mcp": "none_found",
+  "search_sources": [
+    "https://github.com/salesforcecommercecloud/commerce-sdk",
+    "https://www.youtube.com/watch?v=qeyqm19m820",
+    "https://trailhead.salesforce.com/trailblazer-community/feed/0D54V00007ViAs6",
+    "https://rhino-inquisitor.com/salesforce-b2c-commerce-cloud-documentation/"
+  ],
+  "researched_at": "2026-07-09T04:53:21.081Z",
+  "model": "exa-answer"
+}

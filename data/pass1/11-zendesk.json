@@ -2,62 +2,49 @@
   "id": 11,
   "name": "Zendesk",
   "category": "Support & Helpdesk",
-  "one_liner": "Zendesk is a cloud-based customer service platform that centralizes customer interactions across multiple channels into a unified ticketing system, offering self-service options, and leveraging AI and automation.",
+  "mcp_notes": "No official or widely recognized community Model Context Protocol (MCP) server was found in the provided documentation.",
+  "access": "self_serve_free",
+  "api_type": [
+    "REST"
+  ],
+  "blocker": null,
+  "api_notes": "The Zendesk API is a comprehensive, resource-oriented REST API that covers ticketing, help center, chat, voice, sales CRM, and custom data objects.",
+  "confidence": "high",
   "auth_methods": [
     "OAuth2",
     "API key",
-    "Basic",
-    "JWT"
+    "Basic"
   ],
-  "auth_notes": "Zendesk supports OAuth2, API token, and Basic authentication (email and password or email and API token). Basic authentication with email and password is deprecated, with API tokens or OAuth recommended. JWT is supported for the Sunshine Conversations API.",
-  "access": "self_serve_trial",
-  "access_notes": "Developers can obtain working API credentials by signing up for a free 14-day trial account, which provides access to all features of the Zendesk Customer Service Suite Professional plan. This trial account can be converted into a sponsored developer account for partners.",
-  "api_type": [
-    "REST",
-    "GraphQL",
-    "SDK-only"
-  ],
-  "api_breadth": "broad",
-  "api_notes": "Zendesk offers a broad set of REST APIs covering ticketing, help center, live chat, voice, sales CRM, and custom data. There is also a GraphQL API for the Chat Conversations API and a limited GraphQL Search API for companies. SDKs are available for web, Android, iOS, and Unity.",
-  "mcp": "official",
-  "mcp_notes": "Zendesk has officially adopted the Model Context Protocol (MCP) and announced both MCP Client and MCP Server capabilities as part of its AI strategy, allowing agents to connect with external systems.",
-  "buildable": "yes",
-  "blocker": null,
+  "mcp": "none_found",
   "evidence": [
     {
-      "claim": "Zendesk is a cloud-based customer service platform that helps businesses manage customer interactions across multiple channels by centralizing them into a unified ticketing system, offering self-service options, and leveraging AI and automation.",
-      "url": "https://www.zendesk.com/"
-    },
-    {
-      "claim": "Zendesk supports OAuth2, API token, and Basic authentication. Basic authentication with email and password is also mentioned, but it's deprecated and Zendesk recommends migrating to API tokens or OAuth. JWT is supported for the Sunshine Conversations API.",
-      "url": "https://support.zendesk.com/hc/en-us/articles/4408831452954-How-can-I-authenticate-API-requests"
-    },
-    {
-      "claim": "Developers can get working API credentials by signing up for a free 14-day trial account. This trial provides access to all features of the Zendesk Customer Service Suite Professional plan. If interested in becoming a developer partner, the trial account can be converted into a sponsored Zendesk Support account which does not expire.",
-      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3A9itNfuBHJIwAd-vZiJODim_75ZKq5XrhSA6yNMBM4IxtmS2pT4PVWfokNzjCoYa7ATVSR5Qr6p7iKVsu50Ebn4xKyCxJoMChZNq8YXtbmcCZxYtvZY8qCfyltu_p_TvNPkoB9Gz2pvd2nyioA1kXbVJe1g2LcSzBUMCjnNFeiAtxcLatxthe4YRb-SU9aF6l6LqqECmQWJDiw1niW9hbUh_ObfLYG996ycyJsNsgfE-b5eddg=="
-    },
-    {
-      "claim": "Zendesk offers a comprehensive set of APIs, primarily REST, covering various product capabilities like ticketing, help center, live chat, voice, sales CRM, and custom data. There is also a GraphQL API for the Chat Conversations API and a limited GraphQL Search API for companies.",
+      "claim": "Zendesk provides comprehensive REST APIs covering ticketing, CRM, help center, and other core product functionalities.",
       "url": "https://developer.zendesk.com/api-reference/"
     },
     {
-      "claim": "Zendesk has officially adopted the Model Context Protocol (MCP) and announced both MCP Client and MCP Server capabilities as part of its AI strategy.",
-      "url": "https://www.techradar.com/pro/zendesk-becomes-the-latest-to-adopt-mcp-to-futureproof-customers-in-the-ai-first-era"
+      "claim": "Zendesk's public API supports API tokens, OAuth2 access tokens, and Basic authentication.",
+      "url": "https://www.getmacha.com/blog/zendesk-api-explained"
+    },
+    {
+      "claim": "Developers can access the platform and APIs via a 14-day free trial account.",
+      "url": "https://developer.zendesk.com/documentation/"
+    },
+    {
+      "claim": "Search citation: Introduction | Zendesk Developer Docs",
+      "url": "https://developer.zendesk.com/api-reference/introduction/introduction/"
     }
   ],
-  "confidence": "high",
+  "one_liner": "Zendesk is a customer service and engagement platform that provides a broad REST API for managing tickets, customer data, and communication channels.",
+  "auth_notes": "Supports API tokens (sent via Basic auth), OAuth2 access tokens, and Basic authentication with email and password. OAuth2 is the recommended approach for long-term integrations. JWT is also used for specific SDK and user-facing scenarios.",
+  "access_notes": "Developers can sign up for a free 14-day trial account on the Zendesk Sunshine platform to access the APIs. Internal use applications do not require additional approvals, though third-party developers distributing apps must comply with security requirements.",
+  "api_breadth": "broad",
+  "buildable": "yes",
   "search_sources": [
-    "https://support.zendesk.com/hc/en-us/articles/4408831452954-How-can-I-authenticate-API-requests",
-    "https://www.eesel.ai/blog/zendesk-api-authentication-and-scopes",
-    "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
-    "https://community.zendesk.com/fid-20/tid-8541",
-    "https://developer.zendesk.com/documentation/conversations/getting-started/api-authentication/",
-    "https://developer.zendesk.com/documentation/api-basics/getting-started/getting-a-trial-or-sponsored-account-for-development/",
-    "https://www.zendesk.com/pricing/",
-    "https://support.zendesk.com/hc/en-us/articles/9104802071578-Welcome-to-your-Zendesk-Suite-trial",
-    "https://developer.zendesk.com/api-reference/",
-    "https://www.eesel.ai/blog/zendesk-api-development"
+    "https://www.zendesk.com/blog/customer-service/support/elevating-api-security/",
+    "https://www.youtube.com/watch?v=tTXKHOO6oGM",
+    "https://developer.zendesk.com/api-reference/ticketing/tickets/tickets/",
+    "https://stackoverflow.com/questions/40268016/zendesk-api-from-client-code"
   ],
-  "researched_at": "2026-07-09T04:17:29.193Z",
-  "model": "gemini-2.5-flash"
+  "researched_at": "2026-07-09T04:50:30.302Z",
+  "model": "exa-answer"
 }

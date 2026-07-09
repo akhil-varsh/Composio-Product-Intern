@@ -1,0 +1,47 @@
+{
+  "id": 52,
+  "name": "SE Ranking",
+  "category": "Data, SEO & Scraping",
+  "api_notes": "The API provides broad coverage including backlinks, domain research, keyword research, website audits, AI search, and project management (ranks/competitors). It uses JSON responses.",
+  "confidence": "high",
+  "blocker": null,
+  "access": "self_serve_trial",
+  "auth_notes": "Authentication is performed using a single API key which accesses both Data and Project endpoints.",
+  "mcp_notes": "An official MCP server exists, allowing integration with AI assistants like Claude Desktop, Cursor, and Gemini CLI.",
+  "access_notes": "Developers can access the API via a 14-day free trial (100,000 credits) or a pay-as-you-go model. Paid subscription plans and standalone API add-ons are also available.",
+  "api_breadth": "broad",
+  "mcp": "official",
+  "auth_methods": [
+    "API key"
+  ],
+  "api_type": [
+    "REST"
+  ],
+  "one_liner": "SE Ranking provides a comprehensive SEO and GEO data API that covers keyword research, backlinks, domain analysis, website audits, AI search, and project management.",
+  "evidence": [
+    {
+      "claim": "The SE Ranking API provides broad access to SEO and project data, and is available via a 14-day free trial with 100,000 credits or pay-as-you-go plans.",
+      "url": "https://seranking.com/api-pricing.html"
+    },
+    {
+      "claim": "The vendor provides an official MCP (Model Context Protocol) server to integrate SE Ranking data with AI tools.",
+      "url": "https://seranking.com/api/integrations/"
+    },
+    {
+      "claim": "The API is accessed via a single API key for both Data and Project endpoints.",
+      "url": "https://help.seranking.com/hc/en-us/articles/22447958135068-Getting-Started-with-SE-Ranking-s-API"
+    },
+    {
+      "claim": "Search citation: SE Ranking API Reference - SE Ranking API Documentation",
+      "url": "https://seranking.com/api/data/reference/"
+    }
+  ],
+  "buildable": "yes",
+  "search_sources": [
+    "https://seranking.com/api.html",
+    "https://api.on-page.ai/best-seo-api",
+    "https://www.postman.com/serankingdev/se-ranking-developers/overview"
+  ],
+  "researched_at": "2026-07-09T04:54:05.806Z",
+  "model": "exa-answer"
+}

@@ -1,0 +1,48 @@
+{
+  "id": 17,
+  "name": "Plain",
+  "category": "Support & Helpdesk",
+  "buildable": "yes",
+  "mcp": "official",
+  "confidence": "high",
+  "evidence": [
+    {
+      "claim": "Plain is an API-first customer infrastructure platform for B2B SaaS with a GraphQL API that provides full feature parity with its UI.",
+      "url": "https://help.plain.com/article/api-quickstart"
+    },
+    {
+      "claim": "Plain provides an official typed TypeScript SDK and an API explorer for developers.",
+      "url": "https://www.plain.com/blog/api-first-support-platforms"
+    },
+    {
+      "claim": "Search citation: Why API-First Infrastructure wins in an Agent-driven world",
+      "url": "https://www.plain.com/blog/api-first-support-ai-agents"
+    },
+    {
+      "claim": "Search citation: Plain Product — AI Support Infrastructure for B2B Teams",
+      "url": "https://www.plain.com/product"
+    }
+  ],
+  "blocker": null,
+  "api_type": [
+    "GraphQL"
+  ],
+  "api_breadth": "broad",
+  "mcp_notes": "Plain explicitly states they have native MCP server support.",
+  "api_notes": "The API is GraphQL-based with full feature parity with the UI, allowing programmatic control over essentially all product functions.",
+  "access": "self_serve_free",
+  "access_notes": "Developers can access the API by creating a Plain workspace, which allows them to generate API keys in the settings.",
+  "auth_notes": "Authentication is performed via API keys associated with 'Machine Users', provided in the Authorization header as a Bearer token.",
+  "auth_methods": [
+    "Bearer token"
+  ],
+  "one_liner": "Plain is an API-first customer support infrastructure platform designed for B2B teams to build custom workflows and integrate customer data.",
+  "search_sources": [
+    "https://konghq.com/blog/learning-center/what-is-api",
+    "https://aws.amazon.com/what-is/api/",
+    "https://medium.com/@twirl/the-api-book-api-as-a-product-6d5699c54771",
+    "https://www.pandium.com/blogs/what-is-a-unified-api-and-how-to-evaluate-one-for-product-integrations"
+  ],
+  "researched_at": "2026-07-09T04:51:08.279Z",
+  "model": "exa-answer"
+}

@@ -1,0 +1,51 @@
+{
+  "id": 45,
+  "name": "Magento (Adobe Commerce)",
+  "category": "Ecommerce",
+  "blocker": null,
+  "api_breadth": "broad",
+  "mcp": "official",
+  "evidence": [
+    {
+      "claim": "Adobe Commerce and Magento Open Source provide a web API framework supporting GraphQL, REST, and SOAP.",
+      "url": "https://developer.adobe.com/commerce/webapi/get-started/"
+    },
+    {
+      "claim": "Adobe Commerce REST API supports OAuth 1.0a and token-based authentication.",
+      "url": "https://developer.adobe.com/commerce/webapi/rest/"
+    },
+    {
+      "claim": "Search citation: What is Adobe Commerce (Formerly Magento)? Comprehensive Guide for 2025 | Rightpoint",
+      "url": "https://www.rightpoint.com/thought/article/what-is-adobe-commerce-formerly-magento-comprehensive-guide-for-2025"
+    },
+    {
+      "claim": "Search citation: Adobe Commerce (Magento): B2B & B2C Enterprise Solutions | Adobe",
+      "url": "https://business.adobe.com/products/commerce.html"
+    }
+  ],
+  "one_liner": "Adobe Commerce (formerly Magento) is a flexible, enterprise-grade eCommerce platform that enables businesses to build personalized, scalable, and headless shopping experiences.",
+  "confidence": "high",
+  "access_notes": "Developers can enable web services through the Adobe Commerce Admin panel by creating an integration, which allows for self-managed API credentials without requiring a paid plan or external approval.",
+  "api_type": [
+    "REST",
+    "GraphQL",
+    "SOAP"
+  ],
+  "auth_notes": "Adobe Commerce supports OAuth 1.0a for third-party applications, token-based authentication for mobile/server-to-server, and login credentials for admin/customer sessions. Adobe Commerce as a Cloud Service requires Adobe Identity Management Service (IMS) using Bearer tokens.",
+  "access": "self_serve_free",
+  "api_notes": "The platform provides a comprehensive web API framework supporting REST, GraphQL, and SOAP to manage core commerce objects like products, orders, and customers. REST endpoints vary between on-premises/Cloud versions and Cloud Service (SaaS). SOAP is supported but less commonly used in modern integrations compared to REST and GraphQL.",
+  "buildable": "yes",
+  "mcp_notes": "Adobe Commerce documentation mentions built-in support for agentic commerce protocols and an MCP layer to power custom agentic experiences.",
+  "auth_methods": [
+    "OAuth2",
+    "Bearer token"
+  ],
+  "search_sources": [
+    "https://experienceleague.adobe.com/en/docs/experience-cloud-kcs/kbarticles/ka-27501",
+    "https://quizlet.com/1163650375/adobe-commerce-ad0-e724-exam-questions-flash-cards/",
+    "https://developer.cybersource.com/technology-partners/Adobe-REST.html",
+    "https://developer.adobe.com/commerce/php/includes/web-api"
+  ],
+  "researched_at": "2026-07-09T04:53:25.874Z",
+  "model": "exa-answer"
+}

@@ -1,0 +1,48 @@
+{
+  "id": 51,
+  "name": "DataForSEO",
+  "category": "Data, SEO & Scraping",
+  "auth_methods": [
+    "Basic"
+  ],
+  "one_liner": "DataForSEO provides a suite of REST APIs that allow developers to programmatically access comprehensive SEO and marketing data, such as real-time SERP results, keyword analytics, and backlink profiles.",
+  "confidence": "high",
+  "api_breadth": "broad",
+  "access": "self_serve_free",
+  "buildable": "yes",
+  "evidence": [
+    {
+      "claim": "DataForSEO offers a comprehensive suite of REST APIs for SEO and marketing data, including SERP, backlinks, and keyword data.",
+      "url": "https://dataforseo.com/apis"
+    },
+    {
+      "claim": "The API uses Basic authentication, requiring an API login and password, often encoded in Base64.",
+      "url": "https://www.digitalocean.com/community/tutorials/dataforseo-chatgpt-api-integration"
+    },
+    {
+      "claim": "A free account allows access to a sandbox environment for testing; the service uses a pay-as-you-go model for production data.",
+      "url": "https://dataforseo.com/apis/serp-api"
+    },
+    {
+      "claim": "DataForSEO does not currently offer an official Model Context Protocol (MCP) server.",
+      "url": "https://seranking.com/blog/dataforseo-alternatives/"
+    }
+  ],
+  "blocker": null,
+  "api_type": [
+    "REST"
+  ],
+  "api_notes": "DataForSEO provides a comprehensive suite of REST APIs covering SERP, keywords, backlinks, domain analytics, and more. It is primarily accessed via REST with JSON parameters. No native client libraries are provided, though Postman collections and API examples are available.",
+  "mcp": "none_found",
+  "auth_notes": "Authentication uses a login (email) and password (API password), typically formatted as a Base64 encoded string for Basic authentication.",
+  "mcp_notes": "While competitor platforms like SE Ranking explicitly mention offering an MCP server, there is no evidence of an official DataForSEO MCP server in the provided documentation.",
+  "access_notes": "Developers can sign up for a free account and access a sandbox environment to test API calls. While the account is free, the API operates on a pay-as-you-go model where funds must be added to the account to perform production tasks.",
+  "search_sources": [
+    "https://dataforseo.com/blog/a-kickstart-guide-to-using-dataforseo-apis",
+    "https://dataforseo.com/blog/take-a-closer-look-dataforseo-api-and-serpapi-com-compared",
+    "https://dataforseo.com/blog/building-marketing-tech-tools-with-apis",
+    "https://workspace.google.com/marketplace/app/dataforseo_api_connector/630215580340"
+  ],
+  "researched_at": "2026-07-09T04:53:57.676Z",
+  "model": "exa-answer"
+}

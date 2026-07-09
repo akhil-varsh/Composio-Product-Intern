@@ -1,0 +1,49 @@
+{
+  "id": 34,
+  "name": "GoHighLevel",
+  "category": "Marketing, Ads, Email & Social",
+  "mcp_notes": "No official or community Model Context Protocol server was identified in the provided documentation.",
+  "access_notes": "Basic API access is limited to the Starter and Unlimited plans, but full features (Advanced API access, Agency API keys) are restricted to the Agency Pro plan. The platform's entry-level Starter plan does not include API access.",
+  "mcp": "none_found",
+  "api_type": [
+    "REST"
+  ],
+  "evidence": [
+    {
+      "claim": "HighLevel provides a comprehensive REST API for CRM functions including contacts, messaging, workflows, and payments.",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/48001060529-highlevel-api-documentation"
+    },
+    {
+      "claim": "API access is gated by subscription level; the Starter plan has no API access, and the Unlimited plan is required for access.",
+      "url": "https://supplygem.com/gohighlevel-developer/"
+    },
+    {
+      "claim": "Public APIs use OAuth 2.0 bearer tokens and Private Integration Tokens (PIT).",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000007515-how-to-use-public-apis-in-agent-studio"
+    },
+    {
+      "claim": "Search citation: Go High Level API 2.0 upgrade - Questions - Make Community",
+      "url": "https://community.make.com/t/go-high-level-api-2-0-upgrade/29009"
+    }
+  ],
+  "auth_methods": [
+    "OAuth2",
+    "Bearer token"
+  ],
+  "api_breadth": "broad",
+  "one_liner": "GoHighLevel is a CRM and marketing automation platform that provides a broad REST API for managing contacts, messaging, workflows, and calendar bookings.",
+  "api_notes": "The platform provides a broad REST API for managing core CRM functions like contacts, messaging, workflows, calendars, and payments. Version 2.0 is the current supported standard.",
+  "auth_notes": "Public APIs utilize OAuth 2.0 bearer tokens. Developers can also use Private Integration Tokens (PIT) for server-to-server scenarios. JWTs are used within the bearer tokens.",
+  "confidence": "high",
+  "blocker": "API access requires a paid subscription (Unlimited plan or higher).",
+  "buildable": "yes",
+  "access": "paid_plan",
+  "search_sources": [
+    "https://www.youtube.com/watch?v=vrbi5TiFJ-g",
+    "https://marketplace.gohighlevel.com/docs/Authorization/DeveloperGlossary/",
+    "https://www.youtube.com/watch?v=ZCBrj_miYiw",
+    "https://www.youtube.com/watch?v=OFSOpBVlpvs&vl=en"
+  ],
+  "researched_at": "2026-07-09T04:52:30.843Z",
+  "model": "exa-answer"
+}

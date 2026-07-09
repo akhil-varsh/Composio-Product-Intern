@@ -1,0 +1,48 @@
+{
+  "id": 33,
+  "name": "LinkedIn Ads",
+  "category": "Marketing, Ads, Email & Social",
+  "access_notes": "Access to the Advertising API (part of the Marketing Developer Platform) requires an application, review, and approval process; it is not available for self-serve or individual developers.",
+  "buildable": "blocked",
+  "mcp_notes": "There is no official or well-known community MCP server for the LinkedIn Marketing API.",
+  "mcp": "none_found",
+  "confidence": "high",
+  "api_type": [
+    "REST"
+  ],
+  "evidence": [
+    {
+      "claim": "Access to Marketing APIs requires application and approval through the LinkedIn Marketing Developer Platform; it is not open to all developers.",
+      "url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access"
+    },
+    {
+      "claim": "The LinkedIn Marketing API allows programmatic control over ad campaigns, targeting, and analytics.",
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/?view=li-lms-2026-06"
+    },
+    {
+      "claim": "Search citation: LinkedIn API Documentation - LinkedIn | Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/linkedin/"
+    },
+    {
+      "claim": "Search citation: What is LinkedIn API? Types, Access, and Honest Review",
+      "url": "https://www.salesforge.ai/blog/linkedin-api"
+    }
+  ],
+  "auth_notes": "Authentication is handled via OAuth 2.0.",
+  "api_breadth": "broad",
+  "auth_methods": [
+    "OAuth2"
+  ],
+  "api_notes": "The Marketing API allows for programmatic management of ad campaigns, audience targeting, reporting, and lead synchronization.",
+  "blocker": "The API requires successful application to the LinkedIn Marketing Developer Program, which is gated and typically restricted to incorporated companies.",
+  "one_liner": "The LinkedIn Marketing API provides programmatic access to create, manage, and report on LinkedIn advertising campaigns and marketing activities.",
+  "access": "partner_gated",
+  "search_sources": [
+    "https://elfsight.com/blog/linkedin-api-access-and-pricing/",
+    "https://developer.linkedin.com/product-catalog/marketing",
+    "https://developer.linkedin.com/product-catalog",
+    "https://www.oktopost.com/glossary/what-is-linkedin-marketing-api/"
+  ],
+  "researched_at": "2026-07-09T04:52:26.121Z",
+  "model": "exa-answer"
+}

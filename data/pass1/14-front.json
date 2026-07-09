@@ -2,47 +2,48 @@
   "id": 14,
   "name": "Front",
   "category": "Support & Helpdesk",
-  "one_liner": "Front is a customer operations platform that unifies customer communication channels (email, chat, SMS, social, voice) into a shared inbox, enabling team collaboration, automation, and AI-powered customer service.",
+  "buildable": "with_caveats",
+  "api_type": [
+    "REST",
+    "SDK-only"
+  ],
+  "mcp_notes": "Front has released an official beta MCP server that allows AI applications to connect to Front data and API documentation.",
+  "confidence": "high",
+  "api_notes": "The Front platform features three primary APIs: a Core API (REST) for backend operations, a Plugin SDK for embedding custom UI in Front, and a Channels API for integrating messaging streams. The Core API is extensive, covering most product entities.",
+  "api_breadth": "broad",
   "auth_methods": [
-    "OAuth2",
     "Bearer token"
   ],
-  "auth_notes": "The Core API uses Bearer tokens for authentication. Developers can obtain these tokens either through API tokens generated in their settings or via OAuth2. Front recommends and often requires OAuth2 for public integrations.",
   "access": "self_serve_free",
-  "access_notes": "Developers can sign up for a free developer account to access a sandbox environment and obtain API credentials for testing. While a free developer account is available, API rate limits for production use are tied to paid plans (Starter, Professional, Enterprise), and additional rate limit add-ons can be purchased.",
-  "api_type": [
-    "REST"
-  ],
-  "api_breadth": "broad",
-  "api_notes": "Front offers a Core API, which is a backend REST API providing comprehensive control over a wide range of entities including messages, contacts, channels, inboxes, teammates, and analytics. It also supports webhooks for real-time updates. Additionally, there's a Channels API for custom messaging channels and a Plugin SDK.",
-  "mcp": "official",
-  "mcp_notes": "An official Front MCP (Model Context Protocol) server is available in beta, allowing AI applications to interact with Front accounts and API documentation using natural language.",
-  "buildable": "yes",
-  "blocker": null,
+  "one_liner": "Front is a customer communication platform that centralizes interactions from multiple channels into a unified, collaborative inbox.",
+  "auth_notes": "Authentication is handled via API tokens (Bearer tokens). The system supports fine-grained permissions for these tokens. OAuth2 is also supported, particularly for integrations and third-party apps.",
+  "access_notes": "Developers can sign up for a free developer account at the Front Developer Portal, which provides a sandbox environment to test integrations without affecting production data.",
+  "blocker": "The Channel API is restricted to authorized partners, which may block the creation of certain types of integrations (like custom application channels) for non-partners.",
   "evidence": [
     {
-      "claim": "Front is a customer operations platform that unifies customer communication channels into a shared inbox for team collaboration, automation, and AI-powered customer service.",
-      "url": "https://www.getmacha.com/blog/what-is-front-app"
+      "claim": "Front provides a free developer account for building and testing integrations.",
+      "url": "https://dev.frontapp.com/docs/welcome"
     },
     {
-      "claim": "The Core API uses Bearer tokens for authentication, obtainable via API tokens or OAuth2. OAuth2 is recommended for public integrations.",
-      "url": "https://dev.frontapp.com/docs/authentication"
+      "claim": "Front's platform consists of a Core API (REST), Plugin SDK, and Channels API.",
+      "url": "https://help.front.com/en/articles/2482"
     },
     {
-      "claim": "Developers can sign up for a free developer account to access a sandbox environment and obtain API tokens.",
-      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZkGAIoELVIMlh-A5cR00xRKwd_SUHnHOfIsmMsllyUsSrJgMxelL70l6iU1twp0733x1aurWWONdQ3ML5pFd4v4MTnfVrgs8l1kvWijB3GNgGCm39QkvF_iFUCCiXOS1ctZb88Qa-z8QNQWBzIp7PbcfOW-PfebByGv2tpggvnNC8FvqQ3YtUIg6kCitt_qohrLIBKKZPg02X8hjtSber"
+      "claim": "Front offers an official beta MCP server for AI integrations.",
+      "url": "https://community.front.com/api-news-updates-40"
     },
     {
-      "claim": "Front's Core API is a backend REST API that provides comprehensive control over various entities like messages, contacts, and inboxes, and supports webhooks.",
-      "url": "https://dev.frontapp.com/docs/core-api-overview"
-    },
-    {
-      "claim": "An official Front MCP (Model Context Protocol) server is available in beta, enabling AI applications to interact with Front accounts and API documentation.",
-      "url": "https://community.front.com/api-news-updates-40/the-front-mcp-server-is-here-beta-3712"
+      "claim": "The Channel API is restricted to partners, which can block internal channel integration use cases.",
+      "url": "https://community.front.com/developers-36/index2.html"
     }
   ],
-  "confidence": "high",
-  "search_sources": [],
-  "researched_at": "2026-07-09T04:18:17.207Z",
-  "model": "gemini-2.5-flash"
+  "mcp": "official",
+  "search_sources": [
+    "https://community.front.com/developer-q-a-37/index2.html",
+    "https://endgrate.com/blog/using-the-front-api-to-get-conversations-(with-python-examples)",
+    "https://community.front.com/p/developers",
+    "https://front.com/product/integrate-with-customer-service-apps-front"
+  ],
+  "researched_at": "2026-07-09T04:50:44.996Z",
+  "model": "exa-answer"
 }

@@ -1,0 +1,49 @@
+{
+  "id": 21,
+  "name": "Slack",
+  "category": "Communications & Messaging",
+  "api_breadth": "broad",
+  "confidence": "high",
+  "buildable": "yes",
+  "mcp_notes": "Slack has released an official MCP server to allow AI agents to securely access Slack workspace data.",
+  "api_notes": "The Slack platform offers a comprehensive Web API and Events API. It is highly broad, allowing for the creation of bots, workflows, and integrations that can manipulate most objects within Slack.",
+  "evidence": [
+    {
+      "claim": "Slack provides a Web API for building apps, agents, and integrations.",
+      "url": "https://docs.slack.dev/apis/web-api/"
+    },
+    {
+      "claim": "Slack offers an official Model Context Protocol (MCP) server.",
+      "url": "https://slack.com/blog/news/mcp-real-time-search-api-now-available"
+    },
+    {
+      "claim": "Developers can create apps for free by signing in to their Slack account.",
+      "url": "https://api.slack.com/apps/"
+    },
+    {
+      "claim": "Search citation: How to properly interact with Slack’s API — The Slack Way | by Hugo Lu | Medium",
+      "url": "https://medium.com/@hugolu87/how-to-properly-interact-with-slacks-api-the-slack-way-efbd74856991"
+    }
+  ],
+  "auth_methods": [
+    "OAuth2",
+    "Bearer token"
+  ],
+  "access_notes": "A developer can create a free account and register apps for development purposes via the Slack API dashboard. Access to specific paid features or Enterprise features may require higher-tier plans.",
+  "mcp": "official",
+  "one_liner": "Slack is a messaging and collaboration platform that provides an extensive API for building custom apps, agents, and automated workflows.",
+  "access": "self_serve_free",
+  "api_type": [
+    "REST"
+  ],
+  "auth_notes": "Slack uses OAuth2 for app authorization and typically issues Bearer tokens (Bot User OAuth Tokens) to authenticate API requests.",
+  "blocker": "Commercial distribution of apps typically requires agreement to Slack's Marketplace terms or a separate partnership/agreement.",
+  "search_sources": [
+    "https://slack.com/terms-of-service/api",
+    "https://dysposition.com/2020/09/22/very-old-thoughts-on-the-slack-api/",
+    "https://www.youtube.com/watch?v=s25rdwy3p-Q",
+    "https://slack.com/features/enterprise-search"
+  ],
+  "researched_at": "2026-07-09T04:51:26.667Z",
+  "model": "exa-answer"
+}

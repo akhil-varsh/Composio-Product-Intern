@@ -2,59 +2,49 @@
   "id": 7,
   "name": "Zoho CRM",
   "category": "CRM & Sales",
-  "one_liner": "Zoho CRM is a cloud-based customer relationship management (CRM) software that helps businesses manage sales, marketing, and customer support activities, automate tasks, and provide a unified view of customer data.",
+  "blocker": null,
+  "access": "self_serve_free",
+  "mcp_notes": "Zoho provides an official Zoho CRM MCP server to enable AI agents to perform tasks.",
   "auth_methods": [
     "OAuth2"
   ],
-  "auth_notes": "The Zoho CRM API primarily uses the OAuth 2.0 protocol for authentication, involving grant tokens, access tokens, and refresh tokens.",
-  "access": "self_serve_free",
-  "access_notes": "Developers can obtain API credentials by themselves. Zoho CRM offers a free plan for up to 3 users, which includes API access with 5000 API calls/day. Developers can register their applications in the Zoho Developer Console. However, GraphQL APIs are not available in trial versions and require Enterprise, Zoho One Enterprise, CRM Plus, or Ultimate editions.",
+  "access_notes": "Zoho offers a fully featured free Developer Edition specifically for developers to learn, configure, and test their applications.",
+  "auth_notes": "The v2 and later APIs use the OAuth 2.0 protocol for authentication.",
+  "evidence": [
+    {
+      "claim": "Zoho provides a fully featured free Developer Edition environment for developers.",
+      "url": "https://www.zoho.com/crm/developer/"
+    },
+    {
+      "claim": "Zoho CRM provides REST and GraphQL APIs for third-party integration.",
+      "url": "https://www.zoho.com/crm/developer/docs/"
+    },
+    {
+      "claim": "All v2 APIs and later use OAuth 2.0 for authentication.",
+      "url": "https://medium.com/@MeetSeoExpert/zoho-crm-api-integration-with-rest-of-the-platform-6c0e8be9f326"
+    },
+    {
+      "claim": "Search citation: Get Related Records | Zoho CRM API | V8",
+      "url": "https://www.zoho.com/crm/developer/docs/api/v8/get-related-records.html"
+    }
+  ],
+  "buildable": "yes",
+  "mcp": "official",
+  "api_notes": "The API is extensive, providing REST, GraphQL, Bulk, and Query APIs (COQL). It also includes comprehensive SDKs in multiple languages (Java, Python, PHP, Node.js, C#, Ruby, JavaScript).",
   "api_type": [
     "REST",
     "GraphQL",
     "SDK-only"
   ],
   "api_breadth": "broad",
-  "api_notes": "Zoho CRM provides documented public REST APIs, allowing access and manipulation of almost all CRM components, including records, modules, and custom views, with support for Bulk, Notification, and Query APIs. It also offers GraphQL APIs for precise data access. SDKs are available for various languages like Java, Python, PHP, Node.js, and C#.",
-  "mcp": "official",
-  "mcp_notes": "An official Model Context Protocol (MCP) server, called 'Zoho MCP,' exists and is built and endorsed by Zoho. It enables AI agents to interact with Zoho apps and over 950 third-party integrations.",
-  "buildable": "yes",
-  "blocker": null,
-  "evidence": [
-    {
-      "claim": "Zoho CRM is a cloud-based customer relationship management (CRM) software that helps businesses manage sales, marketing, and customer support activities.",
-      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHyvHdU9LmmYM0FAWe6wfdUfhFh0MqWOXEKoDmTCoYv9C_0OedBjwamhwfK4bBXV3ktMDAOdvw9hqaV96fVGedVnWYQpcQCf2d2Bfrn1t0qMbH_V17pLPVxUDHEQtXCLU4NinFvRbLDwELPlmYFV-mPbmD6o6RRvbIaOQNHJkVWS_Cxc17RS0JYudIZO3IrrEHM98PQTw"
-    },
-    {
-      "claim": "The Zoho CRM API uses the OAuth 2.0 protocol for authentication.",
-      "url": "https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html"
-    },
-    {
-      "claim": "Zoho CRM offers a free plan for up to 3 users, which includes API access with 5000 API calls/day.",
-      "url": "https://www.zoho.com/crm/zohocrm-pricing.html"
-    },
-    {
-      "claim": "Zoho CRM provides documented public REST APIs and GraphQL APIs.",
-      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHDGH7gszsSHdexD-RnfGhdEF8cxPN1FxjgBSR_5teFHpEEnVylmL1xJK-MdNkiw19jnkQjz4jH6AY8eIMKB19mfBfYkTtWag-S4pMqJ810oFOHAfMuOR3P8nly9FuYAbBSTryaI="
-    },
-    {
-      "claim": "An official Model Context Protocol (MCP) server, called 'Zoho MCP,' exists and is built and endorsed by Zoho.",
-      "url": "https://www.zoho.com/mcp/"
-    }
-  ],
+  "one_liner": "Zoho CRM is a customer relationship management platform that offers comprehensive developer tools, including REST and GraphQL APIs, to integrate and automate business processes.",
   "confidence": "high",
   "search_sources": [
-    "https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html",
-    "https://zoho-crm-api.readthedocs.io/en/latest/authentication/",
-    "https://www.zoho.com/crm/developer/docs/api/v8/auth-request.html",
-    "https://www.postman.com/postman/integration-flows/documentation/0s51720/zoho-crm-rest-apis",
-    "https://www.zoho.com/crm/zohocrm-pricing.html",
-    "https://www.method.me/blog/zoho-crm-cost/",
-    "https://www.getknit.dev/blog/zoho-crm-api-integration-guide-oauth-2-0-use-cases-step-by-step-tutorial",
-    "https://github.com/junnaisystems/zoho-crm-mcp",
-    "https://www.zoho.com/crm/developer/docs/api/graphql/graphql-overview.html",
-    "https://www.zoho.com/crm/developer/docs/api/graphql/enable-graphql-api.html"
+    "https://www.zoho.com/crm/developer/docs/api/v8/",
+    "https://www.youtube.com/watch?v=ZdicRo5Z6IU",
+    "https://help.zoho.com/portal/en/community/topic/using-3rd-party-api-for-zoho-crm-integration",
+    "https://www.merge.dev/integrations/zoho-crm"
   ],
-  "researched_at": "2026-07-09T04:16:17.936Z",
-  "model": "gemini-2.5-flash"
+  "researched_at": "2026-07-09T04:50:10.900Z",
+  "model": "exa-answer"
 }

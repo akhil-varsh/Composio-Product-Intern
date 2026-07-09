@@ -2,48 +2,46 @@
   "id": 2,
   "name": "HubSpot",
   "category": "CRM & Sales",
-  "one_liner": "HubSpot is a Smart CRM platform that unifies marketing, sales, service, content management, and data tools to manage the entire customer lifecycle.",
+  "access": "self_serve_free",
+  "api_type": [
+    "REST"
+  ],
   "auth_methods": [
     "OAuth2",
-    "other"
+    "Bearer token"
   ],
-  "auth_notes": "HubSpot's public API supports OAuth and private app access tokens for authentication. API keys were retired in late 2022, though some legacy keys might still function. OAuth 2.0 is used for public or multi-account apps, while private app access tokens are for single-account or internal integrations.",
-  "access": "self_serve_free",
-  "access_notes": "Developers can create free 'developer test accounts' which include a 90-day trial of many enterprise features. These accounts can be renewed by making API calls or manually. A standard HubSpot account (free or paid) also provides access to developer tools.",
-  "api_type": [
-    "REST",
-    "GraphQL"
-  ],
-  "api_breadth": "broad",
-  "api_notes": "HubSpot offers a comprehensive public API, primarily REST-based, covering a wide range of CRM, marketing, sales, service, and content management functionalities. It also provides a GraphQL API for querying CRM and HubDB data, particularly for Content Hub Professional/Enterprise and Sales/Service Hub Enterprise subscriptions, which can be used in API requests.",
-  "mcp": "official",
-  "mcp_notes": "HubSpot offers two distinct official Model Context Protocol (MCP) servers. One is a remote, HubSpot-hosted server (mcp.hubspot.com) that allows MCP-compatible AI tools and agents to securely read and write to the HubSpot CRM through natural conversation. The other is a local, CLI-based Developer MCP Server for building on the HubSpot Developer Platform.",
-  "buildable": "yes",
-  "blocker": null,
   "evidence": [
     {
-      "claim": "HubSpot is a Smart CRM platform that combines marketing, sales, service, website content, and data tools into one unified system.",
-      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGv38VY8PdiPC3lICbygguhMgUalOOZshEB6Uj-B_dSumgo0eTPxFsyESEIwvqo20ZtBynNeKtQGT_y6dCax50JA178jWW2ownSWY4HIw40cTkFpL9-JcP8Bh418eS0edzmWRm1pFI6CrrrPluUNQ=="
+      "claim": "HubSpot APIs are built using REST conventions and accessible via api.hubapi.com.",
+      "url": "https://developers.hubspot.com/docs/api-reference/latest/overview"
     },
     {
-      "claim": "There are two ways to authenticate calls to HubSpot's APIs: OAuth, and private app access tokens. HubSpot officially retired API Keys in late 2022.",
-      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsncC-LH4fAU1RFdcUZ2yoximkLwh_4ZFTYW0AZzbaUjVu5mWb6crppO1kbxE0dCuzARMw4pK4NWL0RryVzYf_GTWB6qAcgBhHuGl5GOOMjuQRyC3jdJ8mJu-s8MFlZu6p6v-A0q1tUDHjXNZb7y_UKuQl_kHU5hk3uK6FkAF2t0PuOR2Yx0V-cPiJg=="
+      "claim": "Developers can access the API by signing up for a free HubSpot account and using the Developer Dashboard.",
+      "url": "https://composio.dev/content/hubspot-api-developers-overview"
     },
     {
-      "claim": "Developer test accounts are free HubSpot accounts with access to a 90-day trial of many enterprise features. These accounts will expire after 90 days if no API calls are made to the account, but can be renewed manually or via API call.",
-      "url": "https://developers.hubspot.com/docs/getting-started/account-types"
+      "claim": "Search citation: Ask HN: Can someone at HubSpot explain some of their API design choices? | Hacker News",
+      "url": "https://news.ycombinator.com/item?id=39908514"
     },
     {
-      "claim": "HubSpot's Developer Platform offers APIs, SDKs, and tooling. HubSpot supports both REST and GraphQL APIs for accessing CRM and HubDB data.",
-      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3sWenvFFTOt28LlqKDFZApi4ka29xd2q-evTPpqLUV-I4Opg3_u18u-txgOBHM7sKuWET9dIDzB7TUMZVo_XFHn_cYIDPiFYqQgk5yGK-YSeHtIvRbz6KNTA=="
-    },
-    {
-      "claim": "HubSpot offers two distinct MCP (Model Context Protocol) servers — one for connecting any MCP-compatible AI tool or agent to your CRM (remote, hosted at mcp.hubspot.com), and one for building on the HubSpot Developer Platform (local, CLI-based). The remote server is generally available.",
-      "url": "https://www.hubspot.com/ai-tools"
+      "claim": "Search citation: HubSpot API Explained: Automate CRM Tasks Like a Pro",
+      "url": "https://generect.com/blog/hubspot-api/"
     }
   ],
+  "buildable": "yes",
+  "mcp": "none_found",
   "confidence": "high",
-  "search_sources": [],
-  "researched_at": "2026-07-09T04:14:59.796Z",
-  "model": "gemini-2.5-flash"
+  "access_notes": "Developers can sign up for a free HubSpot account to access the developer dashboard and API features.",
+  "auth_notes": "HubSpot officially pushes OAuth2 for integrations. While older documentation and legacy systems mentioned API keys, these are being deprecated or discouraged in favor of more secure authentication methods like OAuth2.",
+  "mcp_notes": "No official or prominent community-maintained Model Context Protocol (MCP) server was identified in the provided sources.",
+  "one_liner": "HubSpot is a CRM and growth platform that provides a broad REST API for managing marketing, sales, and customer service data.",
+  "api_breadth": "broad",
+  "blocker": null,
+  "api_notes": "HubSpot provides a extensive REST API that covers CRM objects (contacts, deals, companies), marketing, service, and other platform features. Legacy APIs are being transitioned to versioned, RESTful endpoints.",
+  "search_sources": [
+    "https://community.hubspot.com/t5/APIs-Integrations/Syncing-product-sales-to-Hubspot-deals-and-products-via-API/m-p/230750",
+    "https://community.hubspot.com/t5/APIs-Integrations/Deal-Search-API/m-p/439204"
+  ],
+  "researched_at": "2026-07-09T04:49:37.310Z",
+  "model": "exa-answer"
 }

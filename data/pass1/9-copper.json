@@ -2,58 +2,48 @@
   "id": 9,
   "name": "Copper",
   "category": "CRM & Sales",
-  "one_liner": "Copper is a CRM designed for Google Workspace users, enabling management of contacts, deals, tasks, and pipelines directly within Google apps.",
-  "auth_methods": [
-    "API key",
-    "OAuth2"
-  ],
-  "auth_notes": "The Copper Developer API supports both API keys and OAuth2.0. API key authentication requires including `X-PW-AccessToken`, `X-PW-Application` (set to `developer_api`), and `X-PW-UserEmail` in HTTPS requests. OAuth2.0 is the preferred approach for partner integrations.",
-  "access": "paid_plan",
-  "access_notes": "API access is available on the Professional and Business plans. While Copper offers a free trial for the product, API keys are generated from within the settings once an active account is established. The Professional plan, which includes API access, starts at $59/user/month when billed annually.",
+  "confidence": "high",
   "api_type": [
     "REST"
   ],
-  "api_breadth": "broad",
-  "api_notes": "The Copper Developer API provides a RESTful interface with JSON-formatted responses. It allows access to most Copper resources, including people, companies, opportunities, projects, tasks, activities, and custom fields, indicating a broad API surface.",
-  "mcp": "community",
-  "mcp_notes": "Third-party platforms such as viaSocket, ContextGate, and MCPBundles offer community-built or endorsed Model Context Protocol (MCP) servers for Copper, facilitating AI agent interaction with CRM data. No official MCP server built or endorsed directly by Copper was found.",
-  "buildable": "yes",
-  "blocker": null,
+  "buildable": "with_caveats",
+  "mcp_notes": "While one search result mentions an 'MCP server' in the context of Merge's integration, there is no evidence of an official Copper-authored MCP server.",
   "evidence": [
     {
-      "claim": "Copper is a CRM designed specifically for companies using Google Workspace, allowing users to manage contacts, deals, tasks, and pipelines directly from their inbox and other Google apps.",
-      "url": "https://efficient.app/apps/copper"
-    },
-    {
-      "claim": "The Copper Developer API supports API keys and OAuth2.0.",
-      "url": "https://developer.copper.com/introduction/authentication.html"
-    },
-    {
-      "claim": "API access is available on the Professional and Business plans, with the Professional tier starting at $59/user/month (billed annually).",
-      "url": "https://checkthat.ai/brands/copper/pricing"
-    },
-    {
-      "claim": "The Copper Developer API provides a RESTful interface with JSON-formatted responses to access most Copper resources.",
+      "claim": "The Copper Developer API provides a RESTful interface for accessing Copper resources.",
       "url": "https://developer.copper.com/"
     },
     {
-      "claim": "Third-party platforms like viaSocket offer community-built MCP servers for Copper.",
-      "url": "https://viasocket.com/mcp/copper"
+      "claim": "To register an application for OAuth2.0, developers must contact Copper to receive client_id and client_secret credentials.",
+      "url": "https://developer.copper.com/introduction/oauth/index.html"
+    },
+    {
+      "claim": "Access tokens are provided as Bearer tokens in the Authorization header.",
+      "url": "https://developer.copper.com/introduction/oauth/flow.html"
+    },
+    {
+      "claim": "Search citation: Copper API Integration - Build & Ship Faster with Merge",
+      "url": "https://www.merge.dev/integrations/copper"
     }
   ],
-  "confidence": "high",
-  "search_sources": [
-    "https://efficient.app/apps/copper",
-    "https://www.folk.app/articles/copper-crm-review",
-    "https://developer.copper.com/introduction/authentication.html",
-    "https://truto.one/blog/integrate-copper/",
-    "https://developer.copper.com/introduction/requests.html",
-    "https://checkthat.ai/brands/copper/pricing",
-    "https://www.copper.com/integrations/fireflies-ai",
-    "https://support.ipaas.com/en/articles/13311335-copper-crm-installation-instructions",
-    "https://www.youtube.com/watch?v=Z1gc9-i9HbY",
-    "https://zeeg.me/en/blog/post/copper-crm-pricing"
+  "mcp": "none_found",
+  "api_breadth": "moderate",
+  "api_notes": "The API provides a RESTful interface to access most Copper CRM resources. Note: There is significant ambiguity in the search results between the Copper CRM (copper.com) and a digital asset management platform (copper.co) sharing a similar name. The provided documentation at developer.copper.com specifically refers to the CRM API.",
+  "one_liner": "Copper is a CRM platform that provides a REST API for developers to build applications and integrate with its resources.",
+  "access": "partner_gated",
+  "blocker": "The developer must contact Copper to register an application and obtain client credentials.",
+  "access_notes": "To register an application for the OAuth2.0 flow, developers must contact Copper to provide the application name, purpose, and a secure callback URL.",
+  "auth_methods": [
+    "OAuth2",
+    "Bearer token"
   ],
-  "researched_at": "2026-07-09T04:17:03.151Z",
-  "model": "gemini-2.5-flash"
+  "auth_notes": "OAuth2.0 is the recommended method. The API also supports legacy API keys, though OAuth2.0 is preferred for third-party integrations. Bearer tokens are used in the Authorization header after completing the OAuth2.0 flow.",
+  "search_sources": [
+    "https://support.copper.com/en/articles/8823462-api-docs-and-tips",
+    "https://developer.copper.co/api-reference/getting-started",
+    "https://namtheartist95.medium.com/what-is-api-integration-4a6cec71ebad",
+    "https://endgrate.com/blog/using-the-copper-api-to-get-people-(with-python-examples)"
+  ],
+  "researched_at": "2026-07-09T04:50:20.443Z",
+  "model": "exa-answer"
 }

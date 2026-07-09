@@ -1,0 +1,49 @@
+{
+  "id": 36,
+  "name": "Klaviyo",
+  "category": "Marketing, Ads, Email & Social",
+  "blocker": null,
+  "access": "self_serve_free",
+  "auth_methods": [
+    "API key",
+    "OAuth2"
+  ],
+  "buildable": "yes",
+  "api_type": [
+    "REST"
+  ],
+  "api_notes": "Klaviyo provides a comprehensive REST-based API that covers core objects like profiles, lists, events, campaigns, and flows. It includes client-side and server-side endpoints, as well as official SDKs in Python, PHP, Ruby, and Node.",
+  "access_notes": "Developers can sign up for a Klaviyo account and generate their own API keys (private or public) for testing without needing manual approval or a paid plan.",
+  "mcp_notes": "An MCP server exists that is actively discussed in the Klaviyo community, though it is not explicitly labeled as an official vendor-supported product.",
+  "api_breadth": "broad",
+  "mcp": "community",
+  "auth_notes": "Uses private API keys for server-side requests and public API keys (company ID) for client-side requests. OAuth2 is recommended for tech partners.",
+  "evidence": [
+    {
+      "claim": "Klaviyo allows developers to create apps and integrations via its API and provides free test accounts.",
+      "url": "https://developers.klaviyo.com/"
+    },
+    {
+      "claim": "Klaviyo APIs support private API key authentication, OAuth, and public key authentication.",
+      "url": "https://developers.klaviyo.com/en/docs/authenticate_"
+    },
+    {
+      "claim": "There is a community-referenced MCP server available for Klaviyo.",
+      "url": "https://community.klaviyo.com/developer-group-64/klaviyo-api-mcp-18743"
+    },
+    {
+      "claim": "Search citation: API overview",
+      "url": "https://developers.klaviyo.com/en/reference/api_overview"
+    }
+  ],
+  "confidence": "high",
+  "one_liner": "Klaviyo is a marketing automation platform that provides APIs for managing customer data, tracking events, and automating personalized communication flows.",
+  "search_sources": [
+    "https://academy.klaviyo.com/en-us/learning-paths/api-fundamentals-for-marketers/courses/interpret-api-documentation/lessons/navigate-the-developer-portal",
+    "https://community.klaviyo.com/developer-group-64/klaviyo-api-questions-5097",
+    "https://www.youtube.com/watch?v=x0RjkP8T13A",
+    "https://community.klaviyo.com/developer-group-64/value-is-not-passing-through-to-create-event-api-7774"
+  ],
+  "researched_at": "2026-07-09T04:52:41.604Z",
+  "model": "exa-answer"
+}

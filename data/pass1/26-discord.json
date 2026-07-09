@@ -1,0 +1,48 @@
+{
+  "id": 26,
+  "name": "Discord",
+  "category": "Communications & Messaging",
+  "blocker": null,
+  "evidence": [
+    {
+      "claim": "The Discord API is a REST API that allows you to interact with Discord data from your own applications.",
+      "url": "https://docs.discord.com/developers/reference"
+    },
+    {
+      "claim": "Discord provides APIs, SDKs, and a developer portal for building integrations.",
+      "url": "https://support-dev.discord.com/hc/en-us/articles/8562894815383-Discord-Developer-Terms-of-Service"
+    },
+    {
+      "claim": "Search citation: How Discord Became a Developer Platform",
+      "url": "https://www.youtube.com/watch?v=CHvUp1rynek"
+    },
+    {
+      "claim": "Search citation: Official plugin support and third party client · discord/discord-api-docs · Discussion #3857 · GitHub",
+      "url": "https://github.com/discord/discord-api-docs/discussions/3857"
+    }
+  ],
+  "api_type": [
+    "REST"
+  ],
+  "confidence": "high",
+  "access": "self_serve_free",
+  "api_notes": "The Discord API is a comprehensive REST and WebSocket-based API covering bot interactions, guild/server management, channel operations, and user messaging. OAuth2 is used for user-based integrations.",
+  "access_notes": "Developers can create an account and register applications in the Discord Developer Portal for free. Access to the API is generally available, though some advanced features may have eligibility criteria or rate limits.",
+  "auth_methods": [
+    "OAuth2",
+    "Bearer token"
+  ],
+  "mcp_notes": "No official Model Context Protocol (MCP) server exists. The API is primarily REST and WebSocket-based.",
+  "auth_notes": "Discord supports Bot tokens (provided as Bearer tokens in the Authorization header) and OAuth2 bearer tokens for user-specific authorization.",
+  "mcp": "none_found",
+  "api_breadth": "broad",
+  "one_liner": "Discord is a communication platform that provides a public API allowing developers to build bots and integrate applications with its servers, channels, and messaging systems.",
+  "buildable": "yes",
+  "search_sources": [
+    "https://stackoverflow.com/questions/76797365/trigger-discord-bot-event-from-external-api",
+    "https://community.activepieces.com/t/discord-api-discord-piece-or-code-piece-with-discord-js/4817",
+    "https://parse.bot/marketplace/ffad243f-ca33-435b-ba87-bb1469c0d298/discord-com-api"
+  ],
+  "researched_at": "2026-07-09T04:51:52.832Z",
+  "model": "exa-answer"
+}

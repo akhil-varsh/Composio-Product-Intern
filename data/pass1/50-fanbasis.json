@@ -1,0 +1,47 @@
+{
+  "id": 50,
+  "name": "fanbasis",
+  "category": "Ecommerce",
+  "buildable": "yes",
+  "one_liner": "FanBasis is an all-in-one business infrastructure platform that provides payment orchestration, checkout services, and fulfillment automation for online entrepreneurs.",
+  "api_notes": "The API covers core business operations including payment creation, checkout session management, and webhook events. It also provides SDKs for Node, Python, PHP, and Ruby.",
+  "access_notes": "Developers can generate API keys directly from the FanBasis dashboard after logging in.",
+  "evidence": [
+    {
+      "claim": "The FanBasis API uses API keys for authentication and provides a sandbox environment for testing.",
+      "url": "https://apidocs.fan/"
+    },
+    {
+      "claim": "Search citation: FanBasis",
+      "url": "https://www.fanbasis.com/"
+    },
+    {
+      "claim": "Search citation: FanBasis — Payments Infrastructure That Makes You More Money",
+      "url": "https://www.fanbasis.com/enterprises"
+    },
+    {
+      "claim": "Search citation: How To Use FanBasis App - Ultimate Guide (2025) - YouTube",
+      "url": "https://www.youtube.com/watch?v=PoldnKFeX_s"
+    }
+  ],
+  "mcp": "none_found",
+  "auth_notes": "Authentication is performed by including an x-api-key header in requests.",
+  "mcp_notes": "No official or community MCP server was identified in the documentation.",
+  "api_breadth": "moderate",
+  "auth_methods": [
+    "API key"
+  ],
+  "api_type": [
+    "REST"
+  ],
+  "confidence": "high",
+  "blocker": null,
+  "access": "self_serve_free",
+  "search_sources": [
+    "https://docs.worldpay.com/apis",
+    "https://apps.apple.com/us/app/fanbasis/id1585599824",
+    "https://www.justanswer.com/software/t1rjp-fanbasis-legitimacy-ai-financial-gain-claims.html"
+  ],
+  "researched_at": "2026-07-09T04:53:51.966Z",
+  "model": "exa-answer"
+}

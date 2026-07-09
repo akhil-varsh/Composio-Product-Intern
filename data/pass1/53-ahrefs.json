@@ -1,0 +1,49 @@
+{
+  "id": 53,
+  "name": "Ahrefs",
+  "category": "Data, SEO & Scraping",
+  "api_breadth": "broad",
+  "blocker": "Production access for new integrations is gated behind an approval process and an Ahrefs Enterprise plan.",
+  "mcp": "none_found",
+  "api_notes": "The API provides extensive access to backlink, keyword, and site audit data via REST endpoints. Access is credit-based and governed by a unit-billing model.",
+  "auth_methods": [
+    "API key",
+    "Bearer token",
+    "OAuth2"
+  ],
+  "buildable": "with_caveats",
+  "evidence": [
+    {
+      "claim": "Ahrefs provides a REST API for accessing marketing and search data.",
+      "url": "https://docs.ahrefs.com/"
+    },
+    {
+      "claim": "Ahrefs Connect uses OAuth 2.0 for integrations and requires an Enterprise plan for production activation.",
+      "url": "https://docs.ahrefs.com/en/ahrefs-connect/docs/how-it-works"
+    },
+    {
+      "claim": "Production API usage is restricted, requiring Enterprise subscriptions and credit-based billing.",
+      "url": "https://seranking.com/blog/ahrefs-api-alternatives/"
+    },
+    {
+      "claim": "Search citation: Ahrefs—AI Marketing Platform Powered by Big Data",
+      "url": "https://ahrefs.com/"
+    }
+  ],
+  "access": "paid_plan",
+  "api_type": [
+    "REST"
+  ],
+  "access_notes": "While free test queries are available for development, production access generally requires an Ahrefs Enterprise plan or, in some cases for legacy users, a paid subscription. Third-party app integrations through Ahrefs Connect require approval and typically an Enterprise plan.",
+  "mcp_notes": "Ahrefs documentation mentions an 'MCP' section for connecting data to AI assistants (Claude, ChatGPT), but this is presented as a consumer-facing feature for AI integration rather than a public developer API server for third-party platforms to build upon.",
+  "auth_notes": "Direct API usage utilizes API keys (sent as Bearer tokens). Third-party integrations via Ahrefs Connect use OAuth 2.0.",
+  "one_liner": "Ahrefs is a SaaS SEO and marketing platform providing data for backlink analysis, keyword research, site audits, and rank tracking.",
+  "confidence": "high",
+  "search_sources": [
+    "https://www.youtube.com/watch?v=fs0RJ1vABq0",
+    "https://saleshive.com/vendors/ahrefs",
+    "https://improvado.io/docs/ahrefs"
+  ],
+  "researched_at": "2026-07-09T04:54:10.514Z",
+  "model": "exa-answer"
+}

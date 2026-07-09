@@ -1,0 +1,50 @@
+{
+  "id": 41,
+  "name": "Shopify",
+  "category": "Ecommerce",
+  "blocker": null,
+  "api_type": [
+    "REST",
+    "GraphQL"
+  ],
+  "access": "self_serve_free",
+  "access_notes": "Developers can create a free Shopify Partner account to access the platform and generate credentials for custom or public apps. API access is tied to these credentials, which are self-service, though production usage may be subject to store-specific permissions or app store review requirements.",
+  "one_liner": "Shopify is an ecommerce platform that provides a suite of APIs for developers to manage store data, build headless commerce experiences, and integrate third-party applications.",
+  "mcp_notes": "No official or widely recognized community Model Context Protocol server was found in the official documentation.",
+  "buildable": "yes",
+  "mcp": "none_found",
+  "auth_notes": "OAuth2 is used for public apps, while API keys/access tokens are used for custom or private integrations.",
+  "api_breadth": "broad",
+  "confidence": "high",
+  "evidence": [
+    {
+      "claim": "Shopify provides a comprehensive suite of APIs including the GraphQL-based Admin API for managing store data and the Storefront API for customer-facing experiences.",
+      "url": "https://shopify.dev/docs/api"
+    },
+    {
+      "claim": "Developers can register as partners to gain access to Shopify APIs, with authentication methods including OAuth2 for public apps and access tokens/keys for custom apps.",
+      "url": "https://www.shopify.com/legal/api-terms"
+    },
+    {
+      "claim": "The Admin API is the robust, core interface for reading and writing store data, supporting both REST and GraphQL.",
+      "url": "https://www.shopify.com/enterprise/blog/ecommerce-api"
+    },
+    {
+      "claim": "Search citation: The Shopify Developer API Ecosystem: What You Need to Know  | Storetasker Blog",
+      "url": "https://resources.storetasker.com/blog/the-shopify-developer-api-ecosystem-what-you-need-to-know"
+    }
+  ],
+  "auth_methods": [
+    "OAuth2",
+    "API key"
+  ],
+  "api_notes": "The Admin API (GraphQL) is the primary, broad-reaching interface for managing store data. REST remains available (legacy), and the Storefront API provides public-facing access for headless commerce.",
+  "search_sources": [
+    "https://www.youtube.com/watch?v=uF0KGzbHlak",
+    "https://community.shopify.com/t/api-integration-has-anyone-done-it-is-it-complicated/416221",
+    "https://www.quora.com/How-do-Shopify-APIs-work",
+    "https://community.shopify.com/t/integrate-products-from-supplier-api/229827"
+  ],
+  "researched_at": "2026-07-09T04:53:05.727Z",
+  "model": "exa-answer"
+}

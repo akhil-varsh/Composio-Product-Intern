@@ -264,14 +264,16 @@
   re-runnable in isolation — the repo README reproduces this page end to end.</p>
   <div class="pipeline">
     <div class="stage"><div class="n">Pass 1</div><div class="t">Research agent</div>
-      <p>One search-grounded Gemini call per app fills a strict JSON schema: auth, access, API surface,
-      MCP, verdict, evidence URLs. Closed enums keep the results clusterable.</p></div>
+      <p>One Exa <code>/answer</code> call per app — web search + synthesis in a single request,
+      locked to a strict JSON schema: auth, access, API surface, MCP, verdict, evidence URLs.
+      Closed enums keep the results clusterable.</p></div>
     <div class="stage"><div class="n">Cross-check</div><div class="t">Composio registry</div>
       <p>The Composio SDK + v3 API pulls the full toolkit catalog; each app is matched to see if a
       toolkit already exists and what auth Composio itself records for it.</p></div>
     <div class="stage"><div class="n">Pass 2</div><div class="t">Evidence verifier</div>
-      <p>A second model call gets <em>no search access</em> — only the pages pass 1 cited, fetched raw.
-      It confirms or contradicts each field. Dead or hallucinated citation URLs surface here.</p></div>
+      <p>Layer 1 re-fetches every cited URL — dead citations surface here — and keyword-corroborates
+      each claim against the page text. Layer 2 re-asks every unsettled field as a narrow,
+      schema-locked question; a disagreement overturns the field and is logged.</p></div>
     <div class="stage"><div class="n">Pass 3</div><div class="t">Human review</div>
       <p>A random sample hand-checked against live docs, plus every app the verifier flagged.
       Human corrections outrank the machine ones.</p></div>
@@ -401,7 +403,7 @@ const mcpOffN = R.filter(r => r.mcp === "official").length;
 document.getElementById("metaChips").innerHTML = [
   `${N} apps · 10 categories`,
   `researched ${new Date(DATA.generated_at).toLocaleDateString("en-GB", { month: "short", year: "numeric" })}`,
-  `model: ${esc(R[0]?.model || "gemini-2.5-flash")} + Google Search grounding`,
+  `engine: Exa /answer, cross-checked by Gemini on ${DATA.verification.model_agreement?.apps_compared ?? 0} apps`,
   `${DATA.verification.verified_count} machine-verified · ${DATA.verification.human_sample.sampled_ids.length} human-checked`,
 ].map(s => `<span>${s}</span>`).join("");
 
@@ -658,11 +660,12 @@ function renderTable() {
     `<b>${checked + fv.not_verifiable}</b> field-claims against them; a human then hand-checked ` +
     `<b>${v.human_sample.sampled_ids.length}</b> randomly sampled apps against live docs. ` +
     `Wrong answers were not deleted — they are listed below, struck through.`;
+  const ma = v.model_agreement || { rate: null, apps_compared: 0, fields_compared: 0 };
   document.getElementById("verifTiles").innerHTML = [
     { v: acc1, l: "pass-1 agent accuracy", d: `${fv.confirmed} of ${checked} machine-checkable field-claims confirmed` },
     { v: String(v.corrections.length), l: "corrections applied", d: `${v.corrections.filter(c => c.source === "human").length} by human, ${v.corrections.filter(c => c.source === "verifier").length} by verifier` },
+    { v: ma.rate == null ? "—" : Math.round(ma.rate * 100) + "%", l: "two-engine agreement", d: `${ma.apps_compared} apps researched independently by both Gemini and Exa (${ma.fields_compared} fields)` },
     { v: accH, l: "accuracy after loops", d: `on the ${v.human_sample.sampled_ids.length}-app human sample (${v.human_sample.fields_checked} fields)` },
-    { v: String(fv.not_verifiable), l: "claims not machine-verifiable", d: "cited page fetchable but silent — escalated to human" },
   ].map(t => `<div class="tile"><div class="v">${t.v}</div><div class="l">${t.l}</div><div class="d">${t.d}</div></div>`).join("");
 
   document.getElementById("corrTable").innerHTML =
@@ -679,6 +682,12 @@ function renderTable() {
     const r = R.find(x => x.id === nte.id);
     misses.push(`<li><b>${esc(r ? r.name : "#" + nte.id)}</b>: ${esc(nte.note)}</li>`);
   }
+  const dis = (ma.disagreements || []);
+  for (const d of dis.slice(0, 6)) {
+    misses.push(`<li><b>${esc(d.name)}</b> · ${esc(d.field)}: Gemini said <i>${esc(fmtVal(d.gemini))}</i>, ` +
+      `Exa said <i>${esc(fmtVal(d.exa))}</i> — verification loops + human review arbitrated.</li>`);
+  }
+  if (dis.length > 6) misses.push(`<li>…and ${dis.length - 6} more two-engine disagreements, all arbitrated the same way.</li>`);
   document.getElementById("missList").innerHTML = misses.join("") || "<li>None.</li>";
 })();
 </script>

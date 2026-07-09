@@ -1,0 +1,49 @@
+{
+  "id": 48,
+  "name": "Gumroad",
+  "category": "Ecommerce",
+  "auth_methods": [
+    "OAuth2",
+    "Bearer token"
+  ],
+  "mcp_notes": "No official or well-known community Model Context Protocol server exists for Gumroad.",
+  "auth_notes": "Uses OAuth2 for third-party applications; for personal use, a static access token (Bearer token) can be generated via the dashboard.",
+  "api_breadth": "moderate",
+  "api_notes": "The API covers core objects like products, sales, and offers but lacks some dashboard functionality (e.g., creating products) and updated_at timestamps. It also lacks a sandbox or test mode.",
+  "buildable": "yes",
+  "confidence": "high",
+  "mcp": "none_found",
+  "access": "self_serve_free",
+  "api_type": [
+    "REST"
+  ],
+  "access_notes": "Developers can register an application and generate an access token for their own account through the Gumroad dashboard without manual approval or a paid plan.",
+  "evidence": [
+    {
+      "claim": "The Gumroad API is a REST API that uses OAuth authentication and JSON for requests.",
+      "url": "https://app.gumroad.com/api"
+    },
+    {
+      "claim": "Developers can manually generate an access token for their own Gumroad account through the application settings in the dashboard.",
+      "url": "https://gumroad.com/help/article/280-create-application-api"
+    },
+    {
+      "claim": "The API lacks a test or sandbox mode, making it difficult to test POST and PUT operations safely.",
+      "url": "https://blog.stackademic.com/the-flaws-of-the-gumroad-api-from-a-consumer-perspective-4235677dbd7f"
+    },
+    {
+      "claim": "Search citation: Gumroad | Postman API Network",
+      "url": "https://www.postman.com/api-reference-library/gumroad/overview"
+    }
+  ],
+  "one_liner": "Gumroad is a platform that provides an API for creators to manage digital products, sales, offer codes, and customer data.",
+  "blocker": null,
+  "search_sources": [
+    "https://www.youtube.com/watch?v=8JhwrZGxg4k",
+    "https://forum.ghost.org/t/display-gumroad-items-through-api/35942",
+    "https://github.com/SamyPesse/gumroad-api",
+    "https://konghq.com/blog/learning-center/what-is-api"
+  ],
+  "researched_at": "2026-07-09T04:53:40.289Z",
+  "model": "exa-answer"
+}

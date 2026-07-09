@@ -1,0 +1,48 @@
+{
+  "id": 27,
+  "name": "Telegram",
+  "category": "Communications & Messaging",
+  "buildable": "yes",
+  "auth_notes": "The Bot API uses an API token (provided by @BotFather) passed in the URL path to authenticate requests. The full Telegram API requires a more complex registration process involving an API ID and user authorization.",
+  "auth_methods": [
+    "API key"
+  ],
+  "api_notes": "Telegram provides two primary APIs: the Bot API (simplified HTTPS interface) and the Telegram API (full MTProto-based protocol for custom clients/TDLib). Both are broad in scope, supporting messaging, media, and advanced UI primitives.",
+  "api_type": [
+    "REST"
+  ],
+  "access": "self_serve_free",
+  "confidence": "high",
+  "one_liner": "Telegram provides APIs that allow developers to create custom messaging clients and automated bots for its platform.",
+  "blocker": null,
+  "evidence": [
+    {
+      "claim": "Telegram offers a Bot API for bots and a Telegram API for custom clients, both free of charge.",
+      "url": "https://core.telegram.org/"
+    },
+    {
+      "claim": "Bots are registered via @BotFather in the Telegram app, which provides an API token instantly without review or fees.",
+      "url": "https://medium.com/@wk0/send-and-receive-messages-with-the-telegram-api-17de9102ab78"
+    },
+    {
+      "claim": "Search citation: Telegram: The Default Front Door for AI Agents (2025) | Towards AI",
+      "url": "https://pub.towardsai.net/telegram-is-quietly-becoming-the-default-front-door-for-ai-agents-e0ba57a5b681"
+    },
+    {
+      "claim": "Search citation: Leverage the Telegram API for Sales Growth- Advantages, Use Cases, and Automation Steps - devotel",
+      "url": "https://devotel.com/blog/leverage-the-telegram-api-for-sales-growth-advantages-use-cases-and-automation-steps/"
+    }
+  ],
+  "mcp": "none_found",
+  "api_breadth": "broad",
+  "access_notes": "Developers can create bots and obtain API tokens entirely for free and without approval by interacting with the @BotFather tool within the Telegram app. Full Telegram API and Bot API access is free of charge.",
+  "mcp_notes": "While individual community projects (e.g., claude-code-telegram) may implement MCP servers as part of their own integrations, no official MCP server is provided by Telegram.",
+  "search_sources": [
+    "https://apix-drive.com/en/telegram-api",
+    "https://stackoverflow.com/questions/32118525/getting-started-with-the-telegram-api-any-useful-resource",
+    "https://www.youtube.com/watch?v=sJXUL-hQnyI",
+    "https://zernio.com/blog/telegram-api-alternative"
+  ],
+  "researched_at": "2026-07-09T04:51:57.925Z",
+  "model": "exa-answer"
+}

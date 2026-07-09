@@ -1,0 +1,48 @@
+{
+  "id": 49,
+  "name": "Amazon Selling Partner",
+  "category": "Ecommerce",
+  "evidence": [
+    {
+      "claim": "The Selling Partner API (SP-API) is a REST-based API that helps Amazon sellers and vendors programmatically access their data for orders, shipments, payments, and much more.",
+      "url": "https://developer.amazonservices.com/"
+    },
+    {
+      "claim": "You must have a Professional selling account and be the primary account user to create an SP-API developer profile, which Amazon evaluates before granting access.",
+      "url": "https://sell.amazon.com/developers"
+    },
+    {
+      "claim": "The authorization model for the Selling Partner API is based on Login with Amazon, an Amazon implementation of OAuth 2.0.",
+      "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/strategy-gen-ai-selling-partner-api/integrating-sp-api.html"
+    },
+    {
+      "claim": "Search citation: Connect to the Selling Partner API Using a Generated C# SDK",
+      "url": "https://developer-docs.amazon.com/sp-api/docs/connect-to-the-selling-partner-api-using-a-generated-c-sharp-sdk"
+    }
+  ],
+  "blocker": "Requires a Professional selling account (monthly fee) and a mandatory developer profile application/review process by Amazon.",
+  "api_breadth": "broad",
+  "api_notes": "The SP-API provides a comprehensive set of REST-based endpoints for managing orders, listings, payments, reports, and more. Amazon provides OpenAPI models to support integration.",
+  "access": "admin_approval",
+  "access_notes": "Access requires a Professional selling account and submission of a developer profile, which is evaluated and approved by Amazon.",
+  "buildable": "with_caveats",
+  "auth_methods": [
+    "OAuth2"
+  ],
+  "confidence": "high",
+  "auth_notes": "Uses Login with Amazon (LWA), which implements OAuth 2.0. Credentials include Client ID, Client Secret, and Refresh Tokens.",
+  "one_liner": "The Amazon Selling Partner API is a REST-based interface that allows Amazon sellers and vendors to programmatically manage their business data, including orders, shipments, and payments.",
+  "mcp_notes": "No official or community MCP server was identified in the provided documentation; the API is standard REST accessed via SDKs or direct HTTP requests.",
+  "api_type": [
+    "REST"
+  ],
+  "mcp": "none_found",
+  "search_sources": [
+    "https://www.pellsoftware.com/developing-amazon-sp-api/",
+    "https://github.com/amzn/selling-partner-api-models",
+    "https://www.youtube.com/watch?v=BGmx-9C1aoM",
+    "https://stackoverflow.com/questions/75822171/is-there-any-endpoint-in-amazon-sp-api-to-get-seller-id"
+  ],
+  "researched_at": "2026-07-09T04:53:45.775Z",
+  "model": "exa-answer"
+}

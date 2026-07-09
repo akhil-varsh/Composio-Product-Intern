@@ -1,0 +1,43 @@
+{
+  "id": 39,
+  "name": "Threads (Meta)",
+  "category": "Marketing, Ads, Email & Social",
+  "buildable": "yes",
+  "api_type": [
+    "REST"
+  ],
+  "mcp": "none_found",
+  "api_breadth": "broad",
+  "one_liner": "The Threads API is a collection of tools that enables developers to programmatically publish content, retrieve data, and manage conversations on the Threads platform.",
+  "evidence": [
+    {
+      "claim": "The Threads API is a public API that allows developers to publish content, read replies, manage insights, and more.",
+      "url": "https://zernio.com/blog/threads-api"
+    },
+    {
+      "claim": "Production access to the Threads API is gated by Meta App Review.",
+      "url": "https://www.blotato.com/blog/threads-api-pricing"
+    },
+    {
+      "claim": "Search citation: - YouTube",
+      "url": "https://www.youtube.com/watch?v=iFXj21Pv_zo"
+    },
+    {
+      "claim": "Search citation: Postman",
+      "url": "https://www.postman.com/meta/threads/collection/dht3nzz/threads-api"
+    }
+  ],
+  "access_notes": "The API is free to use but gated by Meta App Review for production access. Developers can build and test with themselves or other authorized 'Threads Testers' without formal review, but moving beyond this requires Meta App Review.",
+  "access": "admin_approval",
+  "confidence": "high",
+  "api_notes": "The Threads API is part of the Meta Graph API and uses RESTful principles. It supports publishing, reading replies, insights, deletion, and location tagging.",
+  "mcp_notes": "There is no official MCP server provided by Meta. Third-party wrappers may provide their own, but they are not official.",
+  "blocker": "None, provided the developer is willing to go through the app registration and testing/review process.",
+  "auth_notes": "The API uses OAuth 2.0 to grant applications permission to act on behalf of a user.",
+  "auth_methods": [
+    "OAuth2"
+  ],
+  "search_sources": [],
+  "researched_at": "2026-07-09T04:52:55.513Z",
+  "model": "exa-answer"
+}
