@@ -1,0 +1,20 @@
+{
+  "name": "app-research-agent",
+  "version": "1.0.0",
+  "description": "Agent that researches 100 apps for AI-toolkit buildability (auth, access, API surface, MCP) and produces a verified case-study page.",
+  "type": "module",
+  "scripts": {
+    "research": "tsx src/research.ts",
+    "composio": "tsx src/composio-check.ts",
+    "verify": "tsx src/verify.ts",
+    "build-data": "tsx src/build-data.ts",
+    "site": "tsx src/build-site.ts"
+  },
+  "dependencies": {
+    "@composio/core": "^0.5.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}
