@@ -1,0 +1,49 @@
+{
+  "id": 66,
+  "name": "Neo4j",
+  "category": "Developer, Infra & Data platforms",
+  "access_notes": "Developers can access the database, including the Query API, through Neo4j AuraDB, which offers a free tier. Credentials are generated upon instance creation.",
+  "buildable": "yes",
+  "auth_notes": "Authentication is typically handled via standard username/password (Basic) credentials when connecting to the database instance.",
+  "mcp": "official",
+  "one_liner": "Neo4j is a native graph database platform that stores and manages connected data using nodes and relationships, queried via the Cypher language.",
+  "api_notes": "The primary interface is the Query API (which replaced the deprecated transactional HTTP API and legacy REST API) used to execute Cypher queries. Drivers are the recommended approach for most application development. GraphQL is also supported via a library/toolbox.",
+  "api_breadth": "broad",
+  "auth_methods": [
+    "Basic"
+  ],
+  "evidence": [
+    {
+      "claim": "The Neo4j Query API is the current standard for executing Cypher statements through HTTP, replacing the deprecated transactional HTTP API.",
+      "url": "https://neo4j.com/docs/http-api/current/"
+    },
+    {
+      "claim": "Neo4j AuraDB provides a free tier for developers to build applications, and developers connect using credentials provided for their instance.",
+      "url": "https://www.youtube.com/watch?v=EkKSCuTHrLk"
+    },
+    {
+      "claim": "Neo4j Labs provides official MCP servers for capabilities like executing Cypher and modeling graphs.",
+      "url": "https://neo4j.com/labs/"
+    },
+    {
+      "claim": "Search citation: Neo4j Graph Intelligence Platform",
+      "url": "https://neo4j.com/"
+    }
+  ],
+  "access": "self_serve_free",
+  "confidence": "high",
+  "mcp_notes": "Neo4j maintains official MCP servers under Neo4j Labs, covering functionality such as Cypher execution, graph modeling, and Aura infrastructure management.",
+  "api_type": [
+    "REST",
+    "GraphQL"
+  ],
+  "blocker": null,
+  "search_sources": [
+    "https://www.puppygraph.com/blog/gpt-vs-neo4j-graph-database-applications",
+    "https://neo4j.com/docs/rest-docs/current/",
+    "https://neo4j.com/videos/road-to-nodes-ai-end-to-end-neo4j-developer-workspace-with-mcp/",
+    "https://neo4j.com/videos/nodes-2024-query-api-a-tale-of-types-and-http/"
+  ],
+  "researched_at": "2026-07-09T04:55:13.613Z",
+  "model": "exa-answer"
+}

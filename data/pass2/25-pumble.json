@@ -1,0 +1,47 @@
+{
+  "id": 25,
+  "name": "Pumble",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "contradicted",
+      "corrected_value": "broad",
+      "quote": "re-ask found \"broad\" (https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration/)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://pumble.com/help/integrations/automation-workflow-integrations/how-to-use-the-pumble-mcp-server/)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://pumble.com/integrations)"
+    }
+  ],
+  "urls_fetched": [
+    "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration/",
+    "https://pumble.com/integrations",
+    "https://trueconf.com/blog/reviews-comparisons/pumble-vs-slack",
+    "https://pumble.com/integrations/ai-assistant"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:02:19.039Z"
+}

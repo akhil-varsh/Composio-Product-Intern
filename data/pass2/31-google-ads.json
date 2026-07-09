@@ -1,0 +1,46 @@
+{
+  "id": 31,
+  "name": "Google Ads",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "contradicted",
+      "corrected_value": "admin_approval",
+      "quote": "re-ask found \"admin_approval\" (https://developers.google.com/google-ads/api/docs/get-started/dev-token)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.google.com/google-ads/api/docs/concepts/call-structure)"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.google.com/google-ads/api/docs/concepts/api-structure)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.google.com/google-ads/api/docs/access-levels)"
+    }
+  ],
+  "urls_fetched": [
+    "https://developers.google.com/google-ads/api/docs/get-started/introduction",
+    "https://ppc.io/blog/google-ads-api",
+    "https://support.google.com/google-ads/answer/15235?hl=en",
+    "https://www.youtube.com/watch?v=R7WbvRLqW64"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:04:12.965Z"
+}

@@ -1,0 +1,49 @@
+{
+  "id": 64,
+  "name": "Cloudflare",
+  "category": "Developer, Infra & Data platforms",
+  "api_type": [
+    "REST"
+  ],
+  "mcp": "none_found",
+  "api_notes": "The Cloudflare API is a comprehensive REST-based interface that allows control over nearly all Cloudflare products and account settings. The API documentation has transitioned to the OpenAPI specification.",
+  "confidence": "high",
+  "blocker": null,
+  "buildable": "yes",
+  "access_notes": "Developers can sign up for a Cloudflare account for free and generate API tokens directly from their dashboard to access the API.",
+  "api_breadth": "broad",
+  "access": "self_serve_free",
+  "one_liner": "Cloudflare provides a comprehensive global cloud platform that includes edge computing, security, storage, and networking services, all of which are manageable via their public API.",
+  "mcp_notes": "No official or well-known community Model Context Protocol (MCP) server was found for the Cloudflare API.",
+  "auth_notes": "Cloudflare primarily uses API tokens (which function as Bearer tokens) and API keys for authentication. Documentation for authentication is provided for every endpoint.",
+  "evidence": [
+    {
+      "claim": "Cloudflare provides an extensive API Reference covering account management, security settings, and product configurations.",
+      "url": "https://developers.cloudflare.com/api/"
+    },
+    {
+      "claim": "Cloudflare has standardized its API documentation using the OpenAPI specification to improve developer experience.",
+      "url": "https://blog.cloudflare.com/building-a-better-developer-experience-through-api-documentation/"
+    },
+    {
+      "claim": "Cloudflare provides a unified developer platform to build, deploy, and manage applications globally.",
+      "url": "https://developers.cloudflare.com/"
+    },
+    {
+      "claim": "Search citation: APIs · Cloudflare Workers docs",
+      "url": "https://developers.cloudflare.com/workers/configuration/integrations/apis/"
+    }
+  ],
+  "auth_methods": [
+    "Bearer token",
+    "API key"
+  ],
+  "search_sources": [
+    "https://www.cloudflare.com/developer-platform/products/",
+    "https://www.youtube.com/watch?v=QTsaAhFvX9o",
+    "https://www.youtube.com/watch?v=dhVF7uTieAc",
+    "https://neilmadden.blog/2025/06/06/a-look-at-cloudflares-ai-coded-oauth-library/"
+  ],
+  "researched_at": "2026-07-09T04:55:03.797Z",
+  "model": "exa-answer"
+}

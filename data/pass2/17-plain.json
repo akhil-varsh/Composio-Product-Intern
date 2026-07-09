@@ -1,0 +1,46 @@
+{
+  "id": 17,
+  "name": "Plain",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "contradicted",
+      "corrected_value": "moderate",
+      "quote": "re-ask found \"moderate\" (https://plain.support.site/article/using-plains-api)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://plain.support.site/article/using-plains-api)"
+    }
+  ],
+  "urls_fetched": [
+    "https://help.plain.com/article/api-quickstart",
+    "https://www.plain.com/blog/api-first-support-platforms",
+    "https://www.plain.com/blog/api-first-support-ai-agents",
+    "https://www.plain.com/product"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:01:07.387Z"
+}

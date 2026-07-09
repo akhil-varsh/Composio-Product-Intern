@@ -1,0 +1,47 @@
+{
+  "id": 85,
+  "name": "iPayX",
+  "category": "Finance & Fintech",
+  "api_type": [
+    "none"
+  ],
+  "access_notes": "The provided search results do not contain any information regarding the public developer API of iPayX. No documentation or API references for iPayX could be found in the provided sources.",
+  "evidence": [
+    {
+      "claim": "The provided search results contain no documentation for iPayX.",
+      "url": "https://ipayx.ai/docs"
+    },
+    {
+      "claim": "Search citation: AI and API documentation: What works, what doesn't, by Tom Johnson",
+      "url": "https://www.youtube.com/watch?v=cacDYvA5ZTI"
+    },
+    {
+      "claim": "Search citation: What Is an AI API? How to Add AI to Your App (2026)",
+      "url": "https://www.articsledge.com/post/ai-api-artificial-intelligence-application-programming-interface"
+    },
+    {
+      "claim": "Search citation: OpenAI API Platform Documentation",
+      "url": "https://developers.openai.com/api/docs"
+    }
+  ],
+  "confidence": "high",
+  "api_notes": "No API documentation for iPayX was available in the provided sources.",
+  "api_breadth": "none",
+  "one_liner": "Information about iPayX and its product capabilities is not available in the provided sources.",
+  "mcp": "none_found",
+  "access": "no_public_api",
+  "buildable": "blocked",
+  "mcp_notes": "No information about an MCP server exists as no public API is documented.",
+  "blocker": "No public API documentation exists for iPayX in the provided sources.",
+  "auth_methods": [],
+  "auth_notes": "No API documentation found to determine authentication methods.",
+  "search_sources": [
+    "https://www.classicinformatics.com/blog/top-ai-apis-to-build-intelligent-products",
+    "https://www.mosaicx.com/blog/ai-apis-how-ai-is-revolutionizing-application-programming-interfaces",
+    "https://cohere.com/blog/api-ai",
+    "https://support.read.ai/hc/en-us/articles/49381161088659-API-Reference",
+    "https://medium.com/@API4AI/how-ai-apis-are-transforming-software-development-dc8875eb0d5c"
+  ],
+  "researched_at": "2026-07-09T04:56:42.688Z",
+  "model": "exa-answer"
+}

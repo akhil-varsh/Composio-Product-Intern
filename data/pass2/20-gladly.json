@@ -1,0 +1,46 @@
+{
+  "id": 20,
+  "name": "Gladly",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.gladly.com/rest/index.html)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.gladly.com/rest/)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "community",
+      "quote": "re-ask found \"community\" (https://www.stackone.com/connectors/gladly/mcp/)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.gladly.com/rest/index.html)"
+    }
+  ],
+  "urls_fetched": [
+    "https://developer.gladly.com/rest/",
+    "https://help.gladly.com/implementation/docs/get-your-api-tokens",
+    "https://developer.gladly.com/",
+    "https://help.gladly.com/developer-tutorials/docs/app-platform-overview"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:01:31.959Z"
+}

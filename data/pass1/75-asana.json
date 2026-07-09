@@ -1,0 +1,49 @@
+{
+  "id": 75,
+  "name": "Asana",
+  "category": "Productivity & Project Management",
+  "blocker": null,
+  "evidence": [
+    {
+      "claim": "Asana's API is a RESTful interface for reading/writing information and reacting to changes.",
+      "url": "https://developers.asana.com/docs/quick-start"
+    },
+    {
+      "claim": "Developers can generate personal access tokens for API access via the developer console in their account settings.",
+      "url": "https://help.asana.com/s/article/api?language=en_US"
+    },
+    {
+      "claim": "Search citation: How to GET tasks from the Asana API in Python",
+      "url": "https://www.merge.dev/blog/get-tasks-asana-api-python"
+    },
+    {
+      "claim": "Search citation: How To Set Up And Create Api Key In Asana (Tutorial 2025)",
+      "url": "https://www.youtube.com/watch?v=PHqjLID7WAg"
+    }
+  ],
+  "api_type": [
+    "REST"
+  ],
+  "access": "self_serve_free",
+  "one_liner": "Asana's API is a RESTful platform that enables software to read, create, update, and delete data within Asana workspaces and automate workflows.",
+  "mcp": "none_found",
+  "auth_methods": [
+    "OAuth2",
+    "Bearer token"
+  ],
+  "buildable": "yes",
+  "api_breadth": "broad",
+  "auth_notes": "The API supports OAuth 2.0 (Asana Connect) for third-party applications and Bearer token authentication via Personal Access Tokens (PATs) for scripts and individual prototyping.",
+  "api_notes": "Asana provides a comprehensive REST API that covers most core objects (tasks, projects, users, etc.) and operations.",
+  "access_notes": "Developers can create Personal Access Tokens (PATs) directly through the Asana developer console in their personal settings for individual use and prototyping. OAuth 2.0 (Asana Connect) is available for broader application integration. Access is not gated behind paid plans or partner approval for general API usage, though usage is subject to API terms.",
+  "confidence": "high",
+  "mcp_notes": "No official or widely recognized community Model Context Protocol (MCP) server was identified in the provided documentation.",
+  "search_sources": [
+    "https://forum.asana.com/t/what-type-of-developer-is-best-suited-to-build-app-using-asanas-api/929",
+    "https://developers.asana.com/docs/api-explorer",
+    "https://asana.com/terms/api-terms",
+    "https://cloudfresh.com/en/products/asana-api/"
+  ],
+  "researched_at": "2026-07-09T04:55:55.782Z",
+  "model": "exa-answer"
+}

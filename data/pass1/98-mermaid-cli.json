@@ -1,0 +1,46 @@
+{
+  "id": 98,
+  "name": "Mermaid CLI",
+  "category": "AI, Research & Media-native",
+  "blocker": null,
+  "mcp": "none_found",
+  "confidence": "high",
+  "evidence": [
+    {
+      "claim": "Mermaid CLI is a command-line interface for the Mermaid library that takes a mermaid definition file as input and generates an SVG/PNG/PDF file as output.",
+      "url": "https://github.com/mermaid-js/mermaid-cli"
+    },
+    {
+      "claim": "Search citation: mermaid-js/mermaid",
+      "url": "https://github.com/mermaid-js/mermaid"
+    },
+    {
+      "claim": "Search citation: Mermaid | Diagramming and charting tool",
+      "url": "https://mermaid.js.org/"
+    },
+    {
+      "claim": "Search citation: Actually customize a theme · Issue #107 · mermaidjs/mermaid.cli",
+      "url": "https://github.com/mermaidjs/mermaid.cli/issues/107"
+    }
+  ],
+  "api_notes": "The CLI provides a Node.js API that allows developers to programmatically execute the tool's core function: taking a Mermaid definition file as input and generating an SVG, PNG, or PDF file. It is not a platform-based REST or GraphQL API.",
+  "access_notes": "The Mermaid CLI is an open-source tool distributed via npm, freely available to anyone without requiring registration, API keys, or accounts.",
+  "auth_methods": [],
+  "auth_notes": "The tool is a local command-line and Node.js utility and does not utilize any web-based authentication methods like API keys or OAuth2.",
+  "api_type": [
+    "SDK-only"
+  ],
+  "access": "self_serve_free",
+  "api_breadth": "narrow",
+  "mcp_notes": "No official or community-maintained Model Context Protocol (MCP) server was found for the Mermaid CLI.",
+  "one_liner": "Mermaid CLI is a command-line and Node.js tool used to convert Mermaid diagram definition files into SVG, PNG, or PDF output files.",
+  "buildable": "yes",
+  "search_sources": [
+    "https://mermaid.ai/open-source/config/mermaidCLI.html",
+    "https://github.com/mermaid-js/mermaid-cli/issues/467",
+    "https://github.com/mermaid-js/mermaid-cli/issues/603",
+    "https://stackoverflow.com/questions/50762662/how-to-install-mermaid-to-render-flowcharts-in-markdown"
+  ],
+  "researched_at": "2026-07-09T04:57:47.804Z",
+  "model": "exa-answer"
+}

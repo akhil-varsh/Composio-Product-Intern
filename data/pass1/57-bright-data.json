@@ -1,0 +1,50 @@
+{
+  "id": 57,
+  "name": "Bright Data",
+  "category": "Data, SEO & Scraping",
+  "api_notes": "The API surface is broad, covering proxy management, web scraping, search (SERP), datasets, and specialized unlockers, available via REST endpoints and official SDKs for Python and JavaScript/TypeScript.",
+  "mcp": "official",
+  "access": "self_serve_free",
+  "one_liner": "Bright Data is an enterprise-grade platform providing proxy networks, web scraping APIs, and structured web data collection services.",
+  "evidence": [
+    {
+      "claim": "Bright Data is an all-in-one platform for proxies and web scraping, offering data extraction and web access APIs.",
+      "url": "https://brightdata.com/"
+    },
+    {
+      "claim": "The Bright Data Scraper Studio API uses Bearer token authentication.",
+      "url": "https://docs.brightdata.com/datasets/scraper-studio/quickstart"
+    },
+    {
+      "claim": "Bright Data provides an official MCP server to connect AI models to real-time web data.",
+      "url": "https://docs.brightdata.com/introduction"
+    },
+    {
+      "claim": "A free tier is available for Bright Data accounts with API access.",
+      "url": "https://brightdata.com/blog/ai/ai-news-agent-with-bright-sdk"
+    }
+  ],
+  "api_type": [
+    "REST",
+    "SDK-only"
+  ],
+  "buildable": "yes",
+  "mcp_notes": "Bright Data provides an official MCP server to facilitate AI integration with their web data, search, and scraping tools.",
+  "auth_methods": [
+    "Bearer token",
+    "API key"
+  ],
+  "api_breadth": "broad",
+  "access_notes": "Developers can sign up for a free account with free monthly credits without a credit card. API access is available to these accounts.",
+  "auth_notes": "Authentication typically uses an API Token/Key passed as a Bearer token in the Authorization header.",
+  "confidence": "high",
+  "blocker": null,
+  "search_sources": [
+    "https://github.com/brightdata/skills/blob/main/README.md",
+    "https://haystack.deepset.ai/integrations/bright-data",
+    "https://www.youtube.com/watch?v=uL1sNXcbMbI",
+    "https://use-apify.com/blog/bright-data-review"
+  ],
+  "researched_at": "2026-07-09T04:54:30.762Z",
+  "model": "exa-answer"
+}

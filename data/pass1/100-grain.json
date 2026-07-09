@@ -1,0 +1,48 @@
+{
+  "id": 100,
+  "name": "Grain",
+  "category": "AI, Research & Media-native",
+  "mcp": "official",
+  "evidence": [
+    {
+      "claim": "The Grain API supports OAuth2 and Personal/Workspace access tokens, authenticated via Bearer headers.",
+      "url": "https://developers.grain.com/"
+    },
+    {
+      "claim": "Grain provides an official MCP Server & API.",
+      "url": "https://grain.com/"
+    },
+    {
+      "claim": "Search citation: Does Grain Share my Data with 3rd parties like OpenAI? | Grain",
+      "url": "https://support.grain.com/en/articles/8054613-does-grain-share-my-data-with-3rd-parties-like-openai"
+    },
+    {
+      "claim": "Search citation: Grain AI notetaker deep dive: cross-meeting SPICED analysis, HubSpot sync, and coaching workflows",
+      "url": "https://www.youtube.com/watch?v=otp7gkrqsQw"
+    }
+  ],
+  "api_notes": "The API provides endpoints for core functionality including managing and listing recordings and transcripts. Documentation describes it as a public API supporting Personal and Workspace tokens.",
+  "mcp_notes": "The official Grain website indicates the availability of an MCP Server & API.",
+  "api_type": [
+    "REST"
+  ],
+  "access": "self_serve_free",
+  "buildable": "yes",
+  "one_liner": "Grain is an AI-powered meeting notetaker that records, transcribes, and summarizes meetings to provide actionable insights.",
+  "confidence": "high",
+  "auth_methods": [
+    "Bearer token"
+  ],
+  "api_breadth": "moderate",
+  "auth_notes": "API calls use the Authorization: Bearer TOKEN header. Supported tokens include Personal Access Tokens (PATs), Workspace Access Tokens, and OAuth2 access tokens.",
+  "blocker": null,
+  "access_notes": "Developers can generate Personal Access Tokens (PATs) and Workspace Access Tokens directly from their Grain account settings, or implement the OAuth2 flow for third-party integrations.",
+  "search_sources": [
+    "https://www.pandium.com/blogs/what-is-a-unified-api-and-how-to-evaluate-one-for-product-integrations",
+    "https://mindcloud.co/docs/universal/rest/grain/latest/introduction/getting-started",
+    "https://grain.com/integrations",
+    "https://marketplace.zoom.us/apps/mIfjTU-qRWqcu7zfzjG4SA"
+  ],
+  "researched_at": "2026-07-09T04:57:56.910Z",
+  "model": "exa-answer"
+}

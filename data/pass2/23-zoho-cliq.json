@@ -1,0 +1,47 @@
+{
+  "id": 23,
+  "name": "Zoho Cliq",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "contradicted",
+      "corrected_value": "broad",
+      "quote": "re-ask found \"broad\" (https://www.zoho.com/cliq/help/restapi/v2/introduction/)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://www.zoho.com/cliq/help/platform/zoho-cliq-mcp.html)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://www.zoho.com/cliq/help/restapi/v3/registerclient/)"
+    }
+  ],
+  "urls_fetched": [
+    "https://www.zoho.com/cliq/help/restapi/v3/introduction/",
+    "https://www.zoho.com/cliq/help/platform/faq.html",
+    "https://www.zoho.com/developer/rest-api.html",
+    "https://www.zoho.com/cliq/help/platform/getting-started-with-cliq-platform.html"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:01:54.316Z"
+}

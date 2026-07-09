@@ -1,0 +1,48 @@
+{
+  "id": 63,
+  "name": "Netlify",
+  "category": "Developer, Infra & Data platforms",
+  "auth_methods": [
+    "OAuth2",
+    "Bearer token"
+  ],
+  "confidence": "high",
+  "mcp": "none_found",
+  "api_notes": "The Netlify REST API allows management of sites, deploys, DNS, form submissions, and more. While highly functional, some users have reported that certain complex operations (like function deployments) require referring to both API and product-specific documentation to navigate correctly.",
+  "api_type": [
+    "REST"
+  ],
+  "access_notes": "Developers can generate Personal Access Tokens (PATs) for manual authentication directly within their Netlify user settings. OAuth2 is used for public integrations intended for other users.",
+  "one_liner": "Netlify is a platform that provides a REST API to manage atomic site deploys, DNS, form submissions, and other infrastructure-related tasks for web projects.",
+  "access": "self_serve_free",
+  "evidence": [
+    {
+      "claim": "Netlify provides a REST API to manage atomic deploys, form submissions, DNS, and more.",
+      "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/"
+    },
+    {
+      "claim": "Search citation: Deploying a site using the file digest API - Support - Netlify Support Forums",
+      "url": "https://answers.netlify.com/t/deploying-a-site-using-the-file-digest-api/3309"
+    },
+    {
+      "claim": "Search citation: Cannot deploy function via API (tried all solutions) - Support - Netlify Support Forums",
+      "url": "https://answers.netlify.com/t/cannot-deploy-function-via-api-tried-all-solutions/95690"
+    },
+    {
+      "claim": "Search citation: General Availability of Private Integrations for Netlify Core",
+      "url": "https://www.netlify.com/blog/general-availability-private-integrations-for-netlify-core/"
+    }
+  ],
+  "api_breadth": "broad",
+  "buildable": "yes",
+  "mcp_notes": "No official or prominent community-maintained Model Context Protocol (MCP) server was identified in the provided sources.",
+  "auth_notes": "The API uses OAuth2 for public integrations. For personal use or scripts, a Personal Access Token (PAT) is used as a Bearer token in the Authorization header.",
+  "blocker": null,
+  "search_sources": [
+    "https://developers.netlify.com/videos/introducing-ai-gateway/",
+    "https://www.netlify.com/blog/start-a-netlify-project-from-a-prompt/",
+    "https://openai.com/business/apps/netlify/"
+  ],
+  "researched_at": "2026-07-09T04:54:59.345Z",
+  "model": "exa-answer"
+}

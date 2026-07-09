@@ -1,0 +1,49 @@
+{
+  "id": 76,
+  "name": "Monday.com",
+  "category": "Productivity & Project Management",
+  "auth_methods": [
+    "API key",
+    "OAuth2"
+  ],
+  "confidence": "high",
+  "mcp": "none_found",
+  "buildable": "yes",
+  "api_notes": "The API is a comprehensive GraphQL interface covering boards, items, subitems, users, and workflows. Official SDKs for Node.js are available.",
+  "access_notes": "Developers can create a free developer account to access API tools and the API playground without expiration. Admin/member personal API tokens can be generated through the account UI. OAuth is also supported for app-based integrations.",
+  "blocker": null,
+  "auth_notes": "Supports personal API tokens (API keys) and OAuth 2.0 authorization flows. Short-lived tokens are also used for specific authentication scenarios.",
+  "api_breadth": "broad",
+  "evidence": [
+    {
+      "claim": "The monday.com Platform API is an expressive GraphQL API to interact with workflows, automate processes, and power integrations.",
+      "url": "https://developer.monday.com/api-reference/"
+    },
+    {
+      "claim": "Authentication is handled via Personal API tokens (API keys) or OAuth 2.0.",
+      "url": "https://www.fruitionservices.io/post/monday-platform-api"
+    },
+    {
+      "claim": "Search citation: Monday.com | Appsmith",
+      "url": "https://docs.appsmith.com/connect-data/reference/monday.com"
+    },
+    {
+      "claim": "Search citation: @mondaydotcomorg/api",
+      "url": "https://www.npmjs.com/package/@mondaydotcomorg/api"
+    }
+  ],
+  "access": "self_serve_free",
+  "one_liner": "Monday.com is a work operating system providing a comprehensive GraphQL API for managing workflows, boards, items, and integrations.",
+  "mcp_notes": "No official or well-known community Model Context Protocol server was identified in the provided sources.",
+  "api_type": [
+    "GraphQL"
+  ],
+  "search_sources": [
+    "https://www.youtube.com/watch?v=cMupQ0mH08A",
+    "https://apix-drive.com/en/blog/other/monday-api-integration",
+    "https://www.youtube.com/watch?v=27_R-hgrDgU",
+    "https://github.com/n8n-io/n8n/issues/26071"
+  ],
+  "researched_at": "2026-07-09T04:56:00.547Z",
+  "model": "exa-answer"
+}

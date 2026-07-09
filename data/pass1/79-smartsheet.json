@@ -1,0 +1,48 @@
+{
+  "id": 79,
+  "name": "Smartsheet",
+  "category": "Productivity & Project Management",
+  "api_type": [
+    "REST",
+    "SDK-only"
+  ],
+  "mcp": "official",
+  "auth_notes": "Supports OAuth 2.0 for delegated access and personal access tokens (API access tokens) for direct API access. Bearer token authentication is used for the API requests.",
+  "access_notes": "The Smartsheet API requires a Business, Enterprise, or Advanced Work Management plan. It is not available on free plans.",
+  "buildable": "with_caveats",
+  "api_notes": "The REST API provides comprehensive CRUD operations for core objects like sheets, rows, columns, reports, and folders, along with webhooks and bulk operations. SDKs are provided for Python, Java, C#, and Node.js.",
+  "blocker": "API access is restricted to paid Smartsheet plans (Business, Enterprise, or Advanced Work Management).",
+  "one_liner": "Smartsheet is a work management platform that offers an enterprise-grade API for automating workflows, managing project data, and building custom integrations.",
+  "mcp_notes": "Smartsheet provides an official MCP server for connecting to AI clients like Claude and Cursor.",
+  "access": "paid_plan",
+  "api_breadth": "broad",
+  "auth_methods": [
+    "OAuth2",
+    "Bearer token"
+  ],
+  "confidence": "high",
+  "evidence": [
+    {
+      "claim": "The Smartsheet API provides full programmatic control, including CRUD operations, webhooks, and bulk operations.",
+      "url": "https://www.smartsheet.com/content-center/product-insights/smartsheet-tips/4-solutions-developers-build-smartsheet-api"
+    },
+    {
+      "claim": "The Smartsheet API requires a Business, Enterprise, or Advanced Work Management plan.",
+      "url": "https://developers.smartsheet.com/api/smartsheet/introduction"
+    },
+    {
+      "claim": "Search citation: 5 steps for getting started with the Smartsheet API | Smartsheet",
+      "url": "http://gt-events.net/api-getting-started.html"
+    },
+    {
+      "claim": "Search citation: What Makes an API Enterprise-Grade? A 5-Dimension Evaluation Framework | Smartsheet",
+      "url": "https://www.smartsheet.com/content-center/managing-work/it-management/what-makes-api-enterprise-grade-5-dimension-evaluation"
+    }
+  ],
+  "search_sources": [
+    "https://community.smartsheet.com/discussions/tagged/api-and-developers/p31",
+    "https://developers.smartsheet.com/api/smartsheet/openapi/reports"
+  ],
+  "researched_at": "2026-07-09T04:56:16.585Z",
+  "model": "exa-answer"
+}

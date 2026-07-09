@@ -1,0 +1,47 @@
+{
+  "id": 16,
+  "name": "LiveAgent",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://faq.liveagent.com/535002-LiveAgent-API-v1-vs-v3-Authentication-Differences-API-Key-Management-and-Resolving-403-Errors)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://www.liveagent.com/features/api/)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://support.liveagent.com/647358-MCP-Integration-for-Agents)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://support.liveagent.com/911737-API-v3)"
+    }
+  ],
+  "urls_fetched": [
+    "https://www.liveagent.com/features/api/",
+    "https://support.liveagent.com/802463-REST-API",
+    "https://dev.to/aws/ai-agents-are-your-apis-biggest-consumer-do-they-care-about-good-design-31l2"
+  ],
+  "urls_failed": [
+    "https://www.youtube.com/watch?v=hciNKcLwSes (almost no text (JS-rendered or blocked))"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T05:01:00.693Z"
+}

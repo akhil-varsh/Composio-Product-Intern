@@ -1,0 +1,47 @@
+{
+  "id": 93,
+  "name": "Fathom",
+  "category": "AI, Research & Media-native",
+  "auth_methods": [
+    "OAuth2"
+  ],
+  "one_liner": "Fathom is an AI meeting assistant that records, transcribes, and summarizes meetings to provide actionable insights and automate workflows.",
+  "api_type": [
+    "REST"
+  ],
+  "evidence": [
+    {
+      "claim": "Fathom provides a public API accessible to all users for building workflows and integrations.",
+      "url": "https://help.fathom.video/en/articles/8368641"
+    },
+    {
+      "claim": "Fathom provides an official MCP server for custom workflows.",
+      "url": "https://chromewebstore.google.com/detail/fathom-ai-note-taker-for/nhocmlminaplaendbabmoemehbpgdemn"
+    },
+    {
+      "claim": "Search citation: Fathom Expands with New Features Designed to Extract Maximum Value From Every Conversation",
+      "url": "https://www.businesswire.com/news/home/20251008689349/en/Fathom-Expands-with-New-Features-Designed-to-Extract-Maximum-Value-From-Every-Conversation"
+    },
+    {
+      "claim": "Search citation: Fathom Product Updates and New Features",
+      "url": "https://help.fathom.video/en/articles/6220097"
+    }
+  ],
+  "buildable": "yes",
+  "access": "self_serve_free",
+  "blocker": null,
+  "api_notes": "The API provides access to meeting insights, transcripts, summaries, action items, and metadata. Rate limits are set at 60 calls per minute.",
+  "confidence": "high",
+  "auth_notes": "API keys are created at the user level, and OAuth 2.0 is used for third-party integration apps.",
+  "access_notes": "The public API is available to all users; developers can browse documentation and start building without gated access or partner status. OAuth apps can be registered for marketplace listings.",
+  "api_breadth": "moderate",
+  "mcp": "official",
+  "mcp_notes": "The official documentation lists an MCP server as an integration option.",
+  "search_sources": [
+    "https://www.youtube.com/watch?v=A7CWNxA538M",
+    "https://www.fathom.ai/vs/others",
+    "https://arrows.to/guide/top-ai-notetakers/fathom-founder-deep-dive-quick-concise-ai-meeting-notes-for-hubspot-teams"
+  ],
+  "researched_at": "2026-07-09T04:57:24.922Z",
+  "model": "exa-answer"
+}

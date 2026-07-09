@@ -1,0 +1,48 @@
+{
+  "id": 87,
+  "name": "Xero",
+  "category": "Finance & Fintech",
+  "buildable": "yes",
+  "access": "self_serve_free",
+  "blocker": null,
+  "api_breadth": "broad",
+  "api_type": [
+    "REST"
+  ],
+  "access_notes": "Developers can sign up for a free developer account to access the API. A tiered pricing model with a free starter tier (up to 5 connections) exists, but developers can get credentials and start building immediately on a self-serve basis.",
+  "mcp": "official",
+  "one_liner": "Xero is a global small business accounting platform that provides an API for developers to integrate with accounting data such as invoices, bank transactions, and contacts.",
+  "mcp_notes": "Xero has officially released an MCP server designed for accounting data.",
+  "confidence": "high",
+  "evidence": [
+    {
+      "claim": "Xero provides a developer platform where users can sign up for a free account to build and test integrations.",
+      "url": "https://developer.xero.com/"
+    },
+    {
+      "claim": "Xero utilizes OAuth 2.0 and has introduced a tiered pricing model that includes a free starter tier.",
+      "url": "https://www.apideck.com/blog/xero-api-pricing-and-the-app-partner-program"
+    },
+    {
+      "claim": "The Xero API is a RESTful API that allows developers to access various resources like invoices and contacts.",
+      "url": "https://www.merge.dev/blog/xero-api"
+    },
+    {
+      "claim": "Xero has released an official Model Context Protocol (MCP) server for accounting data.",
+      "url": "https://devblog.xero.com/talking-to-the-xero-api-part-3-8cf02e7b0174"
+    }
+  ],
+  "api_notes": "The Xero Accounting API is comprehensive, covering core objects like invoices, contacts, bank transactions, and more.",
+  "auth_methods": [
+    "OAuth2"
+  ],
+  "auth_notes": "The API uses OAuth 2.0 for authentication and authorization. Custom connections also use the client credentials grant type.",
+  "search_sources": [
+    "https://www.youtube.com/watch?v=7TaWaXVq5IY",
+    "https://devblog.xero.com/saying-hello-world-to-the-xero-api-15f5ff620c40",
+    "https://developer.xero.com/documentation/api/accounting/overview",
+    "https://devblog.xero.com/growing-yc-startups-with-xeros-api-e392cc405e12"
+  ],
+  "researched_at": "2026-07-09T04:56:55.195Z",
+  "model": "exa-answer"
+}

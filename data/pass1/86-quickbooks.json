@@ -1,0 +1,48 @@
+{
+  "id": 86,
+  "name": "QuickBooks",
+  "category": "Finance & Fintech",
+  "evidence": [
+    {
+      "claim": "QuickBooks Online provides a REST-based API for integrating with its accounting software, requiring OAuth 2.0 for authentication.",
+      "url": "https://developer.intuit.com/app/developer/qbo/docs/develop"
+    },
+    {
+      "claim": "Production API access requires an app assessment, compliance with the App Partner Program, and adherence to the Developer Terms of Service.",
+      "url": "https://developer.intuit.com/app/developer/qbo/docs/get-started/partner-faq"
+    },
+    {
+      "claim": "Search citation: How to access your API key in QuickBooks Online",
+      "url": "https://www.merge.dev/blog/quickbooks-online-api-key"
+    },
+    {
+      "claim": "Search citation: QuickBooks Online API integration: what you should know",
+      "url": "https://www.merge.dev/blog/quickbooks-api"
+    }
+  ],
+  "api_notes": "The QuickBooks Online API is a REST-based framework covering a wide range of accounting entities (invoices, bills, etc.). As of 2025, it utilizes a tiered App Partner Program with usage-based pricing for data retrieval. Core data creation/update operations remain free. Premium APIs (e.g., Projects, Custom Fields, Sales Tax) require higher partner tiers.",
+  "auth_methods": [
+    "OAuth2"
+  ],
+  "buildable": "with_caveats",
+  "confidence": "high",
+  "api_breadth": "broad",
+  "access_notes": "While creating a developer account and workspace is self-serve, gaining production API access requires submitting an app assessment questionnaire and complying with the Intuit Developer Terms of Service, which includes an app review/approval process. This applies even for internal-only integrations.",
+  "one_liner": "QuickBooks is an accounting software platform that enables small businesses to manage financial transactions, invoicing, payroll, and reporting.",
+  "auth_notes": "Uses OAuth 2.0 and OpenID Connect for authentication and authorization.",
+  "blocker": "The mandatory app assessment and compliance review process for production access is the primary blocker for simple/internal use cases.",
+  "mcp_notes": "No official or well-known community MCP server was identified in the documentation. Intuit provides SDKs, Postman collections, and standard REST APIs.",
+  "api_type": [
+    "REST"
+  ],
+  "mcp": "none_found",
+  "access": "admin_approval",
+  "search_sources": [
+    "https://www.apideck.com/blog/quickbooks-api-pricing-and-the-intuit-app-partner-program",
+    "https://help.developer.intuit.com/s/question/0D54R00009olnsiSAA/how-can-i-get-production-api-access-to-my-qbo-data-if-i-dont-have-a-publicfacing-website-or-hosted-application-im-building-an-inhouse-data-integration-project-for-my-companys-data-were-building-a-data-warehouse-in-aws-and-need-some-data-from-qb",
+    "https://help.developer.intuit.com/s/topic/0TOG00000004r3dOAA/api-integration",
+    "https://developerrelations.com/talks/quickbooks-platform-for-developers/"
+  ],
+  "researched_at": "2026-07-09T04:56:48.086Z",
+  "model": "exa-answer"
+}

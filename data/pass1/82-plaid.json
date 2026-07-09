@@ -1,0 +1,48 @@
+{
+  "id": 82,
+  "name": "Plaid",
+  "category": "Finance & Fintech",
+  "auth_methods": [
+    "API key"
+  ],
+  "mcp": "official",
+  "access": "self_serve_free",
+  "api_notes": "The API is a JSON-over-HTTP RESTful service. Access requires a client_id and secret. Detailed OpenAPI specifications are provided.",
+  "api_type": [
+    "REST"
+  ],
+  "one_liner": "Plaid provides a financial data network API that enables applications to securely connect with users' bank accounts and financial institutions.",
+  "buildable": "yes",
+  "confidence": "high",
+  "auth_notes": "Authentication is performed using a client_id and secret, which can be passed in the request body or via headers. OAuth tokens are used specifically for the Plaid MCP server access.",
+  "mcp_notes": "Plaid offers an official MCP server to connect AI agents to Plaid's diagnostics and analytics tools.",
+  "blocker": null,
+  "api_breadth": "broad",
+  "evidence": [
+    {
+      "claim": "Plaid provides a comprehensive RESTful API for integrating financial data with a client_id and secret for authentication.",
+      "url": "https://plaid.com/docs/api/"
+    },
+    {
+      "claim": "Developers can obtain free Sandbox and Development environment keys via the Plaid Dashboard without immediate payment or extensive approval, though Production access is gated.",
+      "url": "https://www.youtube.com/watch?v=sGBvKDGgPjc"
+    },
+    {
+      "claim": "Plaid provides an official Model Context Protocol (MCP) server for connecting AI agents to its diagnostic and analytic tools.",
+      "url": "https://plaid.com/blog/openai-plaid-mcp/"
+    },
+    {
+      "claim": "Search citation: Plaid: Enabling all companies to build fintech solutions",
+      "url": "https://plaid.com/"
+    }
+  ],
+  "access_notes": "Developers can self-serve to get Sandbox and Development environment credentials for free. Production access requires a formal application process including company details and approval.",
+  "search_sources": [
+    "https://plaid.com/docs/quickstart/",
+    "https://plaid.com/docs/api/items/",
+    "https://www.fintegrationfs.com/post/plaid-api-vs-open-banking-apis-for-us-financial-products",
+    "https://apitracker.io/a/plaid"
+  ],
+  "researched_at": "2026-07-09T04:56:30.118Z",
+  "model": "exa-answer"
+}

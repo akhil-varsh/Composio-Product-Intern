@@ -1,0 +1,48 @@
+{
+  "id": 96,
+  "name": "Devin",
+  "category": "AI, Research & Media-native",
+  "api_notes": "The External API allows for full platform control, including spinning up Devin instances, session management, and accessing resources like playbooks and knowledge. The Devin MCP server is a distinct component for providing tools to AI agents.",
+  "evidence": [
+    {
+      "claim": "Devin is an autonomous AI software engineer designed to help engineering teams.",
+      "url": "https://docs.devin.ai/get-started/devin-intro"
+    },
+    {
+      "claim": "Developers can use Devin's External API to spin up Devin instances and integrate them into workflows.",
+      "url": "https://cognition.com/blog/devin-101-automatic-pr-reviews-with-the-devin-api"
+    },
+    {
+      "claim": "The Devin MCP server provides programmatic access to Devin's platform capabilities and requires a Devin API key.",
+      "url": "https://docs.devin.ai/work-with-devin/devin-mcp"
+    },
+    {
+      "claim": "Search citation: Devin AI Explained for Beginners (AI Coding Assistant for Software Engineers)",
+      "url": "https://www.youtube.com/watch?v=ZUw0JzZ1I2Q"
+    }
+  ],
+  "one_liner": "Devin is an autonomous AI software engineering agent capable of planning, coding, testing, and debugging software projects.",
+  "api_breadth": "broad",
+  "buildable": "yes",
+  "mcp_notes": "An official Devin MCP server exists, intended to provide AI agents with access to Devin platform capabilities (sessions, playbooks, etc.).",
+  "blocker": "Requires a paid Devin account.",
+  "api_type": [
+    "REST"
+  ],
+  "auth_notes": "Uses Bearer tokens (API keys) via Authorization headers. OAuth2 is used in the context of Devin connecting to other MCP servers, not as the primary auth for the Devin API itself.",
+  "mcp": "official",
+  "auth_methods": [
+    "Bearer token"
+  ],
+  "access": "paid_plan",
+  "confidence": "high",
+  "access_notes": "Devin is a paid service (Individual/Teams plans). Developers generate API keys from their account settings after signing up for a Devin account.",
+  "search_sources": [
+    "https://docs.devin.ai/work-with-devin/mcp",
+    "https://mcpservers.org/servers/devin/deepwiki",
+    "https://www.linkedin.com/posts/cognition-ai-labs_devin-is-now-model-context-protocol-mcp-activity-7353868386835058688-zvo2",
+    "https://medium.com/@prpatel05/a-real-world-coding-story-devin-ai-as-my-co-pilot-e1ff2ae492fa"
+  ],
+  "researched_at": "2026-07-09T04:57:38.232Z",
+  "model": "exa-answer"
+}

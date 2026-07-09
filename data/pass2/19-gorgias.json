@@ -1,0 +1,45 @@
+{
+  "id": 19,
+  "name": "Gorgias",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"paid_plan\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (broad)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (yes)"
+    }
+  ],
+  "urls_fetched": [
+    "https://docs.gorgias.com/en-US/connect-external-apps-to-gorgias-and-create-sidebar-widgets-81822",
+    "https://www.gorgias.com/blog/gorgias-mcp",
+    "https://www.gorgias.com/",
+    "https://www.merge.dev/integrations/gorgias"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:01:20.802Z"
+}

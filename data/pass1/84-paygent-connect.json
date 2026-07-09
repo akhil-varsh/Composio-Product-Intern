@@ -1,0 +1,48 @@
+{
+  "id": 84,
+  "name": "Paygent Connect",
+  "category": "Finance & Fintech",
+  "one_liner": "Paygent Connect (NMI-powered) provides a payment gateway API for processing credit card payments and managing transactions.",
+  "api_breadth": "moderate",
+  "confidence": "high",
+  "blocker": null,
+  "api_notes": "The API is documented as a collection of gateway services (Payment, Three-Step, Query) accessible via security keys. It does not include Collect.js.",
+  "auth_notes": "Authentication is performed via a security key generated in the merchant control panel.",
+  "access_notes": "A developer can generate security keys (API keys) directly within the merchant control panel settings page.",
+  "api_type": [
+    "REST"
+  ],
+  "auth_methods": [
+    "API key"
+  ],
+  "access": "self_serve_free",
+  "mcp_notes": "No official or community Model Context Protocol server was found for NMI/Paygent.",
+  "mcp": "none_found",
+  "evidence": [
+    {
+      "claim": "The NMI Customer Present Cloud API facilitates payment transactions and can be used in conjunction with other gateway services like the Payment API for follow-up transactions.",
+      "url": "https://docs.nmi.com/docs/introduction-to-the-customer-present-cloud-api"
+    },
+    {
+      "claim": "Search citation: Worldpay Developer Hub",
+      "url": "https://docs.worldpay.com/apis"
+    },
+    {
+      "claim": "Search citation: Payment Processing Integrations, APIs & SDKs | North Developer",
+      "url": "https://developer.north.com/"
+    },
+    {
+      "claim": "Search citation: Worldnet Payments | Merchant API Documentation",
+      "url": "https://developers.worldnetpayments.com/apis/merchant/"
+    }
+  ],
+  "buildable": "yes",
+  "search_sources": [
+    "https://www.vergentlms.com/api-in-lending/",
+    "https://www.cardconnect.com/launchpointe/isv-growth/guide-for-developers/",
+    "https://solidgate.com/blog/payment-api-guide/",
+    "https://www.globalpaymentsintegrated.com/en-us/apis-and-sdks/developer-resources"
+  ],
+  "researched_at": "2026-07-09T04:56:38.964Z",
+  "model": "exa-answer"
+}

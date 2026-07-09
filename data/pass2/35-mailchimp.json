@@ -1,0 +1,46 @@
+{
+  "id": 35,
+  "name": "Mailchimp",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://mailchimp.com/developer/marketing/guides/quick-start/)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://mailchimp.com/developer/marketing/ https://openapi.city/providers/mailchimp)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "community",
+      "quote": "re-ask found \"community\" (https://growthengineer.ai/mcp-servers/intuit-mailchimp)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (yes)"
+    }
+  ],
+  "urls_fetched": [
+    "https://mailchimp.com/developer/marketing/docs/fundamentals/",
+    "https://mailchimp.com/developer/marketing/",
+    "https://stackoverflow.com/questions/67202277/mailchimp-api-integration-in-php",
+    "https://mailchimp.com/developer/marketing/api/lists/"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:05:09.775Z"
+}

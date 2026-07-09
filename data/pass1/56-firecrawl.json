@@ -1,0 +1,48 @@
+{
+  "id": 56,
+  "name": "Firecrawl",
+  "category": "Data, SEO & Scraping",
+  "mcp_notes": "Firecrawl provides an official MCP server, which can be configured in MCP-compatible clients.",
+  "auth_methods": [
+    "Bearer token"
+  ],
+  "evidence": [
+    {
+      "claim": "Firecrawl provides an API to search, scrape, and interact with the web, returning LLM-ready data like Markdown or JSON.",
+      "url": "https://www.firecrawl.dev/"
+    },
+    {
+      "claim": "The API supports authentication via Bearer tokens using an API key.",
+      "url": "https://github.com/firecrawl/firecrawl"
+    },
+    {
+      "claim": "A free tier is available, allowing users to access the API without immediate payment.",
+      "url": "https://www.firecrawl.dev/blog"
+    },
+    {
+      "claim": "Search citation: Firecrawl Explained: Turning the Web into Usable Data with AI | ApiX-Drive",
+      "url": "https://apix-drive.com/en/blog/useful/firecrawl-explained"
+    }
+  ],
+  "access_notes": "Developers can sign up for a free tier or use the service in a keyless mode with monthly free credits. Higher usage tiers are available through paid plans.",
+  "mcp": "official",
+  "api_type": [
+    "REST",
+    "SDK-only"
+  ],
+  "buildable": "yes",
+  "auth_notes": "The API uses Bearer token authentication via an API key.",
+  "blocker": null,
+  "access": "self_serve_free",
+  "api_notes": "The API is broad, covering core functions like scraping, crawling, searching, and autonomous agent-based data gathering. It is accessible via REST API or official SDKs (Python, Node.js).",
+  "confidence": "high",
+  "one_liner": "Firecrawl is an API service that crawls, scrapes, and interacts with the web to provide LLM-ready data for AI agents and applications.",
+  "api_breadth": "broad",
+  "search_sources": [
+    "https://www.firecrawl.dev/blog/ai-powered-data-retrieval",
+    "https://www.firecrawl.dev/alternatives/firecrawl-vs-scrape-do",
+    "https://www.youtube.com/watch?v=eH8JdttKIdA"
+  ],
+  "researched_at": "2026-07-09T04:54:25.721Z",
+  "model": "exa-answer"
+}

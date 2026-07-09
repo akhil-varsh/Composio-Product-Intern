@@ -1,0 +1,48 @@
+{
+  "id": 83,
+  "name": "Binance",
+  "category": "Finance & Fintech",
+  "evidence": [
+    {
+      "claim": "Binance provides official documentation for its Spot APIs and streams, including REST and WebSocket interfaces.",
+      "url": "https://github.com/binance/binance-spot-api-docs"
+    },
+    {
+      "claim": "Developers generate API keys via the API Management section in their account settings to access private trading and account endpoints.",
+      "url": "https://apidog.com/blog/binance-api/"
+    },
+    {
+      "claim": "Public endpoints are accessible without authentication, while private endpoints require API key and signature verification.",
+      "url": "https://vezgo.com/blog/binance-api-cheat-sheet-for-developers/"
+    },
+    {
+      "claim": "Search citation: binance-exchange/binance-official-api-docs",
+      "url": "https://github.com/binance-exchange/binance-official-api-docs"
+    }
+  ],
+  "api_breadth": "broad",
+  "access_notes": "Developers can generate API keys directly through the API Management section of their personal Binance account settings.",
+  "mcp_notes": "No official or prominent community-maintained Model Context Protocol (MCP) server was identified in the official documentation.",
+  "mcp": "none_found",
+  "buildable": "yes",
+  "auth_notes": "Private endpoints require an API key and an HMAC SHA256 signature (the API also supports RSA and Ed25519 keys). Public endpoints can be accessed without authentication.",
+  "one_liner": "Binance provides a comprehensive API that allows developers to programmatically access market data, manage accounts, and execute cryptocurrency trades.",
+  "blocker": null,
+  "confidence": "high",
+  "access": "self_serve_free",
+  "auth_methods": [
+    "API key"
+  ],
+  "api_type": [
+    "REST"
+  ],
+  "api_notes": "The API includes comprehensive support for market data, trading (Spot), user data, and WebSocket streams. It also supports FIX protocol.",
+  "search_sources": [
+    "https://publicapis.io/binance-api",
+    "https://stackoverflow.com/questions/70079120/can-i-make-transactions-on-the-users-behalf-using-some-exchange-api-binance-c",
+    "https://github.com/binance-exchange/binance-official-api-docs/blob/master/rest-api.md",
+    "https://www.youtube.com/watch?v=UqML0bbmhPc"
+  ],
+  "researched_at": "2026-07-09T04:56:35.158Z",
+  "model": "exa-answer"
+}

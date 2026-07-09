@@ -1,0 +1,47 @@
+{
+  "id": 33,
+  "name": "LinkedIn Ads",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"partner_gated\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview?view=li-lms-2026-03)"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview?view=li-lms-2026-05)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "community",
+      "quote": "re-ask found \"community\" (https://github.com/Nuraveda-Labs/linkedin-ads-mcp)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "contradicted",
+      "corrected_value": "with_caveats",
+      "quote": "re-ask found \"with_caveats\" (https://developer.linkedin.com/product-catalog/marketing/advertising-api)"
+    }
+  ],
+  "urls_fetched": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/?view=li-lms-2026-06",
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://www.salesforge.ai/blog/linkedin-api"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:04:49.485Z"
+}

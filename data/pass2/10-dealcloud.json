@@ -1,0 +1,46 @@
+{
+  "id": 10,
+  "name": "DealCloud",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://api.docs.dealcloud.com/docs/token)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"admin_approval\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://api.docs.dealcloud.com/docs)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://growthengineer.ai/mcp-servers/intapp-celeste)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://api.docs.dealcloud.com/docs/token)"
+    }
+  ],
+  "urls_fetched": [
+    "https://www.intapp.com/dealcloud/",
+    "https://api.docs.dealcloud.com/docs/data",
+    "https://api.docs.dealcloud.com/docs/apikeys",
+    "https://api.docs.dealcloud.com/docs"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T04:59:52.393Z"
+}

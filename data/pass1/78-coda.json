@@ -1,0 +1,48 @@
+{
+  "id": 78,
+  "name": "Coda",
+  "category": "Productivity & Project Management",
+  "auth_notes": "Authentication is performed using API tokens generated in the user's account settings, used as Bearer tokens in headers.",
+  "confidence": "high",
+  "blocker": null,
+  "mcp_notes": "Coda provides an official MCP server specifically optimized for LLM usage patterns.",
+  "buildable": "yes",
+  "auth_methods": [
+    "Bearer token"
+  ],
+  "access_notes": "The Coda API is available to all users free of charge, in both free and paid workspaces, via account-generated tokens.",
+  "api_breadth": "moderate",
+  "evidence": [
+    {
+      "claim": "The Coda API is a RESTful API that allows programmatic interaction with docs, tables, and rows.",
+      "url": "https://coda.io/developers"
+    },
+    {
+      "claim": "Search citation: Coda: Your all-in-one collaborative workspace.",
+      "url": "https://coda.io/"
+    },
+    {
+      "claim": "Search citation: Coda - Tray.ai Documentation",
+      "url": "https://tray.ai/documentation/connectors/service/coda"
+    },
+    {
+      "claim": "Search citation: Getting Started Guide: Coda API",
+      "url": "https://coda.io/@oleg/getting-started-guide-coda-api"
+    }
+  ],
+  "api_type": [
+    "REST"
+  ],
+  "api_notes": "The REST API covers core doc management, including listing docs, and reading/writing table data (rows, tables, formulas). It does not currently support full-text search across all content.",
+  "mcp": "official",
+  "one_liner": "Coda is a collaborative workspace platform that combines elements of documents, spreadsheets, and applications into a single canvas.",
+  "access": "self_serve_free",
+  "search_sources": [
+    "https://coda.io/product",
+    "https://www.simonesmerilli.com/life/coda-ai",
+    "https://coda.io/resources/courses/enterprise-org-admin-workspace-setup/coda-admin-api",
+    "https://connect.superhuman.com/t/certain-files-are-not-returned-by-the-coda-api/50422"
+  ],
+  "researched_at": "2026-07-09T04:56:09.250Z",
+  "model": "exa-answer"
+}

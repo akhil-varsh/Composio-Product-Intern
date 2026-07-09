@@ -1,0 +1,50 @@
+{
+  "id": 27,
+  "name": "Telegram",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "contradicted",
+      "corrected_value": [
+        "other"
+      ],
+      "quote": "re-ask found \"other\" (https://core.telegram.org/api/auth)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://core.telegram.org/api/obtaining_api_id/)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://core.telegram.org/api)"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://core.telegram.org/api)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "community",
+      "quote": "re-ask found \"community\" (none_found)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (with_caveats)"
+    }
+  ],
+  "urls_fetched": [
+    "https://core.telegram.org/",
+    "https://pub.towardsai.net/telegram-is-quietly-becoming-the-default-front-door-for-ai-agents-e0ba57a5b681",
+    "https://devotel.com/blog/leverage-the-telegram-api-for-sales-growth-advantages-use-cases-and-automation-steps/"
+  ],
+  "urls_failed": [
+    "https://medium.com/@wk0/send-and-receive-messages-with-the-telegram-api-17de9102ab78 (HTTP 403)"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T05:02:43.163Z"
+}

@@ -1,0 +1,46 @@
+{
+  "id": 7,
+  "name": "Zoho CRM",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://www.zoho.com/crm/developer/docs/api-directory.html)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://anythingmcp.com/guides/zoho-crm-to-mcp)"
+    }
+  ],
+  "urls_fetched": [
+    "https://www.zoho.com/crm/developer/",
+    "https://www.zoho.com/crm/developer/docs/",
+    "https://www.zoho.com/crm/developer/docs/api/v8/get-related-records.html"
+  ],
+  "urls_failed": [
+    "https://medium.com/@MeetSeoExpert/zoho-crm-api-integration-with-rest-of-the-platform-6c0e8be9f326 (HTTP 403)"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T04:59:26.903Z"
+}

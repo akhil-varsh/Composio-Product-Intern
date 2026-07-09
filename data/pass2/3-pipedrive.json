@@ -1,0 +1,45 @@
+{
+  "id": 3,
+  "name": "Pipedrive",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://www.pipedrive.com/en/features/crm-api)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://pipedrive.readme.io/docs/marketplace-creating-a-proper-app)"
+    }
+  ],
+  "urls_fetched": [
+    "https://developers.pipedrive.com/docs/api/v1",
+    "https://www.pipedrive.com/en/features/crm-api",
+    "https://saleshive.com/vendors/pipedrive",
+    "https://www.merge.dev/integrations/pipedrive"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T04:58:51.222Z"
+}

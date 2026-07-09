@@ -1,0 +1,46 @@
+{
+  "id": 34,
+  "name": "GoHighLevel",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"paid_plan\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://revsetlabs.com/blog/highlevel-api-documentation/)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-use-the-highlevel-mcp-server)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://github.com/GoHighLevel/highlevel-api-sdk)"
+    }
+  ],
+  "urls_fetched": [
+    "https://help.gohighlevel.com/support/solutions/articles/48001060529-highlevel-api-documentation",
+    "https://supplygem.com/gohighlevel-developer/",
+    "https://help.gohighlevel.com/support/solutions/articles/155000007515-how-to-use-public-apis-in-agent-studio",
+    "https://community.make.com/t/go-high-level-api-2-0-upgrade/29009"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:04:59.497Z"
+}

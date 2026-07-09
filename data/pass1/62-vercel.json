@@ -1,0 +1,48 @@
+{
+  "id": 62,
+  "name": "Vercel",
+  "category": "Developer, Infra & Data platforms",
+  "auth_methods": [
+    "Bearer token"
+  ],
+  "confidence": "high",
+  "one_liner": "Vercel is a frontend cloud platform that provides a REST API for developers to manage and automate deployments, projects, and team settings.",
+  "evidence": [
+    {
+      "claim": "The Vercel REST API enables developers to manage and automate deployments, projects, teams, and more.",
+      "url": "https://marketplace.apilayer.com/vercel-api"
+    },
+    {
+      "claim": "Access to the API requires an active Vercel account, and use is governed by API Terms. Vercel may grant API Keys for access.",
+      "url": "https://vercel.com/legal/api-terms"
+    },
+    {
+      "claim": "Developers use the REST API for tasks such as deploying projects.",
+      "url": "https://github.com/vercel/vercel/discussions/8203"
+    },
+    {
+      "claim": "Search citation: Vercel Documentation",
+      "url": "https://vercel.com/docs"
+    }
+  ],
+  "buildable": "yes",
+  "api_breadth": "broad",
+  "access": "self_serve_free",
+  "api_type": [
+    "REST"
+  ],
+  "blocker": null,
+  "auth_notes": "Documentation refers to the use of tokens or credentials granted by Vercel to access the API. Bearer token authentication is the standard practice for such REST APIs.",
+  "mcp": "none_found",
+  "api_notes": "The REST API provides programmatic access to manage projects, deployments, and team settings, facilitating CI/CD workflows and automation. While the Vercel-provided link in the search results was broken [1], the API is widely recognized in developer contexts [6, 8].",
+  "mcp_notes": "Vercel documentation mentions creating MCP servers as a tool for AI agents to interact with systems, but there is no official Vercel Platform API MCP server provided by the vendor for controlling their cloud platform.",
+  "access_notes": "A developer must maintain an active Vercel account in good standing. API keys can be managed within the platform for use with the API.",
+  "search_sources": [
+    "https://vercel.com/docs/rest-api",
+    "https://www.youtube.com/watch?v=mojZpktAiYQ",
+    "https://www.aihero.dev/what-is-the-ai-sdk",
+    "https://www.youtube.com/watch?v=yLMODEUPJdU"
+  ],
+  "researched_at": "2026-07-09T04:54:54.624Z",
+  "model": "exa-answer"
+}

@@ -1,0 +1,49 @@
+{
+  "id": 71,
+  "name": "Notion",
+  "category": "Productivity & Project Management",
+  "auth_methods": [
+    "Bearer token",
+    "OAuth2"
+  ],
+  "api_notes": "The REST API provides access to core Notion objects including pages, databases, blocks, users, and comments. It allows for creating, reading, and updating content within these objects.",
+  "evidence": [
+    {
+      "claim": "The Notion API allows for programmatic interaction with databases, pages, and content within Notion.",
+      "url": "https://www.notion.com/help/guides/connect-tools-to-notion-api"
+    },
+    {
+      "claim": "Developers can create internal integrations and obtain an integration token (bearer token) for free via the Notion developer portal.",
+      "url": "https://www.mindstudio.ai/blog/notion-developer-platform-ai-agents-cli-webhooks-api"
+    },
+    {
+      "claim": "Search citation: How to Get Your Notion API Key: Integration Token Setup | SFAI Labs",
+      "url": "https://sfailabs.com/guides/how-to-get-notion-api-key"
+    },
+    {
+      "claim": "Search citation: Notion API – Full Course for Beginners",
+      "url": "https://www.youtube.com/watch?v=ec5m6t77eYM"
+    }
+  ],
+  "access_notes": "The API is available to all Notion users, including those on the free plan, at no additional cost. Developers can create internal integrations via the Notion developer hub without needing approval or a paid plan.",
+  "confidence": "high",
+  "blocker": null,
+  "access": "self_serve_free",
+  "one_liner": "Notion is a collaborative productivity platform that provides a REST API for programmatically accessing and managing pages, databases, blocks, and other workspace content.",
+  "api_breadth": "moderate",
+  "buildable": "yes",
+  "mcp_notes": "Notion has released an official MCP server (available as an npm package @notionhq/notion-mcp-server) to allow AI assistants to interact with Notion data.",
+  "auth_notes": "Internal integrations use a bearer token (Internal Integration Token) generated in the developer portal. Public integrations support OAuth2 flows.",
+  "api_type": [
+    "REST"
+  ],
+  "mcp": "official",
+  "search_sources": [
+    "https://www.notion.com/help/create-integrations-with-the-notion-api",
+    "https://www.notion.com/blog/introducing-developer-platform",
+    "https://apievangelist.com/2026/01/20/a-3rd-party-notion-api-sandbox-to-provide-a-safer-agent-sandbox/",
+    "https://www.notion.com/connections"
+  ],
+  "researched_at": "2026-07-09T04:55:37.470Z",
+  "model": "exa-answer"
+}

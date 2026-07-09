@@ -1,0 +1,49 @@
+{
+  "id": 55,
+  "name": "Apify",
+  "category": "Data, SEO & Scraping",
+  "mcp": "official",
+  "confidence": "high",
+  "buildable": "yes",
+  "blocker": null,
+  "access": "self_serve_free",
+  "api_notes": "The API is a comprehensive RESTful interface providing control over all major platform aspects, including Actors, runs, storage, and scheduling.",
+  "evidence": [
+    {
+      "claim": "Apify is a cloud-based platform for web scraping, data extraction, and automation that allows users to build and run Actors.",
+      "url": "https://www.b12.io/glossary-of-web-design-terms/apify/"
+    },
+    {
+      "claim": "The Apify API is a RESTful API that allows programmatic control of the platform, with authentication via API tokens in the header.",
+      "url": "https://docs.apify.com/api/v2"
+    },
+    {
+      "claim": "Apify provides an official Model Context Protocol (MCP) server for AI agents.",
+      "url": "https://github.com/apify/apify-mcp-server"
+    },
+    {
+      "claim": "Search citation: API integration | Platform | Apify Documentation",
+      "url": "https://docs.apify.com/platform/integrations/api"
+    }
+  ],
+  "one_liner": "Apify is a cloud-based platform that provides tools for web scraping, data extraction, and browser automation through serverless programs called Actors.",
+  "api_breadth": "broad",
+  "mcp_notes": "Apify maintains an official MCP server (mcp.apify.com) to allow AI agents to interact with the Apify platform and its Actors.",
+  "api_type": [
+    "REST"
+  ],
+  "auth_notes": "Authentication is primarily handled via secret API tokens, which can be passed as a 'Bearer' token in the Authorization header (recommended) or as a URL query parameter. Additionally, the platform supports agentic payments (x402/Skyfire) for specific use cases.",
+  "auth_methods": [
+    "API key",
+    "Bearer token"
+  ],
+  "access_notes": "Apify offers a free plan with $5 of monthly compute credits which provides access to the platform and API, with no credit card required to start.",
+  "search_sources": [
+    "https://www.youtube.com/watch?v=kHluWNkxvh0",
+    "https://apify.com/happyco/test/api",
+    "https://www.trustpilot.com/review/apify.com?page=8",
+    "https://aws.amazon.com/marketplace/pp/prodview-t3cvd2xjhfj6m"
+  ],
+  "researched_at": "2026-07-09T04:54:21.237Z",
+  "model": "exa-answer"
+}

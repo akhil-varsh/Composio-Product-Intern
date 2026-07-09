@@ -1,0 +1,47 @@
+{
+  "id": 24,
+  "name": "Lark (Larksuite)",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://open.larksuite.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/docs-v1/content/get)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://github.com/larksuite/lark-openapi-mcp/blob/main/README.md)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://open.larksuite.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/docs-v1/content/get)"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (broad)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://github.com/larksuite/lark-openapi-mcp)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://github.com/larksuite/lark-openapi-mcp/tree/refs/heads/main)"
+    }
+  ],
+  "urls_fetched": [
+    "https://www.youtube.com/watch?v=GLiZ0PvEMCE",
+    "https://github.com/larksuite/oapi-sdk-nodejs"
+  ],
+  "urls_failed": [
+    "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/directory-v1/department/filter (almost no text (JS-rendered or blocked))",
+    "https://www.larksuite.com/hc/en-US/articles/831091963734-overview-of-lark-developer (almost no text (JS-rendered or blocked))"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T05:02:10.257Z"
+}

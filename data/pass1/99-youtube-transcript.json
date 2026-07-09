@@ -1,0 +1,48 @@
+{
+  "id": 99,
+  "name": "YouTube Transcript",
+  "category": "AI, Research & Media-native",
+  "evidence": [
+    {
+      "claim": "TranscriptAPI is a managed REST API for YouTube data extraction including transcripts, search, channel listing, and playlist extraction.",
+      "url": "https://transcriptapi.com/blog/best-youtube-transcript-api-compared"
+    },
+    {
+      "claim": "The API supports Bearer token authentication and offers 100 free credits to start.",
+      "url": "https://transcriptapi.com/blog/transcriptapi-vs-serpapi"
+    },
+    {
+      "claim": "TranscriptAPI provides an official MCP server for integrating with AI assistants.",
+      "url": "https://transcriptapi.com/"
+    },
+    {
+      "claim": "Search citation: TranscriptAPI vs Supadata: YouTube API Comparison | TranscriptAPI",
+      "url": "https://transcriptapi.com/blog/transcriptapi-vs-supadata"
+    }
+  ],
+  "api_notes": "The API covers core YouTube workflow endpoints: transcript extraction, search, channel resolution, channel/playlist video listing, and latest upload monitoring.",
+  "buildable": "yes",
+  "mcp_notes": "TranscriptAPI provides an official MCP server designed for YouTube workflows, including transcript extraction and search, compatible with tools like Claude and ChatGPT.",
+  "auth_methods": [
+    "Bearer token"
+  ],
+  "mcp": "official",
+  "blocker": null,
+  "api_type": [
+    "REST"
+  ],
+  "access_notes": "Developers can sign up on the website and get 100 free credits without a credit card. Paid plans are available for higher volume.",
+  "auth_notes": "Authentication is handled via a Bearer token (API Key) passed in the Authorization header.",
+  "access": "self_serve_free",
+  "confidence": "high",
+  "one_liner": "TranscriptAPI is a hosted REST API and MCP service that provides programmatic access to YouTube transcripts, search, channels, and playlists.",
+  "api_breadth": "moderate",
+  "search_sources": [
+    "https://transcriptapi.com/blog/best-youtube-transcript-apis-compared",
+    "https://github.com/jdepoix/youtube-transcript-api",
+    "https://supadata.ai/blog/best-youtube-transcript-api",
+    "https://www.youtube.com/watch?v=znZs418fc_c"
+  ],
+  "researched_at": "2026-07-09T04:57:52.200Z",
+  "model": "exa-answer"
+}

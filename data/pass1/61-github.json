@@ -1,0 +1,50 @@
+{
+  "id": 61,
+  "name": "GitHub",
+  "category": "Developer, Infra & Data platforms",
+  "auth_methods": [
+    "OAuth2",
+    "Bearer token"
+  ],
+  "one_liner": "GitHub's public API allows developers to create integrations, retrieve data, and automate workflows across repositories, issues, pull requests, and other GitHub platform features.",
+  "evidence": [
+    {
+      "claim": "The GitHub REST API is fully described in an OpenAPI compliant document.",
+      "url": "https://docs.github.com/en/rest"
+    },
+    {
+      "claim": "The GitHub REST API provides programmatic access to repositories, issues, pull requests, users, and webhooks.",
+      "url": "https://www.getknit.dev/blog/github-api-integration-guide"
+    },
+    {
+      "claim": "Most endpoints use Authorization: Bearer and Accept: application/vnd.github+json headers.",
+      "url": "https://docs.github.com/en/rest/pulls/pulls?apiVersion=2026-03-10"
+    },
+    {
+      "claim": "Search citation: GitHub Community",
+      "url": "https://github.com/orgs/community/discussions/24604"
+    }
+  ],
+  "mcp": "none_found",
+  "auth_notes": "Authentication is primarily handled via Bearer tokens using GitHub Apps (installation tokens) or OAuth Apps (user access tokens), and Personal Access Tokens.",
+  "buildable": "yes",
+  "confidence": "high",
+  "api_type": [
+    "REST",
+    "GraphQL"
+  ],
+  "access": "self_serve_free",
+  "mcp_notes": "No official or well-known community MCP server was identified in the provided sources.",
+  "api_breadth": "broad",
+  "api_notes": "The API covers repositories, issues, pull requests, users, and webhooks. It offers both REST and GraphQL interfaces.",
+  "access_notes": "Developers can create GitHub accounts for free and generate personal access tokens or register GitHub Apps via the developer settings to access the API.",
+  "blocker": null,
+  "search_sources": [
+    "https://stackoverflow.com/questions/30827342/github-api-returned-url-meaning",
+    "https://www.youtube.com/watch?v=CJUbQ1QiBUY&vl=en",
+    "https://devactivity.com/insights/unraveling-github-copilots-api-model-discrepancy-a-hit-to-remote-developer-productivity/",
+    "https://github.com/orgs/community/discussions/113311"
+  ],
+  "researched_at": "2026-07-09T04:54:49.800Z",
+  "model": "exa-answer"
+}

@@ -1,0 +1,46 @@
+{
+  "id": 2,
+  "name": "HubSpot",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.hubspot.com/integrate-with-hubspot)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://developers.hubspot.com/ai-tools/mcp)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.hubspot.com/docs/apps/developer-platform/overview.md)"
+    }
+  ],
+  "urls_fetched": [
+    "https://developers.hubspot.com/docs/api-reference/latest/overview",
+    "https://composio.dev/content/hubspot-api-developers-overview",
+    "https://news.ycombinator.com/item?id=39908514",
+    "https://generect.com/blog/hubspot-api/"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T04:58:44.012Z"
+}

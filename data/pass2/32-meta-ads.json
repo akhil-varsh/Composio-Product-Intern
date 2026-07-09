@@ -1,0 +1,46 @@
+{
+  "id": 32,
+  "name": "Meta Ads",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "not_verifiable"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"admin_approval\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://blog.coupler.io/facebook-ads-api/)"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://www.adstellar.ai/blog/meta-ads-api)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://github.com/byadsco/meta-ads-mcp/blob/main/README.md)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://github.com/maxx3250/claude-meta-mcp)"
+    }
+  ],
+  "urls_fetched": [
+    "https://admanage.ai/blog/meta-marketing-api-challenges-and-fix",
+    "https://www.youtube.com/watch?v=2FVSTWqxHig",
+    "https://stackoverflow.com/questions/77141022/facebook-marketing-api-not-working-when-using-exactly-what-they-are-asking-for"
+  ],
+  "urls_failed": [
+    "https://developers.facebook.com/docs/marketing-apis/ (HTTP 400)"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T05:04:38.691Z"
+}

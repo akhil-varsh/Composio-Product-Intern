@@ -1,0 +1,50 @@
+{
+  "id": 30,
+  "name": "Vonage",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "contradicted",
+      "corrected_value": [
+        "Basic",
+        "JWT"
+      ],
+      "quote": "re-ask found \"Basic, JWT\" (https://developer.vonage.com/en/getting-started/concepts/authentication)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.vonage.com/en/dashboard/getting-started)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (broad)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.vonage.com/en/getting-started/overview)"
+    }
+  ],
+  "urls_fetched": [
+    "https://www.vonage.com/about-us/newsroom/press-releases/Vonage-Expands-Developer-Ecosystem-to-Accelerate-the-Next-Era-of-Enterprise-Digital-Transformation/19b6d04d-2cb0-41b7-a921-30a1cb95192a/",
+    "https://tokbox.com/developer/guides/basics/"
+  ],
+  "urls_failed": [
+    "https://www.vonage.com/communications-apis/ (HTTP 403)",
+    "https://www.youtube.com/watch?v=8Y0tUi_tFa8 (almost no text (JS-rendered or blocked))"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T05:04:00.688Z"
+}

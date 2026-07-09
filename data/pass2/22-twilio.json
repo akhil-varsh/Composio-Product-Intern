@@ -1,0 +1,46 @@
+{
+  "id": 22,
+  "name": "Twilio",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://www.twilio.com/docs/usage/requests-to-twilio.md)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://www.twilio.com/docs/usage/api)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://www.twilio.com/docs/ai/mcp)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://rhumb.dev/blog/twilio-api-autopsy)"
+    }
+  ],
+  "urls_fetched": [
+    "https://www.mo.agency/blog/what-is-twilio",
+    "https://www.twilio.com/docs/glossary/what-is-an-api",
+    "https://www.twilio.com/en-us",
+    "https://www.twilio.com/docs"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:01:48.353Z"
+}

@@ -1,0 +1,49 @@
+{
+  "id": 73,
+  "name": "Linear",
+  "category": "Productivity & Project Management",
+  "api_notes": "Linear provides a comprehensive GraphQL API that supports both querying and mutation of virtually all entities in the workspace, including support for AI agent integrations.",
+  "access_notes": "Developers can create personal API keys within their own Linear account via the settings menu without needing approval or a paid plan. Admin settings can control whether members create keys, but self-serve access is supported.",
+  "access": "self_serve_free",
+  "confidence": "high",
+  "one_liner": "Linear is a project management and issue tracking platform purpose-built for software development teams.",
+  "evidence": [
+    {
+      "claim": "Linear's public API is built using GraphQL and allows for both querying and mutating entities.",
+      "url": "https://linear.app/docs/api-and-webhooks"
+    },
+    {
+      "claim": "Authentication is supported via OAuth 2.0 or personal API keys.",
+      "url": "https://linear.app/developers"
+    },
+    {
+      "claim": "Developers can generate API keys directly from their workspace settings.",
+      "url": "https://www.merge.dev/blog/linear-api-key"
+    },
+    {
+      "claim": "Search citation: Linear – The system for product development",
+      "url": "https://linear.app/"
+    }
+  ],
+  "auth_methods": [
+    "OAuth2",
+    "API key"
+  ],
+  "buildable": "yes",
+  "api_breadth": "broad",
+  "api_type": [
+    "GraphQL"
+  ],
+  "blocker": null,
+  "mcp": "none_found",
+  "auth_notes": "Linear supports both personal API keys for individual access and OAuth 2.0 for third-party application integrations.",
+  "mcp_notes": "While the product mentions \"MCP support\" in promotional contexts, there is no evidence of an official or community Model Context Protocol server explicitly provided by the vendor at this time; it appears to be a feature of the Linear Agent product.",
+  "search_sources": [
+    "https://www.youtube.com/watch?v=pUOk5W2G66o",
+    "https://www.youtube.com/watch?v=wCaP1RKlD-E",
+    "https://medium.com/linear-app/fast-growing-startups-are-built-on-linear-74511bf96afb",
+    "https://www.gitbook.com/blog/linear-and-gitbook-knowledge-sharing"
+  ],
+  "researched_at": "2026-07-09T04:55:46.192Z",
+  "model": "exa-answer"
+}

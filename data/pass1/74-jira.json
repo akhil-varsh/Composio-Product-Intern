@@ -1,0 +1,50 @@
+{
+  "id": 74,
+  "name": "Jira",
+  "category": "Productivity & Project Management",
+  "api_type": [
+    "REST"
+  ],
+  "access_notes": "Developers can sign up for a free Jira account and generate API tokens via their Atlassian profile to access the REST API. No paid plan or formal approval is required for basic API usage.",
+  "mcp_notes": "Atlassian has released an official MCP server to allow AI agents and CLI tools to interact with Jira.",
+  "confidence": "high",
+  "api_breadth": "broad",
+  "access": "self_serve_free",
+  "auth_methods": [
+    "OAuth2",
+    "Basic",
+    "JWT"
+  ],
+  "api_notes": "The Jira Cloud platform REST API is comprehensive, covering core objects such as issues, projects, boards, workflows, and users. The Data Center version also provides a similarly extensive REST API.",
+  "buildable": "yes",
+  "blocker": null,
+  "evidence": [
+    {
+      "claim": "The Jira Cloud platform REST API provides comprehensive access to Jira resources like issues, projects, and workflows.",
+      "url": "https://developer.atlassian.com/cloud/jira/platform/rest/v2/"
+    },
+    {
+      "claim": "Developers can authenticate using API tokens (via basic auth) or OAuth 2.0.",
+      "url": "https://www.getknit.dev/blog/deep-dive-developer-guide-to-building-a-jira-api-integration"
+    },
+    {
+      "claim": "Atlassian provides an official MCP server for integrating Jira with CLI tools and AI agents.",
+      "url": "https://www.atlassian.com/software/jira"
+    },
+    {
+      "claim": "Search citation: ",
+      "url": "https://developer.atlassian.com/"
+    }
+  ],
+  "one_liner": "Jira is a project management and issue-tracking platform that provides a robust REST API for automating workflows, managing issues, and syncing data across external systems.",
+  "auth_notes": "Basic authentication (using email and an API token) is the standard for individual/server-to-server integrations. OAuth 2.0 (3LO) is used for user-delegated access. JWT is utilized for Atlassian Connect apps. Older methods like OAuth 1.0a are deprecated.",
+  "mcp": "official",
+  "search_sources": [
+    "https://developer.atlassian.com/server/jira/platform/rest/v11002/",
+    "https://www.youtube.com/watch?v=2ahOpLVcYqQ",
+    "https://community.developer.atlassian.com/t/jira-api-guidance-for-integration-with-bespoke-software/26024",
+    "https://community.developer.atlassian.com/t/very-confused-trying-to-integrate-jira-into-our-app-using-the-rest-api/50131"
+  ],
+  "researched_at": "2026-07-09T04:55:50.758Z",
+  "model": "exa-answer"
+}

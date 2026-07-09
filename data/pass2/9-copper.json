@@ -1,0 +1,47 @@
+{
+  "id": 9,
+  "name": "Copper",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"partner_gated\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "contradicted",
+      "corrected_value": "broad",
+      "quote": "re-ask found \"broad\" (https://developer.copper.com/)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "community",
+      "quote": "re-ask found \"community\" (community)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://bollardai.com/resources/copper)"
+    }
+  ],
+  "urls_fetched": [
+    "https://developer.copper.com/",
+    "https://developer.copper.com/introduction/oauth/index.html",
+    "https://developer.copper.com/introduction/oauth/flow.html",
+    "https://www.merge.dev/integrations/copper"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T04:59:41.933Z"
+}

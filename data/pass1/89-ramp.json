@@ -1,0 +1,49 @@
+{
+  "id": 89,
+  "name": "Ramp",
+  "category": "Finance & Fintech",
+  "buildable": "with_caveats",
+  "access_notes": "API access requires an existing Ramp account with admin privileges to create a developer app. Sandbox access is not self-serve and must be requested by contacting an account manager. Production access also requires an application process.",
+  "auth_notes": "Ramp uses OAuth 2.0 for secure API access. Client ID and client secret authentication for token endpoints typically uses HTTP Basic Auth.",
+  "confidence": "high",
+  "auth_methods": [
+    "OAuth2",
+    "Basic"
+  ],
+  "api_type": [
+    "REST"
+  ],
+  "mcp_notes": "Ramp provides an official Developer MCP server designed for use with AI assistants like Claude, ChatGPT, and Cursor.",
+  "blocker": "The main blockers are the requirement for an active Ramp account with admin permissions, and the non-self-serve process for provisioning a sandbox environment.",
+  "api_notes": "The API provides a comprehensive REST surface for the Ramp data model, including support for custom records and webhooks.",
+  "api_breadth": "broad",
+  "evidence": [
+    {
+      "claim": "To begin using the Ramp Developer API, you must first create a developer app to obtain your API credentials, which requires admin access.",
+      "url": "https://support.ramp.com/accessing-the-developer-api"
+    },
+    {
+      "claim": "Ramp's official developer documentation mentions an official MCP server for AI assistants.",
+      "url": "https://docs.ramp.com/developer-api/v1/overview/introduction"
+    },
+    {
+      "claim": "Search citation: Ramp API Documentation",
+      "url": "https://docs.ramp.com/developer-api/v1/build-with-ramp"
+    },
+    {
+      "claim": "Search citation: Developer Platform",
+      "url": "https://ramp.com/developer-tools"
+    }
+  ],
+  "mcp": "official",
+  "one_liner": "Ramp is a corporate card and spend management platform that provides a developer API for programmatically accessing transaction, card, and user data to build custom integrations and automations.",
+  "access": "admin_approval",
+  "search_sources": [
+    "https://www.youtube.com/watch?v=p3HpVmukUjY",
+    "https://docs.ramp.com/developer-api/v1/erp-integrations",
+    "https://docs.ramp.com/developer-api/v1/ramp-rate",
+    "https://jobs.ashbyhq.com/ramp/42527ca9-03b9-499e-a5c4-18e4245af138"
+  ],
+  "researched_at": "2026-07-09T04:57:04.921Z",
+  "model": "exa-answer"
+}

@@ -1,0 +1,49 @@
+{
+  "id": 77,
+  "name": "ClickUp",
+  "category": "Productivity & Project Management",
+  "access": "self_serve_free",
+  "buildable": "yes",
+  "confidence": "high",
+  "mcp_notes": "ClickUp provides an official, first-party MCP server to connect AI assistants with ClickUp.",
+  "one_liner": "ClickUp is a project management and productivity platform that provides a REST API for programmatically managing tasks, workflows, and workspace data.",
+  "evidence": [
+    {
+      "claim": "The ClickUp API is a REST API that lets you interact with ClickUp programmatically.",
+      "url": "https://www.youtube.com/watch?v=pRohAkwEQVk"
+    },
+    {
+      "claim": "ClickUp provides an official, first-party Model Context Protocol (MCP) server.",
+      "url": "https://developer.clickup.com/"
+    },
+    {
+      "claim": "The API documentation provides a complete reference for endpoints and payloads.",
+      "url": "https://developer.clickup.com/reference"
+    },
+    {
+      "claim": "Search citation: Public API | ClickUp",
+      "url": "https://clickup.canny.io/public-api?status=completed"
+    }
+  ],
+  "api_type": [
+    "REST"
+  ],
+  "api_breadth": "broad",
+  "blocker": null,
+  "mcp": "official",
+  "access_notes": "Developers can register an app and generate API credentials directly within their personal and workspace settings in the ClickUp interface.",
+  "auth_methods": [
+    "OAuth2",
+    "Bearer token"
+  ],
+  "api_notes": "The ClickUp API is a comprehensive REST API that allows programmatic interaction with tasks, projects, and other core ClickUp objects. Official documentation provides full reference details including endpoints and payloads.",
+  "auth_notes": "Supports OAuth2 for app integrations and personal API tokens (Bearer tokens) for individual use.",
+  "search_sources": [
+    "https://feedback.clickup.com/public-api/?category=api-settings&sort=top",
+    "https://project-management.com/clickup-api/",
+    "https://feedback.clickup.com/public-api/?category=fields-formulas-statuses&sort=new",
+    "https://www.merge.dev/integrations/clickup"
+  ],
+  "researched_at": "2026-07-09T04:56:05.056Z",
+  "model": "exa-answer"
+}

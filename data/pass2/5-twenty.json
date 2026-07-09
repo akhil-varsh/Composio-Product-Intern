@@ -1,0 +1,52 @@
+{
+  "id": 5,
+  "name": "Twenty",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "contradicted",
+      "corrected_value": [
+        "API key",
+        "OAuth2",
+        "JWT"
+      ],
+      "quote": "re-ask found \"API key, OAuth2, JWT\" (https://twentyhq-twenty.mintlify.app/developers/api/authentication)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://twentyhq-twenty.mintlify.app/developers/api/authentication)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (broad)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://github.com/twentyhq/twenty/pull/18113)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.twenty.com/developers/extend/api)"
+    }
+  ],
+  "urls_fetched": [
+    "https://docs.twenty.com/developers/extend/api",
+    "https://twenty.com/",
+    "https://dev.to/vardhaman619/my-experience-with-modern-open-source-crm-twenty-crm-2hen"
+  ],
+  "urls_failed": [
+    "https://www.youtube.com/watch?v=n4OiVp-NWMo (almost no text (JS-rendered or blocked))"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T04:59:10.614Z"
+}

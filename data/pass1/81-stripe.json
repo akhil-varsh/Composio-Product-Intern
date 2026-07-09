@@ -1,0 +1,48 @@
+{
+  "id": 81,
+  "name": "Stripe",
+  "category": "Finance & Fintech",
+  "access": "self_serve_free",
+  "mcp": "none_found",
+  "one_liner": "Stripe is a developer-focused payment processing platform that enables businesses to accept payments and manage financial transactions through its APIs.",
+  "evidence": [
+    {
+      "claim": "The Stripe API is organized around REST with predictable resource-oriented URLs and returns JSON-encoded responses.",
+      "url": "https://docs.stripe.com/api"
+    },
+    {
+      "claim": "Stripe's API spans hundreds of endpoints across various products including Payments, Billing, Connect, and Tax.",
+      "url": "https://www.apideck.com/blog/introduction-to-the-stripe-api"
+    },
+    {
+      "claim": "Search citation: Stripe Integration: Setting Up & Understanding Stripe's API - Free Course Preview | Part 1",
+      "url": "https://www.youtube.com/watch?v=Sh_enHD6ssI"
+    },
+    {
+      "claim": "Search citation: How API changes flow into Stripe's developer products | Stripe Dot Dev Blog",
+      "url": "https://stripe.dev/blog/how-api-changes-flow-into-stripes-developer-products"
+    }
+  ],
+  "api_breadth": "broad",
+  "blocker": null,
+  "api_notes": "The API is organized around REST, uses JSON-encoded responses, and offers both v1 and v2 namespaces. It provides extensive SDKs and is supported by OpenAPI specifications.",
+  "api_type": [
+    "REST"
+  ],
+  "mcp_notes": "There is no official or well-known community MCP server provided by Stripe. Stripe focuses on OpenAPI specifications and SDKs for its developer integrations.",
+  "auth_methods": [
+    "Bearer token"
+  ],
+  "auth_notes": "Stripe uses API keys (sent as Bearer tokens in the Authorization header) to authenticate requests.",
+  "confidence": "high",
+  "access_notes": "Developers can sign up for a Stripe account and access API credentials in test mode immediately via a self-serve process.",
+  "buildable": "yes",
+  "search_sources": [
+    "https://stripe.com/resources/more/payment-application-program-interfaces-apis",
+    "https://kenneth.io/post/insights-from-building-stripes-developer-platform-and-api-developer-experience-part-1",
+    "https://www.linkedin.com/posts/gaurav-agentic_ive-read-stripes-api-docs-4-times-this-activity-7404175117649403904-8pze",
+    "https://www.youtube.com/watch?v=tPIv5q4mt3E"
+  ],
+  "researched_at": "2026-07-09T04:56:25.421Z",
+  "model": "exa-answer"
+}

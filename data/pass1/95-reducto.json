@@ -1,0 +1,49 @@
+{
+  "id": 95,
+  "name": "Reducto",
+  "category": "AI, Research & Media-native",
+  "access": "self_serve_free",
+  "blocker": null,
+  "confidence": "high",
+  "api_type": [
+    "REST",
+    "SDK-only"
+  ],
+  "api_breadth": "broad",
+  "auth_methods": [
+    "Bearer token"
+  ],
+  "mcp_notes": "Reducto provides an official Model Context Protocol (MCP) server for integration with AI agent workflows.",
+  "evidence": [
+    {
+      "claim": "Reducto provides a complete toolkit for classification, parsing, extraction, splitting, editing, and workflow orchestration via a REST API.",
+      "url": "https://docs.reducto.ai/agent-guide"
+    },
+    {
+      "claim": "Reducto integrates directly into AI agent workflows via the MCP server.",
+      "url": "https://docs.reducto.ai/overview"
+    },
+    {
+      "claim": "Search citation: Parse | Turn Any Document into Structured Data | Reducto",
+      "url": "https://reducto.ai/parse"
+    },
+    {
+      "claim": "Search citation: Reducto: The Agentic Document Platform for AI Teams",
+      "url": "https://reducto.ai/"
+    }
+  ],
+  "mcp": "official",
+  "auth_notes": "Authentication is performed via the Authorization: Bearer $REDUCTO_API_KEY header.",
+  "api_notes": "The API provides a comprehensive set of endpoints for the full document lifecycle including parsing, extraction, splitting, classification, editing, and pipeline orchestration. SDKs exist for Python, Node.js, and Go, alongside direct REST support.",
+  "access_notes": "Developers can create a free account at studio.reducto.ai to generate API keys.",
+  "one_liner": "Reducto is an agentic document platform that provides a toolkit for classification, parsing, extraction, splitting, and editing of documents into structured data for AI teams.",
+  "buildable": "yes",
+  "search_sources": [
+    "https://www.youtube.com/watch?v=QBC_cViA7j8",
+    "https://reducto.ai/blog/document-api",
+    "https://reducto.ai/blog/build-vs-buy-ai-document-ingestion",
+    "https://www.linkedin.com/posts/asit-sahoo_reducto-the-agentic-document-platform-for-activity-7354545457202679808-th0n"
+  ],
+  "researched_at": "2026-07-09T04:57:33.552Z",
+  "model": "exa-answer"
+}

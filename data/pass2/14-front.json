@@ -1,0 +1,45 @@
+{
+  "id": 14,
+  "name": "Front",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://dev.frontapp.com/me/docs/authentication)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://help.front.com/en/articles/2482)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://dev.frontapp.com/docs/partnering-with-front)"
+    }
+  ],
+  "urls_fetched": [
+    "https://dev.frontapp.com/docs/welcome",
+    "https://help.front.com/en/articles/2482",
+    "https://community.front.com/api-news-updates-40",
+    "https://community.front.com/developers-36/index2.html"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:00:39.986Z"
+}

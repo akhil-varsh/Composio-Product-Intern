@@ -94,6 +94,12 @@ function main() {
   for (const v of verifications) {
     const rec = finalById.get(v.id);
     if (!rec) continue;
+    (rec as any).verified = {
+      confirmed: v.fields.filter((f) => f.verdict === "confirmed").length,
+      contradicted: v.fields.filter((f) => f.verdict === "contradicted").length,
+      not_verifiable: v.fields.filter((f) => f.verdict === "not_verifiable").length,
+      dead_urls: v.urls_failed.length,
+    };
     for (const f of v.fields) {
       if (f.verdict === "confirmed") confirmed++;
       else if (f.verdict === "not_verifiable") notVerifiable++;

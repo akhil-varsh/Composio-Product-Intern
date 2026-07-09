@@ -1,0 +1,50 @@
+{
+  "id": 70,
+  "name": "Sentry",
+  "category": "Developer, Infra & Data platforms",
+  "api_type": [
+    "REST"
+  ],
+  "one_liner": "Sentry provides error tracking and application performance monitoring software for developers.",
+  "evidence": [
+    {
+      "claim": "Sentry provides a public REST API for programmatic access to the platform.",
+      "url": "https://docs.sentry.io/api/"
+    },
+    {
+      "claim": "The REST API uses Bearer token authentication.",
+      "url": "https://sentry.io/"
+    },
+    {
+      "claim": "Developers can create internal integrations in their Sentry settings to get API tokens for free.",
+      "url": "https://blog.sentry.io/customize-your-sentry-workflow-a-sample-internal-integration/"
+    },
+    {
+      "claim": "Search citation: Public Integrations",
+      "url": "https://docs.sentry.io/integrations/integration-platform/public-integration/"
+    }
+  ],
+  "confidence": "high",
+  "access_notes": "Developers can create internal integrations or personal auth tokens directly from their account settings to access the API for free.",
+  "mcp_notes": "Sentry provides an official MCP server for agent-based access to the platform.",
+  "api_breadth": "broad",
+  "api_notes": "The REST API provides extensive control over Sentry resources including organizations, teams, issues, events, releases, and monitoring.",
+  "auth_notes": "The API supports Bearer tokens (via personal auth tokens or internal integrations), OAuth2 (for public integrations), and JWT (for specific authorization flows).",
+  "mcp": "official",
+  "blocker": null,
+  "auth_methods": [
+    "Bearer token",
+    "OAuth2",
+    "JWT"
+  ],
+  "access": "self_serve_free",
+  "buildable": "yes",
+  "search_sources": [
+    "https://develop.sentry.dev/backend/api/public/",
+    "https://github.com/getsentry/sentry/issues/85534",
+    "https://stackoverflow.com/questions/73666362/need-help-to-understand-the-documentation-of-sentry-api",
+    "https://dev.to/aws/ai-agents-are-your-apis-biggest-consumer-do-they-care-about-good-design-31l2"
+  ],
+  "researched_at": "2026-07-09T04:55:32.827Z",
+  "model": "exa-answer"
+}

@@ -1,0 +1,43 @@
+{
+  "id": 28,
+  "name": "WhatsApp Business",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "not_verifiable"
+    },
+    {
+      "field": "api_type",
+      "verdict": "not_verifiable"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "not_verifiable"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "community",
+      "quote": "re-ask found \"community\" (https://github.com/fredshred7/whatsapp-mcp-server)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.facebook.com/)"
+    }
+  ],
+  "urls_fetched": [
+    "https://whatsappbusiness.com/developers/developer-hub/",
+    "https://medium.com/@hamzas2401/how-i-registered-my-whatsapp-business-number-on-meta-b175a290a451",
+    "https://www.youtube.com/watch?v=2C99NvvOg_k",
+    "https://www.youtube.com/watch?v=ROt9sXIQDm4"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:03:36.167Z"
+}

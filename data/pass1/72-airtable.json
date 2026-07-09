@@ -1,0 +1,49 @@
+{
+  "id": 72,
+  "name": "Airtable",
+  "category": "Productivity & Project Management",
+  "api_notes": "The API provides full CRUD functionality for records, and meta-data API options allow for managing tables, fields, and bases. It is well-documented on a per-base basis.",
+  "confidence": "high",
+  "blocker": null,
+  "api_type": [
+    "REST"
+  ],
+  "mcp": "none_found",
+  "mcp_notes": "No official or well-known community MCP server was found in the provided sources.",
+  "one_liner": "Airtable is a cloud-based, low-code platform that combines spreadsheet-like interface simplicity with the functionality of a relational database.",
+  "auth_notes": "Airtable uses personal access tokens (Bearer tokens) and OAuth2. Legacy API keys have been deprecated.",
+  "evidence": [
+    {
+      "claim": "Airtable's API allows you to create, read, update, and delete records, and provides access to metadata about bases and tables.",
+      "url": "https://www.airtable.com/guides/scale/using-airtable-api"
+    },
+    {
+      "claim": "Airtable supports personal access tokens and OAuth for authentication.",
+      "url": "https://community.airtable.com/development-apis-11/getting-started-with-the-api-from-3rd-party-framework-4315"
+    },
+    {
+      "claim": "Search citation: Exploring Airtable’s New API",
+      "url": "https://www.youtube.com/watch?v=69VJHAfKABk"
+    },
+    {
+      "claim": "Search citation: What is Airtable? [Ultimate Guide 2025]",
+      "url": "https://blog.boldtech.dev/what-is-airtable/"
+    }
+  ],
+  "auth_methods": [
+    "OAuth2",
+    "Bearer token"
+  ],
+  "access_notes": "Users can generate personal access tokens or OAuth integrations themselves through the Airtable developer hub on a free plan.",
+  "buildable": "yes",
+  "api_breadth": "broad",
+  "access": "self_serve_free",
+  "search_sources": [
+    "https://community.airtable.com/development-apis-11/regarding-airtable-api-key-deprecation-and-the-use-of-external-services-in-scripts-and-automations-4078",
+    "https://apievangelist.com/2017/07/11/each-airtable-datastore-comes-with-complete-api-and-developer-portal/",
+    "https://community.airtable.com/other-questions-13/what-is-api-and-why-do-i-need-it-14884",
+    "https://community.airtable.com/fid-11/tid-5448"
+  ],
+  "researched_at": "2026-07-09T04:55:41.601Z",
+  "model": "exa-answer"
+}

@@ -1,0 +1,47 @@
+{
+  "id": 1,
+  "name": "Salesforce",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://architect.salesforce.com/docs/architect/fundamentals/guide/platform-transformation)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.html)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (with_caveats)"
+    }
+  ],
+  "urls_fetched": [
+    "https://www.getknit.dev/blog/salesforce-api-integration-in-depth",
+    "https://architect.salesforce.com/docs/architect/decision-guides/guide/data-integration.html",
+    "https://developer.salesforce.com/docs/apis"
+  ],
+  "urls_failed": [
+    "https://medium.com/geekculture/salesforce-apis-and-integration-capabilities-the-pocket-guide-2a1a8e97603d (HTTP 403)"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T04:58:31.247Z"
+}

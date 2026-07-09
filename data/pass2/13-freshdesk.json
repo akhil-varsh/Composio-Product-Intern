@@ -1,0 +1,46 @@
+{
+  "id": 13,
+  "name": "Freshdesk",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.freshdesk.com/api/v1/)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"paid_plan\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.freshdesk.com/api/)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://support.freshdesk.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk-eap-)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.freshdesk.com/api/)"
+    }
+  ],
+  "urls_fetched": [
+    "https://developer.freshdesk.com/api/v1",
+    "https://community.freshworks.com/api-and-webhooks-11406/freshdesk-api-for-free-users-available-35254",
+    "https://support.freshdesk.com/support/solutions/articles/215517-how-to-find-your-api-key",
+    "https://www.merge.dev/integrations/freshdesk"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:00:28.525Z"
+}

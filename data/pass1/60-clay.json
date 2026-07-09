@@ -1,0 +1,46 @@
+{
+  "id": 60,
+  "name": "Clay",
+  "category": "Data, SEO & Scraping",
+  "api_type": [
+    "none"
+  ],
+  "buildable": "blocked",
+  "api_breadth": "none",
+  "mcp": "official",
+  "one_liner": "Clay is a GTM (Go-To-Market) automation platform that uses AI and a spreadsheet-like interface to enrich, research, and orchestrate prospect data for sales and marketing teams.",
+  "access_notes": "Clay does not offer a public API for developers to programmatically access or manipulate its platform, despite providing an \"HTTP API\" feature within their workflow builder that allows Clay to call external third-party APIs.",
+  "evidence": [
+    {
+      "claim": "As of today, clay is a purely graphical tool and does not offer a public API.",
+      "url": "https://florian-martens.medium.com/does-clay-have-an-api-no-but-theres-pipe0-6a37300529f6"
+    },
+    {
+      "claim": "The HTTP API feature in Clay is for making outbound requests to external tools, not for external access to Clay.",
+      "url": "https://university.clay.com/docs/http-api-integration-overview"
+    },
+    {
+      "claim": "Search citation: ",
+      "url": "https://www.clay.com/glossary/api"
+    },
+    {
+      "claim": "Search citation: Clay | Build systems to grow revenue",
+      "url": "https://www.clay.com/"
+    }
+  ],
+  "api_notes": "The product features an 'HTTP API' integration tool that allows users to make outbound requests to other platforms from within a Clay workflow, but there is no public developer API for external systems to interact with the Clay platform itself.",
+  "mcp_notes": "Clay provides a 'Clay MCP' resource, though it is described in the context of connecting a Clay workspace to AI tools.",
+  "confidence": "high",
+  "access": "no_public_api",
+  "blocker": "Clay is a graphical interface tool that does not expose its internal platform functionality through a public API for external applications.",
+  "auth_methods": [],
+  "auth_notes": "Clay provides an internal API key for accessing native Clay-based integrations, but this is not for a public developer API. Outbound HTTP requests within Clay workflows support various authentication methods for the external services being called.",
+  "search_sources": [
+    "https://www.vanderbuild.co/blog/what-is-clay-and-how-can-it-help-you",
+    "https://university.clay.com/docs/guide-find-clay-api-key",
+    "https://www.youtube.com/watch?v=HqdvpIGiOz4",
+    "https://www.youtube.com/watch?v=uD4Aidlm2Gs"
+  ],
+  "researched_at": "2026-07-09T04:54:45.245Z",
+  "model": "exa-answer"
+}

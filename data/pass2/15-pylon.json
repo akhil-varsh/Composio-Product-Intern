@@ -1,0 +1,48 @@
+{
+  "id": 15,
+  "name": "Pylon",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "contradicted",
+      "corrected_value": "self_serve_free",
+      "quote": "re-ask found \"self_serve_free\" (https://app.getpylon.com/docs/api)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://app.getpylon.com/docs/api)"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "contradicted",
+      "corrected_value": "broad",
+      "quote": "re-ask found \"broad\" (https://apis.io/providers/pylon/)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://docs.usepylon.com/pylon-docs/integrations/pylon-mcp)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://app.getpylon.com/docs/api)"
+    }
+  ],
+  "urls_fetched": [
+    "https://docs.usepylon.com/pylon-docs/developer/api",
+    "https://www.usepylon.com/",
+    "https://docs.usepylon.com/pylon-docs",
+    "https://docs.usepylon.com/pylon-docs/knowledge-base/search"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:00:50.613Z"
+}

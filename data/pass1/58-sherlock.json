@@ -1,0 +1,46 @@
+{
+  "id": 58,
+  "name": "Sherlock",
+  "category": "Data, SEO & Scraping",
+  "auth_methods": [],
+  "api_breadth": "none",
+  "access_notes": "The core Sherlock project is a local command-line interface (CLI) tool and does not provide a public API for developers. Third-party integrations, such as the one on Apify, may offer APIs, but these are separate services not maintained by the Sherlock Project.",
+  "buildable": "blocked",
+  "mcp_notes": "The core project does not provide an MCP server. A third-party Apify wrapper for Sherlock exists that may support MCP, but this is not an official project offering.",
+  "confidence": "high",
+  "blocker": "The core project is a CLI tool and does not expose a public API; it is not designed for programmatic access.",
+  "auth_notes": "The project does not have a public API, therefore it has no authentication methods.",
+  "access": "no_public_api",
+  "one_liner": "Sherlock is an open-source command-line tool designed to hunt down social media accounts by username across hundreds of social networks.",
+  "api_notes": "The official project is a CLI tool. There is no official public API. The mentioned Apify integration is a third-party wrapper and not part of the Sherlock project. Another referenced product, CloudFerro's Sherlock, is a separate AI service unrelated to this project.",
+  "mcp": "none_found",
+  "api_type": [
+    "none"
+  ],
+  "evidence": [
+    {
+      "claim": "Sherlock is primarily a CLI tool; it does not provide an official API.",
+      "url": "https://github.com/bellingcat/toolkit/blob/main/gitbook/tools/sherlock/README.md"
+    },
+    {
+      "claim": "A feature request for a REST API was closed by the maintainer, stating that a web API is not something they will be doing with the current version.",
+      "url": "https://github.com/sherlock-project/sherlock/issues/129"
+    },
+    {
+      "claim": "Apify provides a third-party wrapper (Actor) for Sherlock, which is distinct from the core open-source project.",
+      "url": "https://apify.com/misceres/sherlock"
+    },
+    {
+      "claim": "Search citation: sherlock-project/sherlock",
+      "url": "https://github.com/sherlock-project/sherlock"
+    }
+  ],
+  "search_sources": [
+    "https://github.com/sherlock-project/sherlock/issues/1832",
+    "https://0dayscyber.medium.com/how-hackers-find-anyone-using-sherlock-osint-basics-31030aeafa74",
+    "https://github.com/mitmedialab/sherlock-project",
+    "https://cloudferro.com/blog/how-to-use-cloudferro-ai-hub-sherlock/"
+  ],
+  "researched_at": "2026-07-09T04:54:35.572Z",
+  "model": "exa-answer"
+}

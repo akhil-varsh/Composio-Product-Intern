@@ -1,0 +1,46 @@
+{
+  "id": 6,
+  "name": "Podio",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://rollout.com/integration-guides/podio/api-essentials)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (broad)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (official)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://emergent.sh/integrations/podio)"
+    }
+  ],
+  "urls_fetched": [
+    "https://developers.podio.com/index/faq",
+    "https://developers.podio.com/index/api",
+    "https://developers.podio.com/",
+    "https://stackoverflow.com/questions/39688274/podio-api-key-after-leaving-workspace"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T04:59:19.692Z"
+}

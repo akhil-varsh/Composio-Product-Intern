@@ -1,0 +1,46 @@
+{
+  "id": 11,
+  "name": "Zendesk",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.zendesk.com/api-reference/introduction/security-and-auth/)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.zendesk.com/api-reference/)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "community",
+      "quote": "re-ask found \"community\" (https://support.zendesk.com/hc/en-us/articles/10497779528730-Connecting-to-MCP-servers-and-using-MCP-tools-in-action-flows-EAP, https://www.zendesk.co.uk/blog/zip2-revolutionizing-service-with-the-zendesk-ai-mcp-client/)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://www.merge.dev/blog/zendesk-mcp-cursor)"
+    }
+  ],
+  "urls_fetched": [
+    "https://developer.zendesk.com/api-reference/",
+    "https://www.getmacha.com/blog/zendesk-api-explained",
+    "https://developer.zendesk.com/documentation/",
+    "https://developer.zendesk.com/api-reference/introduction/introduction/"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:00:03.306Z"
+}

@@ -1,0 +1,47 @@
+{
+  "id": 26,
+  "name": "Discord",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.discord.com/developers/reference)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "community",
+      "quote": "re-ask found \"community\" (https://github.com/jhm1909/discord-mcp, https://github.com/PaSympa/discord-mcp, https://github.com/BennettSchwartz/discord-mcp, https://github.com/barryyip0625/MCP-Discord, https://github.com/sushi-dev55/discord-mcp, https://registry.npmjs.org/discord-mcp, https://github.com/gregatryanconsultingai/discord-mcp-plus, https://github.com/rayenking/discord-mcp)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://github.com/yuniruyuni/n8n-nodes-discord)"
+    }
+  ],
+  "urls_fetched": [
+    "https://docs.discord.com/developers/reference",
+    "https://github.com/discord/discord-api-docs/discussions/3857"
+  ],
+  "urls_failed": [
+    "https://support-dev.discord.com/hc/en-us/articles/8562894815383-Discord-Developer-Terms-of-Service (HTTP 403)",
+    "https://www.youtube.com/watch?v=CHvUp1rynek (almost no text (JS-rendered or blocked))"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T05:02:27.195Z"
+}

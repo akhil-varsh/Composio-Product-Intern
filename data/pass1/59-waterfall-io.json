@@ -1,0 +1,48 @@
+{
+  "id": 59,
+  "name": "Waterfall.io",
+  "category": "Data, SEO & Scraping",
+  "access": "self_serve_free",
+  "api_notes": "The API is RESTful and provides endpoints for Prospector, Contact Enrichment, Phone Enrichment, and Job Changes.",
+  "confidence": "high",
+  "api_breadth": "moderate",
+  "auth_methods": [
+    "API key"
+  ],
+  "one_liner": "Waterfall.io is a B2B data orchestration platform that aggregates multiple data vendors via a single API to provide contact and company enrichment.",
+  "auth_notes": "The API uses a custom header 'x-api-key' for authentication.",
+  "mcp_notes": "No official or well-known community MCP server was found in the provided sources.",
+  "blocker": null,
+  "buildable": "yes",
+  "access_notes": "The API documentation provides instructions for direct use of their API, and the platform advertises usage-based pricing with no hidden fees, implying self-serve access.",
+  "evidence": [
+    {
+      "claim": "Waterfall.io provides a REST API for contact/company enrichment and prospecting.",
+      "url": "https://www.waterfall.io/"
+    },
+    {
+      "claim": "Search citation: Use Waterfall Enrichment – Apollo",
+      "url": "https://knowledge.apollo.io/hc/en-us/articles/34071121664781-Use-Waterfall-Enrichment"
+    },
+    {
+      "claim": "Search citation: Waterfall.io",
+      "url": "https://www.linkedin.com/company/waterfall-io"
+    },
+    {
+      "claim": "Search citation: The TRUTH about Waterfall Enrichment - YouTube",
+      "url": "https://www.youtube.com/watch?v=HltNPIFED40"
+    }
+  ],
+  "api_type": [
+    "REST"
+  ],
+  "mcp": "none_found",
+  "search_sources": [
+    "https://www.cleanlist.ai/product/waterfall-enrichment",
+    "https://help.nightfall.ai/developer-api/introduction/overview",
+    "https://developer.salesintel.io/salesintel-api-documentation/company-apis",
+    "https://coresignal.com/blog/waterfall-enrichment/"
+  ],
+  "researched_at": "2026-07-09T04:54:39.716Z",
+  "model": "exa-answer"
+}

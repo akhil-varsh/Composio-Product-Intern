@@ -1,0 +1,46 @@
+{
+  "id": 18,
+  "name": "Help Scout",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"paid_plan\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "contradicted",
+      "corrected_value": "broad",
+      "quote": "re-ask found \"broad\" (https://developer.helpscout.com/)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (none_found)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.helpscout.com/mailbox-api/overview/authentication/)"
+    }
+  ],
+  "urls_fetched": [
+    "https://docs.helpscout.com/article/1140-mailbox-api",
+    "https://developer.helpscout.com/docs-api/",
+    "https://developer.helpscout.com/",
+    "https://www.stitchflow.com/user-management/help-scout/api"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:01:15.051Z"
+}

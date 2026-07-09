@@ -1,0 +1,46 @@
+{
+  "id": 12,
+  "name": "Intercom",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.intercom.com/docs/build-an-integration/learn-more/authentication)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.intercom.com/docs/build-an-integration/getting-started)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://github.com/intercom/intercom-openapi)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://developers.intercom.com/docs/guides/mcp.md)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/setting-up-oauth, https://www.scalekit.com/blog/intercom-mcp-vs-api, https://truto.one/blog/how-do-i-integrate-with-the-intercom-api-2026-architecture-guide, https://developers.intercom.com/docs)"
+    }
+  ],
+  "urls_fetched": [
+    "https://developers.intercom.com/docs/build-an-integration/learn-more/rest-apis",
+    "https://www.intercom.com/blog/introducing-the-fin-api-platform/",
+    "https://www.youtube.com/watch?v=lFI6N0LMcxI",
+    "https://www.intercom.com/"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:00:17.482Z"
+}

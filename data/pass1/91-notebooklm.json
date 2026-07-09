@@ -1,0 +1,48 @@
+{
+  "id": 91,
+  "name": "NotebookLM",
+  "category": "AI, Research & Media-native",
+  "auth_methods": [
+    "Bearer token"
+  ],
+  "api_type": [
+    "REST"
+  ],
+  "api_notes": "The API is part of the NotebookLM Enterprise offering and covers core notebook management tasks like creation, retrieval, listing, deletion, and sharing.",
+  "one_liner": "NotebookLM is an AI-powered research assistant that analyzes documents to generate insights, summaries, and audio overviews, with an enterprise API for programmatic notebook management.",
+  "blocker": "The API is restricted to enterprise-licensed users and requires administrative configuration in Google Cloud; it is not a self-serve developer API.",
+  "confidence": "high",
+  "access": "paid_plan",
+  "buildable": "with_caveats",
+  "auth_notes": "Uses OAuth2 bearer tokens via gcloud authentication.",
+  "mcp": "community",
+  "api_breadth": "moderate",
+  "mcp_notes": "There is no official vendor-provided MCP server, but community-maintained options (e.g., notebooklm-mcp-cli) exist.",
+  "access_notes": "Requires an enterprise agreement, specifically a Gemini Enterprise or Education Premium add-on license, and admin-level setup in a Google Cloud project.",
+  "evidence": [
+    {
+      "claim": "The NotebookLM Enterprise API allows programmatic notebook management including creation, retrieval, and sharing.",
+      "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks"
+    },
+    {
+      "claim": "Access to the API requires a paid enterprise license (Gemini Enterprise or Education Premium).",
+      "url": "https://cloud.google.com/resources/notebooklm-enterprise"
+    },
+    {
+      "claim": "There is no public consumer API for NotebookLM; it is exclusively for enterprise customers.",
+      "url": "https://web-clipper-for-notebooklm.com/blog/notebooklm-api"
+    },
+    {
+      "claim": "Search citation: NotebookLM API in 2026: Official Enterprise API, Limits, and Alternatives | AutoContent API Blog",
+      "url": "https://autocontentapi.com/blog/does-notebooklm-have-an-api"
+    }
+  ],
+  "search_sources": [
+    "https://www.youtube.com/watch?v=tXZlegQhV6Q",
+    "https://discuss.ai.google.dev/t/how-to-access-notebooklm-via-api/5084?page=2",
+    "https://developers.google.com/apis-explorer",
+    "https://support.google.com/gemini/thread/407241220/gemini-enterprise-notebooklm-api-fails-to-find-a-file-that-exists-in-a-source-notebook?hl=en"
+  ],
+  "researched_at": "2026-07-09T04:57:14.108Z",
+  "model": "exa-answer"
+}

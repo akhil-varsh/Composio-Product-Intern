@@ -1,0 +1,49 @@
+{
+  "id": 68,
+  "name": "MongoDB Atlas",
+  "category": "Developer, Infra & Data platforms",
+  "mcp": "none_found",
+  "confidence": "high",
+  "auth_methods": [
+    "OAuth2",
+    "API key"
+  ],
+  "auth_notes": "Supports OAuth2 (via service account access tokens) and API key (HTTP Digest) authentication. API requests also require IP access list configuration.",
+  "blocker": "None. API keys and service accounts can be generated self-serve for free accounts.",
+  "mcp_notes": "No official or well-known community Model Context Protocol (MCP) server was found. The documentation provides OpenAPI specifications.",
+  "buildable": "yes",
+  "evidence": [
+    {
+      "claim": "The Atlas Administration API allows developers to programmatically manage administrative tasks and resources in MongoDB Atlas.",
+      "url": "https://www.mongodb.com/docs/atlas/api/"
+    },
+    {
+      "claim": "Developers can authenticate with OAuth2 service account tokens or API keys, and must configure IP access lists.",
+      "url": "https://www.mongodb.com/docs/atlas/configure-api-access/"
+    },
+    {
+      "claim": "The Atlas Administration API is a versioned REST API.",
+      "url": "https://www.mongodb.com/docs/api/"
+    },
+    {
+      "claim": "Search citation: Atlas Administration API Reference - Atlas - MongoDB Docs",
+      "url": "https://www.mongodb.com/docs/atlas/api/atlas-admin-api-ref/"
+    }
+  ],
+  "api_breadth": "broad",
+  "access": "self_serve_free",
+  "one_liner": "MongoDB Atlas is a cloud database platform that provides a RESTful administration API for programmatically managing administrative resources like projects, clusters, and users.",
+  "access_notes": "Developers can sign up for a free Atlas account and generate API keys or service account tokens through the Atlas web interface themselves. Administrative actions performed via the API are subject to billing if they incur charges.",
+  "api_type": [
+    "REST"
+  ],
+  "api_notes": "The Atlas Administration API covers management of most Atlas administrative resources (projects, clusters, users, etc.). Additional APIs like the Embedding and Reranking API are also available. Note that App Services Data API has reached End-of-Life.",
+  "search_sources": [
+    "https://blog.postman.com/a-better-developer-experience-with-the-mongodb-atlas-data-api/",
+    "https://www.youtube.com/watch?v=aEqPtv3KLuw",
+    "https://www.prnewswire.com/news-releases/mongodb-announces-four-new-ai-powered-capabilities-to-improve-developer-productivity-and-accelerate-application-modernization-301938565.html",
+    "https://www.youtube.com/watch?v=aqJLpXbqrc0"
+  ],
+  "researched_at": "2026-07-09T04:55:22.895Z",
+  "model": "exa-answer"
+}

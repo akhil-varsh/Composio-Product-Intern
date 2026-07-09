@@ -1,0 +1,45 @@
+{
+  "id": 4,
+  "name": "Attio",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://github.com/api-evangelist/attio)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://attio.com/platform/developers)"
+    }
+  ],
+  "urls_fetched": [
+    "https://attio.com/platform/developers",
+    "https://attio.com/legal/attio-developer-terms",
+    "https://attio.com/",
+    "https://attio.com/blog/meet-the-attio-developer-platform"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T04:58:58.622Z"
+}

@@ -1,0 +1,48 @@
+{
+  "id": 94,
+  "name": "Consensus",
+  "category": "AI, Research & Media-native",
+  "auth_methods": [
+    "API key"
+  ],
+  "access": "admin_approval",
+  "api_notes": "The documented API is narrow, primarily exposing a quick search endpoint for research papers.",
+  "api_type": [
+    "REST"
+  ],
+  "mcp_notes": "No official or well-known community Model Context Protocol (MCP) server was found for Consensus.",
+  "blocker": "The API access is gated behind an application and custom-quote process, and is not available via self-serve sign-up.",
+  "api_breadth": "narrow",
+  "access_notes": "Access is gated; the API is available by application only, requiring users to request access for a custom quote.",
+  "auth_notes": "Authentication uses an API key (passed via the x-api-key header).",
+  "confidence": "high",
+  "one_liner": "Consensus is a research tool that provides an API for programmatically searching and retrieving peer-reviewed academic paper metadata and citations.",
+  "buildable": "with_caveats",
+  "evidence": [
+    {
+      "claim": "The Consensus API is available by application only.",
+      "url": "https://consensus.app/home/api/"
+    },
+    {
+      "claim": "The API uses an x-api-key header for authentication.",
+      "url": "https://docs.consensus.app/reference/v1_quick_search"
+    },
+    {
+      "claim": "Search citation: How to Access Consensus API Documentation",
+      "url": "https://support.goconsensus.com/consensus-api-documents"
+    },
+    {
+      "claim": "Search citation: What Is Consensus AI? 📚 Fast & Credible Research (Obsidian + Zotero)",
+      "url": "https://www.youtube.com/watch?v=ZuON_ODs5Eo"
+    }
+  ],
+  "mcp": "none_found",
+  "search_sources": [
+    "https://www.useparagon.com/learn/build-vs-buy-authentication-for-integrations/",
+    "https://docs.constructor.com/docs/integrating-with-constructor-retrieving-results-getting-started",
+    "https://www.compliance.ai/api/docs/api-user-guide/",
+    "https://developers.egnyte.com/api-docs/read/ai-api"
+  ],
+  "researched_at": "2026-07-09T04:57:28.970Z",
+  "model": "exa-answer"
+}

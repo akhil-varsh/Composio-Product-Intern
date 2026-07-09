@@ -1,0 +1,50 @@
+{
+  "id": 69,
+  "name": "Datadog",
+  "category": "Developer, Infra & Data platforms",
+  "access_notes": "Developers can create a Datadog account and generate API/Application keys or newer token types (like PATs) themselves within the account settings.",
+  "api_notes": "The API is a comprehensive, resource-oriented REST API covering most platform functionalities including metrics, logs, dashboards, and integration management.",
+  "one_liner": "Datadog is a monitoring and observability platform that provides tools for infrastructure monitoring, application performance, and log management.",
+  "api_type": [
+    "REST"
+  ],
+  "auth_notes": "The API supports API/Application keys, OAuth2 access tokens (Bearer tokens), and newer scoped credentials like Personal Access Tokens (PATs) and Service Access Tokens (SATs).",
+  "evidence": [
+    {
+      "claim": "Datadog provides a comprehensive REST API for accessing platform data and managing resources.",
+      "url": "https://docs.datadoghq.com/api/latest/"
+    },
+    {
+      "claim": "Developers can authenticate using API/Application keys or modern OAuth2/token-based flows.",
+      "url": "https://www.datadoghq.com/blog/datadog-api-authentication/"
+    },
+    {
+      "claim": "Datadog offers full API access to bring observability to all applications and infrastructure.",
+      "url": "https://www.datadoghq.com/product/"
+    },
+    {
+      "claim": "Search citation: API and Application Keys",
+      "url": "https://docs.datadoghq.com/account_management/api-app-keys/"
+    }
+  ],
+  "buildable": "yes",
+  "mcp": "none_found",
+  "confidence": "high",
+  "auth_methods": [
+    "OAuth2",
+    "API key",
+    "Bearer token"
+  ],
+  "access": "self_serve_free",
+  "mcp_notes": "While Datadog lists \"MCP Server\" as a product category in their general product overview, there is no widely documented or official MCP server available for general public use in their API docs. Existing tools like the Claude plugin use the pup CLI, not an MCP server.",
+  "api_breadth": "broad",
+  "blocker": null,
+  "search_sources": [
+    "https://dlthub.com/context/source/datadog",
+    "https://github.com/DataDog/datadog-api-claude-plugin",
+    "https://datadoghq.dev/datadog-api-client-go/",
+    "https://www.datadoghq.com/blog/programmatically-manage-your-datadog-integrations/"
+  ],
+  "researched_at": "2026-07-09T04:55:27.592Z",
+  "model": "exa-answer"
+}

@@ -1,0 +1,49 @@
+{
+  "id": 67,
+  "name": "Snowflake",
+  "category": "Developer, Infra & Data platforms",
+  "mcp": "official",
+  "mcp_notes": "Snowflake offers managed Model Context Protocol (MCP) servers (currently in public preview) to simplify interoperability with agentic applications.",
+  "one_liner": "Snowflake is a data cloud platform that allows users to store, process, and analyze data, with a REST API for programmatic resource management and automation.",
+  "api_breadth": "broad",
+  "confidence": "high",
+  "auth_methods": [
+    "JWT",
+    "Bearer token"
+  ],
+  "access_notes": "Developers can sign up for a Snowflake account and generate the necessary credentials (JWT/Bearer tokens) to interact with the REST API directly.",
+  "evidence": [
+    {
+      "claim": "The Snowflake REST API provides endpoints for programmatic interaction with and control over various resources within the Snowflake Data Cloud.",
+      "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/snowflake-rest-api"
+    },
+    {
+      "claim": "The API uses Bearer token authentication requiring a JWT in the request header.",
+      "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/getting-started"
+    },
+    {
+      "claim": "Snowflake offers managed Model Context Protocol (MCP) servers in public preview to simplify connecting Snowflake data with agentic applications.",
+      "url": "https://www.snowflake.com/en/blog/integrated-developer-environment-ai/"
+    },
+    {
+      "claim": "Search citation: HOW TO: Build Applications with Snowflake's SQL REST API",
+      "url": "https://www.youtube.com/watch?v=s9lZpM-aV1I"
+    }
+  ],
+  "buildable": "yes",
+  "auth_notes": "The API uses Bearer token authentication with a JWT.",
+  "access": "self_serve_free",
+  "api_type": [
+    "REST"
+  ],
+  "blocker": null,
+  "api_notes": "The Snowflake REST API covers a wide range of administrative, resource management, and data-related operations, including users, databases, warehouses, tasks, and more. It is built on OpenAPI specifications.",
+  "search_sources": [
+    "https://docs.snowflake.com/en/sql-reference/external-functions-introduction",
+    "https://medium.com/snowflake/pulling-data-from-an-external-api-into-snowflake-with-python-dcc1ba6ecc69",
+    "https://www.snowflake.com/en/product/features/cortex/",
+    "https://www.youtube.com/watch?v=uwq5pdKl4Dg"
+  ],
+  "researched_at": "2026-07-09T04:55:18.144Z",
+  "model": "exa-answer"
+}

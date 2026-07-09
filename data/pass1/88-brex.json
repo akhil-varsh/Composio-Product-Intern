@@ -1,0 +1,47 @@
+{
+  "id": 88,
+  "name": "Brex",
+  "category": "Finance & Fintech",
+  "api_notes": "The API covers core objects including accounting data, budgets, expenses, fields, payments (ACH/wire/check), teams (users/cards), transactions, and webhooks.",
+  "mcp": "none_found",
+  "access": "self_serve_free",
+  "confidence": "high",
+  "api_breadth": "moderate",
+  "auth_methods": [
+    "OAuth2"
+  ],
+  "blocker": null,
+  "auth_notes": "The documentation specifies using OAuth for authentication and authorization. Admins can generate user tokens within the Brex dashboard.",
+  "one_liner": "Brex is a unified corporate spend and expense management platform that provides a REST API for programmatically managing financial data, payments, and company teams.",
+  "access_notes": "The Brex API is available to all Brex customers free of charge; account and card admins can generate API tokens directly via their Brex dashboard.",
+  "mcp_notes": "No official or community MCP server was found in the provided documentation.",
+  "buildable": "yes",
+  "evidence": [
+    {
+      "claim": "Brex is a unified spend platform providing corporate cards, expense management, reimbursements, travel, and bill pay.",
+      "url": "https://developer.brex.com/"
+    },
+    {
+      "claim": "The Brex API is available to all customers free of charge.",
+      "url": "https://www.brex.com/journal/press/brex-announces-api-and-zapier-partnership-to-automate-payments-transactions-and-more"
+    },
+    {
+      "claim": "Brex APIs use OAuth for authentication and authorization.",
+      "url": "https://www.brex.com/journal/building-the-brex-api"
+    },
+    {
+      "claim": "Search citation: Brex API",
+      "url": "https://www.brex.com/support/brex-api"
+    }
+  ],
+  "api_type": [
+    "REST"
+  ],
+  "search_sources": [
+    "https://www.brex.com/product/api",
+    "https://redocly.com/customers/brex",
+    "https://www.openbankingtracker.com/provider/brex/apis"
+  ],
+  "researched_at": "2026-07-09T04:57:00.081Z",
+  "model": "exa-answer"
+}

@@ -1,0 +1,49 @@
+{
+  "id": 97,
+  "name": "higgsfield",
+  "category": "AI, Research & Media-native",
+  "mcp": "official",
+  "api_breadth": "moderate",
+  "api_notes": "The API allows for image and video generation tasks. While there is a Python SDK, direct REST access is also supported. Note that some third-party sites discussing Higgsfield API access appear to reference wrapper services rather than the native API.",
+  "evidence": [
+    {
+      "claim": "The Higgsfield API allows developers to generate AI images and videos, with access provided through API keys obtained from the Higgsfield Cloud dashboard.",
+      "url": "https://github.com/higgsfield-ai/higgsfield-client"
+    },
+    {
+      "claim": "Higgsfield provides an official MCP (Model Context Protocol) server to connect with AI agents for generation tasks without needing traditional API keys.",
+      "url": "https://higgsfield.ai/cli"
+    },
+    {
+      "claim": "Search citation: Build An AI Influencer Automation App Using Higgsfield API & Gemini 3",
+      "url": "https://www.youtube.com/watch?v=Dt_0s7PZrRA&vl=en"
+    },
+    {
+      "claim": "Search citation: Setting up integration with the AI higgsfield - Questions - n8n Community",
+      "url": "https://community.n8n.io/t/setting-up-integration-with-the-ai-higgsfield/227826"
+    }
+  ],
+  "access_notes": "Developers can sign up for a Higgsfield account at cloud.higgsfield.ai and generate API keys through the dashboard.",
+  "one_liner": "Higgsfield provides an AI platform for image and video generation, accessible via a native REST API or through an official Model Context Protocol (MCP) server for AI agent integration.",
+  "mcp_notes": "Higgsfield provides an official MCP server, which allows AI agents to interact with its generation tools using an account-based authentication flow instead of API keys.",
+  "api_type": [
+    "REST",
+    "SDK-only"
+  ],
+  "buildable": "yes",
+  "confidence": "high",
+  "access": "self_serve_free",
+  "auth_methods": [
+    "API key"
+  ],
+  "blocker": null,
+  "auth_notes": "Authentication is handled via an API key, which can be provided as a single combined string or separate key and secret pairs.",
+  "search_sources": [
+    "https://cloud.higgsfield.ai/",
+    "https://apps.make.com/higgsfield-ai-sxl99v",
+    "https://unifuncs.com/s/DIPucSAR",
+    "https://anil-matcha-open-higgsfield-ai.mintlify.app/guides/api-configuration"
+  ],
+  "researched_at": "2026-07-09T04:57:42.683Z",
+  "model": "exa-answer"
+}

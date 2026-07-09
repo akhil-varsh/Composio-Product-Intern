@@ -1,0 +1,47 @@
+{
+  "id": 29,
+  "name": "Aircall",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "contradicted",
+      "corrected_value": "self_serve_free",
+      "quote": "re-ask found \"self_serve_free\" (https://support.aircall.io/en-gb/articles/10375395181853)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "contradicted",
+      "corrected_value": "broad",
+      "quote": "re-ask found \"broad\" (https://developer.aircall.io/)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://github.com/themobilefirstco/aircall-mcp-server)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (with_caveats)"
+    }
+  ],
+  "urls_fetched": [
+    "https://developer.aircall.io/api-references",
+    "https://developer.aircall.io/",
+    "https://aircall.io/blog/news/aircall-for-developers-public-api/",
+    "https://aircall.io/product-overview/"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:03:45.883Z"
+}

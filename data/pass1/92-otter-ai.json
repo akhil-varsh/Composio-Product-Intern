@@ -1,0 +1,48 @@
+{
+  "id": 92,
+  "name": "Otter AI",
+  "category": "AI, Research & Media-native",
+  "access": "paid_plan",
+  "one_liner": "Otter.ai is an AI-powered meeting assistant platform that provides transcription, recording, and meeting intelligence services.",
+  "mcp_notes": "An official MCP server exists to connect Otter meeting data to AI assistants like Claude, ChatGPT, and Cursor. It is distinct from the public REST API.",
+  "api_type": [
+    "REST"
+  ],
+  "access_notes": "The public API is currently available exclusively for Enterprise workspaces; users without this access are directed to contact an account manager.",
+  "blocker": "The API is restricted to the Enterprise plan and requires an account manager for access if not available in the workspace.",
+  "auth_notes": "API requests require Bearer token authentication via API keys managed within the Otter.ai account settings.",
+  "api_breadth": "moderate",
+  "evidence": [
+    {
+      "claim": "Otter.ai’s Public API provides programmatic access to retrieve channels, conversations, transcripts, and workspace details, but is restricted to Enterprise workspaces.",
+      "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API"
+    },
+    {
+      "claim": "Otter provides an official Model Context Protocol (MCP) server to allow AI assistants to securely access meeting context.",
+      "url": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server"
+    },
+    {
+      "claim": "Search citation: New Otter.ai features plan to enable 'system of record'",
+      "url": "https://www.nojitter.com/digital-workplace/new-otter-ai-features-plan-to-enable-system-of-record-for-meetings"
+    },
+    {
+      "claim": "Search citation: How Otter’s MCP Turned 76 Conversations into a Searchable Evidence-Based Study",
+      "url": "https://otter.ai/case-study/audience-strategies"
+    }
+  ],
+  "api_notes": "The API covers core objects including channels, conversations, transcripts, audio, and meeting insights.",
+  "auth_methods": [
+    "Bearer token"
+  ],
+  "confidence": "high",
+  "mcp": "official",
+  "buildable": "with_caveats",
+  "search_sources": [
+    "https://community.front.com/workflows-discussion-47/otter-ai-integration-430",
+    "https://www.recall.ai/blog/how-to-integrate-with-otter-ai",
+    "https://www.promptarmor.com/connectors/otter-ai",
+    "https://www.youtube.com/watch?v=fEYj6BEflJ4"
+  ],
+  "researched_at": "2026-07-09T04:57:18.700Z",
+  "model": "exa-answer"
+}

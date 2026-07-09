@@ -1,0 +1,46 @@
+{
+  "id": 21,
+  "name": "Slack",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (self_serve_free)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.slack.dev/reference/)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://github.com/vercel/slack-tools/blob/main/README.md)"
+    }
+  ],
+  "urls_fetched": [
+    "https://docs.slack.dev/apis/web-api/",
+    "https://slack.com/blog/news/mcp-real-time-search-api-now-available",
+    "https://api.slack.com/apps/"
+  ],
+  "urls_failed": [
+    "https://medium.com/@hugolu87/how-to-properly-interact-with-slacks-api-the-slack-way-efbd74856991 (HTTP 403)"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T05:01:39.806Z"
+}

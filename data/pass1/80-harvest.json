@@ -1,0 +1,49 @@
+{
+  "id": 80,
+  "name": "Harvest",
+  "category": "Productivity & Project Management",
+  "confidence": "high",
+  "api_notes": "The V2 API covers a wide range of core objects including clients, projects, tasks, timesheets, expenses, invoices, estimates, roles, users, and reports.",
+  "api_breadth": "broad",
+  "one_liner": "Harvest is a web-based time tracking and billing platform.",
+  "mcp_notes": "There is no evidence of an official or well-known community Model Context Protocol server for Harvest.",
+  "evidence": [
+    {
+      "claim": "The Harvest API V2 supports both Personal Access Tokens and OAuth2 for authentication.",
+      "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/"
+    },
+    {
+      "claim": "Every Harvest API request requires two headers: Authorization (Bearer token) and Harvest-Account-Id.",
+      "url": "https://www.rapidevelopers.com/bolt-ai-integrations/harvest"
+    },
+    {
+      "claim": "The Harvest V2 API provides comprehensive endpoints for clients, projects, timesheets, and reports.",
+      "url": "https://help.getharvest.com/api-v2/"
+    },
+    {
+      "claim": "Search citation: Harvest Reviews | Read Customer Service Reviews of www.getharvest.com",
+      "url": "https://www.trustpilot.com/review/www.getharvest.com"
+    }
+  ],
+  "auth_methods": [
+    "OAuth2",
+    "Bearer token"
+  ],
+  "blocker": null,
+  "auth_notes": "Authentication requires a Bearer token (via Personal Access Token or OAuth2) plus a mandatory 'Harvest-Account-Id' header for every request.",
+  "buildable": "yes",
+  "access": "self_serve_free",
+  "access_notes": "Developers can generate a Personal Access Token (PAT) for themselves by creating a Harvest account and navigating to the Developers section within their account settings, requiring no prior approval or paid plan.",
+  "api_type": [
+    "REST"
+  ],
+  "mcp": "none_found",
+  "search_sources": [
+    "https://community.cdata.com/how-to-with-cdata-72/accessing-harvest-time-tracking-data-from-anywhere-552",
+    "https://mixedanalytics.com/knowledge-base/access-harvest-time-tracking-data-google-sheets/",
+    "https://dontpaniclabs.com/blog/post/2021/10/19/using-the-harvest-api/",
+    "https://github.com/harvesthq/api"
+  ],
+  "researched_at": "2026-07-09T04:56:20.944Z",
+  "model": "exa-answer"
+}
