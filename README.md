@@ -9,8 +9,6 @@ API surface is, whether an MCP server exists, and whether an agent toolkit could
 today. Results are verified in a second machine pass plus a human spot-check, and published
 as a single self-contained HTML case study.
 
-**Live case study:** _link goes here after deploy_
-
 ## How it works
 
 ```
