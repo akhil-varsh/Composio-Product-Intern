@@ -1,0 +1,46 @@
+{
+  "id": 68,
+  "name": "MongoDB Atlas",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (self_serve_free)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/2025-03-12.md)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (official)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://github.com/montumodi/mongodb-atlas-mcp-server)"
+    }
+  ],
+  "urls_fetched": [
+    "https://www.mongodb.com/docs/atlas/api/",
+    "https://www.mongodb.com/docs/atlas/configure-api-access/",
+    "https://www.mongodb.com/docs/api/",
+    "https://www.mongodb.com/docs/atlas/api/atlas-admin-api-ref/"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:11:42.150Z"
+}

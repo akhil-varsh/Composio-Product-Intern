@@ -1,0 +1,55 @@
+{
+  "id": 58,
+  "name": "Sherlock",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "contradicted",
+      "corrected_value": [
+        "Bearer token"
+      ],
+      "quote": "re-ask found \"Bearer token\" (https://context7.com/sherlock-project/sherlock/llms.txt)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (no_public_api)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "contradicted",
+      "corrected_value": [
+        "REST",
+        "gRPC"
+      ],
+      "quote": "re-ask found \"REST, gRPC\" (https://developer.ansys.com/docs/sherlock-apis-2025-r2/getting-started.md)"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "contradicted",
+      "corrected_value": "moderate",
+      "quote": "re-ask found \"moderate\" (https://developer.ansys.com/docs/sherlock-apis-2025-r1/index-to-sherlock-api.md)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://conare.ai/marketplace/mcp/sherlock-mcp)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "contradicted",
+      "corrected_value": "yes",
+      "quote": "re-ask found \"yes\" (yes)"
+    }
+  ],
+  "urls_fetched": [
+    "https://github.com/bellingcat/toolkit/blob/main/gitbook/tools/sherlock/README.md",
+    "https://github.com/sherlock-project/sherlock/issues/129",
+    "https://apify.com/misceres/sherlock",
+    "https://github.com/sherlock-project/sherlock"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:09:46.305Z"
+}

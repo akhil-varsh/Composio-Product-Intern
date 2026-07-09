@@ -1,0 +1,46 @@
+{
+  "id": 99,
+  "name": "YouTube Transcript",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "contradicted",
+      "corrected_value": "broad",
+      "quote": "re-ask found \"broad\" (https://www.youtubetranscript.dev/api-docs)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (with_caveats)"
+    }
+  ],
+  "urls_fetched": [
+    "https://transcriptapi.com/blog/best-youtube-transcript-api-compared",
+    "https://transcriptapi.com/blog/transcriptapi-vs-serpapi",
+    "https://transcriptapi.com/",
+    "https://transcriptapi.com/blog/transcriptapi-vs-supadata"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:17:12.534Z"
+}

@@ -1,0 +1,46 @@
+{
+  "id": 41,
+  "name": "Shopify",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://shopify.dev/docs/apps/build/dev-dashboard/get-api-access-tokens)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://shopify.dev/docs/api)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://tenten.co/shopifymcp/docs/mcp-resources/official-mcp-servers)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://www.shopify.com/legal/api-terms)"
+    }
+  ],
+  "urls_fetched": [
+    "https://shopify.dev/docs/api",
+    "https://www.shopify.com/legal/api-terms",
+    "https://www.shopify.com/enterprise/blog/ecommerce-api",
+    "https://resources.storetasker.com/blog/the-shopify-developer-api-ecosystem-what-you-need-to-know"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:06:45.696Z"
+}

@@ -1,0 +1,45 @@
+{
+  "id": 67,
+  "name": "Snowflake",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (self_serve_free)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.snowflake.com/en/en/developer-guide/snowflake-rest-api/snowflake-rest-api)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.snowflake.com/en/user-guide/api-authentication)"
+    }
+  ],
+  "urls_fetched": [
+    "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/snowflake-rest-api",
+    "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/getting-started",
+    "https://www.snowflake.com/en/blog/integrated-developer-environment-ai/",
+    "https://www.youtube.com/watch?v=s9lZpM-aV1I"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:11:31.432Z"
+}

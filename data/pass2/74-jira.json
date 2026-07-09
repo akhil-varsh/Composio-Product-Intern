@@ -1,0 +1,46 @@
+{
+  "id": 74,
+  "name": "Jira",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.atlassian.com/cloud/jira/platform/rest/v2/)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.atlassian.com/cloud/jira/platform/index/)"
+    }
+  ],
+  "urls_fetched": [
+    "https://developer.atlassian.com/cloud/jira/platform/rest/v2/",
+    "https://www.getknit.dev/blog/deep-dive-developer-guide-to-building-a-jira-api-integration",
+    "https://developer.atlassian.com/"
+  ],
+  "urls_failed": [
+    "https://www.atlassian.com/software/jira (almost no text (JS-rendered or blocked))"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T05:12:49.018Z"
+}

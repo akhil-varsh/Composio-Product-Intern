@@ -1,0 +1,46 @@
+{
+  "id": 53,
+  "name": "Ahrefs",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.ahrefs.com/en/api/docs/api-keys-creation-and-management)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"paid_plan\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.ahrefs.com/en/api/docs/introduction)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://docs.ahrefs.com/en/mcp/docs/introduction)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.ahrefs.com/en/ahrefs-connect/docs/how-it-works)"
+    }
+  ],
+  "urls_fetched": [
+    "https://docs.ahrefs.com/",
+    "https://docs.ahrefs.com/en/ahrefs-connect/docs/how-it-works",
+    "https://seranking.com/blog/ahrefs-api-alternatives/",
+    "https://ahrefs.com/"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:08:54.345Z"
+}

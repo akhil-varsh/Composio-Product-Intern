@@ -1,0 +1,46 @@
+{
+  "id": 43,
+  "name": "BigCommerce",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (broad)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://www.bigcommerce.com/blog/storefront-mcp/)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.bigcommerce.com/developer/docs/integrations/apps/guide.md)"
+    }
+  ],
+  "urls_fetched": [
+    "https://docs.bigcommerce.com/",
+    "https://ecommerce.folio3.com/blog/bigcommerce-product-api/",
+    "https://api2cart.com/api-technology/a-foreword-to-bigcommerce-api/"
+  ],
+  "urls_failed": [
+    "https://www.americaneagle.com/insights/blog/post/bigcommerce-system-api-integration-capabilities (HTTP 403)"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T05:07:07.384Z"
+}

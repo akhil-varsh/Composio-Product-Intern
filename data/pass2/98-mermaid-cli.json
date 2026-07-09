@@ -1,0 +1,49 @@
+{
+  "id": 98,
+  "name": "Mermaid CLI",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "contradicted",
+      "corrected_value": [
+        "API key"
+      ],
+      "quote": "re-ask found \"API key\" (https://docs.rs/mermaid-cli/latest/mermaid_cli/app/struct.UserProviderConfig.html)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://github.com/mermaid-js/mermaid-cli?tab=readme-ov-file)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://github.com/mermaid-js/mermaid-cli?tab=readme-ov-file)"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "contradicted",
+      "corrected_value": "broad",
+      "quote": "re-ask found \"broad\" (https://deepwiki.com/mermaid-js/mermaid-cli/3.1-cli-implementation)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (none_found)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://github.com/mermaid-js/mermaid-cli)"
+    }
+  ],
+  "urls_fetched": [
+    "https://github.com/mermaid-js/mermaid-cli",
+    "https://github.com/mermaid-js/mermaid",
+    "https://mermaid.js.org/",
+    "https://github.com/mermaidjs/mermaid.cli/issues/107"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:17:07.238Z"
+}

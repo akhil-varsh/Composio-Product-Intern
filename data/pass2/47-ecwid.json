@@ -1,0 +1,48 @@
+{
+  "id": 47,
+  "name": "Ecwid",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "contradicted",
+      "corrected_value": "paid_plan",
+      "quote": "re-ask found \"paid_plan\" (https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.ecwid.com/api-reference)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "community",
+      "quote": "re-ask found \"community\" (community)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.ecwid.com/get-started/make-your-first-api-request)"
+    }
+  ],
+  "urls_fetched": [
+    "https://docs.ecwid.com/api-reference",
+    "https://stackoverflow.com/questions/74325412/i-am-currently-stuck-in-creating-a-bidirectional-connection-between-jitsu-and-ec",
+    "https://api2cart.com/api-technology/ecwid-api/"
+  ],
+  "urls_failed": [
+    "https://support.ecwid.com/hc/en-us/articles/4938302203932-Adding-more-features-to-your-store-via-Ecwid-s-API (HTTP 403)"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T05:07:52.031Z"
+}

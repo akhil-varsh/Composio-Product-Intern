@@ -1,0 +1,48 @@
+{
+  "id": 38,
+  "name": "Pinterest",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.pinterest.com/docs/getting-started/authentication/)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"admin_approval\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "contradicted",
+      "corrected_value": "moderate",
+      "quote": "re-ask found \"moderate\" (moderate)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "community",
+      "quote": "re-ask found \"community\" (https://github.com/what-name/pinterest-mcp)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://policy.pinterest.com/en-gb/developer-guidelines)"
+    }
+  ],
+  "urls_fetched": [
+    "https://developers.pinterest.com/docs/key-concepts/access-tiers/",
+    "https://www.blotato.com/blog/pinterest-api-pricing",
+    "https://developers.pinterest.com/blog/2022/04/12/introducing-pinterest-api-v5/"
+  ],
+  "urls_failed": [
+    "https://developers.pinterest.com/docs/api/v5/ (almost no text (JS-rendered or blocked))"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T05:05:46.786Z"
+}

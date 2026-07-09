@@ -1,0 +1,46 @@
+{
+  "id": 51,
+  "name": "DataForSEO",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.dataforseo.com/v3/auth/)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://dataforseo.com/apis)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://dataforseo.com/model-context-protocol)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.dataforseo.com/v3/)"
+    }
+  ],
+  "urls_fetched": [
+    "https://dataforseo.com/apis",
+    "https://www.digitalocean.com/community/tutorials/dataforseo-chatgpt-api-integration",
+    "https://dataforseo.com/apis/serp-api",
+    "https://seranking.com/blog/dataforseo-alternatives/"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:08:37.275Z"
+}

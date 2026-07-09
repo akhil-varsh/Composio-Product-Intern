@@ -1,0 +1,48 @@
+{
+  "id": 92,
+  "name": "Otter AI",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API)"
+    },
+    {
+      "field": "access",
+      "verdict": "contradicted",
+      "corrected_value": "partner_gated",
+      "quote": "re-ask found \"partner_gated\" (partner_gated)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API)"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "contradicted",
+      "corrected_value": "narrow",
+      "quote": "re-ask found \"narrow\" (https://www.withone.ai/knowledge/otter-ai/conn_mod_def%3A%3AGLU0_zZHxQg%3A%3AapD2lO4qR2iqlwnGvS4vuQ)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (with_caveats)"
+    }
+  ],
+  "urls_fetched": [
+    "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server",
+    "https://www.nojitter.com/digital-workplace/new-otter-ai-features-plan-to-enable-system-of-record-for-meetings",
+    "https://otter.ai/case-study/audience-strategies"
+  ],
+  "urls_failed": [
+    "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API (HTTP 403)"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T05:16:07.925Z"
+}

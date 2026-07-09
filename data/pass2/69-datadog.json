@@ -1,0 +1,46 @@
+{
+  "id": 69,
+  "name": "Datadog",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.datadoghq.com/api/latest/authentication/)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.datadoghq.com/api/latest/using-the-api.md)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://github.com/datadog-ai-labs/mcp-server)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (yes)"
+    }
+  ],
+  "urls_fetched": [
+    "https://docs.datadoghq.com/api/latest/",
+    "https://www.datadoghq.com/blog/datadog-api-authentication/",
+    "https://www.datadoghq.com/product/",
+    "https://docs.datadoghq.com/account_management/api-app-keys/"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:11:52.482Z"
+}

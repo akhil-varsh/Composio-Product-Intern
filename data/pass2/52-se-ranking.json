@@ -1,0 +1,46 @@
+{
+  "id": 52,
+  "name": "SE Ranking",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_trial\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://seranking.com/api/project/getting-started/)"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://seranking.com/api.html)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://seranking.com/api/how-to-get-api/)"
+    }
+  ],
+  "urls_fetched": [
+    "https://seranking.com/api-pricing.html",
+    "https://seranking.com/api/integrations/",
+    "https://seranking.com/api/data/reference/"
+  ],
+  "urls_failed": [
+    "https://help.seranking.com/hc/en-us/articles/22447958135068-Getting-Started-with-SE-Ranking-s-API (HTTP 403)"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T05:08:45.137Z"
+}

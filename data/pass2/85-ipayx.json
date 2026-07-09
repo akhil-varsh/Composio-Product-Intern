@@ -1,0 +1,53 @@
+{
+  "id": 85,
+  "name": "iPayX",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "contradicted",
+      "corrected_value": [
+        "Bearer token",
+        "API key"
+      ],
+      "quote": "re-ask found \"Bearer token, API key\" (https://github.com/Ipayx-stellar/mcp-fx-audit)"
+    },
+    {
+      "field": "access",
+      "verdict": "contradicted",
+      "corrected_value": "self_serve_free",
+      "quote": "re-ask found \"self_serve_free\" (https://github.com/Ipayx-stellar/mcp-fx-audit)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://github.com/iPAYX-Technologies/mcp-fx-audit/commit/bb30c87f2bdfe8a2f8d18b051b2d34c61ba7b7a6)"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "contradicted",
+      "corrected_value": "narrow",
+      "quote": "re-ask found \"narrow\" (https://github.com/iPAYX-Technologies/mcp-fx-audit/commit/bb30c87f2bdfe8a2f8d18b051b2d34c61ba7b7a6)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://github.com/iPAYX-Technologies/mcp-fx-audit)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "contradicted",
+      "corrected_value": "yes",
+      "quote": "re-ask found \"yes\" (https://github.com/Ipayx-stellar/mcp-fx-audit)"
+    }
+  ],
+  "urls_fetched": [
+    "https://ipayx.ai/docs",
+    "https://www.youtube.com/watch?v=cacDYvA5ZTI",
+    "https://www.articsledge.com/post/ai-api-artificial-intelligence-application-programming-interface",
+    "https://developers.openai.com/api/docs"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:14:52.840Z"
+}

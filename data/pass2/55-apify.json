@@ -1,0 +1,45 @@
+{
+  "id": 55,
+  "name": "Apify",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.apify.com/platform/integrations/api)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.apify.com/platform/integrations/integrate)"
+    }
+  ],
+  "urls_fetched": [
+    "https://www.b12.io/glossary-of-web-design-terms/apify/",
+    "https://docs.apify.com/api/v2",
+    "https://github.com/apify/apify-mcp-server",
+    "https://docs.apify.com/platform/integrations/api"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:09:12.966Z"
+}

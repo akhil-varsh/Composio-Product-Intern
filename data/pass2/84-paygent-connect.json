@@ -1,0 +1,47 @@
+{
+  "id": 84,
+  "name": "Paygent Connect",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.paygent.to/reference/api-reference/)"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "contradicted",
+      "corrected_value": "narrow",
+      "quote": "re-ask found \"narrow\" (https://docs.paygent.to/reference/api-reference/)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (none_found)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (with_caveats)"
+    }
+  ],
+  "urls_fetched": [
+    "https://docs.nmi.com/docs/introduction-to-the-customer-present-cloud-api",
+    "https://developer.north.com/"
+  ],
+  "urls_failed": [
+    "https://docs.worldpay.com/apis (almost no text (JS-rendered or blocked))",
+    "https://developers.worldnetpayments.com/apis/merchant/ (almost no text (JS-rendered or blocked))"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T05:14:36.102Z"
+}

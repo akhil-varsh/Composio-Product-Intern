@@ -1,0 +1,47 @@
+{
+  "id": 80,
+  "name": "Harvest",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://help.getharvest.com/api-v2/)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://anythingmcp.com/guides/harvest-to-mcp)"
+    }
+  ],
+  "urls_fetched": [
+    "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+    "https://www.rapidevelopers.com/bolt-ai-integrations/harvest",
+    "https://help.getharvest.com/api-v2/"
+  ],
+  "urls_failed": [
+    "https://www.trustpilot.com/review/www.getharvest.com (HTTP 403)"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T05:13:50.300Z"
+}

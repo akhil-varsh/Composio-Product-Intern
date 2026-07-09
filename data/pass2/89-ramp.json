@@ -1,0 +1,45 @@
+{
+  "id": 89,
+  "name": "Ramp",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.ramp.com/developer-api/v1/api/authorization)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"admin_approval\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.ramp.com/developer-api/)"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.ramp.com/developer-api/)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.ramp.com/developer-api/)"
+    }
+  ],
+  "urls_fetched": [
+    "https://support.ramp.com/accessing-the-developer-api",
+    "https://docs.ramp.com/developer-api/v1/overview/introduction",
+    "https://docs.ramp.com/developer-api/v1/build-with-ramp",
+    "https://ramp.com/developer-tools"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:15:36.834Z"
+}

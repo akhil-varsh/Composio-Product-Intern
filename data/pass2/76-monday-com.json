@@ -1,0 +1,47 @@
+{
+  "id": 76,
+  "name": "Monday.com",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.monday.com/api-reference/docs/authentication)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.monday.com/api-reference)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://developer.monday.com/api-reference/docs/monday-mcp-overview)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.monday.com/api-reference/docs/rate-limits)"
+    }
+  ],
+  "urls_fetched": [
+    "https://developer.monday.com/api-reference/",
+    "https://www.fruitionservices.io/post/monday-platform-api",
+    "https://docs.appsmith.com/connect-data/reference/monday.com"
+  ],
+  "urls_failed": [
+    "https://www.npmjs.com/package/@mondaydotcomorg/api (HTTP 403)"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T05:13:13.833Z"
+}

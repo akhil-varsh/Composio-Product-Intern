@@ -1,0 +1,46 @@
+{
+  "id": 63,
+  "name": "Netlify",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://open-api.netlify.com/)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://github.com/netlify/netlify-mcp)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api)"
+    }
+  ],
+  "urls_fetched": [
+    "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+    "https://answers.netlify.com/t/deploying-a-site-using-the-file-digest-api/3309",
+    "https://answers.netlify.com/t/cannot-deploy-function-via-api-tried-all-solutions/95690",
+    "https://www.netlify.com/blog/general-availability-private-integrations-for-netlify-core/"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:10:41.639Z"
+}

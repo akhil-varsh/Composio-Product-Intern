@@ -1,0 +1,45 @@
+{
+  "id": 57,
+  "name": "Bright Data",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.brightdata.com/api-reference/SDK, https://docs.brightdata.com/api-reference/SDK-JS, https://docs.brightdata.com/scraping-automation/serp-api/send-your-first-request, https://docs.brightdata.com/api-reference/discover/overview, https://docs.brightdata.com/api-reference/rest-api/scraper/crawl-api, https://brightdata-ipv6-release.mintlify.app/api-reference/api-vs-native-access)"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.brightdata.com/scraping-automation/introduction)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.brightdata.com/proxy-networks/faqs)"
+    }
+  ],
+  "urls_fetched": [
+    "https://brightdata.com/",
+    "https://docs.brightdata.com/datasets/scraper-studio/quickstart",
+    "https://docs.brightdata.com/introduction",
+    "https://brightdata.com/blog/ai/ai-news-agent-with-bright-sdk"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:09:31.396Z"
+}

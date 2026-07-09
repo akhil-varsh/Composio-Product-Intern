@@ -1,0 +1,47 @@
+{
+  "id": 50,
+  "name": "fanbasis",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (self_serve_free)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "contradicted",
+      "corrected_value": "broad",
+      "quote": "re-ask found \"broad\" (https://www.fanbasis.com/enterprises)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "community",
+      "quote": "re-ask found \"community\" (https://zapier.com/mcp/fanbasis)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://www.fanbasis.com/enterprises)"
+    }
+  ],
+  "urls_fetched": [
+    "https://apidocs.fan/",
+    "https://www.fanbasis.com/",
+    "https://www.fanbasis.com/enterprises",
+    "https://www.youtube.com/watch?v=PoldnKFeX_s"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:08:26.142Z"
+}

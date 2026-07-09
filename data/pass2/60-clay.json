@@ -1,0 +1,50 @@
+{
+  "id": 60,
+  "name": "Clay",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "contradicted",
+      "corrected_value": [
+        "Bearer token",
+        "OAuth2"
+      ],
+      "quote": "re-ask found \"Bearer token, OAuth2\" (https://integrations.sh/clay.com/)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"no_public_api\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://university.clay.com/docs/using-clay-as-an-api)"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://university.clay.com/docs/using-clay-as-an-api)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://www.clay.com/guides/clay-mcp)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "contradicted",
+      "corrected_value": "with_caveats",
+      "quote": "re-ask found \"with_caveats\" (with_caveats)"
+    }
+  ],
+  "urls_fetched": [
+    "https://florian-martens.medium.com/does-clay-have-an-api-no-but-theres-pipe0-6a37300529f6",
+    "https://university.clay.com/docs/http-api-integration-overview",
+    "https://www.clay.com/glossary/api",
+    "https://www.clay.com/"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:10:08.964Z"
+}

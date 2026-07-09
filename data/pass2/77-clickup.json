@@ -1,0 +1,49 @@
+{
+  "id": 77,
+  "name": "ClickUp",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "contradicted",
+      "corrected_value": [
+        "OAuth2",
+        "API key"
+      ],
+      "quote": "re-ask found \"OAuth2, API key\" (https://developer.clickup.com/docs/authentication)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.clickup.com/docs/authentication)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://feedback.clickup.com/public-api/?category=docs&status=beta)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://clickup.com/blog/clickup-api/)"
+    }
+  ],
+  "urls_fetched": [
+    "https://www.youtube.com/watch?v=pRohAkwEQVk",
+    "https://developer.clickup.com/",
+    "https://developer.clickup.com/reference",
+    "https://clickup.canny.io/public-api?status=completed"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:13:23.969Z"
+}

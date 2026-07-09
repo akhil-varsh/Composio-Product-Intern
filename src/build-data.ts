@@ -121,6 +121,14 @@ function main() {
     }
   }
 
+  // Snapshot the sampled apps' post-verifier state so sample accuracy can be
+  // computed at each stage (pass-1 vs final, post-verifier vs final).
+  const postVerifier = new Map<number, ResearchRecord>();
+  for (const id of human.sampled_ids) {
+    const rec = finalById.get(id);
+    if (rec) postVerifier.set(id, structuredClone(rec));
+  }
+
   // ---- apply human corrections (highest precedence) ----
   for (const h of human.corrections) {
     const rec = finalById.get(h.id);
@@ -141,12 +149,36 @@ function main() {
   const machineChecked = confirmed + contradicted;
   const pass1Accuracy = machineChecked ? confirmed / machineChecked : null;
 
-  // human sample: fields checked = sampled apps x 6 key fields; wrong = human corrections on sampled apps
-  const KEY_FIELDS = 6;
-  const humanCheckedFields = human.sampled_ids.length * KEY_FIELDS;
-  const humanWrong = human.corrections.filter((c) => human.sampled_ids.includes(c.id)).length;
-  const humanSampleAccuracy = humanCheckedFields
-    ? (humanCheckedFields - humanWrong) / humanCheckedFields
+  // Human-audited sample: final (human-arbitrated) values are ground truth. Count how
+  // many of the 6 key fields were wrong at pass-1 and how many remained wrong after the
+  // machine loops. Strict comparison — free-vs-trial nuance counts as wrong here.
+  const KEY_FIELDS = ["auth_methods", "access", "api_type", "api_breadth", "mcp", "buildable"];
+  const strictEq = (a: unknown, b: unknown): boolean => {
+    if (Array.isArray(a) && Array.isArray(b)) {
+      const sa = new Set(a.map(String)), sb = new Set(b.map(String));
+      return sa.size === sb.size && [...sa].every((x) => sb.has(x));
+    }
+    return a === b;
+  };
+  const pass1ById = new Map(records.map((r) => [r.id, r]));
+  let sampleWrongPass1 = 0;
+  let sampleWrongPostVerifier = 0;
+  for (const id of human.sampled_ids) {
+    const fin = finalById.get(id);
+    const p1 = pass1ById.get(id);
+    const pv = postVerifier.get(id);
+    if (!fin || !p1 || !pv) continue;
+    for (const f of KEY_FIELDS) {
+      if (!strictEq((p1 as any)[f], (fin as any)[f])) sampleWrongPass1++;
+      if (!strictEq((pv as any)[f], (fin as any)[f])) sampleWrongPostVerifier++;
+    }
+  }
+  const humanCheckedFields = human.sampled_ids.length * KEY_FIELDS.length;
+  const samplePass1Accuracy = humanCheckedFields
+    ? (humanCheckedFields - sampleWrongPass1) / humanCheckedFields
+    : null;
+  const samplePostVerifierAccuracy = humanCheckedFields
+    ? (humanCheckedFields - sampleWrongPostVerifier) / humanCheckedFields
     : null;
 
   const finalRecords = [...finalById.values()]
@@ -203,8 +235,10 @@ function main() {
       human_sample: {
         sampled_ids: human.sampled_ids,
         fields_checked: humanCheckedFields,
-        wrong: humanWrong,
-        accuracy: humanSampleAccuracy,
+        pass1_wrong: sampleWrongPass1,
+        post_verifier_wrong: sampleWrongPostVerifier,
+        pass1_accuracy: samplePass1Accuracy,
+        post_verifier_accuracy: samplePostVerifierAccuracy,
       },
       human_notes: human.notes ?? [],
       model_agreement: {
@@ -223,6 +257,12 @@ function main() {
     console.log(
       `Pass-1 accuracy on machine-verifiable fields: ${(pass1Accuracy * 100).toFixed(1)}% ` +
         `(${confirmed} confirmed / ${contradicted} contradicted / ${notVerifiable} not verifiable)`,
+    );
+  }
+  if (samplePass1Accuracy !== null) {
+    console.log(
+      `Human-audited sample (${human.sampled_ids.length} apps x ${KEY_FIELDS.length} fields): ` +
+        `pass-1 ${(samplePass1Accuracy * 100).toFixed(1)}% -> after machine loops ${(samplePostVerifierAccuracy! * 100).toFixed(1)}% -> 100% after human pass`,
     );
   }
   console.log(`${corrections.length} corrections applied (${corrections.filter((c) => c.source === "human").length} human).`);

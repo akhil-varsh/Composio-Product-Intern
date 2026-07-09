@@ -1,0 +1,46 @@
+{
+  "id": 73,
+  "name": "Linear",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (self_serve_free)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://linear.app/docs/api-and-webhooks)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://linear.app/docs/mcp)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://www.scalekit.com/blog/linear-mcp-vs-api)"
+    }
+  ],
+  "urls_fetched": [
+    "https://linear.app/docs/api-and-webhooks",
+    "https://linear.app/developers",
+    "https://www.merge.dev/blog/linear-api-key",
+    "https://linear.app/"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:12:40.555Z"
+}

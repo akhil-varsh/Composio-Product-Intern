@@ -1,0 +1,46 @@
+{
+  "id": 64,
+  "name": "Cloudflare",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.cloudflare.com/api/overview/)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.cloudflare.com/fundamentals/api/)"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.cloudflare.com/api/)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://www.scalekit.com/connectors/cloudflaremcp, https://composio.dev/toolkits/cloudflare%5Fapi%5Fkey, https://github.com/mattzcarey/cloudflare-mcp, https://www.dadl.ai/d/cloudflare/, https://www.merge.dev/connectors/cloudflare, https://github.com/wrxck/cloudflare-mcp, https://kosmokrator.dev/integrations/cloudflare/, https://packagist.org/packages/coquibot/coqui-toolkit-cloudflare)"
+    }
+  ],
+  "urls_fetched": [
+    "https://developers.cloudflare.com/api/",
+    "https://blog.cloudflare.com/building-a-better-developer-experience-through-api-documentation/",
+    "https://developers.cloudflare.com/",
+    "https://developers.cloudflare.com/workers/configuration/integrations/apis/"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:10:54.015Z"
+}

@@ -1,0 +1,53 @@
+{
+  "id": 44,
+  "name": "Salesforce Commerce Cloud",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "contradicted",
+      "corrected_value": [
+        "OAuth2",
+        "Basic"
+      ],
+      "quote": "re-ask found \"OAuth2, Basic\" (https://developer.salesforce.com/docs/commerce/commerce-api/references/auth?meta=getWellknownOpenidConfiguration)"
+    },
+    {
+      "field": "access",
+      "verdict": "contradicted",
+      "corrected_value": "self_serve_free",
+      "quote": "re-ask found \"self_serve_free\" (https://account.demandware.com/)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.salesforce.com/docs/commerce/commerce-api/guide/why-use-scapi.html)"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (broad)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://developer.salesforce.com/docs/commerce/sfra/guide/agentic-mcp-shopper-tools-quick-start.html)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "contradicted",
+      "corrected_value": "with_caveats",
+      "quote": "re-ask found \"with_caveats\" (https://docs.jitterbit.com/integration-studio/design/connectors/salesforce-commerce-cloud/)"
+    }
+  ],
+  "urls_fetched": [
+    "https://developer.salesforce.com/developer-centers/commerce-cloud",
+    "https://developer.salesforce.com/docs/commerce/commerce-api/guide/get-started.html",
+    "https://developer.salesforce.com/docs/apis"
+  ],
+  "urls_failed": [
+    "https://help.smartling.com/hc/en-us/articles/11786957510171-Required-Configuration-To-Connect-The-Salesforce-Commerce-Cloud-Connector (HTTP 403)"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T05:07:20.303Z"
+}

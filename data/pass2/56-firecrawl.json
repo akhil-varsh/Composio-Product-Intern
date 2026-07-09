@@ -1,0 +1,45 @@
+{
+  "id": 56,
+  "name": "Firecrawl",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (broad)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.firecrawl.dev/sdks/python)"
+    }
+  ],
+  "urls_fetched": [
+    "https://www.firecrawl.dev/",
+    "https://github.com/firecrawl/firecrawl",
+    "https://www.firecrawl.dev/blog",
+    "https://apix-drive.com/en/blog/useful/firecrawl-explained"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:09:20.396Z"
+}

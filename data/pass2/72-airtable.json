@@ -1,0 +1,47 @@
+{
+  "id": 72,
+  "name": "Airtable",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://airtable.com/developers/web/api/authentication)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://airtable.com/developers/web/api/introduction)"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://airtable.com/developers/web/api/introduction)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "community",
+      "quote": "re-ask found \"community\" (community)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.nango.dev/docs/api-integrations/airtable)"
+    }
+  ],
+  "urls_fetched": [
+    "https://www.airtable.com/guides/scale/using-airtable-api",
+    "https://community.airtable.com/development-apis-11/getting-started-with-the-api-from-3rd-party-framework-4315",
+    "https://blog.boldtech.dev/what-is-airtable/"
+  ],
+  "urls_failed": [
+    "https://www.youtube.com/watch?v=69VJHAfKABk (almost no text (JS-rendered or blocked))"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T05:12:29.566Z"
+}

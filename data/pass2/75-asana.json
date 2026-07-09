@@ -1,0 +1,47 @@
+{
+  "id": 75,
+  "name": "Asana",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.asana.com/docs/authentication)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.asana.com/docs/personal-access-token)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (broad)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://developers.asana.com/docs/using-asanas-mcp-server)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.asana.com/docs/authentication)"
+    }
+  ],
+  "urls_fetched": [
+    "https://developers.asana.com/docs/quick-start",
+    "https://www.merge.dev/blog/get-tasks-asana-api-python",
+    "https://www.youtube.com/watch?v=PHqjLID7WAg"
+  ],
+  "urls_failed": [
+    "https://help.asana.com/s/article/api?language=en_US (almost no text (JS-rendered or blocked))"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T05:13:01.133Z"
+}

@@ -1,0 +1,48 @@
+{
+  "id": 59,
+  "name": "Waterfall.io",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "contradicted",
+      "corrected_value": "paid_plan",
+      "quote": "re-ask found \"paid_plan\" (https://docs.waterfall.io/v1/authentication)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.waterfall.io/v1/introduction)"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "contradicted",
+      "corrected_value": "broad",
+      "quote": "re-ask found \"broad\" (https://docs.waterfall.io/v1/search-contact-launcher)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.waterfall.io/llms.txt)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.waterfall.io/v1/api-keys-list)"
+    }
+  ],
+  "urls_fetched": [
+    "https://www.waterfall.io/",
+    "https://www.linkedin.com/company/waterfall-io"
+  ],
+  "urls_failed": [
+    "https://knowledge.apollo.io/hc/en-us/articles/34071121664781-Use-Waterfall-Enrichment (HTTP 403)",
+    "https://www.youtube.com/watch?v=HltNPIFED40 (almost no text (JS-rendered or blocked))"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T05:09:57.337Z"
+}

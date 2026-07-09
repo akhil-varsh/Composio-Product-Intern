@@ -1,0 +1,47 @@
+{
+  "id": 97,
+  "name": "higgsfield",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "contradicted",
+      "corrected_value": "paid_plan",
+      "quote": "re-ask found \"paid_plan\" (https://flowith.io/blog/higgsfield-pricing-free-vs-creator-vs-studio/)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "contradicted",
+      "corrected_value": "broad",
+      "quote": "re-ask found \"broad\" (https://github.com/higgsfield-ai/higgsfield-client, https://github.com/higgsfield-ai/higgsfield-js/, https://github.com/Hikhakk/higgsfield-mcp-unified)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://github.com/higgsfield-ai/higgsfield-js/ https://github.com/anthonyjohn17/higgsfield-api-client https://github.com/Hikhakk/higgsfield-mcp-unified)"
+    }
+  ],
+  "urls_fetched": [
+    "https://github.com/higgsfield-ai/higgsfield-client",
+    "https://higgsfield.ai/cli",
+    "https://www.youtube.com/watch?v=Dt_0s7PZrRA&vl=en",
+    "https://community.n8n.io/t/setting-up-integration-with-the-ai-higgsfield/227826"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:16:54.296Z"
+}

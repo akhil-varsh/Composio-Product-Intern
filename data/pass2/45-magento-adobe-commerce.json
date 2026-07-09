@@ -1,0 +1,46 @@
+{
+  "id": 45,
+  "name": "Magento (Adobe Commerce)",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://github.com/api-evangelist/magento)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "community",
+      "quote": "re-ask found \"community\" (https://github.com/thomastx05/magento-mcp)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (yes)"
+    }
+  ],
+  "urls_fetched": [
+    "https://developer.adobe.com/commerce/webapi/get-started/",
+    "https://developer.adobe.com/commerce/webapi/rest/",
+    "https://www.rightpoint.com/thought/article/what-is-adobe-commerce-formerly-magento-comprehensive-guide-for-2025",
+    "https://business.adobe.com/products/commerce.html"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:07:30.268Z"
+}

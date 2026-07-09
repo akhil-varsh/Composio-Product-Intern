@@ -1,0 +1,46 @@
+{
+  "id": 91,
+  "name": "NotebookLM",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"paid_plan\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "contradicted",
+      "corrected_value": "broad",
+      "quote": "re-ask found \"broad\" (https://github.com/HenriqueCosta05/notebooklm-ts-api)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://github.com/HenriqueCosta05/notebooklm-ts-api)"
+    }
+  ],
+  "urls_fetched": [
+    "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+    "https://cloud.google.com/resources/notebooklm-enterprise",
+    "https://web-clipper-for-notebooklm.com/blog/notebooklm-api",
+    "https://autocontentapi.com/blog/does-notebooklm-have-an-api"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:15:54.118Z"
+}

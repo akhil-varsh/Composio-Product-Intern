@@ -1,0 +1,48 @@
+{
+  "id": 90,
+  "name": "PitchBook",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "contradicted",
+      "corrected_value": "partner_gated",
+      "quote": "re-ask found \"partner_gated\" (https://www.pitchbook.com/pricing)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://pitchbook.com/blog/what-is-direct-data)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://premium.mcp.pitchbook.com/mcp)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://api.pitchbook.com)"
+    }
+  ],
+  "urls_fetched": [
+    "https://dlthub.com/context/source/pitchbook-api"
+  ],
+  "urls_failed": [
+    "https://pitchbook.com/help/PitchBook-api (HTTP 403)",
+    "https://pitchbook.com/ (HTTP 403)",
+    "https://pitchbook.com/products/direct-access-data (HTTP 403)"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T05:15:45.831Z"
+}

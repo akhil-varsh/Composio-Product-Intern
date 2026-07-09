@@ -1,0 +1,47 @@
+{
+  "id": 93,
+  "name": "Fathom",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.fathom.ai/sdks/authentication)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (self_serve_free)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "contradicted",
+      "corrected_value": "broad",
+      "quote": "re-ask found \"broad\" (https://usefathom.com/docs/features/api)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.fathom.ai/quickstart)"
+    }
+  ],
+  "urls_fetched": [
+    "https://help.fathom.video/en/articles/8368641",
+    "https://chromewebstore.google.com/detail/fathom-ai-note-taker-for/nhocmlminaplaendbabmoemehbpgdemn",
+    "https://help.fathom.video/en/articles/6220097"
+  ],
+  "urls_failed": [
+    "https://www.businesswire.com/news/home/20251008689349/en/Fathom-Expands-with-New-Features-Designed-to-Extract-Maximum-Value-From-Every-Conversation (HTTP 403)"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T05:16:16.451Z"
+}

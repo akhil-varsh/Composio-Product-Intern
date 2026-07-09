@@ -1,0 +1,48 @@
+{
+  "id": 48,
+  "name": "Gumroad",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://www.mintlify.com/antiwork/gumroad/api/authentication)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://rollout.com/integration-guides/gumroad/api-essentials)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "contradicted",
+      "corrected_value": "broad",
+      "quote": "re-ask found \"broad\" (https://mintlify.wiki/antiwork/gumroad/api/overview)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "community",
+      "quote": "re-ask found \"community\" (https://github.com/rmarescu/gumroad-mcp)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://composio.dev/toolkits/gumroad)"
+    }
+  ],
+  "urls_fetched": [
+    "https://blog.stackademic.com/the-flaws-of-the-gumroad-api-from-a-consumer-perspective-4235677dbd7f"
+  ],
+  "urls_failed": [
+    "https://app.gumroad.com/api (almost no text (JS-rendered or blocked))",
+    "https://gumroad.com/help/article/280-create-application-api (almost no text (JS-rendered or blocked))",
+    "https://www.postman.com/api-reference-library/gumroad/overview (almost no text (JS-rendered or blocked))"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T05:08:04.837Z"
+}

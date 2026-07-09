@@ -1,0 +1,46 @@
+{
+  "id": 81,
+  "name": "Stripe",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (self_serve_free)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://www.apideck.com/blog/introduction-to-the-stripe-api)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://docs.stripe.com/mcp)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://wmcp.sh/integration/stripe)"
+    }
+  ],
+  "urls_fetched": [
+    "https://docs.stripe.com/api",
+    "https://www.apideck.com/blog/introduction-to-the-stripe-api",
+    "https://www.youtube.com/watch?v=Sh_enHD6ssI",
+    "https://stripe.dev/blog/how-api-changes-flow-into-stripes-developer-products"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:14:02.777Z"
+}

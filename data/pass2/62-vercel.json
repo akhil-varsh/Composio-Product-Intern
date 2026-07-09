@@ -1,0 +1,46 @@
+{
+  "id": 62,
+  "name": "Vercel",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (broad)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://vercel.com/docs/agent-resources/vercel-mcp)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://vercel.com/docs/integrations/create-integration/vercel-api-integrations)"
+    }
+  ],
+  "urls_fetched": [
+    "https://marketplace.apilayer.com/vercel-api",
+    "https://vercel.com/legal/api-terms",
+    "https://github.com/vercel/vercel/discussions/8203",
+    "https://vercel.com/docs"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:10:30.329Z"
+}

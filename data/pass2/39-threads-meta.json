@@ -1,0 +1,45 @@
+{
+  "id": 39,
+  "name": "Threads (Meta)",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"admin_approval\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "not_verifiable"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "not_verifiable"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "community",
+      "quote": "re-ask found \"community\" (https://github.com/sergekostenchuk/threads-mcp)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.social-api.ai/connectors/threads)"
+    }
+  ],
+  "urls_fetched": [
+    "https://zernio.com/blog/threads-api",
+    "https://www.blotato.com/blog/threads-api-pricing",
+    "https://www.youtube.com/watch?v=iFXj21Pv_zo"
+  ],
+  "urls_failed": [
+    "https://www.postman.com/meta/threads/collection/dht3nzz/threads-api (almost no text (JS-rendered or blocked))"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T05:06:24.325Z"
+}

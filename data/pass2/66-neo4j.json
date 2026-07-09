@@ -1,0 +1,45 @@
+{
+  "id": 66,
+  "name": "Neo4j",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://neo4j.com/docs/operations-manual/2026.02/authentication-authorization/)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://neo4j.com/docs/aura/api/authentication/)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://neo4j.com/docs/query-api/current/)"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://neo4j.com/docs/query-api/current/)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://github.com/neo4j-contrib/query-go-sdk)"
+    }
+  ],
+  "urls_fetched": [
+    "https://neo4j.com/docs/http-api/current/",
+    "https://www.youtube.com/watch?v=EkKSCuTHrLk",
+    "https://neo4j.com/labs/",
+    "https://neo4j.com/"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:11:19.405Z"
+}

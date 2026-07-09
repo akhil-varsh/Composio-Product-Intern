@@ -1,0 +1,46 @@
+{
+  "id": 37,
+  "name": "systeme.io",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.systeme.io/reference/api)"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.systeme.io/reference/api)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://help.systeme.io/article/9489-how-to-use-systeme-ios-mcp)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.systeme.io/reference/api)"
+    }
+  ],
+  "urls_fetched": [
+    "https://help.systeme.io/article/2329-how-to-use-systeme-io-public-api",
+    "https://readme.anytrack.io/docs/systemeio",
+    "https://techscribe.in/business-ai-tools/systemeio/",
+    "https://www.youtube.com/watch?v=r9CUU5uEXE4"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:05:32.836Z"
+}

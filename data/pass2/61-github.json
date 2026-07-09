@@ -1,0 +1,50 @@
+{
+  "id": 61,
+  "name": "GitHub",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "contradicted",
+      "corrected_value": [
+        "Bearer token",
+        "Basic"
+      ],
+      "quote": "re-ask found \"Bearer token, Basic\" (https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api?apiVersion=2026-03-10)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.github.com/en/rest)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://github.com/github/github-mcp-server/)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://truto.one/integrations/detail/github/)"
+    }
+  ],
+  "urls_fetched": [
+    "https://docs.github.com/en/rest",
+    "https://www.getknit.dev/blog/github-api-integration-guide",
+    "https://docs.github.com/en/rest/pulls/pulls?apiVersion=2026-03-10",
+    "https://github.com/orgs/community/discussions/24604"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:10:22.040Z"
+}

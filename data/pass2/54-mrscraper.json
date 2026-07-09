@@ -1,0 +1,47 @@
+{
+  "id": 54,
+  "name": "MrScraper",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.mrscraper.com/docs/guides/programmatically)"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "contradicted",
+      "corrected_value": "broad",
+      "quote": "re-ask found \"broad\" (https://docs.mrscraper.com/docs/api/v3/scraper/ai-init)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (official)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.mrscraper.com/docs/integrations/langchain)"
+    }
+  ],
+  "urls_fetched": [
+    "https://mrscraper.com/about",
+    "https://docs.mrscraper.com/docs/features/activating-api",
+    "https://mrscraper.com/webscraperapi",
+    "https://mrscraper.com/"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:09:05.182Z"
+}

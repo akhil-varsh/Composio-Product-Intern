@@ -1,0 +1,49 @@
+{
+  "id": 94,
+  "name": "Consensus",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.consensus.app/docs/mcp, https://app.goconsensus.com/api-documentation/)"
+    },
+    {
+      "field": "access",
+      "verdict": "contradicted",
+      "corrected_value": "self_serve_free",
+      "quote": "re-ask found \"self_serve_free\" (https://apigene.ai/mcp/official/consensus)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.consensus.app/reference/v1_quick_search)"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "contradicted",
+      "corrected_value": "moderate",
+      "quote": "re-ask found \"moderate\" (https://app.goconsensus.com/api-documentation/)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://docs.consensus.app/docs/mcp)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (yes)"
+    }
+  ],
+  "urls_fetched": [
+    "https://docs.consensus.app/reference/v1_quick_search",
+    "https://support.goconsensus.com/consensus-api-documents",
+    "https://www.youtube.com/watch?v=ZuON_ODs5Eo"
+  ],
+  "urls_failed": [
+    "https://consensus.app/home/api/ (HTTP 403)"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T05:16:32.064Z"
+}

@@ -1,0 +1,45 @@
+{
+  "id": 79,
+  "name": "Smartsheet",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.smartsheet.com/api/smartsheet/openapi)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.smartsheet.com/api/smartsheet/introduction?iOS=)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (with_caveats)"
+    }
+  ],
+  "urls_fetched": [
+    "https://www.smartsheet.com/content-center/product-insights/smartsheet-tips/4-solutions-developers-build-smartsheet-api",
+    "https://developers.smartsheet.com/api/smartsheet/introduction",
+    "http://gt-events.net/api-getting-started.html",
+    "https://www.smartsheet.com/content-center/managing-work/it-management/what-makes-api-enterprise-grade-5-dimension-evaluation"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:13:42.903Z"
+}

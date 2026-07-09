@@ -202,9 +202,7 @@
   <div class="tiles" id="kpis"></div>
 
   <div class="findings">
-    <ul id="narrative">
-      <!--NARRATIVE-->
-    </ul>
+    <ul id="narrative"></ul>
   </div>
 
   <div class="charts">
@@ -436,15 +434,62 @@ document.getElementById("metaChips").innerHTML = [
 ].map(s => `<span>${s}</span>`).join("");
 
 const v = DATA.verification;
+const hs = v.human_sample;
 const acc1 = v.pass1_accuracy == null ? "—" : Math.round(v.pass1_accuracy * 100) + "%";
-const accH = v.human_sample.accuracy == null ? "—" : Math.round(v.human_sample.accuracy * 100) + "%";
+const hsArc = hs.pass1_accuracy == null ? "—"
+  : `${Math.round(hs.pass1_accuracy * 100)}%→${Math.round(hs.post_verifier_accuracy * 100)}%`;
 document.getElementById("kpis").innerHTML = [
   { v: `${buildableN + caveatsN}<span style="font-size:18px;color:var(--muted)">/${N}</span>`, l: "buildable as a toolkit", d: `${buildableN} clean + ${caveatsN} with caveats` },
   { v: pct(selfServeN, N) + "%", l: "self-serve credentials", d: "free tier or trial, no gatekeeper" },
   { v: pct(oauthN, N) + "%", l: "support OAuth2", d: `${pct(keyN, N)}% support API keys` },
   { v: `${inComposioN}<span style="font-size:18px;color:var(--muted)">/${DATA.composio.length || N}</span>`, l: "already in Composio", d: "matched in the live registry" },
-  { v: `${acc1} → ${accH}`, l: "accuracy, pass 1 → final", d: "see verification below" },
+  { v: `${v.corrections.length}`, l: "fields corrected by verification", d: `${acc1} of self-cited claims held up — details below`, },
 ].map(t => `<div class="tile"><div class="v">${t.v}</div><div class="l">${t.l}</div><div class="d">${t.d}</div></div>`).join("");
+
+/* ---------- narrative: hand-written prose, live-computed numbers ---------- */
+(function narrative() {
+  const gatedSet = ["paid_plan", "admin_approval", "partner_gated", "no_public_api"];
+  const demoted = v.corrections.filter(c =>
+    c.field === "access" && SELF_SERVE.includes(String(c.from)) && gatedSet.includes(String(c.to))).length;
+  const keyOrToken = R.filter(r => (r.auth_methods || []).some(a => /api key|bearer/i.test(a))).length;
+  const oauthOrKey = R.filter(r => (r.auth_methods || []).some(a => /oauth|api key|bearer/i.test(a))).length;
+  const catShare = CATEGORIES.map(c => {
+    const rows = R.filter(r => r.category === c);
+    return { c, share: rows.filter(r => SELF_SERVE.includes(r.access)).length / rows.length };
+  }).sort((a, b) => b.share - a.share);
+  const easyCats = catShare.slice(0, 3).map(x => x.c.split(",")[0].split("&")[0].trim());
+  const gatedCats = catShare.slice(-3).reverse().map(x => x.c.split(",")[0].split("&")[0].trim());
+  const mcpCorr = v.corrections.filter(c => c.field === "mcp").length;
+  const accessCorr = v.corrections.filter(c => c.field === "access").length;
+  const easyWins = R.filter(r => r.buildable === "yes" && SELF_SERVE.includes(r.access) &&
+    !composioById.get(r.id)?.in_composio).length;
+  const outreach = R.filter(r => ["partner_gated", "admin_approval"].includes(r.access)).length;
+  const p1s = hs.pass1_accuracy == null ? "—" : Math.round(hs.pass1_accuracy * 100) + "%";
+  const pvs = hs.post_verifier_accuracy == null ? "—" : Math.round(hs.post_verifier_accuracy * 100) + "%";
+
+  document.getElementById("narrative").innerHTML = [
+    `<b>Self-serve is the norm — but thinner than it first looks.</b> ${selfServeN} of ${N} apps let a
+     developer mint API credentials without talking to anyone. Verification knocked apps off that list
+     repeatedly: access drew ${accessCorr} corrections, more than almost any other field — agents
+     systematically confuse "free product signup" with "free API access".`,
+    `<b>Two auth patterns are essentially the whole game.</b> OAuth2 appears on ${oauthN} of ${N} apps and
+     simple keys/tokens on ${keyOrToken}; Basic, JWT and mTLS are a rounding error. A platform that ships
+     managed OAuth plus a key vault can onboard ${pct(oauthOrKey, N)}% of this list without custom auth work.`,
+    `<b>The gates cluster by category.</b> ${esc(easyCats.join(", "))} are effectively all self-serve;
+     partner and approval gates concentrate in ${esc(gatedCats.join(", "))} — where the data itself is
+     the product (ads, payments, market intel), credentials are the moat.`,
+    `<b>MCP went mainstream fast — and it's the least trustworthy claim.</b> ${mcpOffN} of ${N} apps now
+     ship an official MCP server. But "has an MCP" drew ${mcpCorr} corrections: third-party MCP
+     directories masquerade as vendor endorsement, fooling agents in both directions.`,
+    `<b>The build list writes itself.</b> ${easyWins} apps have no Composio toolkit yet <i>and</i> are
+     buildable today with self-serve credentials — those are the easy wins. ${outreach} apps sit behind
+     approval or partnership gates where outreach, not code, is the next step.`,
+    `<b>Trust, quantified.</b> ${acc1} of the agent's evidence-checked claims survived verification; on a
+     hand-audited random sample the machine loops moved accuracy ${p1s} → ${pvs}, and human arbitration
+     closed the rest. The dominant failure mode wasn't wrong facts — it was wrong <i>identity</i>:
+     small apps with ambiguous names quietly became other companies.`,
+  ].map(s => `<li>${s}</li>`).join("");
+})();
 
 /* ---------- chart: access by category (diverging stacked) ---------- */
 (function accessChart() {
@@ -690,10 +735,10 @@ function renderTable() {
     `Wrong answers were not deleted — they are listed below, struck through.`;
   const ma = v.model_agreement || { rate: null, apps_compared: 0, fields_compared: 0 };
   document.getElementById("verifTiles").innerHTML = [
-    { v: acc1, l: "pass-1 agent accuracy", d: `${fv.confirmed} of ${checked} machine-checkable field-claims confirmed` },
-    { v: String(v.corrections.length), l: "corrections applied", d: `${v.corrections.filter(c => c.source === "human").length} by human, ${v.corrections.filter(c => c.source === "verifier").length} by verifier` },
+    { v: acc1, l: "evidence-check accuracy, all 100", d: `${fv.confirmed} of ${checked} machine-checkable field-claims held up against the agent's own citations` },
+    { v: String(v.corrections.length), l: "corrections applied", d: `${v.corrections.filter(c => c.source === "verifier").length} by the verifier, ${v.corrections.filter(c => c.source === "human").length} by human review` },
     { v: ma.rate == null ? "—" : Math.round(ma.rate * 100) + "%", l: "two-engine agreement", d: `${ma.apps_compared} apps researched independently by both Gemini and Exa (${ma.fields_compared} fields)` },
-    { v: accH, l: "accuracy after loops", d: `on the ${v.human_sample.sampled_ids.length}-app human sample (${v.human_sample.fields_checked} fields)` },
+    { v: hsArc, l: "human-audited sample accuracy", d: `${hs.sampled_ids.length} random apps × 6 fields, hand-checked against live docs: pass 1 → after machine loops (100% after the human pass, by construction)` },
   ].map(t => `<div class="tile"><div class="v">${t.v}</div><div class="l">${t.l}</div><div class="d">${t.d}</div></div>`).join("");
 
   document.getElementById("corrTable").innerHTML =

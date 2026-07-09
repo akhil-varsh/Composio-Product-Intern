@@ -1,0 +1,51 @@
+{
+  "id": 65,
+  "name": "Supabase",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "contradicted",
+      "corrected_value": [
+        "API key",
+        "Bearer token",
+        "Basic"
+      ],
+      "quote": "re-ask found \"API key, Bearer token, Basic\" (https://deepwiki.com/supabase/auth/3-api-reference)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://supabase-supabase.mintlify.app/quickstart)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://supabase.com/docs/guides/integrations/supabase-for-platforms)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://supabase.com/docs/guides/ai-tools/mcp)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://supabase.com/docs/guides/integrations/supabase-for-platforms)"
+    }
+  ],
+  "urls_fetched": [
+    "https://supabase.com/docs/guides/api",
+    "https://supabase.com/blog/simplify-backend-with-data-api",
+    "https://www.youtube.com/watch?v=5mC2FOt9BXI",
+    "https://supabase.com/docs"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:11:05.492Z"
+}

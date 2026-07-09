@@ -1,0 +1,46 @@
+{
+  "id": 49,
+  "name": "Amazon Selling Partner",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"admin_approval\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer-docs.amazon.com/sp-api/reference/welcome-to-api-references)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://github.com/amzn/selling-partner-api-samples/tree/main/use-cases/sp-api-dev-mcp)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer-docs.amazon.com/sp-api/docs/amazon-seller-data-access)"
+    }
+  ],
+  "urls_fetched": [
+    "https://developer.amazonservices.com/",
+    "https://sell.amazon.com/developers",
+    "https://docs.aws.amazon.com/prescriptive-guidance/latest/strategy-gen-ai-selling-partner-api/integrating-sp-api.html",
+    "https://developer-docs.amazon.com/sp-api/docs/connect-to-the-selling-partner-api-using-a-generated-c-sharp-sdk"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:08:14.628Z"
+}

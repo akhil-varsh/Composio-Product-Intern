@@ -1,0 +1,48 @@
+{
+  "id": 86,
+  "name": "QuickBooks",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "contradicted",
+      "corrected_value": "self_serve_free",
+      "quote": "re-ask found \"self_serve_free\" (https://developer.intuit.com/app/developer/qbo/docs/get-started/start-developing-your-app)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.intuit.com/app/developer/qbo/docs/learn/explore-the-quickbooks-online-api)"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.intuit.com/app/developer/qbo/docs/learn/explore-the-quickbooks-online-api)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://github.com/intuit/quickbooks-online-mcp-server)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.intuit.com/app/developer/qbo/docs/get-started/partner-faq)"
+    }
+  ],
+  "urls_fetched": [
+    "https://www.merge.dev/blog/quickbooks-online-api-key",
+    "https://www.merge.dev/blog/quickbooks-api"
+  ],
+  "urls_failed": [
+    "https://developer.intuit.com/app/developer/qbo/docs/develop (almost no text (JS-rendered or blocked))",
+    "https://developer.intuit.com/app/developer/qbo/docs/get-started/partner-faq (almost no text (JS-rendered or blocked))"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T05:15:07.492Z"
+}

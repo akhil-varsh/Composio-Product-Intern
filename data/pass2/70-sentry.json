@@ -1,0 +1,45 @@
+{
+  "id": 70,
+  "name": "Sentry",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.sentry.io/api/auth/)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.sentry.io/api/guides/create-auth-token.md)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.sentry.io/api.md)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.sentry.io/integrations/integration-platform/public-integration/)"
+    }
+  ],
+  "urls_fetched": [
+    "https://docs.sentry.io/api/",
+    "https://sentry.io/",
+    "https://blog.sentry.io/customize-your-sentry-workflow-a-sample-internal-integration/",
+    "https://docs.sentry.io/integrations/integration-platform/public-integration/"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:12:03.921Z"
+}

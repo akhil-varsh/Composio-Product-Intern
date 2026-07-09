@@ -1,0 +1,45 @@
+{
+  "id": 78,
+  "name": "Coda",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://coda.io/@oleg/getting-started-guide-coda-api/start-here-5)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://coda.io/apis/v1/openapi.yaml)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://coda.io/apis/v1/openapi.yaml)"
+    }
+  ],
+  "urls_fetched": [
+    "https://coda.io/developers",
+    "https://coda.io/",
+    "https://tray.ai/documentation/connectors/service/coda",
+    "https://coda.io/@oleg/getting-started-guide-coda-api"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:13:32.106Z"
+}

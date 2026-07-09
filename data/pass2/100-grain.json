@@ -1,0 +1,46 @@
+{
+  "id": 100,
+  "name": "Grain",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.grain.com/)"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://growthengineer.ai/mcp-servers/grain)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://nango.mintlify.dev/docs/integrations/all/grain)"
+    }
+  ],
+  "urls_fetched": [
+    "https://developers.grain.com/",
+    "https://grain.com/",
+    "https://www.youtube.com/watch?v=otp7gkrqsQw"
+  ],
+  "urls_failed": [
+    "https://support.grain.com/en/articles/8054613-does-grain-share-my-data-with-3rd-parties-like-openai (HTTP 404)"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T05:17:21.922Z"
+}

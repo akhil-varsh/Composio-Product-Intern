@@ -1,0 +1,45 @@
+{
+  "id": 36,
+  "name": "Klaviyo",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.klaviyo.com/en/docs/authenticate_)"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.klaviyo.com/en/v2024-10-15/docs/build_your_integration)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.klaviyo.com/en/v2024-10-15/docs/export_data_from_klaviyo)"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://github.com/klaviyo/openapi)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.klaviyo.com/en/reference/api_overview)"
+    }
+  ],
+  "urls_fetched": [
+    "https://developers.klaviyo.com/",
+    "https://developers.klaviyo.com/en/docs/authenticate_",
+    "https://community.klaviyo.com/developer-group-64/klaviyo-api-mcp-18743",
+    "https://developers.klaviyo.com/en/reference/api_overview"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:05:23.056Z"
+}

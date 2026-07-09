@@ -1,0 +1,47 @@
+{
+  "id": 46,
+  "name": "Squarespace",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "contradicted",
+      "corrected_value": "paid_plan",
+      "quote": "re-ask found \"paid_plan\" (https://commerce-apis.squarespace.com/commerce-apis/authentication-and-permissions)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.squarespace.com/commerce-apis/overview)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "community",
+      "quote": "re-ask found \"community\" (community)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://commerce-apis.squarespace.com/commerce-apis/authentication-and-permissions)"
+    }
+  ],
+  "urls_fetched": [
+    "https://developers.squarespace.com/commerce-apis/overview",
+    "https://dlthub.com/context/source/squarespace",
+    "https://apix-drive.com/en/blog/other/squarespace-api-integration",
+    "https://www.rapidevelopers.com/does-saas-have-an-api/does-squarespace-have-an-api"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:07:42.181Z"
+}

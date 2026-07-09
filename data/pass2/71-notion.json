@@ -1,0 +1,47 @@
+{
+  "id": 71,
+  "name": "Notion",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "contradicted",
+      "corrected_value": "broad",
+      "quote": "re-ask found \"broad\" (https://developers.notion.com/guides/get-started/overview)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developers.notion.com/guides/get-started/public-connections)"
+    }
+  ],
+  "urls_fetched": [
+    "https://www.notion.com/help/guides/connect-tools-to-notion-api",
+    "https://www.mindstudio.ai/blog/notion-developer-platform-ai-agents-cli-webhooks-api",
+    "https://sfailabs.com/guides/how-to-get-notion-api-key"
+  ],
+  "urls_failed": [
+    "https://www.youtube.com/watch?v=ec5m6t77eYM (almost no text (JS-rendered or blocked))"
+  ],
+  "notes": "",
+  "verified_at": "2026-07-09T05:12:15.597Z"
+}

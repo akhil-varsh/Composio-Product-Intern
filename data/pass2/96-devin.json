@@ -1,0 +1,46 @@
+{
+  "id": 96,
+  "name": "Devin",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "contradicted",
+      "corrected_value": "self_serve_free",
+      "quote": "re-ask found \"self_serve_free\" (self_serve_free)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.devin.ai/api-reference/overview)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://docs.devin.ai/api-reference/overview)"
+    }
+  ],
+  "urls_fetched": [
+    "https://docs.devin.ai/get-started/devin-intro",
+    "https://cognition.com/blog/devin-101-automatic-pr-reviews-with-the-devin-api",
+    "https://docs.devin.ai/work-with-devin/devin-mcp",
+    "https://www.youtube.com/watch?v=ZUw0JzZ1I2Q"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:16:45.404Z"
+}

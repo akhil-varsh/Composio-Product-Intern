@@ -1,0 +1,46 @@
+{
+  "id": 42,
+  "name": "WooCommerce",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.woocommerce.com/docs/apis/rest-api/)"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.woocommerce.com/docs/apis/)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "official",
+      "quote": "re-ask found \"official\" (https://developer.woocommerce.com/docs/features/mcp/)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.woocommerce.com/docs/apis/rest-api/authentication/)"
+    }
+  ],
+  "urls_fetched": [
+    "https://woocommerce.com/document/woocommerce-rest-api/",
+    "https://developer.woocommerce.com/docs/apis/rest-api/",
+    "https://www.codeable.io/blog/why-the-woocommerce-rest-api-matters/",
+    "https://raidboxes.io/en/blog/ecommerce/woocommerce-api/"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:06:57.853Z"
+}

@@ -1,0 +1,46 @@
+{
+  "id": 83,
+  "name": "Binance",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "claimed API styles appear in cited pages"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://github.com/binance/binance-spot-api-docs/blob/master/rest-api.md)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "contradicted",
+      "corrected_value": "community",
+      "quote": "re-ask found \"community\" (https://github.com/nirholas/Binance-MCP)"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://github.com/binance/binance-spot-api-docs/blob/master/rest-api.md)"
+    }
+  ],
+  "urls_fetched": [
+    "https://github.com/binance/binance-spot-api-docs",
+    "https://apidog.com/blog/binance-api/",
+    "https://vezgo.com/blog/binance-api-cheat-sheet-for-developers/",
+    "https://github.com/binance-exchange/binance-official-api-docs"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:14:23.368Z"
+}

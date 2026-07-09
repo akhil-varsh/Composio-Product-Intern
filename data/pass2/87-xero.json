@@ -1,0 +1,45 @@
+{
+  "id": 87,
+  "name": "Xero",
+  "fields": [
+    {
+      "field": "auth_methods",
+      "verdict": "confirmed",
+      "quote": "all claimed methods appear in cited pages"
+    },
+    {
+      "field": "access",
+      "verdict": "confirmed",
+      "quote": "cited pages match \"self_serve_free\" language"
+    },
+    {
+      "field": "api_type",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://satvasolutions.com/blog/xero-api-integration-guide)"
+    },
+    {
+      "field": "api_breadth",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.xero.com/)"
+    },
+    {
+      "field": "mcp",
+      "verdict": "confirmed",
+      "quote": "MCP mentioned in cited pages"
+    },
+    {
+      "field": "buildable",
+      "verdict": "confirmed",
+      "quote": "independent re-ask agrees (https://developer.xero.com/custom-development)"
+    }
+  ],
+  "urls_fetched": [
+    "https://developer.xero.com/",
+    "https://www.apideck.com/blog/xero-api-pricing-and-the-app-partner-program",
+    "https://www.merge.dev/blog/xero-api",
+    "https://devblog.xero.com/talking-to-the-xero-api-part-3-8cf02e7b0174"
+  ],
+  "urls_failed": [],
+  "notes": "",
+  "verified_at": "2026-07-09T05:15:16.376Z"
+}
