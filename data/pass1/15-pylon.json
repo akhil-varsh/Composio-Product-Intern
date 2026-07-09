@@ -1,0 +1,52 @@
+{
+  "id": 15,
+  "name": "Pylon",
+  "category": "Support & Helpdesk",
+  "one_liner": "Pylon is an AI-native B2B customer support and operations platform that unifies shared Slack, Microsoft Teams, email, and chat support into a single ticketing system, with a knowledge base, accounts, contacts, and AI agents.",
+  "auth_methods": [
+    "API key",
+    "OAuth2"
+  ],
+  "auth_notes": "The public REST API uses API tokens. The official Pylon MCP Server authenticates with OAuth 2.0 (AuthKit).",
+  "access": "admin_approval",
+  "access_notes": "API tokens can only be created by Admin users. Access to the API settings to generate tokens requires an Admin role within a Pylon account. While not explicitly stated as requiring a paid plan for API access, Pylon is a B2B platform with pricing starting at $59 per agent per month, implying API access is part of a paid subscription. The developer hub also suggests contacting support for API access.",
+  "api_type": [
+    "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Pylon offers a documented public REST API that covers core functionalities such as Issues (tickets), Accounts, Contacts, Tags, Custom Fields, Tasks, Projects, Milestones, Knowledge Base (Articles, Collections), Users, and Teams. This allows for comprehensive control over most product features.",
+  "mcp": "official",
+  "mcp_notes": "An official Pylon MCP (Model Context Protocol) Server exists, built and endorsed by the vendor. It exposes Pylon data to AI tools supporting the MCP standard (e.g., Claude, ChatGPT, Cursor) and can be configured and enabled from the Pylon dashboard (Settings → AI Controls → MCP Server).",
+  "buildable": "yes",
+  "blocker": null,
+  "evidence": [
+    {
+      "claim": "Pylon is an AI-native B2B customer support and operations platform that unifies various communication channels into a single ticketing system with a knowledge base, accounts, contacts, and AI agents.",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAjG-2yFmtxOql-lM8YeTXlfYxXA7qY3KUPwQmjV0NWfDYmuA2t0P69DUw79tiuVDD6lT93knuRd2aml27awPcg0xacLOBVRqM63k4J_ch35VBztZSfYZnwkiS5JrOn2BfNg=="
+    },
+    {
+      "claim": "The public REST API uses API tokens for authentication.",
+      "url": "https://docs.usepylon.com/pylon-docs/developer/api"
+    },
+    {
+      "claim": "The official Pylon MCP Server authenticates with OAuth 2.0 (AuthKit).",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcU2K1GXdEVEWCIb6vSxEbZdpXvTFTBE2yzcxNCfxy_pU2nSKghVyFeHkFb1SFJANjRMwTu9j4_kbtO7GI2f-5TG5pYi8N7wubHfkk19vy2OOl4xr51aSbAH7tuIex_z7KevfjZ_GxZfCa9uTZG2H3RdXM5pps"
+    },
+    {
+      "claim": "API tokens can only be created by Admin users, and access to the API may involve contacting support.",
+      "url": "https://getpylon.com/developers/"
+    },
+    {
+      "claim": "Pylon has a documented public REST API covering various core functionalities like Issues, Accounts, Contacts, and Knowledge Base.",
+      "url": "https://github.com/api-evangelist/pylon"
+    },
+    {
+      "claim": "An official Pylon MCP Server exists and can be configured from the Pylon dashboard.",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcU2K1GXdEVEWCIb6vSxEbZdpXvTFTBE2yzcxNCfxy_pU2nSKghVyFeHkFb1SFJANjRMwTu9j4_kbtO7GI2f-5TG5pYi8N7wubHfkk19vy2OOl4xr51aSbAH7tuIex_z7KevfjZ_GxZfCa9uTZG2H3RdXM5pps"
+    }
+  ],
+  "confidence": "high",
+  "search_sources": [],
+  "researched_at": "2026-07-09T04:18:33.095Z",
+  "model": "gemini-2.5-flash"
+}

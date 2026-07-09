@@ -1,0 +1,50 @@
+{
+  "id": 6,
+  "name": "Podio",
+  "category": "CRM & Sales",
+  "one_liner": "Podio is a customizable work collaboration and project management software that helps teams manage workflows, tasks, communication, and file sharing, and allows users to create custom apps without coding.",
+  "auth_methods": [
+    "OAuth2",
+    "API key"
+  ],
+  "auth_notes": "The Podio API uses the OAuth2 protocol for authentication, supporting server-side, client-side, username & password, and app authentication flows. Developers can also generate API keys for their applications.",
+  "access": "self_serve_free",
+  "access_notes": "The Podio API is free to use for both premium and free Podio accounts, with full access and the same rate limits. Developers can sign in or sign up for a Podio account and generate API keys from their account settings.",
+  "api_type": [
+    "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "The Podio API is a complete programmable interface to all Podio functionality, built on a RESTful API using JSON. It covers core areas like applications, comments, contacts, files, hooks, items, status, and tasks, as well as other areas like actions, alerts, app market, calendar, conversations, and more.",
+  "mcp": "official",
+  "mcp_notes": "An official MCP (Model Context Protocol) server exists, built or endorsed by the vendor, live at https://mcp.podio.com. It connects AI assistants directly to Podio data, enabling them to read and write workspaces, apps, and items using natural language. It supports shared default credentials for quick start or using your own API key.",
+  "buildable": "yes",
+  "blocker": null,
+  "evidence": [
+    {
+      "claim": "Podio is a customizable work collaboration and project management software that helps teams manage workflows, tasks, communication, and file sharing, and allows users to create custom apps without coding.",
+      "url": "https://thedigitalprojectmanager.com/tools/podio-review/"
+    },
+    {
+      "claim": "The Podio API uses the OAuth2 protocol for authentication, supporting server-side, client-side, username & password, and app authentication flows.",
+      "url": "https://developers.podio.com/authentication"
+    },
+    {
+      "claim": "The Podio API is free to use for both premium and free Podio accounts, with full access and the same rate limits. Developers can sign in or sign up for a Podio account and generate API keys from their account settings.",
+      "url": "https://developers.podio.com/index/faq"
+    },
+    {
+      "claim": "The Podio API is a complete programmable interface to all Podio functionality, built on a RESTful API using JSON. It covers core areas like applications, comments, contacts, files, hooks, items, status, and tasks, as well as other areas like actions, alerts, app market, calendar, conversations, and more.",
+      "url": "https://developers.podio.com/"
+    },
+    {
+      "claim": "An official MCP (Model Context Protocol) server exists, built or endorsed by the vendor, live at https://mcp.podio.com. It connects AI assistants directly to Podio data, enabling them to read and write workspaces, apps, and items using natural language.",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFy8zdftZT_hUIOJDd_5dkM5pIAJe-t_bc6yo7fk0UhKTQdV30ijTlWiG3sGrtHUG6zszfpRJ0-m7jQ1-ox2oM7ORcNjk2H1XGfAGkxolDzpC8YbiNY6EdjAj_d-HQLULm6kZcLK4UBv75OoZ6bsgf1UOgOaO_pw46eysfY_oLlDt4fq8xSyX00NZCxjBf9rh-WJwWB"
+    }
+  ],
+  "confidence": "high",
+  "search_sources": [
+    "https://docs.sharefile.com/en-us/podio/using-podio/general-features/podio-mcp-server.html"
+  ],
+  "researched_at": "2026-07-09T04:16:03.160Z",
+  "model": "gemini-2.5-flash"
+}

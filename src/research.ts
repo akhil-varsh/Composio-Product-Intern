@@ -40,13 +40,18 @@ Research questions, in priority order:
 4. API surface: documented public REST / GraphQL / SOAP / gRPC / SDK-only / none? Roughly how
    broad (broad = most of the product is controllable via API; moderate = core objects only;
    narrow = a handful of endpoints)?
-5. MCP: does an OFFICIAL MCP server exist (by the vendor)? A well-known community one? None you can find?
+5. MCP: does an OFFICIAL MCP (Model Context Protocol) server exist, built or endorsed by the
+   vendor? A well-known community one? None you can find? MCP means the Model Context Protocol
+   standard that AI agents connect to. OpenAPI specs, Postman collections, SDKs, and Zapier
+   integrations are NOT MCP servers — do not count them.
 6. Verdict: could Composio build an agent toolkit for this TODAY ("yes"), only with caveats
    ("with_caveats" — name them), or is it blocked ("blocked" — name the blocker)?
 
 Rules:
 - Prefer official docs over blog posts. Every important claim needs an evidence URL you actually found.
 - Evidence URLs must be real pages you saw in search results — never invent or guess a URL.
+- Evidence URLs must be the actual destination page (e.g. https://developers.pipedrive.com/docs/api/auth),
+  NEVER a vertexaisearch.cloud.google.com or other redirect/tracking link.
 - If you cannot verify something, say so in the notes and lower "confidence" — do not guess.
 - Some apps are small or obscure; "no_public_api" with low confidence is a valid, honest answer.
 
@@ -69,15 +74,32 @@ Output ONLY a JSON object (no prose before or after) with exactly these fields:
 }`;
 }
 
+// Grounding gives back vertexaisearch redirect links, which expire and hide the real
+// domain. Follow the redirect once to recover the actual destination URL.
+async function resolveRedirect(url: string): Promise<string> {
+  if (!/vertexaisearch\.cloud\.google\.com/.test(url)) return url;
+  try {
+    const res = await fetch(url, { redirect: "manual", signal: AbortSignal.timeout(10_000) });
+    return res.headers.get("location") ?? url;
+  } catch {
+    return url;
+  }
+}
+
 async function researchOne(app: AppEntry): Promise<ResearchRecord> {
   const { text, sources } = await callGemini(buildPrompt(app), { useSearch: true });
   const parsed = extractJson(text) as Omit<ResearchRecord, "id" | "name" | "category">;
+  const evidence = await Promise.all(
+    (parsed.evidence ?? []).map(async (e) => ({ ...e, url: await resolveRedirect(e.url) })),
+  );
+  const resolvedSources = [...new Set(await Promise.all(sources.slice(0, 10).map(resolveRedirect)))];
   return {
     id: app.id,
     name: app.name,
     category: app.category,
     ...parsed,
-    search_sources: sources.slice(0, 10),
+    evidence,
+    search_sources: resolvedSources,
     researched_at: new Date().toISOString(),
     model: process.env.GEMINI_MODEL || "gemini-2.5-flash",
   };

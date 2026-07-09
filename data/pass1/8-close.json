@@ -1,0 +1,50 @@
+{
+  "id": 8,
+  "name": "Close",
+  "category": "CRM & Sales",
+  "one_liner": "Close is a sales CRM that provides tools for calling, email, SMS, pipeline management, and includes an AI sales agent, designed to help sales teams manage leads, automate workflows, and close deals.",
+  "auth_methods": [
+    "API key",
+    "OAuth2",
+    "Basic"
+  ],
+  "auth_notes": "API keys are used with HTTP Basic authentication, where the API key acts as the username and the password is empty. OAuth 2.0 is recommended for user-facing integrations.",
+  "access": "self_serve_free",
+  "access_notes": "API keys can be generated from the 'Settings > Developer > API Keys' section within a Close account. Close offers a free trial for its plans. Integration partners can request a free 'Dev organization' by emailing support, which functions identically to standard organizations but without subscription fees. Existing Close users can also create a free secondary organization for development and testing.",
+  "api_type": [
+    "REST",
+    "Webhooks"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "The Close Developer Platform provides a REST API for pushing CRM data (leads, contacts, activities), syncing data out with webhooks, automating outreach, and managing workflows. It supports creating, retrieving, updating, and deleting leads, tracking various activities (calls, emails, notes, meetings), and managing custom fields.",
+  "mcp": "official",
+  "mcp_notes": "The Close Developer Platform explicitly lists an 'MCP Server: Model Context Protocol for AI agents' and provides documentation on how to connect AI agents via MCP. Close.com provides 36 tools that AI agents can use through the Model Context Protocol (MCP).",
+  "buildable": "yes",
+  "blocker": null,
+  "evidence": [
+    {
+      "claim": "Close is a sales CRM that combines calling, email, SMS, pipeline management, reporting, and an AI sales agent.",
+      "url": "https://close.com/"
+    },
+    {
+      "claim": "The Close API supports API keys and OAuth 2.0 for authentication. API keys use HTTP Basic authentication.",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1ArGFpnUXLwV8N6o1KE7G9BjXvgyEe4PQ5N3F_J_7sw_C2JrCIP4TghMC1Ym7XwOFCH-2IyN8jxy3e9W1jq4bngyy0HRXiKMpTUPM5PTjEf1H11dVMzzyY2P6SSyOwBKN9pivug=="
+    },
+    {
+      "claim": "Developers can generate API keys from their Close account settings. Integration partners can request a free 'Dev organization' for development and testing.",
+      "url": "https://developer.close.com/integrations"
+    },
+    {
+      "claim": "Close has a documented public REST API that allows for comprehensive management of CRM data and workflows, and supports webhooks.",
+      "url": "https://developer.close.com/"
+    },
+    {
+      "claim": "An official MCP (Model Context Protocol) server exists, built or endorsed by Close, for AI agents.",
+      "url": "https://close.com/integrations/close-mcp"
+    }
+  ],
+  "confidence": "high",
+  "search_sources": [],
+  "researched_at": "2026-07-09T04:16:32.895Z",
+  "model": "gemini-2.5-flash"
+}

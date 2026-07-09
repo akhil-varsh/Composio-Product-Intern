@@ -42,8 +42,11 @@ export async function callGemini(prompt: string, opts: CallOptions = {}): Promis
 
     if (res.status === 429 || res.status >= 500) {
       const errText = await res.text();
-      if (/PerDay|daily/i.test(errText)) {
-        throw new Error(`DAILY_QUOTA_EXHAUSTED: ${errText.slice(0, 300)}`);
+      // A 429 is only a hard stop when every violated quota is a PER-DAY one;
+      // per-minute violations just need backoff. Parse quotaIds to tell them apart.
+      const quotaIds = [...errText.matchAll(/"quotaId"\s*:\s*"([^"]+)"/g)].map((m) => m[1]);
+      if (quotaIds.length > 0 && quotaIds.every((q) => /PerDay/i.test(q))) {
+        throw new Error(`DAILY_QUOTA_EXHAUSTED: ${quotaIds.join(", ")}`);
       }
       if (attempt >= maxAttempts) {
         throw new Error(`Gemini ${res.status} after ${attempt} attempts: ${errText.slice(0, 300)}`);

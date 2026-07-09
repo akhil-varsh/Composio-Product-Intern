@@ -1,0 +1,48 @@
+{
+  "id": 14,
+  "name": "Front",
+  "category": "Support & Helpdesk",
+  "one_liner": "Front is a customer operations platform that unifies customer communication channels (email, chat, SMS, social, voice) into a shared inbox, enabling team collaboration, automation, and AI-powered customer service.",
+  "auth_methods": [
+    "OAuth2",
+    "Bearer token"
+  ],
+  "auth_notes": "The Core API uses Bearer tokens for authentication. Developers can obtain these tokens either through API tokens generated in their settings or via OAuth2. Front recommends and often requires OAuth2 for public integrations.",
+  "access": "self_serve_free",
+  "access_notes": "Developers can sign up for a free developer account to access a sandbox environment and obtain API credentials for testing. While a free developer account is available, API rate limits for production use are tied to paid plans (Starter, Professional, Enterprise), and additional rate limit add-ons can be purchased.",
+  "api_type": [
+    "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Front offers a Core API, which is a backend REST API providing comprehensive control over a wide range of entities including messages, contacts, channels, inboxes, teammates, and analytics. It also supports webhooks for real-time updates. Additionally, there's a Channels API for custom messaging channels and a Plugin SDK.",
+  "mcp": "official",
+  "mcp_notes": "An official Front MCP (Model Context Protocol) server is available in beta, allowing AI applications to interact with Front accounts and API documentation using natural language.",
+  "buildable": "yes",
+  "blocker": null,
+  "evidence": [
+    {
+      "claim": "Front is a customer operations platform that unifies customer communication channels into a shared inbox for team collaboration, automation, and AI-powered customer service.",
+      "url": "https://www.getmacha.com/blog/what-is-front-app"
+    },
+    {
+      "claim": "The Core API uses Bearer tokens for authentication, obtainable via API tokens or OAuth2. OAuth2 is recommended for public integrations.",
+      "url": "https://dev.frontapp.com/docs/authentication"
+    },
+    {
+      "claim": "Developers can sign up for a free developer account to access a sandbox environment and obtain API tokens.",
+      "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZkGAIoELVIMlh-A5cR00xRKwd_SUHnHOfIsmMsllyUsSrJgMxelL70l6iU1twp0733x1aurWWONdQ3ML5pFd4v4MTnfVrgs8l1kvWijB3GNgGCm39QkvF_iFUCCiXOS1ctZb88Qa-z8QNQWBzIp7PbcfOW-PfebByGv2tpggvnNC8FvqQ3YtUIg6kCitt_qohrLIBKKZPg02X8hjtSber"
+    },
+    {
+      "claim": "Front's Core API is a backend REST API that provides comprehensive control over various entities like messages, contacts, and inboxes, and supports webhooks.",
+      "url": "https://dev.frontapp.com/docs/core-api-overview"
+    },
+    {
+      "claim": "An official Front MCP (Model Context Protocol) server is available in beta, enabling AI applications to interact with Front accounts and API documentation.",
+      "url": "https://community.front.com/api-news-updates-40/the-front-mcp-server-is-here-beta-3712"
+    }
+  ],
+  "confidence": "high",
+  "search_sources": [],
+  "researched_at": "2026-07-09T04:18:17.207Z",
+  "model": "gemini-2.5-flash"
+}
