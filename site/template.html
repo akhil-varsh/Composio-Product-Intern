@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Can we build it? — 100 apps researched by an agent</title>
+<style>
+  :root {
+    --page: #f9f9f7; --surface: #fcfcfb; --ink: #0b0b0b; --ink-2: #52514e;
+    --muted: #898781; --grid: #e1e0d9; --axis: #c3c2b7; --ring: rgba(11,11,11,0.10);
+    --blue: #2a78d6;
+    --acc-free: #2a78d6; --acc-trial: #86b6ef; --acc-paid: #ec8a88;
+    --acc-approval: #e34948; --acc-partner: #b02a29; --acc-none: #898781;
+    --st-good: #0ca30c; --st-warn: #fab219; --st-crit: #d03b3b;
+    --chip: #f0efec;
+  }
+  @media (prefers-color-scheme: dark) { :root {
+    --page: #0d0d0d; --surface: #1a1a19; --ink: #ffffff; --ink-2: #c3c2b7;
+    --muted: #898781; --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10);
+    --blue: #3987e5;
+    --acc-free: #3987e5; --acc-trial: #86b6ef; --acc-paid: #f0a3a2;
+    --acc-approval: #e66767; --acc-partner: #c94a49; --acc-none: #898781;
+    --chip: #262624;
+  }}
+  :root[data-theme="light"] {
+    --page: #f9f9f7; --surface: #fcfcfb; --ink: #0b0b0b; --ink-2: #52514e;
+    --muted: #898781; --grid: #e1e0d9; --axis: #c3c2b7; --ring: rgba(11,11,11,0.10);
+    --blue: #2a78d6;
+    --acc-free: #2a78d6; --acc-trial: #86b6ef; --acc-paid: #ec8a88;
+    --acc-approval: #e34948; --acc-partner: #b02a29; --acc-none: #898781;
+    --chip: #f0efec;
+  }
+  :root[data-theme="dark"] {
+    --page: #0d0d0d; --surface: #1a1a19; --ink: #ffffff; --ink-2: #c3c2b7;
+    --muted: #898781; --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10);
+    --blue: #3987e5;
+    --acc-free: #3987e5; --acc-trial: #86b6ef; --acc-paid: #f0a3a2;
+    --acc-approval: #e66767; --acc-partner: #c94a49; --acc-none: #898781;
+    --chip: #262624;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--page); color: var(--ink);
+    font: 15px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 20px 80px; }
+
+  header.top {
+    display: flex; align-items: center; gap: 14px; padding: 14px 0;
+    border-bottom: 1px solid var(--grid); margin-bottom: 36px; flex-wrap: wrap;
+  }
+  header.top .brand { font-weight: 700; }
+  header.top .links { margin-left: auto; display: flex; gap: 16px; align-items: center; font-size: 13.5px; }
+  #themeBtn {
+    background: var(--surface); color: var(--ink-2); border: 1px solid var(--grid);
+    border-radius: 8px; padding: 4px 10px; cursor: pointer; font: inherit; font-size: 13px;
+  }
+
+  h1 { font-size: 34px; line-height: 1.2; letter-spacing: -0.5px; max-width: 21em; }
+  .sub { color: var(--ink-2); margin-top: 10px; max-width: 46em; }
+  .meta-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+  .meta-chips span {
+    font-size: 12.5px; color: var(--ink-2); background: var(--chip);
+    padding: 3px 10px; border-radius: 999px;
+  }
+
+  section { margin-top: 56px; }
+  h2 { font-size: 22px; letter-spacing: -0.3px; margin-bottom: 6px; }
+  .kicker { font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .lede { color: var(--ink-2); max-width: 52em; margin-bottom: 22px; }
+
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 22px 0; }
+  .tile {
+    background: var(--surface); border: 1px solid var(--ring); border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .tile .v { font-size: 30px; font-weight: 700; letter-spacing: -0.5px; }
+  .tile .l { font-size: 12.5px; color: var(--ink-2); margin-top: 2px; }
+  .tile .d { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+  .findings { background: var(--surface); border: 1px solid var(--ring); border-radius: 12px; padding: 18px 22px; margin: 18px 0; }
+  .findings li { margin: 8px 0 8px 2px; }
+  .findings b { font-weight: 650; }
+
+  .charts { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--ring); border-radius: 12px;
+    padding: 18px 20px 14px; min-width: 0;
+  }
+  .card.wide { grid-column: 1 / -1; }
+  .card h3 { font-size: 15.5px; margin-bottom: 2px; }
+  .card .note { font-size: 12.5px; color: var(--muted); margin-bottom: 12px; }
+  @media (max-width: 800px) { .charts { grid-template-columns: 1fr; } }
+
+  .legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12.5px; color: var(--ink-2); margin: 6px 0 12px; }
+  .legend .it { display: inline-flex; align-items: center; gap: 6px; }
+  .sw { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+
+  svg text { font: 12px system-ui, -apple-system, "Segoe UI", sans-serif; fill: var(--ink-2); }
+  svg .val { font-variant-numeric: tabular-nums; }
+  svg .end { fill: var(--ink); font-weight: 600; }
+  svg .gridline { stroke: var(--grid); stroke-width: 1; }
+  svg .axisline { stroke: var(--axis); stroke-width: 1; }
+
+  #tooltip {
+    position: fixed; pointer-events: none; z-index: 50; display: none;
+    background: var(--surface); color: var(--ink); border: 1px solid var(--ring);
+    border-radius: 8px; padding: 7px 10px; font-size: 12.5px; max-width: 300px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.14);
+  }
+  #tooltip .t { font-weight: 650; }
+  #tooltip .s { color: var(--ink-2); }
+
+  .filterbar { display: flex; gap: 10px; flex-wrap: wrap; margin: 16px 0 12px; }
+  .filterbar input, .filterbar select {
+    background: var(--surface); color: var(--ink); border: 1px solid var(--grid);
+    border-radius: 8px; padding: 7px 10px; font: inherit; font-size: 13.5px;
+  }
+  .filterbar input { flex: 1; min-width: 180px; }
+  .count-note { font-size: 12.5px; color: var(--muted); align-self: center; }
+
+  .tablewrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--ring); border-radius: 12px; }
+  table { border-collapse: collapse; width: 100%; min-width: 980px; font-size: 13.5px; }
+  th {
+    text-align: left; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.8px;
+    color: var(--muted); padding: 10px 12px; border-bottom: 1px solid var(--grid);
+    cursor: pointer; user-select: none; white-space: nowrap; position: sticky; top: 0; background: var(--surface);
+  }
+  td { padding: 9px 12px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+  tr.approw { cursor: pointer; }
+  tr.approw:hover td { background: color-mix(in srgb, var(--chip) 55%, transparent); }
+  tr.detail td { background: color-mix(in srgb, var(--chip) 40%, transparent); font-size: 13px; color: var(--ink-2); }
+  tr.detail .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 26px; padding: 4px 2px; }
+  tr.detail .cols div { min-width: 0; }
+  tr.detail b { color: var(--ink); font-weight: 600; }
+  @media (max-width: 800px) { tr.detail .cols { grid-template-columns: 1fr; } }
+  .dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; margin-right: 6px; }
+  .chipset span {
+    background: var(--chip); border-radius: 6px; padding: 1px 7px; font-size: 12px;
+    margin-right: 4px; white-space: nowrap; display: inline-block; margin-bottom: 2px;
+  }
+  .verdict { white-space: nowrap; }
+  .verdict .ic { font-weight: 700; margin-right: 5px; }
+  .conf { font-size: 11.5px; color: var(--muted); }
+  .fixed-badge {
+    font-size: 10.5px; background: var(--chip); color: var(--ink-2);
+    border-radius: 5px; padding: 1px 5px; margin-left: 6px; vertical-align: 1px;
+  }
+
+  .pipeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; margin: 20px 0; }
+  .stage { background: var(--surface); border: 1px solid var(--ring); border-radius: 12px; padding: 14px 16px; position: relative; }
+  .stage .n { font-size: 11px; font-weight: 700; letter-spacing: 1px; color: var(--muted); text-transform: uppercase; }
+  .stage .t { font-weight: 650; margin: 4px 0 6px; }
+  .stage p { font-size: 12.5px; color: var(--ink-2); }
+
+  .twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start; }
+  @media (max-width: 800px) { .twocol { grid-template-columns: 1fr; } }
+  .card ul { padding-left: 18px; }
+  .card li { margin: 7px 0; font-size: 13.5px; color: var(--ink-2); }
+  .card li b { color: var(--ink); font-weight: 600; }
+
+  .corr-table { width: 100%; min-width: 0; font-size: 13px; }
+  .corr-table td { padding: 7px 10px; }
+  .from { color: var(--st-crit); text-decoration: line-through; text-decoration-thickness: 1px; }
+  .to { color: var(--ink); font-weight: 600; }
+
+  footer { margin-top: 70px; padding-top: 18px; border-top: 1px solid var(--grid); font-size: 13px; color: var(--muted); display: flex; gap: 18px; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<div id="tooltip" role="status"></div>
+<div class="wrap">
+
+<header class="top">
+  <span class="brand">Toolkit-buildability research</span>
+  <nav class="links">
+    <a href="#table">All 100 apps</a>
+    <a href="#agent">The agent</a>
+    <a href="#verification">Verification</a>
+    <a id="repoLink" href="#" target="_blank" rel="noopener">Source repo ↗</a>
+    <button id="themeBtn" aria-label="Toggle color theme">◐ theme</button>
+  </nav>
+</header>
+
+<h1>Can an AI agent call it? 100 apps, researched and verified by a pipeline.</h1>
+<p class="sub">
+  Before Composio builds a toolkit for an app it asks: what auth, is there a self-serve path,
+  how broad is the API, does an MCP already exist? This page answers those questions for 100
+  requested apps — researched by an agent, fact-checked against the cited docs by a second
+  pass, then spot-checked by a human.
+</p>
+<div class="meta-chips" id="metaChips"></div>
+
+<section id="patterns">
+  <div class="kicker">The headline</div>
+  <h2>What the 100 apps actually look like</h2>
+  <p class="lede">Numbers below are computed live from the final, corrected dataset. Every row in the
+  <a href="#table">table</a> carries its evidence links.</p>
+
+  <div class="tiles" id="kpis"></div>
+
+  <div class="findings">
+    <ul id="narrative">
+      <!--NARRATIVE-->
+    </ul>
+  </div>
+
+  <div class="charts">
+    <div class="card wide">
+      <h3>Credential access, by category</h3>
+      <div class="note">Each row is 10 apps. Left of the line: a developer can self-serve credentials. Right: something gates them.</div>
+      <div class="legend" id="accessLegend"></div>
+      <div id="accessChart"></div>
+    </div>
+    <div class="card">
+      <h3>Auth methods across the 100</h3>
+      <div class="note">Apps count once per supported method, so bars sum past 100.</div>
+      <div id="authChart"></div>
+    </div>
+    <div class="card">
+      <h3>Most common blocker</h3>
+      <div class="note">Among apps that are not cleanly buildable today.</div>
+      <div id="blockerChart"></div>
+    </div>
+    <div class="card">
+      <h3>Buildability verdict</h3>
+      <div class="note">Could Composio ship an agent toolkit today?</div>
+      <div id="verdictChart"></div>
+    </div>
+    <div class="card">
+      <h3>MCP servers & Composio coverage</h3>
+      <div class="note">Official/community MCP found by research; Composio coverage from its live registry (<span id="catalogSize"></span> toolkits).</div>
+      <div id="mcpChart"></div>
+    </div>
+  </div>
+</section>
+
+<section id="table">
+  <div class="kicker">The findings</div>
+  <h2>All 100 apps</h2>
+  <p class="lede">Click any row for notes, evidence links, and what verification changed. Fields overwritten
+  by the verifier or human review carry a <span class="fixed-badge">corrected</span> badge.</p>
+  <div class="filterbar">
+    <input id="q" type="search" placeholder="Search app, note, blocker…" aria-label="Search apps">
+    <select id="fCat" aria-label="Filter by category"></select>
+    <select id="fAccess" aria-label="Filter by access"></select>
+    <select id="fVerdict" aria-label="Filter by verdict"></select>
+    <span class="count-note" id="rowCount"></span>
+  </div>
+  <div class="tablewrap">
+    <table>
+      <thead id="thead"></thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+</section>
+
+<section id="agent">
+  <div class="kicker">The agent</div>
+  <h2>How this was researched</h2>
+  <p class="lede">A four-stage pipeline (TypeScript, ~600 lines). Every stage checkpoints per app and is
+  re-runnable in isolation — the repo README reproduces this page end to end.</p>
+  <div class="pipeline">
+    <div class="stage"><div class="n">Pass 1</div><div class="t">Research agent</div>
+      <p>One search-grounded Gemini call per app fills a strict JSON schema: auth, access, API surface,
+      MCP, verdict, evidence URLs. Closed enums keep the results clusterable.</p></div>
+    <div class="stage"><div class="n">Cross-check</div><div class="t">Composio registry</div>
+      <p>The Composio SDK + v3 API pulls the full toolkit catalog; each app is matched to see if a
+      toolkit already exists and what auth Composio itself records for it.</p></div>
+    <div class="stage"><div class="n">Pass 2</div><div class="t">Evidence verifier</div>
+      <p>A second model call gets <em>no search access</em> — only the pages pass 1 cited, fetched raw.
+      It confirms or contradicts each field. Dead or hallucinated citation URLs surface here.</p></div>
+    <div class="stage"><div class="n">Pass 3</div><div class="t">Human review</div>
+      <p>A random sample hand-checked against live docs, plus every app the verifier flagged.
+      Human corrections outrank the machine ones.</p></div>
+    <div class="stage"><div class="n">Output</div><div class="t">This page</div>
+      <p>Merge applies corrections (human &gt; verifier &gt; agent), tags blockers, computes the
+      accuracy movement, and injects everything into one self-contained HTML file.</p></div>
+  </div>
+  <div class="twocol">
+    <div class="card">
+      <h3>Where a human was needed</h3>
+      <ul id="humanNeeded">
+        <!--HUMAN_NEEDED-->
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Run facts</h3>
+      <ul id="runFacts">
+        <!--RUN_FACTS-->
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="verification">
+  <div class="kicker">The proof</div>
+  <h2>How much should you trust this?</h2>
+  <p class="lede" id="verifLede"></p>
+  <div class="tiles" id="verifTiles"></div>
+  <div class="twocol">
+    <div class="card">
+      <h3>What verification changed</h3>
+      <div class="note">Every field the pass-2 verifier or the human overturned, with the losing value struck out.</div>
+      <div style="overflow-x:auto"><table class="corr-table" id="corrTable"></table></div>
+    </div>
+    <div class="card">
+      <h3>Honest misses & flagged apps</h3>
+      <ul id="missList"></ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span id="genStamp"></span>
+  <span>Built for the Composio AI Product Ops take-home.</span>
+  <a id="repoLink2" href="#" target="_blank" rel="noopener">Reproduce it: source repo ↗</a>
+</footer>
+</div>
+
+<script>
+"use strict";
+const DATA = /*__DATA__*/null;
+
+/* ---------- config ---------- */
+const REPO_URL = "https://github.com/REPLACE_ME"; // set before deploy
+const ACCESS_META = {
+  self_serve_free:  { label: "Self-serve, free",   color: "var(--acc-free)" },
+  self_serve_trial: { label: "Self-serve, trial",  color: "var(--acc-trial)" },
+  paid_plan:        { label: "Paid plan",          color: "var(--acc-paid)" },
+  admin_approval:   { label: "Approval / review",  color: "var(--acc-approval)" },
+  partner_gated:    { label: "Partner / sales",    color: "var(--acc-partner)" },
+  no_public_api:    { label: "No public API",      color: "var(--acc-none)" },
+};
+const ACCESS_ORDER = Object.keys(ACCESS_META);
+const SELF_SERVE = ["self_serve_free", "self_serve_trial"];
+const VERDICT_META = {
+  yes:          { label: "Buildable today", ic: "✓", color: "var(--st-good)" },
+  with_caveats: { label: "With caveats",    ic: "▲", color: "var(--st-warn)" },
+  blocked:      { label: "Blocked",         ic: "✕", color: "var(--st-crit)" },
+};
+const CATEGORIES = [...new Set(DATA.records.map(r => r.category))];
+const composioById = new Map(DATA.composio.map(c => [c.id, c]));
+const correctionsById = new Map();
+for (const c of DATA.verification.corrections) {
+  if (!correctionsById.has(c.id)) correctionsById.set(c.id, []);
+  correctionsById.get(c.id).push(c);
+}
+
+/* ---------- theme ---------- */
+const themeBtn = document.getElementById("themeBtn");
+themeBtn.onclick = () => {
+  const cur = document.documentElement.dataset.theme ||
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  const next = cur === "dark" ? "light" : "dark";
+  document.documentElement.dataset.theme = next;
+  try { localStorage.setItem("theme", next); } catch {}
+};
+try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch {}
+
+/* ---------- tooltip ---------- */
+const tip = document.getElementById("tooltip");
+function bindTips(rootEl) {
+  rootEl.addEventListener("mousemove", (e) => {
+    const t = e.target.closest("[data-tip]");
+    if (!t) { tip.style.display = "none"; return; }
+    tip.innerHTML = t.dataset.tip;
+    tip.style.display = "block";
+    const pad = 14, w = tip.offsetWidth, h = tip.offsetHeight;
+    tip.style.left = Math.min(e.clientX + pad, innerWidth - w - 8) + "px";
+    tip.style.top = (e.clientY + pad + h > innerHeight ? e.clientY - h - 8 : e.clientY + pad) + "px";
+  });
+  rootEl.addEventListener("mouseleave", () => { tip.style.display = "none"; }, true);
+}
+bindTips(document.body);
+
+/* ---------- helpers ---------- */
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const pct = (n, d) => d ? Math.round((n / d) * 100) : 0;
+const fmtVal = (v) => Array.isArray(v) ? v.join(", ") : String(v);
+
+/* ---------- meta chips & KPIs ---------- */
+const R = DATA.records;
+const N = R.length;
+document.getElementById("repoLink").href = REPO_URL;
+document.getElementById("repoLink2").href = REPO_URL;
+document.getElementById("genStamp").textContent =
+  "Data generated " + new Date(DATA.generated_at).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+document.getElementById("catalogSize").textContent = "1,047";
+
+const selfServeN = R.filter(r => SELF_SERVE.includes(r.access)).length;
+const buildableN = R.filter(r => r.buildable === "yes").length;
+const caveatsN = R.filter(r => r.buildable === "with_caveats").length;
+const oauthN = R.filter(r => (r.auth_methods || []).some(a => /oauth/i.test(a))).length;
+const keyN = R.filter(r => (r.auth_methods || []).some(a => /api key/i.test(a))).length;
+const inComposioN = DATA.composio.filter(c => c.in_composio).length;
+const mcpOffN = R.filter(r => r.mcp === "official").length;
+
+document.getElementById("metaChips").innerHTML = [
+  `${N} apps · 10 categories`,
+  `researched ${new Date(DATA.generated_at).toLocaleDateString("en-GB", { month: "short", year: "numeric" })}`,
+  `model: ${esc(R[0]?.model || "gemini-2.5-flash")} + Google Search grounding`,
+  `${DATA.verification.verified_count} machine-verified · ${DATA.verification.human_sample.sampled_ids.length} human-checked`,
+].map(s => `<span>${s}</span>`).join("");
+
+const v = DATA.verification;
+const acc1 = v.pass1_accuracy == null ? "—" : Math.round(v.pass1_accuracy * 100) + "%";
+const accH = v.human_sample.accuracy == null ? "—" : Math.round(v.human_sample.accuracy * 100) + "%";
+document.getElementById("kpis").innerHTML = [
+  { v: `${buildableN + caveatsN}<span style="font-size:18px;color:var(--muted)">/${N}</span>`, l: "buildable as a toolkit", d: `${buildableN} clean + ${caveatsN} with caveats` },
+  { v: pct(selfServeN, N) + "%", l: "self-serve credentials", d: "free tier or trial, no gatekeeper" },
+  { v: pct(oauthN, N) + "%", l: "support OAuth2", d: `${pct(keyN, N)}% support API keys` },
+  { v: `${inComposioN}<span style="font-size:18px;color:var(--muted)">/${DATA.composio.length || N}</span>`, l: "already in Composio", d: "matched in the live registry" },
+  { v: `${acc1} → ${accH}`, l: "accuracy, pass 1 → final", d: "see verification below" },
+].map(t => `<div class="tile"><div class="v">${t.v}</div><div class="l">${t.l}</div><div class="d">${t.d}</div></div>`).join("");
+
+/* ---------- chart: access by category (diverging stacked) ---------- */
+(function accessChart() {
+  document.getElementById("accessLegend").innerHTML = ACCESS_ORDER
+    .map(k => `<span class="it"><span class="sw" style="background:${ACCESS_META[k].color}"></span>${ACCESS_META[k].label}</span>`).join("");
+
+  const rowH = 30, barH = 18, labelW = 210, pxPer = 34, gap = 2;
+  const maxLeft = Math.max(...CATEGORIES.map(c => R.filter(r => r.category === c && SELF_SERVE.includes(r.access)).length), 1);
+  const maxRight = Math.max(...CATEGORIES.map(c => R.filter(r => r.category === c && !SELF_SERVE.includes(r.access)).length), 1);
+  const cx = labelW + maxLeft * pxPer + 10;
+  const width = cx + maxRight * pxPer + 60;
+  const height = CATEGORIES.length * rowH + 26;
+
+  let s = `<svg viewBox="0 0 ${width} ${height}" width="100%" role="img" aria-label="Credential access by category">`;
+  CATEGORIES.forEach((cat, i) => {
+    const y = i * rowH + 4;
+    const rows = R.filter(r => r.category === cat);
+    const left = SELF_SERVE.flatMap(k => rows.filter(r => r.access === k).map(r => ({ k, r })));
+    const right = ACCESS_ORDER.slice(2).flatMap(k => rows.filter(r => r.access === k).map(r => ({ k, r })));
+    s += `<text x="${labelW - 12}" y="${y + barH - 4}" text-anchor="end">${esc(cat)}</text>`;
+    // left arm grows leftward from center, strongest (free) outermost
+    let x = cx;
+    for (let j = left.length - 1; j >= 0; j--) {
+      const seg = left[j]; x -= pxPer;
+      s += `<rect x="${x + gap / 2}" y="${y}" width="${pxPer - gap}" height="${barH}" rx="4"
+        fill="${ACCESS_META[seg.k].color}" data-tip="<span class='t'>${esc(seg.r.name)}</span><br><span class='s'>${ACCESS_META[seg.k].label} — ${esc(seg.r.access_notes || "").slice(0, 140)}</span>"/>`;
+    }
+    let xr = cx;
+    for (const seg of right) {
+      s += `<rect x="${xr + gap / 2}" y="${y}" width="${pxPer - gap}" height="${barH}" rx="4"
+        fill="${ACCESS_META[seg.k].color}" data-tip="<span class='t'>${esc(seg.r.name)}</span><br><span class='s'>${ACCESS_META[seg.k].label} — ${esc(seg.r.access_notes || "").slice(0, 140)}</span>"/>`;
+      xr += pxPer;
+    }
+    if (left.length) s += `<text class="val end" x="${cx - left.length * pxPer - 8}" y="${y + barH - 4}" text-anchor="end">${left.length}</text>`;
+    if (right.length) s += `<text class="val" x="${xr + 8}" y="${y + barH - 4}">${right.length}</text>`;
+  });
+  s += `<line class="axisline" x1="${cx}" y1="0" x2="${cx}" y2="${height - 22}"/>`;
+  s += `<text x="${cx - 8}" y="${height - 6}" text-anchor="end">← self-serve</text>`;
+  s += `<text x="${cx + 8}" y="${height - 6}">gated →</text>`;
+  s += `</svg>`;
+  document.getElementById("accessChart").innerHTML = s;
+})();
+
+/* ---------- chart: horizontal count bars (shared) ---------- */
+function hBars(el, items, color, totalForPct) {
+  const rowH = 28, barH = 16, labelW = 168, valueW = 74;
+  const max = Math.max(...items.map(i => i.n), 1);
+  const width = 520, plotW = width - labelW - valueW;
+  const height = items.length * rowH + 4;
+  let s = `<svg viewBox="0 0 ${width} ${height}" width="100%" role="img">`;
+  items.forEach((it, i) => {
+    const y = i * rowH + 4, w = Math.max((it.n / max) * plotW, 2);
+    s += `<text x="${labelW - 10}" y="${y + barH - 3}" text-anchor="end">${esc(it.label)}</text>
+      <rect x="${labelW}" y="${y}" width="${w}" height="${barH}" rx="4" fill="${color}"
+        data-tip="<span class='t'>${esc(it.label)}</span><br><span class='s'>${it.n} app${it.n === 1 ? "" : "s"}${totalForPct ? ` · ${pct(it.n, totalForPct)}%` : ""}${it.extra ? " · " + esc(it.extra) : ""}</span>"/>
+      <text class="val" x="${labelW + w + 8}" y="${y + barH - 3}">${it.n}${totalForPct ? ` <tspan fill="var(--muted)">(${pct(it.n, totalForPct)}%)</tspan>` : ""}</text>`;
+  });
+  s += `<line class="axisline" x1="${labelW}" y1="0" x2="${labelW}" y2="${height}"/></svg>`;
+  el.innerHTML = s;
+}
+
+(function authChart() {
+  const counts = {};
+  for (const r of R) for (const a of (r.auth_methods || [])) counts[a] = (counts[a] || 0) + 1;
+  const items = Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([label, n]) => ({ label, n }));
+  hBars(document.getElementById("authChart"), items, "var(--blue)", N);
+})();
+
+(function blockerChart() {
+  const counts = {};
+  for (const r of R) if (r.buildable !== "yes" && r.blocker_tag) counts[r.blocker_tag] = (counts[r.blocker_tag] || 0) + 1;
+  const items = Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([label, n]) => ({ label, n }));
+  if (!items.length) { document.getElementById("blockerChart").innerHTML = "<p class='note'>No blockers yet.</p>"; return; }
+  hBars(document.getElementById("blockerChart"), items, "var(--blue)");
+})();
+
+/* ---------- chart: verdict (status stacked bar + tiles) ---------- */
+(function verdictChart() {
+  const el = document.getElementById("verdictChart");
+  const keys = Object.keys(VERDICT_META);
+  const counts = keys.map(k => ({ k, n: R.filter(r => r.buildable === k).length }));
+  const width = 520, barH = 22, gap = 2;
+  let x = 0;
+  let s = `<svg viewBox="0 0 ${width} 34" width="100%" role="img" aria-label="Buildability verdict">`;
+  for (const c of counts) {
+    const w = (c.n / N) * width;
+    if (w > 0) s += `<rect x="${x + gap / 2}" y="4" width="${Math.max(w - gap, 1)}" height="${barH}" rx="4" fill="${VERDICT_META[c.k].color}"
+      data-tip="<span class='t'>${VERDICT_META[c.k].ic} ${VERDICT_META[c.k].label}</span><br><span class='s'>${c.n} of ${N} apps</span>"/>`;
+    x += w;
+  }
+  s += `</svg>`;
+  s += `<div class="legend" style="margin-top:10px">` + counts.map(c =>
+    `<span class="it"><span style="color:${VERDICT_META[c.k].color};font-weight:700">${VERDICT_META[c.k].ic}</span>
+     ${VERDICT_META[c.k].label} <b style="color:var(--ink)">${c.n}</b></span>`).join("") + `</div>`;
+  el.innerHTML = s;
+})();
+
+/* ---------- chart: MCP + Composio ---------- */
+(function mcpChart() {
+  const el = document.getElementById("mcpChart");
+  const mcp = [
+    { label: "Official MCP", n: R.filter(r => r.mcp === "official").length },
+    { label: "Community MCP", n: R.filter(r => r.mcp === "community").length },
+    { label: "None found", n: R.filter(r => r.mcp === "none_found").length },
+  ];
+  const compTotal = DATA.composio.length || N;
+  const comp = [
+    { label: "In Composio", n: inComposioN },
+    { label: "Not in Composio", n: compTotal - inComposioN },
+  ];
+  el.innerHTML = `<div id="mcpBars"></div><div style="height:10px"></div><div id="compBars"></div>`;
+  hBars(document.getElementById("mcpBars"), mcp, "var(--blue)", N);
+  hBars(document.getElementById("compBars"), comp, "var(--acc-trial)", compTotal);
+})();
+
+/* ---------- table ---------- */
+const COLS = [
+  { key: "id", label: "#" },
+  { key: "name", label: "App" },
+  { key: "category", label: "Category" },
+  { key: "auth_methods", label: "Auth" },
+  { key: "access", label: "Access" },
+  { key: "api", label: "API" },
+  { key: "mcp", label: "MCP" },
+  { key: "composio", label: "Composio" },
+  { key: "buildable", label: "Verdict" },
+  { key: "confidence", label: "Conf." },
+];
+let sortKey = "id", sortDir = 1;
+
+function sortVal(r, key) {
+  switch (key) {
+    case "auth_methods": return (r.auth_methods || []).join(",");
+    case "access": return ACCESS_ORDER.indexOf(r.access);
+    case "api": return (r.api_type || []).join(",") + r.api_breadth;
+    case "composio": return composioById.get(r.id)?.in_composio ? 0 : 1;
+    case "buildable": return Object.keys(VERDICT_META).indexOf(r.buildable);
+    case "confidence": return ["high", "medium", "low"].indexOf(r.confidence);
+    default: return r[key];
+  }
+}
+
+function renderHead() {
+  document.getElementById("thead").innerHTML = "<tr>" + COLS.map(c =>
+    `<th data-k="${c.key}">${c.label}${sortKey === c.key ? (sortDir > 0 ? " ↑" : " ↓") : ""}</th>`).join("") + "</tr>";
+  document.querySelectorAll("th").forEach(th => th.onclick = () => {
+    const k = th.dataset.k;
+    if (sortKey === k) sortDir *= -1; else { sortKey = k; sortDir = 1; }
+    renderHead(); renderTable();
+  });
+}
+
+function detailHtml(r) {
+  const c = composioById.get(r.id);
+  const corrs = correctionsById.get(r.id) || [];
+  const ev = (r.evidence || []).map(e =>
+    `<li><a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(new URL(e.url, "https://x.invalid").hostname.replace("www.", ""))}↗</a> — ${esc(e.claim)}</li>`).join("");
+  return `<div class="cols">
+    <div><b>${esc(r.one_liner)}</b><br><br>
+      <b>Auth:</b> ${esc(r.auth_notes)}<br><br>
+      <b>Access:</b> ${esc(r.access_notes)}</div>
+    <div><b>API:</b> ${esc(r.api_notes)}<br><br>
+      <b>MCP:</b> ${esc(r.mcp_notes)}
+      ${r.blocker ? `<br><br><b>Blocker:</b> ${esc(r.blocker)}` : ""}
+      ${c && c.in_composio ? `<br><br><b>Composio:</b> toolkit <code>${esc(c.composio_slug)}</code>${c.composio_tools_count ? `, ${c.composio_tools_count} tools` : ""}${c.composio_auth_schemes?.length ? `, auth: ${esc(c.composio_auth_schemes.join(", "))}` : ""}` : ""}
+      ${corrs.length ? `<br><br><b>Corrected by verification:</b> ${corrs.map(x => `${esc(x.field)}: <span class="from">${esc(fmtVal(x.from))}</span> → <span class="to">${esc(fmtVal(x.to))}</span> (${x.source})`).join("; ")}` : ""}
+    </div>
+    <div style="grid-column:1/-1"><b>Evidence:</b><ul>${ev || "<li>none recorded</li>"}</ul></div>
+  </div>`;
+}
+
+function rowMatches(r, q, cat, acc, verd) {
+  if (cat && r.category !== cat) return false;
+  if (acc && r.access !== acc) return false;
+  if (verd && r.buildable !== verd) return false;
+  if (q) {
+    const hay = [r.name, r.one_liner, r.auth_notes, r.access_notes, r.api_notes, r.mcp_notes, r.blocker, r.blocker_tag]
+      .join(" ").toLowerCase();
+    if (!hay.includes(q)) return false;
+  }
+  return true;
+}
+
+function renderTable() {
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  const cat = document.getElementById("fCat").value;
+  const acc = document.getElementById("fAccess").value;
+  const verd = document.getElementById("fVerdict").value;
+  const rows = R.filter(r => rowMatches(r, q, cat, acc, verd))
+    .sort((a, b) => (sortVal(a, sortKey) > sortVal(b, sortKey) ? 1 : -1) * sortDir);
+  document.getElementById("rowCount").textContent = `${rows.length} of ${N}`;
+  document.getElementById("tbody").innerHTML = rows.map(r => {
+    const c = composioById.get(r.id);
+    const vm = VERDICT_META[r.buildable] || { label: r.buildable, ic: "•", color: "var(--muted)" };
+    const am = ACCESS_META[r.access] || { label: r.access, color: "var(--muted)" };
+    const corrected = correctionsById.has(r.id);
+    return `<tr class="approw" data-id="${r.id}">
+      <td class="conf">${r.id}</td>
+      <td><b>${esc(r.name)}</b>${corrected ? '<span class="fixed-badge">corrected</span>' : ""}</td>
+      <td style="white-space:nowrap">${esc(r.category)}</td>
+      <td class="chipset">${(r.auth_methods || []).map(a => `<span>${esc(a)}</span>`).join("") || "<span>—</span>"}</td>
+      <td style="white-space:nowrap"><span class="dot" style="background:${am.color}"></span>${am.label}</td>
+      <td style="white-space:nowrap">${(r.api_type || []).join(", ") || "—"} <span class="conf">· ${r.api_breadth}</span></td>
+      <td>${r.mcp === "official" ? "official" : r.mcp === "community" ? "community" : "—"}</td>
+      <td>${c?.in_composio ? "✓" : "—"}</td>
+      <td class="verdict"><span class="ic" style="color:${vm.color}">${vm.ic}</span>${vm.label}</td>
+      <td class="conf">${r.confidence}</td>
+    </tr>`;
+  }).join("");
+  document.querySelectorAll("tr.approw").forEach(tr => tr.onclick = () => {
+    const existing = tr.nextElementSibling;
+    if (existing && existing.classList.contains("detail")) { existing.remove(); return; }
+    document.querySelectorAll("tr.detail").forEach(d => d.remove());
+    const r = R.find(x => x.id === Number(tr.dataset.id));
+    const d = document.createElement("tr");
+    d.className = "detail";
+    d.innerHTML = `<td colspan="${COLS.length}">${detailHtml(r)}</td>`;
+    tr.after(d);
+  });
+}
+
+(function initFilters() {
+  const mk = (el, label, opts) => {
+    el.innerHTML = `<option value="">${label}</option>` + opts.map(o =>
+      `<option value="${esc(o.v)}">${esc(o.l)}</option>`).join("");
+    el.onchange = renderTable;
+  };
+  mk(document.getElementById("fCat"), "All categories", CATEGORIES.map(c => ({ v: c, l: c })));
+  mk(document.getElementById("fAccess"), "All access", ACCESS_ORDER.map(k => ({ v: k, l: ACCESS_META[k].label })));
+  mk(document.getElementById("fVerdict"), "All verdicts", Object.keys(VERDICT_META).map(k => ({ v: k, l: VERDICT_META[k].label })));
+  document.getElementById("q").oninput = renderTable;
+  renderHead(); renderTable();
+})();
+
+/* ---------- verification section ---------- */
+(function verification() {
+  const fv = v.field_verdicts;
+  const checked = fv.confirmed + fv.contradicted;
+  document.getElementById("verifLede").innerHTML =
+    `Two loops, then a human. The pass-2 verifier re-fetched the agent's own citations and judged ` +
+    `<b>${checked + fv.not_verifiable}</b> field-claims against them; a human then hand-checked ` +
+    `<b>${v.human_sample.sampled_ids.length}</b> randomly sampled apps against live docs. ` +
+    `Wrong answers were not deleted — they are listed below, struck through.`;
+  document.getElementById("verifTiles").innerHTML = [
+    { v: acc1, l: "pass-1 agent accuracy", d: `${fv.confirmed} of ${checked} machine-checkable field-claims confirmed` },
+    { v: String(v.corrections.length), l: "corrections applied", d: `${v.corrections.filter(c => c.source === "human").length} by human, ${v.corrections.filter(c => c.source === "verifier").length} by verifier` },
+    { v: accH, l: "accuracy after loops", d: `on the ${v.human_sample.sampled_ids.length}-app human sample (${v.human_sample.fields_checked} fields)` },
+    { v: String(fv.not_verifiable), l: "claims not machine-verifiable", d: "cited page fetchable but silent — escalated to human" },
+  ].map(t => `<div class="tile"><div class="v">${t.v}</div><div class="l">${t.l}</div><div class="d">${t.d}</div></div>`).join("");
+
+  document.getElementById("corrTable").innerHTML =
+    `<tr><th>App</th><th>Field</th><th>Change</th><th>By</th></tr>` +
+    (v.corrections.map(c => `<tr>
+      <td>${esc(c.name)}</td><td>${esc(c.field)}</td>
+      <td><span class="from">${esc(fmtVal(c.from))}</span> → <span class="to">${esc(fmtVal(c.to))}</span>
+      ${c.quote ? `<div class="conf">“${esc(String(c.quote).slice(0, 160))}”</div>` : ""}</td>
+      <td>${c.source}</td></tr>`).join("") || `<tr><td colspan="4" class="conf">No corrections needed.</td></tr>`);
+
+  const misses = [];
+  for (const u of v.unverifiable_apps) misses.push(`<li><b>${esc(u.name)}</b>: ${esc(u.reason)}</li>`);
+  for (const nte of v.human_notes) {
+    const r = R.find(x => x.id === nte.id);
+    misses.push(`<li><b>${esc(r ? r.name : "#" + nte.id)}</b>: ${esc(nte.note)}</li>`);
+  }
+  document.getElementById("missList").innerHTML = misses.join("") || "<li>None.</li>";
+})();
+</script>
+</body>
+</html>

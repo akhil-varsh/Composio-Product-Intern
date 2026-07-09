@@ -50,6 +50,9 @@ All long steps checkpoint per-app under `data/` and resume where they left off.
 Re-run any subset with `-- --only 5,50`, smoke-test with `-- --limit 5`,
 force a redo with `-- --force`.
 
+Dev extras: `npx tsx scripts/screenshot.mts` renders the page headlessly (light + dark)
+for layout review — needs `npx playwright install chromium` once.
+
 ## Design choices
 
 - **Plain `fetch` for Gemini, no SDK** — the whole request path is ~60 lines and debuggable.

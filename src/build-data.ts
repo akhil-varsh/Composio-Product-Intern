@@ -38,6 +38,25 @@ interface Correction {
   quote?: string;
 }
 
+// Collapse free-text blockers into a small taxonomy so "most common blocker" is chartable.
+// First matching rule wins; order is specific → generic.
+const BLOCKER_RULES: [RegExp, string][] = [
+  [/partner|contact sales|sales team|allowlist|invite[- ]only|apply for access|business verification/i, "Partnership / sales gate"],
+  [/app review|approval|verification|review process|whitelist/i, "App review / approval"],
+  [/paid|enterprise|premium|pricing|subscription|plan required|trial/i, "Paid plan required"],
+  [/no (official |public |documented )?api|undocumented|unofficial|lacks.*api|does not (offer|provide|have)/i, "No public API"],
+  [/narrow|limited (api|endpoint|surface)|few endpoints|read[- ]only/i, "Narrow API surface"],
+  [/oauth|scope|token|auth/i, "Auth complexity"],
+  [/rate limit|quota/i, "Rate limits"],
+  [/local|cli|self[- ]host|desktop|not a (saas|cloud)/i, "Not a hosted API (CLI/local)"],
+];
+
+function tagBlocker(blocker: string | null): string | null {
+  if (!blocker) return null;
+  for (const [re, tag] of BLOCKER_RULES) if (re.test(blocker)) return tag;
+  return "Other";
+}
+
 function main() {
   const records: ResearchRecord[] = [];
   const verifications: VerificationRecord[] = [];
@@ -123,10 +142,14 @@ function main() {
     ? (humanCheckedFields - humanWrong) / humanCheckedFields
     : null;
 
+  const finalRecords = [...finalById.values()]
+    .sort((a, b) => a.id - b.id)
+    .map((r) => ({ ...r, blocker_tag: tagBlocker(r.blocker) }));
+
   const out = {
     generated_at: new Date().toISOString(),
     app_count: records.length,
-    records: [...finalById.values()].sort((a, b) => a.id - b.id),
+    records: finalRecords,
     composio,
     verification: {
       verified_count: verifications.length,

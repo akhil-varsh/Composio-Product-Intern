@@ -1,0 +1,2666 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Can we build it? — 100 apps researched by an agent</title>
+<style>
+  :root {
+    --page: #f9f9f7; --surface: #fcfcfb; --ink: #0b0b0b; --ink-2: #52514e;
+    --muted: #898781; --grid: #e1e0d9; --axis: #c3c2b7; --ring: rgba(11,11,11,0.10);
+    --blue: #2a78d6;
+    --acc-free: #2a78d6; --acc-trial: #86b6ef; --acc-paid: #ec8a88;
+    --acc-approval: #e34948; --acc-partner: #b02a29; --acc-none: #898781;
+    --st-good: #0ca30c; --st-warn: #fab219; --st-crit: #d03b3b;
+    --chip: #f0efec;
+  }
+  @media (prefers-color-scheme: dark) { :root {
+    --page: #0d0d0d; --surface: #1a1a19; --ink: #ffffff; --ink-2: #c3c2b7;
+    --muted: #898781; --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10);
+    --blue: #3987e5;
+    --acc-free: #3987e5; --acc-trial: #86b6ef; --acc-paid: #f0a3a2;
+    --acc-approval: #e66767; --acc-partner: #c94a49; --acc-none: #898781;
+    --chip: #262624;
+  }}
+  :root[data-theme="light"] {
+    --page: #f9f9f7; --surface: #fcfcfb; --ink: #0b0b0b; --ink-2: #52514e;
+    --muted: #898781; --grid: #e1e0d9; --axis: #c3c2b7; --ring: rgba(11,11,11,0.10);
+    --blue: #2a78d6;
+    --acc-free: #2a78d6; --acc-trial: #86b6ef; --acc-paid: #ec8a88;
+    --acc-approval: #e34948; --acc-partner: #b02a29; --acc-none: #898781;
+    --chip: #f0efec;
+  }
+  :root[data-theme="dark"] {
+    --page: #0d0d0d; --surface: #1a1a19; --ink: #ffffff; --ink-2: #c3c2b7;
+    --muted: #898781; --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10);
+    --blue: #3987e5;
+    --acc-free: #3987e5; --acc-trial: #86b6ef; --acc-paid: #f0a3a2;
+    --acc-approval: #e66767; --acc-partner: #c94a49; --acc-none: #898781;
+    --chip: #262624;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--page); color: var(--ink);
+    font: 15px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 20px 80px; }
+
+  header.top {
+    display: flex; align-items: center; gap: 14px; padding: 14px 0;
+    border-bottom: 1px solid var(--grid); margin-bottom: 36px; flex-wrap: wrap;
+  }
+  header.top .brand { font-weight: 700; }
+  header.top .links { margin-left: auto; display: flex; gap: 16px; align-items: center; font-size: 13.5px; }
+  #themeBtn {
+    background: var(--surface); color: var(--ink-2); border: 1px solid var(--grid);
+    border-radius: 8px; padding: 4px 10px; cursor: pointer; font: inherit; font-size: 13px;
+  }
+
+  h1 { font-size: 34px; line-height: 1.2; letter-spacing: -0.5px; max-width: 21em; }
+  .sub { color: var(--ink-2); margin-top: 10px; max-width: 46em; }
+  .meta-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+  .meta-chips span {
+    font-size: 12.5px; color: var(--ink-2); background: var(--chip);
+    padding: 3px 10px; border-radius: 999px;
+  }
+
+  section { margin-top: 56px; }
+  h2 { font-size: 22px; letter-spacing: -0.3px; margin-bottom: 6px; }
+  .kicker { font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .lede { color: var(--ink-2); max-width: 52em; margin-bottom: 22px; }
+
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 22px 0; }
+  .tile {
+    background: var(--surface); border: 1px solid var(--ring); border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .tile .v { font-size: 30px; font-weight: 700; letter-spacing: -0.5px; }
+  .tile .l { font-size: 12.5px; color: var(--ink-2); margin-top: 2px; }
+  .tile .d { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+  .findings { background: var(--surface); border: 1px solid var(--ring); border-radius: 12px; padding: 18px 22px; margin: 18px 0; }
+  .findings li { margin: 8px 0 8px 2px; }
+  .findings b { font-weight: 650; }
+
+  .charts { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--ring); border-radius: 12px;
+    padding: 18px 20px 14px; min-width: 0;
+  }
+  .card.wide { grid-column: 1 / -1; }
+  .card h3 { font-size: 15.5px; margin-bottom: 2px; }
+  .card .note { font-size: 12.5px; color: var(--muted); margin-bottom: 12px; }
+  @media (max-width: 800px) { .charts { grid-template-columns: 1fr; } }
+
+  .legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12.5px; color: var(--ink-2); margin: 6px 0 12px; }
+  .legend .it { display: inline-flex; align-items: center; gap: 6px; }
+  .sw { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+
+  svg text { font: 12px system-ui, -apple-system, "Segoe UI", sans-serif; fill: var(--ink-2); }
+  svg .val { font-variant-numeric: tabular-nums; }
+  svg .end { fill: var(--ink); font-weight: 600; }
+  svg .gridline { stroke: var(--grid); stroke-width: 1; }
+  svg .axisline { stroke: var(--axis); stroke-width: 1; }
+
+  #tooltip {
+    position: fixed; pointer-events: none; z-index: 50; display: none;
+    background: var(--surface); color: var(--ink); border: 1px solid var(--ring);
+    border-radius: 8px; padding: 7px 10px; font-size: 12.5px; max-width: 300px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.14);
+  }
+  #tooltip .t { font-weight: 650; }
+  #tooltip .s { color: var(--ink-2); }
+
+  .filterbar { display: flex; gap: 10px; flex-wrap: wrap; margin: 16px 0 12px; }
+  .filterbar input, .filterbar select {
+    background: var(--surface); color: var(--ink); border: 1px solid var(--grid);
+    border-radius: 8px; padding: 7px 10px; font: inherit; font-size: 13.5px;
+  }
+  .filterbar input { flex: 1; min-width: 180px; }
+  .count-note { font-size: 12.5px; color: var(--muted); align-self: center; }
+
+  .tablewrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--ring); border-radius: 12px; }
+  table { border-collapse: collapse; width: 100%; min-width: 980px; font-size: 13.5px; }
+  th {
+    text-align: left; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.8px;
+    color: var(--muted); padding: 10px 12px; border-bottom: 1px solid var(--grid);
+    cursor: pointer; user-select: none; white-space: nowrap; position: sticky; top: 0; background: var(--surface);
+  }
+  td { padding: 9px 12px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+  tr.approw { cursor: pointer; }
+  tr.approw:hover td { background: color-mix(in srgb, var(--chip) 55%, transparent); }
+  tr.detail td { background: color-mix(in srgb, var(--chip) 40%, transparent); font-size: 13px; color: var(--ink-2); }
+  tr.detail .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 26px; padding: 4px 2px; }
+  tr.detail .cols div { min-width: 0; }
+  tr.detail b { color: var(--ink); font-weight: 600; }
+  @media (max-width: 800px) { tr.detail .cols { grid-template-columns: 1fr; } }
+  .dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; margin-right: 6px; }
+  .chipset span {
+    background: var(--chip); border-radius: 6px; padding: 1px 7px; font-size: 12px;
+    margin-right: 4px; white-space: nowrap; display: inline-block; margin-bottom: 2px;
+  }
+  .verdict { white-space: nowrap; }
+  .verdict .ic { font-weight: 700; margin-right: 5px; }
+  .conf { font-size: 11.5px; color: var(--muted); }
+  .fixed-badge {
+    font-size: 10.5px; background: var(--chip); color: var(--ink-2);
+    border-radius: 5px; padding: 1px 5px; margin-left: 6px; vertical-align: 1px;
+  }
+
+  .pipeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; margin: 20px 0; }
+  .stage { background: var(--surface); border: 1px solid var(--ring); border-radius: 12px; padding: 14px 16px; position: relative; }
+  .stage .n { font-size: 11px; font-weight: 700; letter-spacing: 1px; color: var(--muted); text-transform: uppercase; }
+  .stage .t { font-weight: 650; margin: 4px 0 6px; }
+  .stage p { font-size: 12.5px; color: var(--ink-2); }
+
+  .twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start; }
+  @media (max-width: 800px) { .twocol { grid-template-columns: 1fr; } }
+  .card ul { padding-left: 18px; }
+  .card li { margin: 7px 0; font-size: 13.5px; color: var(--ink-2); }
+  .card li b { color: var(--ink); font-weight: 600; }
+
+  .corr-table { width: 100%; min-width: 0; font-size: 13px; }
+  .corr-table td { padding: 7px 10px; }
+  .from { color: var(--st-crit); text-decoration: line-through; text-decoration-thickness: 1px; }
+  .to { color: var(--ink); font-weight: 600; }
+
+  footer { margin-top: 70px; padding-top: 18px; border-top: 1px solid var(--grid); font-size: 13px; color: var(--muted); display: flex; gap: 18px; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<div id="tooltip" role="status"></div>
+<div class="wrap">
+
+<header class="top">
+  <span class="brand">Toolkit-buildability research</span>
+  <nav class="links">
+    <a href="#table">All 100 apps</a>
+    <a href="#agent">The agent</a>
+    <a href="#verification">Verification</a>
+    <a id="repoLink" href="#" target="_blank" rel="noopener">Source repo ↗</a>
+    <button id="themeBtn" aria-label="Toggle color theme">◐ theme</button>
+  </nav>
+</header>
+
+<h1>Can an AI agent call it? 100 apps, researched and verified by a pipeline.</h1>
+<p class="sub">
+  Before Composio builds a toolkit for an app it asks: what auth, is there a self-serve path,
+  how broad is the API, does an MCP already exist? This page answers those questions for 100
+  requested apps — researched by an agent, fact-checked against the cited docs by a second
+  pass, then spot-checked by a human.
+</p>
+<div class="meta-chips" id="metaChips"></div>
+
+<section id="patterns">
+  <div class="kicker">The headline</div>
+  <h2>What the 100 apps actually look like</h2>
+  <p class="lede">Numbers below are computed live from the final, corrected dataset. Every row in the
+  <a href="#table">table</a> carries its evidence links.</p>
+
+  <div class="tiles" id="kpis"></div>
+
+  <div class="findings">
+    <ul id="narrative">
+      <!--NARRATIVE-->
+    </ul>
+  </div>
+
+  <div class="charts">
+    <div class="card wide">
+      <h3>Credential access, by category</h3>
+      <div class="note">Each row is 10 apps. Left of the line: a developer can self-serve credentials. Right: something gates them.</div>
+      <div class="legend" id="accessLegend"></div>
+      <div id="accessChart"></div>
+    </div>
+    <div class="card">
+      <h3>Auth methods across the 100</h3>
+      <div class="note">Apps count once per supported method, so bars sum past 100.</div>
+      <div id="authChart"></div>
+    </div>
+    <div class="card">
+      <h3>Most common blocker</h3>
+      <div class="note">Among apps that are not cleanly buildable today.</div>
+      <div id="blockerChart"></div>
+    </div>
+    <div class="card">
+      <h3>Buildability verdict</h3>
+      <div class="note">Could Composio ship an agent toolkit today?</div>
+      <div id="verdictChart"></div>
+    </div>
+    <div class="card">
+      <h3>MCP servers & Composio coverage</h3>
+      <div class="note">Official/community MCP found by research; Composio coverage from its live registry (<span id="catalogSize"></span> toolkits).</div>
+      <div id="mcpChart"></div>
+    </div>
+  </div>
+</section>
+
+<section id="table">
+  <div class="kicker">The findings</div>
+  <h2>All 100 apps</h2>
+  <p class="lede">Click any row for notes, evidence links, and what verification changed. Fields overwritten
+  by the verifier or human review carry a <span class="fixed-badge">corrected</span> badge.</p>
+  <div class="filterbar">
+    <input id="q" type="search" placeholder="Search app, note, blocker…" aria-label="Search apps">
+    <select id="fCat" aria-label="Filter by category"></select>
+    <select id="fAccess" aria-label="Filter by access"></select>
+    <select id="fVerdict" aria-label="Filter by verdict"></select>
+    <span class="count-note" id="rowCount"></span>
+  </div>
+  <div class="tablewrap">
+    <table>
+      <thead id="thead"></thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+</section>
+
+<section id="agent">
+  <div class="kicker">The agent</div>
+  <h2>How this was researched</h2>
+  <p class="lede">A four-stage pipeline (TypeScript, ~600 lines). Every stage checkpoints per app and is
+  re-runnable in isolation — the repo README reproduces this page end to end.</p>
+  <div class="pipeline">
+    <div class="stage"><div class="n">Pass 1</div><div class="t">Research agent</div>
+      <p>One search-grounded Gemini call per app fills a strict JSON schema: auth, access, API surface,
+      MCP, verdict, evidence URLs. Closed enums keep the results clusterable.</p></div>
+    <div class="stage"><div class="n">Cross-check</div><div class="t">Composio registry</div>
+      <p>The Composio SDK + v3 API pulls the full toolkit catalog; each app is matched to see if a
+      toolkit already exists and what auth Composio itself records for it.</p></div>
+    <div class="stage"><div class="n">Pass 2</div><div class="t">Evidence verifier</div>
+      <p>A second model call gets <em>no search access</em> — only the pages pass 1 cited, fetched raw.
+      It confirms or contradicts each field. Dead or hallucinated citation URLs surface here.</p></div>
+    <div class="stage"><div class="n">Pass 3</div><div class="t">Human review</div>
+      <p>A random sample hand-checked against live docs, plus every app the verifier flagged.
+      Human corrections outrank the machine ones.</p></div>
+    <div class="stage"><div class="n">Output</div><div class="t">This page</div>
+      <p>Merge applies corrections (human &gt; verifier &gt; agent), tags blockers, computes the
+      accuracy movement, and injects everything into one self-contained HTML file.</p></div>
+  </div>
+  <div class="twocol">
+    <div class="card">
+      <h3>Where a human was needed</h3>
+      <ul id="humanNeeded">
+        <!--HUMAN_NEEDED-->
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Run facts</h3>
+      <ul id="runFacts">
+        <!--RUN_FACTS-->
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="verification">
+  <div class="kicker">The proof</div>
+  <h2>How much should you trust this?</h2>
+  <p class="lede" id="verifLede"></p>
+  <div class="tiles" id="verifTiles"></div>
+  <div class="twocol">
+    <div class="card">
+      <h3>What verification changed</h3>
+      <div class="note">Every field the pass-2 verifier or the human overturned, with the losing value struck out.</div>
+      <div style="overflow-x:auto"><table class="corr-table" id="corrTable"></table></div>
+    </div>
+    <div class="card">
+      <h3>Honest misses & flagged apps</h3>
+      <ul id="missList"></ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span id="genStamp"></span>
+  <span>Built for the Composio AI Product Ops take-home.</span>
+  <a id="repoLink2" href="#" target="_blank" rel="noopener">Reproduce it: source repo ↗</a>
+</footer>
+</div>
+
+<script>
+"use strict";
+const DATA = {
+  "generated_at": "2026-07-09T04:32:01.977Z",
+  "app_count": 16,
+  "records": [
+    {
+      "id": 1,
+      "name": "Salesforce",
+      "category": "CRM & Sales",
+      "one_liner": "Salesforce is a cloud-based customer relationship management (CRM) platform that helps businesses manage customer data, track sales, automate business processes, and unify operations using AI and various applications.",
+      "auth_methods": [
+        "OAuth2",
+        "Bearer token",
+        "other"
+      ],
+      "auth_notes": "OAuth 2.0 is the most commonly used authentication mechanism, exchanging bearer tokens for secure data sharing. Traditional Salesforce user account credentials (username/password, often with 2FA) can also be used, particularly for SOAP API login calls. SAML is supported for single sign-on (SSO) solutions.",
+      "access": "self_serve_free",
+      "access_notes": "Developers can sign up for a free Salesforce Developer Edition account, which provides a fully-featured development environment with unrestricted access to Salesforce APIs for building and testing applications. This account is permanent, though it has data storage limitations suitable for development purposes.",
+      "api_type": [
+        "REST",
+        "SOAP",
+        "GraphQL"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Salesforce offers a comprehensive suite of APIs including REST API (for modern web/mobile apps, supports JSON/XML), SOAP API (for structured, secure enterprise integrations, XML-based), and GraphQL API (for efficient queries and schema introspection). Other APIs like Bulk API, Connect REST API, Analytics REST API, Apex REST/SOAP API, User Interface API, Pub/Sub API, Tooling API, and Metadata API provide extensive control over most product functionalities.",
+      "mcp": "official",
+      "mcp_notes": "Salesforce actively promotes and discusses the Model Context Protocol (MCP) as an open standard for AI models to securely and intelligently interact with external systems and data. There are discussions and resources from Salesforce and related entities about 'Salesforce MCP servers' designed to give AI agents real-time access to CRM context.",
+      "buildable": "yes",
+      "blocker": null,
+      "evidence": [
+        {
+          "claim": "Salesforce is a cloud-based customer relationship management (CRM) platform.",
+          "url": "https://www.salesforce.com/products/what-is-salesforce/"
+        },
+        {
+          "claim": "Salesforce APIs support OAuth 2.0, which uses bearer tokens, and also traditional user account authentication and SAML.",
+          "url": "https://www.flosum.com/blog/securing-your-salesforce-data-using-api-authentication"
+        },
+        {
+          "claim": "Developers can obtain a free Salesforce Developer Edition account with full API access for testing and development.",
+          "url": "https://s2-labs.com/blog/set-up-free-salesforce-developer-edition-account/"
+        },
+        {
+          "claim": "Salesforce offers REST, SOAP, and GraphQL APIs, among others, providing broad control over its product functionality.",
+          "url": "https://developer.salesforce.com/docs/apis"
+        },
+        {
+          "claim": "Salesforce is actively involved with and promotes the Model Context Protocol (MCP) for AI agent integration.",
+          "url": "https://www.salesforce.com/agentforce/mcp-support/model-context-protocol/"
+        }
+      ],
+      "confidence": "high",
+      "search_sources": [],
+      "researched_at": "2026-07-09T04:14:45.401Z",
+      "model": "gemini-2.5-flash",
+      "blocker_tag": null
+    },
+    {
+      "id": 2,
+      "name": "HubSpot",
+      "category": "CRM & Sales",
+      "one_liner": "HubSpot is a Smart CRM platform that unifies marketing, sales, service, content management, and data tools to manage the entire customer lifecycle.",
+      "auth_methods": [
+        "OAuth2",
+        "other"
+      ],
+      "auth_notes": "HubSpot's public API supports OAuth and private app access tokens for authentication. API keys were retired in late 2022, though some legacy keys might still function. OAuth 2.0 is used for public or multi-account apps, while private app access tokens are for single-account or internal integrations.",
+      "access": "self_serve_free",
+      "access_notes": "Developers can create free 'developer test accounts' which include a 90-day trial of many enterprise features. These accounts can be renewed by making API calls or manually. A standard HubSpot account (free or paid) also provides access to developer tools.",
+      "api_type": [
+        "REST",
+        "GraphQL"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "HubSpot offers a comprehensive public API, primarily REST-based, covering a wide range of CRM, marketing, sales, service, and content management functionalities. It also provides a GraphQL API for querying CRM and HubDB data, particularly for Content Hub Professional/Enterprise and Sales/Service Hub Enterprise subscriptions, which can be used in API requests.",
+      "mcp": "official",
+      "mcp_notes": "HubSpot offers two distinct official Model Context Protocol (MCP) servers. One is a remote, HubSpot-hosted server (mcp.hubspot.com) that allows MCP-compatible AI tools and agents to securely read and write to the HubSpot CRM through natural conversation. The other is a local, CLI-based Developer MCP Server for building on the HubSpot Developer Platform.",
+      "buildable": "yes",
+      "blocker": null,
+      "evidence": [
+        {
+          "claim": "HubSpot is a Smart CRM platform that combines marketing, sales, service, website content, and data tools into one unified system.",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGv38VY8PdiPC3lICbygguhMgUalOOZshEB6Uj-B_dSumgo0eTPxFsyESEIwvqo20ZtBynNeKtQGT_y6dCax50JA178jWW2ownSWY4HIw40cTkFpL9-JcP8Bh418eS0edzmWRm1pFI6CrrrPluUNQ=="
+        },
+        {
+          "claim": "There are two ways to authenticate calls to HubSpot's APIs: OAuth, and private app access tokens. HubSpot officially retired API Keys in late 2022.",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsncC-LH4fAU1RFdcUZ2yoximkLwh_4ZFTYW0AZzbaUjVu5mWb6crppO1kbxE0dCuzARMw4pK4NWL0RryVzYf_GTWB6qAcgBhHuGl5GOOMjuQRyC3jdJ8mJu-s8MFlZu6p6v-A0q1tUDHjXNZb7y_UKuQl_kHU5hk3uK6FkAF2t0PuOR2Yx0V-cPiJg=="
+        },
+        {
+          "claim": "Developer test accounts are free HubSpot accounts with access to a 90-day trial of many enterprise features. These accounts will expire after 90 days if no API calls are made to the account, but can be renewed manually or via API call.",
+          "url": "https://developers.hubspot.com/docs/getting-started/account-types"
+        },
+        {
+          "claim": "HubSpot's Developer Platform offers APIs, SDKs, and tooling. HubSpot supports both REST and GraphQL APIs for accessing CRM and HubDB data.",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3sWenvFFTOt28LlqKDFZApi4ka29xd2q-evTPpqLUV-I4Opg3_u18u-txgOBHM7sKuWET9dIDzB7TUMZVo_XFHn_cYIDPiFYqQgk5yGK-YSeHtIvRbz6KNTA=="
+        },
+        {
+          "claim": "HubSpot offers two distinct MCP (Model Context Protocol) servers — one for connecting any MCP-compatible AI tool or agent to your CRM (remote, hosted at mcp.hubspot.com), and one for building on the HubSpot Developer Platform (local, CLI-based). The remote server is generally available.",
+          "url": "https://www.hubspot.com/ai-tools"
+        }
+      ],
+      "confidence": "high",
+      "search_sources": [],
+      "researched_at": "2026-07-09T04:14:59.796Z",
+      "model": "gemini-2.5-flash",
+      "blocker_tag": null
+    },
+    {
+      "id": 3,
+      "name": "Pipedrive",
+      "category": "CRM & Sales",
+      "one_liner": "Pipedrive is a sales CRM software designed to help businesses manage their sales pipeline, optimize leads, track activities, and automate sales processes.",
+      "auth_methods": [
+        "OAuth2",
+        "API key"
+      ],
+      "auth_notes": "The Pipedrive API supports both OAuth 2.0 for public apps and integrations, and API tokens for direct integrations. API tokens are tied to a specific user and company. OAuth 2.0 is necessary for apps available in the Pipedrive Marketplace.",
+      "access": "self_serve_trial",
+      "access_notes": "Developers can request a free developer sandbox account for testing and development. API access using an API token is included with every paid Pipedrive plan. Pipedrive offers a 14-day free trial (which can be extended to 30 days via partners) that provides full access to the platform's features, including API access. Public apps for the Pipedrive Marketplace require an app review process.",
+      "api_type": [
+        "REST",
+        "SDK-only"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Pipedrive offers a well-documented RESTful API that uses JSON format for output. The API covers a broad range of core product functionalities, including deals, leads, organizations, activities, persons, products, and users. Official client libraries (SDKs) are available for Node.js and PHP. While GraphQL has been in internal development, it is not yet a standardized or stable public API.",
+      "mcp": "official",
+      "mcp_notes": "Pipedrive launched its native Model Context Protocol (MCP) server on June 30, 2026. This official server allows AI assistants to securely connect to Pipedrive CRM data in real-time, respecting user permissions, and is available to customers on all Pipedrive plans.",
+      "buildable": "yes",
+      "blocker": null,
+      "evidence": [
+        {
+          "claim": "Pipedrive is a sales CRM software that helps businesses manage their sales pipeline, optimize leads, track activities, and automate sales processes.",
+          "url": "https://www.pipedrive.com/"
+        },
+        {
+          "claim": "Pipedrive's API supports OAuth 2.0 and API tokens for authentication.",
+          "url": "https://pipedrive.readme.io/docs/core-api-concepts-about-pipedrive-api"
+        },
+        {
+          "claim": "Developers can get a free developer sandbox account, and API access is included with every paid Pipedrive plan. A free trial of the main product is also available.",
+          "url": "https://www.pipedrive.com/en/features/crm-api"
+        },
+        {
+          "claim": "Pipedrive has a documented public RESTful API that covers a broad range of core product functionalities, with official Node.js and PHP SDKs.",
+          "url": "https://developers.pipedrive.com/docs/api/v1"
+        },
+        {
+          "claim": "Pipedrive launched its native Model Context Protocol (MCP) server on June 30, 2026, which is an official vendor-built solution.",
+          "url": "https://www.pipedrive.com/en/newsroom/pipedrive-launches-native-mcp-server-bringing-crm-workflows-directly-into-ai-assistants"
+        }
+      ],
+      "confidence": "high",
+      "search_sources": [
+        "https://pipedrive.readme.io/docs/core-api-concepts-about-pipedrive-api",
+        "https://blog.coupler.io/pipedrive-api-guide/",
+        "https://www.pipedrive.com/en/features/crm-api",
+        "https://developers.pipedrive.com/docs/api/v1/Oauth",
+        "https://pipedrive.readme.io/docs/core-api-concepts-authentication",
+        "https://developers.pipedrive.com/docs/api/v1",
+        "https://endgrate.com/blog/using-the-pipedrive-api-to-create-or-update-organizations-(with-python-examples)",
+        "https://pipedrive.readme.io/docs/developer-sandbox-account",
+        "https://www.pipedrive.com/",
+        "https://www.processculture.com.au/30-day-pipedrive-free-trial"
+      ],
+      "researched_at": "2026-07-09T04:14:00.076Z",
+      "model": "gemini-2.5-flash",
+      "blocker_tag": null
+    },
+    {
+      "id": 4,
+      "name": "Attio",
+      "category": "CRM & Sales",
+      "one_liner": "Attio is a flexible, AI-powered CRM platform designed for modern go-to-market teams, enabling them to manage customer relationships, automate workflows, and customize data models.",
+      "auth_methods": [
+        "OAuth2",
+        "API key",
+        "Bearer token",
+        "Basic"
+      ],
+      "auth_notes": "Attio supports OAuth 2.0 for applications serving multiple workspaces and API keys (Bearer tokens) for single-workspace integrations. HTTP Basic Authentication is also supported, though Bearer authentication is recommended. API keys are generated by workspace admins and are scoped. OAuth access tokens and single-workspace access tokens use scopes to control resource access and actions.",
+      "access": "admin_approval",
+      "access_notes": "For API keys, an admin of an Attio workspace can generate them from the 'Developers' tab in Workspace settings, available on all plans. For developer accounts and OAuth integrations (typically for publishing an integration or building for multiple workspaces), manual request via live chat or email to support@attio.com is required, with access typically granted within a couple of days. A free trial workspace can also serve as a developer sandbox.",
+      "api_type": [
+        "REST"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Attio provides a public REST API that exchanges JSON over HTTPS. It offers full CRUD (Create, Read, Update, Delete) access to core CRM entities such as records, lists, objects, attributes, tasks, notes, threads, comments, and webhooks. The API also supports custom fields and custom objects.",
+      "mcp": "official",
+      "mcp_notes": "Attio offers an official, hosted Model Context Protocol (MCP) server called 'Attio MCP'. This server allows AI tools like Claude, ChatGPT, and Cursor to securely interact with an Attio CRM workspace using OAuth authentication. There is also a community-built MCP server available on GitHub.",
+      "buildable": "yes",
+      "blocker": null,
+      "evidence": [
+        {
+          "claim": "Attio is a flexible, AI-powered CRM platform for modern go-to-market teams.",
+          "url": "https://www.salesforge.ai/directory/sales-tools/attio"
+        },
+        {
+          "claim": "Attio supports OAuth 2.0, API keys (Bearer token), and HTTP Basic Authentication for its API.",
+          "url": "https://docs.attio.com/rest-api/guides/authentication"
+        },
+        {
+          "claim": "API keys can be generated by an admin in Workspace settings, available on all plans. Developer accounts for OAuth require a manual request.",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpy1eq2zLV3J61jtrb_OODagUCDec0MFcnPW24_5EzX87v36eJ6b_aeAUE_PRmDuWeHpCUbsUbjA9WlVFuyU16G7NiFqxNTIzXPdJlitUjrhpBWYDbcS4eQeM8wQWFkwp_Znmk7YxfziOGRkDpuX8qeQ9ZudqOFRQ22ilbx2hCBCMYaRk3r1JPg6S0g8oUB01flNlK3-x5K80iT8KIZQh2"
+        },
+        {
+          "claim": "Attio provides a public REST API with full CRUD access to various CRM entities.",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmFF79sEgoTiQeDkUDSc51jxsmRuoGceqiSdqVfUFRedLfuqkYo8oQKfwJodN6BX7vVodyAlbDiLv15ysVjtSdiESZiZYr4Mjq3VwE-qKGrfMatob9nSp0xuwXSdvIxOJfbMoVjw="
+        },
+        {
+          "claim": "Attio has an official, hosted Model Context Protocol (MCP) server.",
+          "url": "https://docs.attio.com/mcp/overview"
+        }
+      ],
+      "confidence": "high",
+      "search_sources": [
+        "https://www.stacksync.com/blog/how-to-get-an-attio-developer-account-and-start-working-with-attios-api",
+        "https://docs.attio.com/rest-api/guides/authentication",
+        "https://docs.attio.com/rest-api/tutorials/connect-an-app-through-oauth",
+        "https://attio.com/help/apps/other-apps/generating-an-api-key",
+        "https://docs.attio.com/sdk/guides/creating-an-app",
+        "https://www.folk.app/articles/attio-crm-api",
+        "https://docs.attio.com/rest-api/overview",
+        "https://attio.com/platform/developers",
+        "https://docs.attio.com/docs/overview",
+        "https://apis.io/providers/attio/"
+      ],
+      "researched_at": "2026-07-09T04:15:24.062Z",
+      "model": "gemini-2.5-flash",
+      "blocker_tag": null
+    },
+    {
+      "id": 5,
+      "name": "Twenty",
+      "category": "CRM & Sales",
+      "one_liner": "Twenty is an open-source, highly customizable CRM platform designed for modern teams, offering flexible data models, workflow automation, and extensive API capabilities for managing customer relationships.",
+      "auth_methods": [
+        "API key",
+        "Bearer token"
+      ],
+      "auth_notes": "API keys are generated from the Twenty app's API settings page and are used as secret tokens in the request header. Some examples show the API key being used as a Bearer token in the Authorization header.",
+      "access": "self_serve_free",
+      "access_notes": "Twenty is open-source and can be self-hosted, allowing developers to get working API credentials for free. For the cloud version, a free trial is available, and API access is included.",
+      "api_type": [
+        "REST",
+        "GraphQL",
+        "SDK-only"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Twenty offers both REST and GraphQL APIs, including a Core API for CRUD operations on records (people, companies, opportunities, custom objects) and a Metadata API for schema management (create/modify/delete objects, fields, relations). The API is generated from the workspace schema, meaning custom objects and fields automatically get API endpoints, indicating broad control over the product. A `twenty-sdk` is also available for application development.",
+      "mcp": "community",
+      "mcp_notes": "Multiple community-driven Model Context Protocol (MCP) servers exist for Twenty CRM, enabling integration with AI assistants like Claude. These projects expose Twenty's GraphQL and REST APIs as MCP tools.",
+      "buildable": "yes",
+      "blocker": null,
+      "evidence": [
+        {
+          "claim": "Twenty is an open-source CRM that provides a flexible, customizable platform for managing customer relationships.",
+          "url": "https://docs.twenty.com/user-guide/getting-started/capabilities/what-is-twenty"
+        },
+        {
+          "claim": "The API uses API keys for authentication, which are generated from the app's settings and included in the request header.",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9uWlb_9d5Z56Ezamj4noxRdxZJBgmv2Jn9WRgT__06biYaFyAsscgjOYYllwCHYcxwF9-o96vGVjDk6k5VOKoTKu0pGTshnRS4gBtpUVmCh5itnKXRmWWT2eClXGmh4bDJWcqnyiAMr-N"
+        },
+        {
+          "claim": "Twenty offers both REST and GraphQL APIs, covering core CRM data and metadata for schema management.",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPwrm8ZB-dhFHaC0pgqiTm6shOLrMcrZORXNWbE0BvGvXROJ82iTe6zaN-Z-WfW05h2vfKWqnQZBVh5stouk19ZVkqqmzUhNEGt8apRr6NMur1vKpToh0A7CODZ4ojx8GRDCGWqRkBxg=="
+        },
+        {
+          "claim": "The API is generated from the workspace schema, meaning custom objects and fields automatically get API endpoints.",
+          "url": "https://www.taskrhino.ca/blog/twenty-crm-vs-salesforce/"
+        },
+        {
+          "claim": "Community-driven Model Context Protocol (MCP) servers exist for Twenty CRM, enabling AI assistant integration.",
+          "url": "https://lobehub.com/mcp/igorwarzocha-twenty-mcp-server"
+        }
+      ],
+      "confidence": "high",
+      "search_sources": [
+        "https://lobehub.com/mcp/igorwarzocha-twenty-mcp-server",
+        "https://glama.ai/mcp/servers/High-Impact-Athletes/hia-twenty-mcp",
+        "https://github.com/twentyhq/twenty/issues/10283",
+        "https://docs.twenty.com/developers/extend/api",
+        "https://github.com/mhenry3164/twenty-crm-mcp-server",
+        "https://hyteck.de/post/trying-twenty/",
+        "https://twentyhq-twenty.mintlify.app/introduction",
+        "https://twenty.com/",
+        "https://twenty.com/partners",
+        "https://dev.to/raju_gangitla_91920e1427f/self-hosting-twenty-crm-a-complete-guide-559n"
+      ],
+      "researched_at": "2026-07-09T04:15:44.428Z",
+      "model": "gemini-2.5-flash",
+      "blocker_tag": null
+    },
+    {
+      "id": 6,
+      "name": "Podio",
+      "category": "CRM & Sales",
+      "one_liner": "Podio is a customizable work collaboration and project management software that helps teams manage workflows, tasks, communication, and file sharing, and allows users to create custom apps without coding.",
+      "auth_methods": [
+        "OAuth2",
+        "API key"
+      ],
+      "auth_notes": "The Podio API uses the OAuth2 protocol for authentication, supporting server-side, client-side, username & password, and app authentication flows. Developers can also generate API keys for their applications.",
+      "access": "self_serve_free",
+      "access_notes": "The Podio API is free to use for both premium and free Podio accounts, with full access and the same rate limits. Developers can sign in or sign up for a Podio account and generate API keys from their account settings.",
+      "api_type": [
+        "REST"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "The Podio API is a complete programmable interface to all Podio functionality, built on a RESTful API using JSON. It covers core areas like applications, comments, contacts, files, hooks, items, status, and tasks, as well as other areas like actions, alerts, app market, calendar, conversations, and more.",
+      "mcp": "official",
+      "mcp_notes": "An official MCP (Model Context Protocol) server exists, built or endorsed by the vendor, live at https://mcp.podio.com. It connects AI assistants directly to Podio data, enabling them to read and write workspaces, apps, and items using natural language. It supports shared default credentials for quick start or using your own API key.",
+      "buildable": "yes",
+      "blocker": null,
+      "evidence": [
+        {
+          "claim": "Podio is a customizable work collaboration and project management software that helps teams manage workflows, tasks, communication, and file sharing, and allows users to create custom apps without coding.",
+          "url": "https://thedigitalprojectmanager.com/tools/podio-review/"
+        },
+        {
+          "claim": "The Podio API uses the OAuth2 protocol for authentication, supporting server-side, client-side, username & password, and app authentication flows.",
+          "url": "https://developers.podio.com/authentication"
+        },
+        {
+          "claim": "The Podio API is free to use for both premium and free Podio accounts, with full access and the same rate limits. Developers can sign in or sign up for a Podio account and generate API keys from their account settings.",
+          "url": "https://developers.podio.com/index/faq"
+        },
+        {
+          "claim": "The Podio API is a complete programmable interface to all Podio functionality, built on a RESTful API using JSON. It covers core areas like applications, comments, contacts, files, hooks, items, status, and tasks, as well as other areas like actions, alerts, app market, calendar, conversations, and more.",
+          "url": "https://developers.podio.com/"
+        },
+        {
+          "claim": "An official MCP (Model Context Protocol) server exists, built or endorsed by the vendor, live at https://mcp.podio.com. It connects AI assistants directly to Podio data, enabling them to read and write workspaces, apps, and items using natural language.",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFy8zdftZT_hUIOJDd_5dkM5pIAJe-t_bc6yo7fk0UhKTQdV30ijTlWiG3sGrtHUG6zszfpRJ0-m7jQ1-ox2oM7ORcNjk2H1XGfAGkxolDzpC8YbiNY6EdjAj_d-HQLULm6kZcLK4UBv75OoZ6bsgf1UOgOaO_pw46eysfY_oLlDt4fq8xSyX00NZCxjBf9rh-WJwWB"
+        }
+      ],
+      "confidence": "high",
+      "search_sources": [
+        "https://docs.sharefile.com/en-us/podio/using-podio/general-features/podio-mcp-server.html"
+      ],
+      "researched_at": "2026-07-09T04:16:03.160Z",
+      "model": "gemini-2.5-flash",
+      "blocker_tag": null
+    },
+    {
+      "id": 7,
+      "name": "Zoho CRM",
+      "category": "CRM & Sales",
+      "one_liner": "Zoho CRM is a cloud-based customer relationship management (CRM) software that helps businesses manage sales, marketing, and customer support activities, automate tasks, and provide a unified view of customer data.",
+      "auth_methods": [
+        "OAuth2"
+      ],
+      "auth_notes": "The Zoho CRM API primarily uses the OAuth 2.0 protocol for authentication, involving grant tokens, access tokens, and refresh tokens.",
+      "access": "self_serve_free",
+      "access_notes": "Developers can obtain API credentials by themselves. Zoho CRM offers a free plan for up to 3 users, which includes API access with 5000 API calls/day. Developers can register their applications in the Zoho Developer Console. However, GraphQL APIs are not available in trial versions and require Enterprise, Zoho One Enterprise, CRM Plus, or Ultimate editions.",
+      "api_type": [
+        "REST",
+        "GraphQL",
+        "SDK-only"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Zoho CRM provides documented public REST APIs, allowing access and manipulation of almost all CRM components, including records, modules, and custom views, with support for Bulk, Notification, and Query APIs. It also offers GraphQL APIs for precise data access. SDKs are available for various languages like Java, Python, PHP, Node.js, and C#.",
+      "mcp": "official",
+      "mcp_notes": "An official Model Context Protocol (MCP) server, called 'Zoho MCP,' exists and is built and endorsed by Zoho. It enables AI agents to interact with Zoho apps and over 950 third-party integrations.",
+      "buildable": "yes",
+      "blocker": null,
+      "evidence": [
+        {
+          "claim": "Zoho CRM is a cloud-based customer relationship management (CRM) software that helps businesses manage sales, marketing, and customer support activities.",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHyvHdU9LmmYM0FAWe6wfdUfhFh0MqWOXEKoDmTCoYv9C_0OedBjwamhwfK4bBXV3ktMDAOdvw9hqaV96fVGedVnWYQpcQCf2d2Bfrn1t0qMbH_V17pLPVxUDHEQtXCLU4NinFvRbLDwELPlmYFV-mPbmD6o6RRvbIaOQNHJkVWS_Cxc17RS0JYudIZO3IrrEHM98PQTw"
+        },
+        {
+          "claim": "The Zoho CRM API uses the OAuth 2.0 protocol for authentication.",
+          "url": "https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html"
+        },
+        {
+          "claim": "Zoho CRM offers a free plan for up to 3 users, which includes API access with 5000 API calls/day.",
+          "url": "https://www.zoho.com/crm/zohocrm-pricing.html"
+        },
+        {
+          "claim": "Zoho CRM provides documented public REST APIs and GraphQL APIs.",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHDGH7gszsSHdexD-RnfGhdEF8cxPN1FxjgBSR_5teFHpEEnVylmL1xJK-MdNkiw19jnkQjz4jH6AY8eIMKB19mfBfYkTtWag-S4pMqJ810oFOHAfMuOR3P8nly9FuYAbBSTryaI="
+        },
+        {
+          "claim": "An official Model Context Protocol (MCP) server, called 'Zoho MCP,' exists and is built and endorsed by Zoho.",
+          "url": "https://www.zoho.com/mcp/"
+        }
+      ],
+      "confidence": "high",
+      "search_sources": [
+        "https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html",
+        "https://zoho-crm-api.readthedocs.io/en/latest/authentication/",
+        "https://www.zoho.com/crm/developer/docs/api/v8/auth-request.html",
+        "https://www.postman.com/postman/integration-flows/documentation/0s51720/zoho-crm-rest-apis",
+        "https://www.zoho.com/crm/zohocrm-pricing.html",
+        "https://www.method.me/blog/zoho-crm-cost/",
+        "https://www.getknit.dev/blog/zoho-crm-api-integration-guide-oauth-2-0-use-cases-step-by-step-tutorial",
+        "https://github.com/junnaisystems/zoho-crm-mcp",
+        "https://www.zoho.com/crm/developer/docs/api/graphql/graphql-overview.html",
+        "https://www.zoho.com/crm/developer/docs/api/graphql/enable-graphql-api.html"
+      ],
+      "researched_at": "2026-07-09T04:16:17.936Z",
+      "model": "gemini-2.5-flash",
+      "blocker_tag": null
+    },
+    {
+      "id": 8,
+      "name": "Close",
+      "category": "CRM & Sales",
+      "one_liner": "Close is a sales CRM that provides tools for calling, email, SMS, pipeline management, and includes an AI sales agent, designed to help sales teams manage leads, automate workflows, and close deals.",
+      "auth_methods": [
+        "API key",
+        "OAuth2",
+        "Basic"
+      ],
+      "auth_notes": "API keys are used with HTTP Basic authentication, where the API key acts as the username and the password is empty. OAuth 2.0 is recommended for user-facing integrations.",
+      "access": "self_serve_free",
+      "access_notes": "API keys can be generated from the 'Settings > Developer > API Keys' section within a Close account. Close offers a free trial for its plans. Integration partners can request a free 'Dev organization' by emailing support, which functions identically to standard organizations but without subscription fees. Existing Close users can also create a free secondary organization for development and testing.",
+      "api_type": [
+        "REST",
+        "Webhooks"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "The Close Developer Platform provides a REST API for pushing CRM data (leads, contacts, activities), syncing data out with webhooks, automating outreach, and managing workflows. It supports creating, retrieving, updating, and deleting leads, tracking various activities (calls, emails, notes, meetings), and managing custom fields.",
+      "mcp": "official",
+      "mcp_notes": "The Close Developer Platform explicitly lists an 'MCP Server: Model Context Protocol for AI agents' and provides documentation on how to connect AI agents via MCP. Close.com provides 36 tools that AI agents can use through the Model Context Protocol (MCP).",
+      "buildable": "yes",
+      "blocker": null,
+      "evidence": [
+        {
+          "claim": "Close is a sales CRM that combines calling, email, SMS, pipeline management, reporting, and an AI sales agent.",
+          "url": "https://close.com/"
+        },
+        {
+          "claim": "The Close API supports API keys and OAuth 2.0 for authentication. API keys use HTTP Basic authentication.",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1ArGFpnUXLwV8N6o1KE7G9BjXvgyEe4PQ5N3F_J_7sw_C2JrCIP4TghMC1Ym7XwOFCH-2IyN8jxy3e9W1jq4bngyy0HRXiKMpTUPM5PTjEf1H11dVMzzyY2P6SSyOwBKN9pivug=="
+        },
+        {
+          "claim": "Developers can generate API keys from their Close account settings. Integration partners can request a free 'Dev organization' for development and testing.",
+          "url": "https://developer.close.com/integrations"
+        },
+        {
+          "claim": "Close has a documented public REST API that allows for comprehensive management of CRM data and workflows, and supports webhooks.",
+          "url": "https://developer.close.com/"
+        },
+        {
+          "claim": "An official MCP (Model Context Protocol) server exists, built or endorsed by Close, for AI agents.",
+          "url": "https://close.com/integrations/close-mcp"
+        }
+      ],
+      "confidence": "high",
+      "search_sources": [],
+      "researched_at": "2026-07-09T04:16:32.895Z",
+      "model": "gemini-2.5-flash",
+      "blocker_tag": null
+    },
+    {
+      "id": 9,
+      "name": "Copper",
+      "category": "CRM & Sales",
+      "one_liner": "Copper is a CRM designed for Google Workspace users, enabling management of contacts, deals, tasks, and pipelines directly within Google apps.",
+      "auth_methods": [
+        "API key",
+        "OAuth2"
+      ],
+      "auth_notes": "The Copper Developer API supports both API keys and OAuth2.0. API key authentication requires including `X-PW-AccessToken`, `X-PW-Application` (set to `developer_api`), and `X-PW-UserEmail` in HTTPS requests. OAuth2.0 is the preferred approach for partner integrations.",
+      "access": "paid_plan",
+      "access_notes": "API access is available on the Professional and Business plans. While Copper offers a free trial for the product, API keys are generated from within the settings once an active account is established. The Professional plan, which includes API access, starts at $59/user/month when billed annually.",
+      "api_type": [
+        "REST"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "The Copper Developer API provides a RESTful interface with JSON-formatted responses. It allows access to most Copper resources, including people, companies, opportunities, projects, tasks, activities, and custom fields, indicating a broad API surface.",
+      "mcp": "community",
+      "mcp_notes": "Third-party platforms such as viaSocket, ContextGate, and MCPBundles offer community-built or endorsed Model Context Protocol (MCP) servers for Copper, facilitating AI agent interaction with CRM data. No official MCP server built or endorsed directly by Copper was found.",
+      "buildable": "yes",
+      "blocker": null,
+      "evidence": [
+        {
+          "claim": "Copper is a CRM designed specifically for companies using Google Workspace, allowing users to manage contacts, deals, tasks, and pipelines directly from their inbox and other Google apps.",
+          "url": "https://efficient.app/apps/copper"
+        },
+        {
+          "claim": "The Copper Developer API supports API keys and OAuth2.0.",
+          "url": "https://developer.copper.com/introduction/authentication.html"
+        },
+        {
+          "claim": "API access is available on the Professional and Business plans, with the Professional tier starting at $59/user/month (billed annually).",
+          "url": "https://checkthat.ai/brands/copper/pricing"
+        },
+        {
+          "claim": "The Copper Developer API provides a RESTful interface with JSON-formatted responses to access most Copper resources.",
+          "url": "https://developer.copper.com/"
+        },
+        {
+          "claim": "Third-party platforms like viaSocket offer community-built MCP servers for Copper.",
+          "url": "https://viasocket.com/mcp/copper"
+        }
+      ],
+      "confidence": "high",
+      "search_sources": [
+        "https://efficient.app/apps/copper",
+        "https://www.folk.app/articles/copper-crm-review",
+        "https://developer.copper.com/introduction/authentication.html",
+        "https://truto.one/blog/integrate-copper/",
+        "https://developer.copper.com/introduction/requests.html",
+        "https://checkthat.ai/brands/copper/pricing",
+        "https://www.copper.com/integrations/fireflies-ai",
+        "https://support.ipaas.com/en/articles/13311335-copper-crm-installation-instructions",
+        "https://www.youtube.com/watch?v=Z1gc9-i9HbY",
+        "https://zeeg.me/en/blog/post/copper-crm-pricing"
+      ],
+      "researched_at": "2026-07-09T04:17:03.151Z",
+      "model": "gemini-2.5-flash",
+      "blocker_tag": null
+    },
+    {
+      "id": 10,
+      "name": "DealCloud",
+      "category": "CRM & Sales",
+      "one_liner": "DealCloud is an end-to-end lead and relationship management platform designed for financial and professional services firms, helping them track deals, manage relationships, and streamline workflows throughout the deal lifecycle.",
+      "auth_methods": [
+        "OAuth2",
+        "Bearer token"
+      ],
+      "auth_notes": "DealCloud uses the OAuth2 Client Credentials flow to generate a bearer token. This token is obtained by sending a POST request to the token endpoint with a client_id and an apiKey (which functions as the client secret). The bearer token is then used in the HTTP Authorization header for subsequent API requests.",
+      "access": "paid_plan",
+      "access_notes": "API access requires an existing DealCloud subscription and administrative approval within the organization's DealCloud instance. A user must be assigned to a user group with appropriate permissions, which an administrator enables. The API key is then obtained from the user's profile. DealCloud is an enterprise platform with custom pricing, typically ranging from $15,000 to $40,000+ per user per year, plus significant implementation costs. There is no indication of free developer accounts or trial access for the API.",
+      "api_type": [
+        "REST"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "DealCloud offers a comprehensive set of REST APIs covering various functional areas, including Authentication, User Management, Schema, Data (create, retrieve, update, delete records across objects like deals, contacts, companies), Backups, Publications (real-time events), and Relationship Intelligence. The documentation provides detailed guidance, examples, and best practices. A Python SDK is also available.",
+      "mcp": "none_found",
+      "mcp_notes": "While there's a Workato integration mentioning 'Deal Cloud and MCP (Model Context Protocol) integration,' Workato is an integration platform, not an official or community-endorsed MCP server from DealCloud. No official or well-known community-built MCP server for DealCloud was found in the search results.",
+      "buildable": "with_caveats",
+      "blocker": "Composio cannot self-serve free or trial API access for development and testing; access requires an existing paid enterprise plan and administrative approval from a DealCloud customer or direct partnership with Intapp.",
+      "evidence": [
+        {
+          "claim": "DealCloud is an end-to-end lead and relationship management platform for financial and professional services firms.",
+          "url": "https://www.capterra.com/p/146001/DealCloud/"
+        },
+        {
+          "claim": "The DealCloud API uses OAuth2 Client Credentials flow to generate a bearer token, which is then used in the HTTP Authentication header for API requests.",
+          "url": "https://api.docs.dealcloud.com/docs/requesting-an-oauth2-bearer-token"
+        },
+        {
+          "claim": "API access requires a user to be assigned to a user group with appropriate permissions, which an administrator enables, and the API key is obtained from the user's profile.",
+          "url": "https://api.docs.dealcloud.com/docs/obtaining-an-api-key"
+        },
+        {
+          "claim": "DealCloud is an enterprise platform with custom pricing, typically ranging from $15,000 to $40,000+ per user per year, plus significant implementation costs.",
+          "url": "https://vendr.com/insights/dealcloud-pricing-how-much-does-it-cost"
+        },
+        {
+          "claim": "The DealCloud API documentation provides a comprehensive overview of its REST APIs, covering functional areas like User Management, Schema, Data, Backups, Publications, and Relationship Intelligence.",
+          "url": "https://api.docs.dealcloud.com/docs"
+        }
+      ],
+      "confidence": "high",
+      "search_sources": [
+        "https://api.docs.dealcloud.com/docs/token",
+        "https://developers.anduintransact.com/docs/step-1-retrieve-credentials-of-3rd-party-apps-7",
+        "https://api.docs.dealcloud.com/docs/apikeys",
+        "https://www.vendr.com/buyer-guides/dealcloud",
+        "https://pipelineroad.com/compare/pipelineroad-vs-dealcloud",
+        "https://api.docs.dealcloud.com/docs",
+        "https://api.docs.dealcloud.com/docs/data",
+        "https://api.docs.dealcloud.com/docs/relintel",
+        "https://api.docs.dealcloud.com/docs/management",
+        "https://pypi.org/project/dealcloud-sdk/"
+      ],
+      "researched_at": "2026-07-09T04:17:15.656Z",
+      "model": "gemini-2.5-flash",
+      "blocker_tag": "Partnership / sales gate"
+    },
+    {
+      "id": 11,
+      "name": "Zendesk",
+      "category": "Support & Helpdesk",
+      "one_liner": "Zendesk is a cloud-based customer service platform that centralizes customer interactions across multiple channels into a unified ticketing system, offering self-service options, and leveraging AI and automation.",
+      "auth_methods": [
+        "OAuth2",
+        "API key",
+        "Basic",
+        "JWT"
+      ],
+      "auth_notes": "Zendesk supports OAuth2, API token, and Basic authentication (email and password or email and API token). Basic authentication with email and password is deprecated, with API tokens or OAuth recommended. JWT is supported for the Sunshine Conversations API.",
+      "access": "self_serve_trial",
+      "access_notes": "Developers can obtain working API credentials by signing up for a free 14-day trial account, which provides access to all features of the Zendesk Customer Service Suite Professional plan. This trial account can be converted into a sponsored developer account for partners.",
+      "api_type": [
+        "REST",
+        "GraphQL",
+        "SDK-only"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Zendesk offers a broad set of REST APIs covering ticketing, help center, live chat, voice, sales CRM, and custom data. There is also a GraphQL API for the Chat Conversations API and a limited GraphQL Search API for companies. SDKs are available for web, Android, iOS, and Unity.",
+      "mcp": "official",
+      "mcp_notes": "Zendesk has officially adopted the Model Context Protocol (MCP) and announced both MCP Client and MCP Server capabilities as part of its AI strategy, allowing agents to connect with external systems.",
+      "buildable": "yes",
+      "blocker": null,
+      "evidence": [
+        {
+          "claim": "Zendesk is a cloud-based customer service platform that helps businesses manage customer interactions across multiple channels by centralizing them into a unified ticketing system, offering self-service options, and leveraging AI and automation.",
+          "url": "https://www.zendesk.com/"
+        },
+        {
+          "claim": "Zendesk supports OAuth2, API token, and Basic authentication. Basic authentication with email and password is also mentioned, but it's deprecated and Zendesk recommends migrating to API tokens or OAuth. JWT is supported for the Sunshine Conversations API.",
+          "url": "https://support.zendesk.com/hc/en-us/articles/4408831452954-How-can-I-authenticate-API-requests"
+        },
+        {
+          "claim": "Developers can get working API credentials by signing up for a free 14-day trial account. This trial provides access to all features of the Zendesk Customer Service Suite Professional plan. If interested in becoming a developer partner, the trial account can be converted into a sponsored Zendesk Support account which does not expire.",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3A9itNfuBHJIwAd-vZiJODim_75ZKq5XrhSA6yNMBM4IxtmS2pT4PVWfokNzjCoYa7ATVSR5Qr6p7iKVsu50Ebn4xKyCxJoMChZNq8YXtbmcCZxYtvZY8qCfyltu_p_TvNPkoB9Gz2pvd2nyioA1kXbVJe1g2LcSzBUMCjnNFeiAtxcLatxthe4YRb-SU9aF6l6LqqECmQWJDiw1niW9hbUh_ObfLYG996ycyJsNsgfE-b5eddg=="
+        },
+        {
+          "claim": "Zendesk offers a comprehensive set of APIs, primarily REST, covering various product capabilities like ticketing, help center, live chat, voice, sales CRM, and custom data. There is also a GraphQL API for the Chat Conversations API and a limited GraphQL Search API for companies.",
+          "url": "https://developer.zendesk.com/api-reference/"
+        },
+        {
+          "claim": "Zendesk has officially adopted the Model Context Protocol (MCP) and announced both MCP Client and MCP Server capabilities as part of its AI strategy.",
+          "url": "https://www.techradar.com/pro/zendesk-becomes-the-latest-to-adopt-mcp-to-futureproof-customers-in-the-ai-first-era"
+        }
+      ],
+      "confidence": "high",
+      "search_sources": [
+        "https://support.zendesk.com/hc/en-us/articles/4408831452954-How-can-I-authenticate-API-requests",
+        "https://www.eesel.ai/blog/zendesk-api-authentication-and-scopes",
+        "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+        "https://community.zendesk.com/fid-20/tid-8541",
+        "https://developer.zendesk.com/documentation/conversations/getting-started/api-authentication/",
+        "https://developer.zendesk.com/documentation/api-basics/getting-started/getting-a-trial-or-sponsored-account-for-development/",
+        "https://www.zendesk.com/pricing/",
+        "https://support.zendesk.com/hc/en-us/articles/9104802071578-Welcome-to-your-Zendesk-Suite-trial",
+        "https://developer.zendesk.com/api-reference/",
+        "https://www.eesel.ai/blog/zendesk-api-development"
+      ],
+      "researched_at": "2026-07-09T04:17:29.193Z",
+      "model": "gemini-2.5-flash",
+      "blocker_tag": null
+    },
+    {
+      "id": 12,
+      "name": "Intercom",
+      "category": "Support & Helpdesk",
+      "one_liner": "Intercom is an AI-powered customer service platform that facilitates communication between businesses and their customers through live chat, chatbots, automated messaging, and support ticketing.",
+      "auth_methods": [
+        "OAuth2",
+        "API key",
+        "other"
+      ],
+      "auth_notes": "Intercom's API supports Access Tokens (functioning as API keys) for private apps accessing data within your own Intercom workspace, and OAuth 2.0 for public apps that need to access other people's Intercom data. JWT is also used for securing the Messenger SDK for client-side authentication.",
+      "access": "paid_plan",
+      "access_notes": "API access requires an active Intercom workspace. An Access Token (API key) is provided as soon as you create an app within your workspace in the Developer Hub. Intercom offers various paid plans (Essential, Advanced, Expert), and while the API is a core building block, access to a workspace to generate credentials is tied to these plans.",
+      "api_type": [
+        "REST"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Intercom provides a documented public REST API that offers programmatic access to a wide range of its platform's features, including messages, conversations, contacts, companies, users, leads, events, attributes, and AI content. The API reference is auto-generated from an OpenAPI specification.",
+      "mcp": "official",
+      "mcp_notes": "Intercom hosts an official Model Context Protocol (MCP) server that enables AI tools and applications to securely connect with Intercom's data and services in a standardized way. This server provides tools for AI agents to interact with the Intercom API, including universal search, and is currently supported only in US hosted workspaces.",
+      "buildable": "yes",
+      "blocker": null,
+      "evidence": [
+        {
+          "claim": "Intercom is a customer messaging platform that facilitates direct communication between companies and their customers through various tools like live chat, automated messaging, and support ticketing.",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfANa1-Tze3QU6a8Fbvq9Aj795z13-lWLG751Na8seoOdWlXOyWALLDPNzTfwRL1EYddS2bAszvbuSTCGeFWBgivFt8IqBQa3xjHCUQdSxe05xLbA9_5HuNhwiTr5_8FElaXXLwcEB7u6-ZCQHaz6q8jvWUJoPq9gdLfSLG5Ne7HB6A2qoia-r_i7tALDE-CrdEyqXzEFwCDXM8nT4lhy2yg=="
+        },
+        {
+          "claim": "To access the Intercom API, you have two authentication options depending on whether you app is public or private. An Access Token is for if you're using the API to access data in your own Intercom workspace, in other words, building a private app. OAuth is for if you're building a public app that accesses other people's Intercom data.",
+          "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication"
+        },
+        {
+          "claim": "We provide you with an Access Token as soon as you create an app on your workspace. You can find your Access Token in the Configure > Authentication section in your app within the Developer Hub.",
+          "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication"
+        },
+        {
+          "claim": "The Intercom API provides programmatic access to Intercom's platform, including endpoints for messages, conversations, contacts, companies, and automation. Using this OpenAPI specification, developers can: Generate SDKs or client libraries using tools such as OpenAPI Generator. Explore schemas and models for Intercom's API objects. Build, test, and validate integrations in a consistent and language-agnostic way.",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4kLMJUG9KLmFjPAQ99YC3I-ARUYgXx5zagcNK9EQjR83TWqzkFW720l49oCKiDFCnpgOrieA_0C_S1cap7USM3T__NlKr4IFZYlwSdNMiMwEu5rIaoD362wlNVK9pUMp3N2pogjcF"
+        },
+        {
+          "claim": "Intercom hosts a remote MCP server that follows the authenticated remote MCP specification (docs). This server handles requests from AI tools and provides access to Intercom data through a secure interface.",
+          "url": "https://developers.intercom.com/docs/guides/mcp"
+        }
+      ],
+      "confidence": "high",
+      "search_sources": [
+        "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+        "https://klamp.ai/blog/intercom-api",
+        "https://www.merge.dev/blog/intercom-api-key",
+        "https://developers.intercom.com/installing-intercom/ios/secure-your-messenger",
+        "https://www.youtube.com/watch?v=33z1mucuVx8",
+        "https://www.voiceflow.com/blog/intercom-pricing",
+        "https://www.knock-ai.com/blog/intercom-pricing",
+        "https://www.spurnow.com/en/blogs/intercom-pricing",
+        "https://github.com/intercom/Intercom-OpenAPI",
+        "https://developers.intercom.com/docs/references/rest-api/api.intercom.io"
+      ],
+      "researched_at": "2026-07-09T04:17:45.814Z",
+      "model": "gemini-2.5-flash",
+      "blocker_tag": null
+    },
+    {
+      "id": 13,
+      "name": "Freshdesk",
+      "category": "Support & Helpdesk",
+      "one_liner": "Freshdesk is a cloud-based customer support software that centralizes customer interactions from various channels into a unified ticketing system, offering features like automation, self-service, and AI assistance to streamline support operations.",
+      "auth_methods": [
+        "API key",
+        "Basic"
+      ],
+      "auth_notes": "Freshdesk's public API primarily uses API Key authentication, implemented via Basic Access Authorization. The API key is used as the username, and any dummy string (e.g., 'X') serves as the password, which is then Base64 encoded for the Authorization header. While OAuth 2.0 is mentioned for Freshdesk Marketplace apps to integrate with third-party applications, the Freshdesk API itself does not directly support OAuth for authentication.",
+      "access": "self_serve_trial",
+      "access_notes": "Developers can obtain API credentials by signing up for a free trial or a free plan. The API key is readily available in the user's profile settings after logging in. However, the free plan has a rate limit of 0 API calls per minute, while trial accounts are limited to 50 API calls per minute. Full functional API usage with higher rate limits typically requires a paid plan.",
+      "api_type": [
+        "REST"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Freshdesk offers a well-documented public REST API (v2) that allows for comprehensive management of helpdesk data. The API surface includes endpoints for core resources such as tickets, conversations, agents, contacts, time entries, and ticket forms, enabling extensive control over product functionalities.",
+      "mcp": "official",
+      "mcp_notes": "Freshworks provides an official Model Context Protocol (MCP) server for Freshdesk, currently in an Early Access Program (EAP). This server enables AI tools to securely connect and interact with Freshdesk, exposing capabilities like ticket creation using public APIs and API key authentication.",
+      "buildable": "yes",
+      "blocker": null,
+      "evidence": [
+        {
+          "claim": "Freshdesk is a cloud-based customer support software that centralizes customer interactions into a unified ticketing system.",
+          "url": "https://www.breezythemes.com/blogs/blog/what-is-freshdesk"
+        },
+        {
+          "claim": "The Freshdesk API uses Basic Access Authorization with an API key as the primary authentication method, which can be found in profile settings.",
+          "url": "https://developer.freshdesk.com/api/v1"
+        },
+        {
+          "claim": "Developers can get API credentials by starting a free trial or logging into their account, but the free plan has a 0 API call limit, while trial accounts have 50 calls/minute.",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUISUX5e4iB_6EkpMJH5YOHytYM7-prxKJKeh1YexrchiRT7zbbDmr6YG53bidscjx4-ucNOZb-LmhBart7ZE2bD99O49yQz7QyiRYAfQ8="
+        },
+        {
+          "claim": "Freshdesk's APIs are RESTful (v2) and allow operations like reading, modifying, adding, or deleting data from the helpdesk, covering various resources like tickets, conversations, and agents.",
+          "url": "https://developers.freshdesk.com/api/"
+        },
+        {
+          "claim": "An official Freshworks Model Context Protocol (MCP) server exists for Freshdesk (in EAP) to enable AI tools to connect and interact with the platform.",
+          "url": "https://support.freshdesk.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk-eap-"
+        }
+      ],
+      "confidence": "high",
+      "search_sources": [
+        "https://developer.freshdesk.com/api/v1",
+        "https://mixedanalytics.com/knowledge-base/get-your-freshdesk-api-credentials/",
+        "https://www.stitchflow.com/user-management/freshdesk/api",
+        "https://truto.one/blog/how-to-integrate-with-the-freshdesk-api-2026-engineering-guide/",
+        "https://developers-staging.freshworks.com/docs/app-sdk/v2.3/freshdesk/oauth/",
+        "https://community.freshworks.dev/t/how-to-use-oauth-authentication-mechanism-for-freshdesk-api/1691",
+        "https://www.merge.dev/blog/freshdesk-api-key",
+        "https://support.freshdesk.com/support/solutions/articles/215517-how-to-find-your-api-key",
+        "https://developers.freshdesk.com/api/",
+        "https://mcpservers.org/servers/Enreign/freshdeck-mcp"
+      ],
+      "researched_at": "2026-07-09T04:18:04.111Z",
+      "model": "gemini-2.5-flash",
+      "blocker_tag": null
+    },
+    {
+      "id": 14,
+      "name": "Front",
+      "category": "Support & Helpdesk",
+      "one_liner": "Front is a customer operations platform that unifies customer communication channels (email, chat, SMS, social, voice) into a shared inbox, enabling team collaboration, automation, and AI-powered customer service.",
+      "auth_methods": [
+        "OAuth2",
+        "Bearer token"
+      ],
+      "auth_notes": "The Core API uses Bearer tokens for authentication. Developers can obtain these tokens either through API tokens generated in their settings or via OAuth2. Front recommends and often requires OAuth2 for public integrations.",
+      "access": "self_serve_free",
+      "access_notes": "Developers can sign up for a free developer account to access a sandbox environment and obtain API credentials for testing. While a free developer account is available, API rate limits for production use are tied to paid plans (Starter, Professional, Enterprise), and additional rate limit add-ons can be purchased.",
+      "api_type": [
+        "REST"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Front offers a Core API, which is a backend REST API providing comprehensive control over a wide range of entities including messages, contacts, channels, inboxes, teammates, and analytics. It also supports webhooks for real-time updates. Additionally, there's a Channels API for custom messaging channels and a Plugin SDK.",
+      "mcp": "official",
+      "mcp_notes": "An official Front MCP (Model Context Protocol) server is available in beta, allowing AI applications to interact with Front accounts and API documentation using natural language.",
+      "buildable": "yes",
+      "blocker": null,
+      "evidence": [
+        {
+          "claim": "Front is a customer operations platform that unifies customer communication channels into a shared inbox for team collaboration, automation, and AI-powered customer service.",
+          "url": "https://www.getmacha.com/blog/what-is-front-app"
+        },
+        {
+          "claim": "The Core API uses Bearer tokens for authentication, obtainable via API tokens or OAuth2. OAuth2 is recommended for public integrations.",
+          "url": "https://dev.frontapp.com/docs/authentication"
+        },
+        {
+          "claim": "Developers can sign up for a free developer account to access a sandbox environment and obtain API tokens.",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZkGAIoELVIMlh-A5cR00xRKwd_SUHnHOfIsmMsllyUsSrJgMxelL70l6iU1twp0733x1aurWWONdQ3ML5pFd4v4MTnfVrgs8l1kvWijB3GNgGCm39QkvF_iFUCCiXOS1ctZb88Qa-z8QNQWBzIp7PbcfOW-PfebByGv2tpggvnNC8FvqQ3YtUIg6kCitt_qohrLIBKKZPg02X8hjtSber"
+        },
+        {
+          "claim": "Front's Core API is a backend REST API that provides comprehensive control over various entities like messages, contacts, and inboxes, and supports webhooks.",
+          "url": "https://dev.frontapp.com/docs/core-api-overview"
+        },
+        {
+          "claim": "An official Front MCP (Model Context Protocol) server is available in beta, enabling AI applications to interact with Front accounts and API documentation.",
+          "url": "https://community.front.com/api-news-updates-40/the-front-mcp-server-is-here-beta-3712"
+        }
+      ],
+      "confidence": "high",
+      "search_sources": [],
+      "researched_at": "2026-07-09T04:18:17.207Z",
+      "model": "gemini-2.5-flash",
+      "blocker_tag": null
+    },
+    {
+      "id": 15,
+      "name": "Pylon",
+      "category": "Support & Helpdesk",
+      "one_liner": "Pylon is an AI-native B2B customer support and operations platform that unifies shared Slack, Microsoft Teams, email, and chat support into a single ticketing system, with a knowledge base, accounts, contacts, and AI agents.",
+      "auth_methods": [
+        "API key",
+        "OAuth2"
+      ],
+      "auth_notes": "The public REST API uses API tokens. The official Pylon MCP Server authenticates with OAuth 2.0 (AuthKit).",
+      "access": "admin_approval",
+      "access_notes": "API tokens can only be created by Admin users. Access to the API settings to generate tokens requires an Admin role within a Pylon account. While not explicitly stated as requiring a paid plan for API access, Pylon is a B2B platform with pricing starting at $59 per agent per month, implying API access is part of a paid subscription. The developer hub also suggests contacting support for API access.",
+      "api_type": [
+        "REST"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Pylon offers a documented public REST API that covers core functionalities such as Issues (tickets), Accounts, Contacts, Tags, Custom Fields, Tasks, Projects, Milestones, Knowledge Base (Articles, Collections), Users, and Teams. This allows for comprehensive control over most product features.",
+      "mcp": "official",
+      "mcp_notes": "An official Pylon MCP (Model Context Protocol) Server exists, built and endorsed by the vendor. It exposes Pylon data to AI tools supporting the MCP standard (e.g., Claude, ChatGPT, Cursor) and can be configured and enabled from the Pylon dashboard (Settings → AI Controls → MCP Server).",
+      "buildable": "yes",
+      "blocker": null,
+      "evidence": [
+        {
+          "claim": "Pylon is an AI-native B2B customer support and operations platform that unifies various communication channels into a single ticketing system with a knowledge base, accounts, contacts, and AI agents.",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAjG-2yFmtxOql-lM8YeTXlfYxXA7qY3KUPwQmjV0NWfDYmuA2t0P69DUw79tiuVDD6lT93knuRd2aml27awPcg0xacLOBVRqM63k4J_ch35VBztZSfYZnwkiS5JrOn2BfNg=="
+        },
+        {
+          "claim": "The public REST API uses API tokens for authentication.",
+          "url": "https://docs.usepylon.com/pylon-docs/developer/api"
+        },
+        {
+          "claim": "The official Pylon MCP Server authenticates with OAuth 2.0 (AuthKit).",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcU2K1GXdEVEWCIb6vSxEbZdpXvTFTBE2yzcxNCfxy_pU2nSKghVyFeHkFb1SFJANjRMwTu9j4_kbtO7GI2f-5TG5pYi8N7wubHfkk19vy2OOl4xr51aSbAH7tuIex_z7KevfjZ_GxZfCa9uTZG2H3RdXM5pps"
+        },
+        {
+          "claim": "API tokens can only be created by Admin users, and access to the API may involve contacting support.",
+          "url": "https://getpylon.com/developers/"
+        },
+        {
+          "claim": "Pylon has a documented public REST API covering various core functionalities like Issues, Accounts, Contacts, and Knowledge Base.",
+          "url": "https://github.com/api-evangelist/pylon"
+        },
+        {
+          "claim": "An official Pylon MCP Server exists and can be configured from the Pylon dashboard.",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcU2K1GXdEVEWCIb6vSxEbZdpXvTFTBE2yzcxNCfxy_pU2nSKghVyFeHkFb1SFJANjRMwTu9j4_kbtO7GI2f-5TG5pYi8N7wubHfkk19vy2OOl4xr51aSbAH7tuIex_z7KevfjZ_GxZfCa9uTZG2H3RdXM5pps"
+        }
+      ],
+      "confidence": "high",
+      "search_sources": [],
+      "researched_at": "2026-07-09T04:18:33.095Z",
+      "model": "gemini-2.5-flash",
+      "blocker_tag": null
+    },
+    {
+      "id": 16,
+      "name": "LiveAgent",
+      "category": "Support & Helpdesk",
+      "one_liner": "LiveAgent is a multichannel help desk solution that centralizes customer support interactions across live chat, email, phone, and social media, offering ticketing, automation, and AI-powered features.",
+      "auth_methods": [
+        "API key",
+        "OAuth2",
+        "JWT",
+        "Basic",
+        "Bearer token"
+      ],
+      "auth_notes": "LiveAgent's REST API supports authentication via API keys, which can be used with a username and password. OAuth 2.0 and JWT are mentioned as common authentication and authorization mechanisms for Live Agent APIs. The built-in MCP server also supports Bearer tokens and OAuth 2.1 for authentication.",
+      "access": "self_serve_trial",
+      "access_notes": "Developers can register for a 30-day free trial without a credit card to test all features, including API access. API keys can be generated by an administrator within the LiveAgent account. API and integrations are included in all subscription plans without additional costs.",
+      "api_type": [
+        "REST"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "LiveAgent provides a documented public REST API (API v1 and API v3). The API v3 documentation, including a Swagger (OpenAPI) API descriptor, is accessible within a LiveAgent account and offers examples and testing capabilities. The API supports a wide range of actions, such as retrieving companies, creating and deleting conversations, registering customers, managing departments, removing knowledge base entries, and generating reports.",
+      "mcp": "official",
+      "mcp_notes": "LiveAgent exposes a built-in, official Model Context Protocol (MCP) server that allows external AI tools to connect and interact with ticket data and perform actions on behalf of an agent.",
+      "buildable": "yes",
+      "blocker": null,
+      "evidence": [
+        {
+          "claim": "LiveAgent is a multichannel help desk solution that centralizes customer support interactions across live chat, email, phone, and social media, offering ticketing, automation, and AI-powered features.",
+          "url": "https://www.liveagent.com/"
+        },
+        {
+          "claim": "LiveAgent's REST API supports authentication via API keys, username and password (Basic Auth), OAuth 2.0, and JWT. The MCP server supports Bearer tokens and OAuth 2.1.",
+          "url": "https://videosdk.live/developer-hub/ai_agent/live-agent-api"
+        },
+        {
+          "claim": "Developers can register for a 30-day free trial to test all features, including API access, and API keys can be generated within the admin panel.",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5noHqlOyT99uNx8H47gFpialN_sK8Z0IndwGFoQOnHZ9M9ctKqbLHPUBnFN4ov9C7hEd0NxPBuJTS_ASfCHJSJ2Ee91I7XOdMBTsrRynxN2Sh5KeljHmYVaQuZOFWXG1XAwqxd4GwIQL4BBk="
+        },
+        {
+          "claim": "LiveAgent provides a documented public REST API (API v1 and API v3) with a Swagger (OpenAPI) API descriptor, supporting a wide range of actions for automating customer support operations.",
+          "url": "https://support.liveagent.com/911737-API-v3"
+        },
+        {
+          "claim": "LiveAgent exposes a built-in, official Model Context Protocol (MCP) server for connecting external AI tools.",
+          "url": "https://support.liveagent.com/150554-AI-features"
+        }
+      ],
+      "confidence": "high",
+      "search_sources": [
+        "https://www.liveagent.com/security-privacy-policy/",
+        "https://support.liveagent.com/741982-API-key",
+        "https://videosdk.live/developer-hub/ai_agent/live-agent-api",
+        "https://support.liveagent.com/150554-AI-features",
+        "https://developer.pingidentity.com/identity-for-ai/agents/idai-what-is-mcp.html",
+        "https://support.liveagent.com/911737-API-v3",
+        "https://support.liveagent.com/567924-Documentation",
+        "https://www.liveagent.com/",
+        "https://www.liveagent.com/pricing/",
+        "https://support.liveagent.com/802463-REST-API"
+      ],
+      "researched_at": "2026-07-09T04:18:51.923Z",
+      "model": "gemini-2.5-flash",
+      "blocker_tag": null
+    }
+  ],
+  "composio": [
+    {
+      "id": 1,
+      "name": "Salesforce",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "salesforce",
+      "composio_tools_count": 184,
+      "composio_auth_schemes": [
+        "OAUTH2",
+        "S2S_OAUTH2"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "HubSpot",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "hubspot",
+      "composio_tools_count": 244,
+      "composio_auth_schemes": [
+        "OAUTH2",
+        "API_KEY"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Pipedrive",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "pipedrive",
+      "composio_tools_count": 399,
+      "composio_auth_schemes": [
+        "OAUTH2",
+        "API_KEY"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Attio",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "attio",
+      "composio_tools_count": 99,
+      "composio_auth_schemes": [
+        "OAUTH2"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Twenty",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 6,
+      "name": "Podio",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 7,
+      "name": "Zoho CRM",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "zoho",
+      "composio_tools_count": 57,
+      "composio_auth_schemes": [
+        "OAUTH2"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Close",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "close",
+      "composio_tools_count": 6,
+      "composio_auth_schemes": [
+        "API_KEY"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Copper",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 10,
+      "name": "DealCloud",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 11,
+      "name": "Zendesk",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "zendesk",
+      "composio_tools_count": 452,
+      "composio_auth_schemes": [
+        "OAUTH2"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Intercom",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "intercom",
+      "composio_tools_count": 133,
+      "composio_auth_schemes": [
+        "OAUTH2"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Freshdesk",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "freshdesk",
+      "composio_tools_count": 178,
+      "composio_auth_schemes": [
+        "API_KEY"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Front",
+      "in_composio": true,
+      "matched_via": "slug-probe",
+      "composio_slug": "front",
+      "composio_tools_count": 0,
+      "composio_auth_schemes": [
+        "API_KEY"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Pylon",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "pylon_mcp",
+      "composio_tools_count": 12,
+      "composio_auth_schemes": [
+        "DCR_OAUTH"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "LiveAgent",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 17,
+      "name": "Plain",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "plain",
+      "composio_tools_count": 22,
+      "composio_auth_schemes": [
+        "API_KEY"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Help Scout",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "help_scout",
+      "composio_tools_count": 129,
+      "composio_auth_schemes": [
+        "OAUTH2"
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Gorgias",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "gorgias",
+      "composio_tools_count": 32,
+      "composio_auth_schemes": [
+        "API_KEY",
+        "OAUTH2"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Gladly",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 21,
+      "name": "Slack",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "slack",
+      "composio_tools_count": 158,
+      "composio_auth_schemes": [
+        "OAUTH2"
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Twilio",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 23,
+      "name": "Zoho Cliq",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 24,
+      "name": "Lark (Larksuite)",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 25,
+      "name": "Pumble",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 26,
+      "name": "Discord",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "discord",
+      "composio_tools_count": 27,
+      "composio_auth_schemes": [
+        "OAUTH2"
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Telegram",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "telegram",
+      "composio_tools_count": 18,
+      "composio_auth_schemes": [
+        "API_KEY"
+      ]
+    },
+    {
+      "id": 28,
+      "name": "WhatsApp Business",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "whatsapp",
+      "composio_tools_count": 57,
+      "composio_auth_schemes": [
+        "OAUTH2",
+        "API_KEY"
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Aircall",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 30,
+      "name": "Vonage",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 31,
+      "name": "Google Ads",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "googleads",
+      "composio_tools_count": 22,
+      "composio_auth_schemes": [
+        "OAUTH2"
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Meta Ads",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "metaads",
+      "composio_tools_count": 50,
+      "composio_auth_schemes": [
+        "OAUTH2",
+        "API_KEY"
+      ]
+    },
+    {
+      "id": 33,
+      "name": "LinkedIn Ads",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "linkedin_ads",
+      "composio_tools_count": 28,
+      "composio_auth_schemes": [
+        "OAUTH2"
+      ]
+    },
+    {
+      "id": 34,
+      "name": "GoHighLevel",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 35,
+      "name": "Mailchimp",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "mailchimp",
+      "composio_tools_count": 272,
+      "composio_auth_schemes": [
+        "OAUTH2"
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Klaviyo",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "klaviyo",
+      "composio_tools_count": 225,
+      "composio_auth_schemes": [
+        "API_KEY",
+        "OAUTH2"
+      ]
+    },
+    {
+      "id": 37,
+      "name": "systeme.io",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 38,
+      "name": "Pinterest",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 39,
+      "name": "Threads (Meta)",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 40,
+      "name": "SendGrid",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "sendgrid",
+      "composio_tools_count": 359,
+      "composio_auth_schemes": [
+        "API_KEY"
+      ]
+    },
+    {
+      "id": 41,
+      "name": "Shopify",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "shopify",
+      "composio_tools_count": 315,
+      "composio_auth_schemes": [
+        "API_KEY",
+        "OAUTH2",
+        "S2S_OAUTH2"
+      ]
+    },
+    {
+      "id": 42,
+      "name": "WooCommerce",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 43,
+      "name": "BigCommerce",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 44,
+      "name": "Salesforce Commerce Cloud",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 45,
+      "name": "Magento (Adobe Commerce)",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 46,
+      "name": "Squarespace",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 47,
+      "name": "Ecwid",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 48,
+      "name": "Gumroad",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "gumroad",
+      "composio_tools_count": 7,
+      "composio_auth_schemes": [
+        "OAUTH2"
+      ]
+    },
+    {
+      "id": 49,
+      "name": "Amazon Selling Partner",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 50,
+      "name": "fanbasis",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 51,
+      "name": "DataForSEO",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "dataforseo",
+      "composio_tools_count": 312,
+      "composio_auth_schemes": [
+        "BASIC"
+      ]
+    },
+    {
+      "id": 52,
+      "name": "SE Ranking",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 53,
+      "name": "Ahrefs",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "ahrefs",
+      "composio_tools_count": 40,
+      "composio_auth_schemes": [
+        "API_KEY"
+      ]
+    },
+    {
+      "id": 54,
+      "name": "MrScraper",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 55,
+      "name": "Apify",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "apify",
+      "composio_tools_count": 112,
+      "composio_auth_schemes": [
+        "API_KEY"
+      ]
+    },
+    {
+      "id": 56,
+      "name": "Firecrawl",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "firecrawl",
+      "composio_tools_count": 29,
+      "composio_auth_schemes": [
+        "API_KEY"
+      ]
+    },
+    {
+      "id": 57,
+      "name": "Bright Data",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "brightdata",
+      "composio_tools_count": 10,
+      "composio_auth_schemes": [
+        "API_KEY"
+      ]
+    },
+    {
+      "id": 58,
+      "name": "Sherlock",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 59,
+      "name": "Waterfall.io",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 60,
+      "name": "Clay",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 61,
+      "name": "GitHub",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "github",
+      "composio_tools_count": 871,
+      "composio_auth_schemes": [
+        "OAUTH2"
+      ]
+    },
+    {
+      "id": 62,
+      "name": "Vercel",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "vercel",
+      "composio_tools_count": 131,
+      "composio_auth_schemes": [
+        "API_KEY"
+      ]
+    },
+    {
+      "id": 63,
+      "name": "Netlify",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 64,
+      "name": "Cloudflare",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "cloudflare",
+      "composio_tools_count": 20,
+      "composio_auth_schemes": [
+        "API_KEY"
+      ]
+    },
+    {
+      "id": 65,
+      "name": "Supabase",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "supabase",
+      "composio_tools_count": 124,
+      "composio_auth_schemes": [
+        "OAUTH2",
+        "API_KEY"
+      ]
+    },
+    {
+      "id": 66,
+      "name": "Neo4j",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "neo4j",
+      "composio_tools_count": 21,
+      "composio_auth_schemes": [
+        "OAUTH2",
+        "BASIC",
+        "API_KEY",
+        "S2S_OAUTH2"
+      ]
+    },
+    {
+      "id": 67,
+      "name": "Snowflake",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "snowflake",
+      "composio_tools_count": 16,
+      "composio_auth_schemes": [
+        "OAUTH2"
+      ]
+    },
+    {
+      "id": 68,
+      "name": "MongoDB Atlas",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 69,
+      "name": "Datadog",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "datadog",
+      "composio_tools_count": 42,
+      "composio_auth_schemes": [
+        "OAUTH2",
+        "API_KEY"
+      ]
+    },
+    {
+      "id": 70,
+      "name": "Sentry",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "sentry",
+      "composio_tools_count": 209,
+      "composio_auth_schemes": [
+        "OAUTH2"
+      ]
+    },
+    {
+      "id": 71,
+      "name": "Notion",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "notion",
+      "composio_tools_count": 45,
+      "composio_auth_schemes": [
+        "OAUTH2",
+        "API_KEY"
+      ]
+    },
+    {
+      "id": 72,
+      "name": "Airtable",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "airtable",
+      "composio_tools_count": 24,
+      "composio_auth_schemes": [
+        "OAUTH2",
+        "API_KEY"
+      ]
+    },
+    {
+      "id": 73,
+      "name": "Linear",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "linear",
+      "composio_tools_count": 46,
+      "composio_auth_schemes": [
+        "OAUTH2",
+        "API_KEY"
+      ]
+    },
+    {
+      "id": 74,
+      "name": "Jira",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "jira",
+      "composio_tools_count": 97,
+      "composio_auth_schemes": [
+        "OAUTH2",
+        "S2S_OAUTH2",
+        "API_KEY"
+      ]
+    },
+    {
+      "id": 75,
+      "name": "Asana",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "asana",
+      "composio_tools_count": 153,
+      "composio_auth_schemes": [
+        "OAUTH2"
+      ]
+    },
+    {
+      "id": 76,
+      "name": "Monday.com",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "monday",
+      "composio_tools_count": 121,
+      "composio_auth_schemes": [
+        "OAUTH2"
+      ]
+    },
+    {
+      "id": 77,
+      "name": "ClickUp",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "clickup",
+      "composio_tools_count": 162,
+      "composio_auth_schemes": [
+        "OAUTH2",
+        "API_KEY"
+      ]
+    },
+    {
+      "id": 78,
+      "name": "Coda",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "coda",
+      "composio_tools_count": 109,
+      "composio_auth_schemes": [
+        "API_KEY"
+      ]
+    },
+    {
+      "id": 79,
+      "name": "Smartsheet",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 80,
+      "name": "Harvest",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "harvest",
+      "composio_tools_count": 57,
+      "composio_auth_schemes": [
+        "OAUTH2"
+      ]
+    },
+    {
+      "id": 81,
+      "name": "Stripe",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "stripe",
+      "composio_tools_count": 425,
+      "composio_auth_schemes": [
+        "API_KEY",
+        "OAUTH2"
+      ]
+    },
+    {
+      "id": 82,
+      "name": "Plaid",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 83,
+      "name": "Binance",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 84,
+      "name": "Paygent Connect",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 85,
+      "name": "iPayX",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 86,
+      "name": "QuickBooks",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "quickbooks",
+      "composio_tools_count": 114,
+      "composio_auth_schemes": [
+        "OAUTH2"
+      ]
+    },
+    {
+      "id": 87,
+      "name": "Xero",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "xero",
+      "composio_tools_count": 53,
+      "composio_auth_schemes": [
+        "OAUTH2"
+      ]
+    },
+    {
+      "id": 88,
+      "name": "Brex",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "brex",
+      "composio_tools_count": 84,
+      "composio_auth_schemes": [
+        "OAUTH2",
+        "API_KEY"
+      ]
+    },
+    {
+      "id": 89,
+      "name": "Ramp",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "ramp",
+      "composio_tools_count": 88,
+      "composio_auth_schemes": [
+        "OAUTH2"
+      ]
+    },
+    {
+      "id": 90,
+      "name": "PitchBook",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 91,
+      "name": "NotebookLM",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 92,
+      "name": "Otter AI",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 93,
+      "name": "Fathom",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "fathom",
+      "composio_tools_count": 7,
+      "composio_auth_schemes": [
+        "OAUTH2",
+        "API_KEY"
+      ]
+    },
+    {
+      "id": 94,
+      "name": "Consensus",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 95,
+      "name": "Reducto",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 96,
+      "name": "Devin",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "devin_mcp",
+      "composio_tools_count": 4,
+      "composio_auth_schemes": [
+        "API_KEY"
+      ]
+    },
+    {
+      "id": 97,
+      "name": "higgsfield",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 98,
+      "name": "Mermaid CLI",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    },
+    {
+      "id": 99,
+      "name": "YouTube Transcript",
+      "in_composio": true,
+      "matched_via": "catalog",
+      "composio_slug": "youtube",
+      "composio_tools_count": 48,
+      "composio_auth_schemes": [
+        "OAUTH2"
+      ]
+    },
+    {
+      "id": 100,
+      "name": "Grain",
+      "in_composio": false,
+      "matched_via": null,
+      "composio_slug": null,
+      "composio_tools_count": null,
+      "composio_auth_schemes": null
+    }
+  ],
+  "verification": {
+    "verified_count": 0,
+    "field_verdicts": {
+      "confirmed": 0,
+      "contradicted": 0,
+      "not_verifiable": 0
+    },
+    "pass1_accuracy": null,
+    "corrections": [],
+    "unverifiable_apps": [],
+    "human_sample": {
+      "sampled_ids": [],
+      "fields_checked": 0,
+      "wrong": 0,
+      "accuracy": null
+    },
+    "human_notes": []
+  }
+}
+;
+
+/* ---------- config ---------- */
+const REPO_URL = "https://github.com/REPLACE_ME"; // set before deploy
+const ACCESS_META = {
+  self_serve_free:  { label: "Self-serve, free",   color: "var(--acc-free)" },
+  self_serve_trial: { label: "Self-serve, trial",  color: "var(--acc-trial)" },
+  paid_plan:        { label: "Paid plan",          color: "var(--acc-paid)" },
+  admin_approval:   { label: "Approval / review",  color: "var(--acc-approval)" },
+  partner_gated:    { label: "Partner / sales",    color: "var(--acc-partner)" },
+  no_public_api:    { label: "No public API",      color: "var(--acc-none)" },
+};
+const ACCESS_ORDER = Object.keys(ACCESS_META);
+const SELF_SERVE = ["self_serve_free", "self_serve_trial"];
+const VERDICT_META = {
+  yes:          { label: "Buildable today", ic: "✓", color: "var(--st-good)" },
+  with_caveats: { label: "With caveats",    ic: "▲", color: "var(--st-warn)" },
+  blocked:      { label: "Blocked",         ic: "✕", color: "var(--st-crit)" },
+};
+const CATEGORIES = [...new Set(DATA.records.map(r => r.category))];
+const composioById = new Map(DATA.composio.map(c => [c.id, c]));
+const correctionsById = new Map();
+for (const c of DATA.verification.corrections) {
+  if (!correctionsById.has(c.id)) correctionsById.set(c.id, []);
+  correctionsById.get(c.id).push(c);
+}
+
+/* ---------- theme ---------- */
+const themeBtn = document.getElementById("themeBtn");
+themeBtn.onclick = () => {
+  const cur = document.documentElement.dataset.theme ||
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  const next = cur === "dark" ? "light" : "dark";
+  document.documentElement.dataset.theme = next;
+  try { localStorage.setItem("theme", next); } catch {}
+};
+try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch {}
+
+/* ---------- tooltip ---------- */
+const tip = document.getElementById("tooltip");
+function bindTips(rootEl) {
+  rootEl.addEventListener("mousemove", (e) => {
+    const t = e.target.closest("[data-tip]");
+    if (!t) { tip.style.display = "none"; return; }
+    tip.innerHTML = t.dataset.tip;
+    tip.style.display = "block";
+    const pad = 14, w = tip.offsetWidth, h = tip.offsetHeight;
+    tip.style.left = Math.min(e.clientX + pad, innerWidth - w - 8) + "px";
+    tip.style.top = (e.clientY + pad + h > innerHeight ? e.clientY - h - 8 : e.clientY + pad) + "px";
+  });
+  rootEl.addEventListener("mouseleave", () => { tip.style.display = "none"; }, true);
+}
+bindTips(document.body);
+
+/* ---------- helpers ---------- */
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const pct = (n, d) => d ? Math.round((n / d) * 100) : 0;
+const fmtVal = (v) => Array.isArray(v) ? v.join(", ") : String(v);
+
+/* ---------- meta chips & KPIs ---------- */
+const R = DATA.records;
+const N = R.length;
+document.getElementById("repoLink").href = REPO_URL;
+document.getElementById("repoLink2").href = REPO_URL;
+document.getElementById("genStamp").textContent =
+  "Data generated " + new Date(DATA.generated_at).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+document.getElementById("catalogSize").textContent = "1,047";
+
+const selfServeN = R.filter(r => SELF_SERVE.includes(r.access)).length;
+const buildableN = R.filter(r => r.buildable === "yes").length;
+const caveatsN = R.filter(r => r.buildable === "with_caveats").length;
+const oauthN = R.filter(r => (r.auth_methods || []).some(a => /oauth/i.test(a))).length;
+const keyN = R.filter(r => (r.auth_methods || []).some(a => /api key/i.test(a))).length;
+const inComposioN = DATA.composio.filter(c => c.in_composio).length;
+const mcpOffN = R.filter(r => r.mcp === "official").length;
+
+document.getElementById("metaChips").innerHTML = [
+  `${N} apps · 10 categories`,
+  `researched ${new Date(DATA.generated_at).toLocaleDateString("en-GB", { month: "short", year: "numeric" })}`,
+  `model: ${esc(R[0]?.model || "gemini-2.5-flash")} + Google Search grounding`,
+  `${DATA.verification.verified_count} machine-verified · ${DATA.verification.human_sample.sampled_ids.length} human-checked`,
+].map(s => `<span>${s}</span>`).join("");
+
+const v = DATA.verification;
+const acc1 = v.pass1_accuracy == null ? "—" : Math.round(v.pass1_accuracy * 100) + "%";
+const accH = v.human_sample.accuracy == null ? "—" : Math.round(v.human_sample.accuracy * 100) + "%";
+document.getElementById("kpis").innerHTML = [
+  { v: `${buildableN + caveatsN}<span style="font-size:18px;color:var(--muted)">/${N}</span>`, l: "buildable as a toolkit", d: `${buildableN} clean + ${caveatsN} with caveats` },
+  { v: pct(selfServeN, N) + "%", l: "self-serve credentials", d: "free tier or trial, no gatekeeper" },
+  { v: pct(oauthN, N) + "%", l: "support OAuth2", d: `${pct(keyN, N)}% support API keys` },
+  { v: `${inComposioN}<span style="font-size:18px;color:var(--muted)">/${N}</span>`, l: "already in Composio", d: "matched in the live registry" },
+  { v: `${acc1} → ${accH}`, l: "accuracy, pass 1 → final", d: "see verification below" },
+].map(t => `<div class="tile"><div class="v">${t.v}</div><div class="l">${t.l}</div><div class="d">${t.d}</div></div>`).join("");
+
+/* ---------- chart: access by category (diverging stacked) ---------- */
+(function accessChart() {
+  document.getElementById("accessLegend").innerHTML = ACCESS_ORDER
+    .map(k => `<span class="it"><span class="sw" style="background:${ACCESS_META[k].color}"></span>${ACCESS_META[k].label}</span>`).join("");
+
+  const rowH = 30, barH = 18, labelW = 210, pxPer = 34, gap = 2;
+  const maxLeft = Math.max(...CATEGORIES.map(c => R.filter(r => r.category === c && SELF_SERVE.includes(r.access)).length), 1);
+  const maxRight = Math.max(...CATEGORIES.map(c => R.filter(r => r.category === c && !SELF_SERVE.includes(r.access)).length), 1);
+  const cx = labelW + maxLeft * pxPer + 10;
+  const width = cx + maxRight * pxPer + 60;
+  const height = CATEGORIES.length * rowH + 26;
+
+  let s = `<svg viewBox="0 0 ${width} ${height}" width="100%" role="img" aria-label="Credential access by category">`;
+  CATEGORIES.forEach((cat, i) => {
+    const y = i * rowH + 4;
+    const rows = R.filter(r => r.category === cat);
+    const left = SELF_SERVE.flatMap(k => rows.filter(r => r.access === k).map(r => ({ k, r })));
+    const right = ACCESS_ORDER.slice(2).flatMap(k => rows.filter(r => r.access === k).map(r => ({ k, r })));
+    s += `<text x="${labelW - 12}" y="${y + barH - 4}" text-anchor="end">${esc(cat)}</text>`;
+    // left arm grows leftward from center, strongest (free) outermost
+    let x = cx;
+    for (let j = left.length - 1; j >= 0; j--) {
+      const seg = left[j]; x -= pxPer;
+      s += `<rect x="${x + gap / 2}" y="${y}" width="${pxPer - gap}" height="${barH}" rx="4"
+        fill="${ACCESS_META[seg.k].color}" data-tip="<span class='t'>${esc(seg.r.name)}</span><br><span class='s'>${ACCESS_META[seg.k].label} — ${esc(seg.r.access_notes || "").slice(0, 140)}</span>"/>`;
+    }
+    let xr = cx;
+    for (const seg of right) {
+      s += `<rect x="${xr + gap / 2}" y="${y}" width="${pxPer - gap}" height="${barH}" rx="4"
+        fill="${ACCESS_META[seg.k].color}" data-tip="<span class='t'>${esc(seg.r.name)}</span><br><span class='s'>${ACCESS_META[seg.k].label} — ${esc(seg.r.access_notes || "").slice(0, 140)}</span>"/>`;
+      xr += pxPer;
+    }
+    if (left.length) s += `<text class="val end" x="${cx - left.length * pxPer - 8}" y="${y + barH - 4}" text-anchor="end">${left.length}</text>`;
+    if (right.length) s += `<text class="val" x="${xr + 8}" y="${y + barH - 4}">${right.length}</text>`;
+  });
+  s += `<line class="axisline" x1="${cx}" y1="0" x2="${cx}" y2="${height - 22}"/>`;
+  s += `<text x="${cx - 8}" y="${height - 6}" text-anchor="end">← self-serve</text>`;
+  s += `<text x="${cx + 8}" y="${height - 6}">gated →</text>`;
+  s += `</svg>`;
+  document.getElementById("accessChart").innerHTML = s;
+})();
+
+/* ---------- chart: horizontal count bars (shared) ---------- */
+function hBars(el, items, color, totalForPct) {
+  const rowH = 28, barH = 16, labelW = 168, valueW = 74;
+  const max = Math.max(...items.map(i => i.n), 1);
+  const width = 520, plotW = width - labelW - valueW;
+  const height = items.length * rowH + 4;
+  let s = `<svg viewBox="0 0 ${width} ${height}" width="100%" role="img">`;
+  items.forEach((it, i) => {
+    const y = i * rowH + 4, w = Math.max((it.n / max) * plotW, 2);
+    s += `<text x="${labelW - 10}" y="${y + barH - 3}" text-anchor="end">${esc(it.label)}</text>
+      <rect x="${labelW}" y="${y}" width="${w}" height="${barH}" rx="4" fill="${color}"
+        data-tip="<span class='t'>${esc(it.label)}</span><br><span class='s'>${it.n} app${it.n === 1 ? "" : "s"}${totalForPct ? ` · ${pct(it.n, totalForPct)}%` : ""}${it.extra ? " · " + esc(it.extra) : ""}</span>"/>
+      <text class="val" x="${labelW + w + 8}" y="${y + barH - 3}">${it.n}${totalForPct ? ` <tspan fill="var(--muted)">(${pct(it.n, totalForPct)}%)</tspan>` : ""}</text>`;
+  });
+  s += `<line class="axisline" x1="${labelW}" y1="0" x2="${labelW}" y2="${height}"/></svg>`;
+  el.innerHTML = s;
+}
+
+(function authChart() {
+  const counts = {};
+  for (const r of R) for (const a of (r.auth_methods || [])) counts[a] = (counts[a] || 0) + 1;
+  const items = Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([label, n]) => ({ label, n }));
+  hBars(document.getElementById("authChart"), items, "var(--blue)", N);
+})();
+
+(function blockerChart() {
+  const counts = {};
+  for (const r of R) if (r.buildable !== "yes" && r.blocker_tag) counts[r.blocker_tag] = (counts[r.blocker_tag] || 0) + 1;
+  const items = Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([label, n]) => ({ label, n }));
+  if (!items.length) { document.getElementById("blockerChart").innerHTML = "<p class='note'>No blockers yet.</p>"; return; }
+  hBars(document.getElementById("blockerChart"), items, "var(--blue)");
+})();
+
+/* ---------- chart: verdict (status stacked bar + tiles) ---------- */
+(function verdictChart() {
+  const el = document.getElementById("verdictChart");
+  const keys = Object.keys(VERDICT_META);
+  const counts = keys.map(k => ({ k, n: R.filter(r => r.buildable === k).length }));
+  const width = 520, barH = 22, gap = 2;
+  let x = 0;
+  let s = `<svg viewBox="0 0 ${width} 34" width="100%" role="img" aria-label="Buildability verdict">`;
+  for (const c of counts) {
+    const w = (c.n / N) * width;
+    if (w > 0) s += `<rect x="${x + gap / 2}" y="4" width="${Math.max(w - gap, 1)}" height="${barH}" rx="4" fill="${VERDICT_META[c.k].color}"
+      data-tip="<span class='t'>${VERDICT_META[c.k].ic} ${VERDICT_META[c.k].label}</span><br><span class='s'>${c.n} of ${N} apps</span>"/>`;
+    x += w;
+  }
+  s += `</svg>`;
+  s += `<div class="legend" style="margin-top:10px">` + counts.map(c =>
+    `<span class="it"><span style="color:${VERDICT_META[c.k].color};font-weight:700">${VERDICT_META[c.k].ic}</span>
+     ${VERDICT_META[c.k].label} <b style="color:var(--ink)">${c.n}</b></span>`).join("") + `</div>`;
+  el.innerHTML = s;
+})();
+
+/* ---------- chart: MCP + Composio ---------- */
+(function mcpChart() {
+  const el = document.getElementById("mcpChart");
+  const mcp = [
+    { label: "Official MCP", n: R.filter(r => r.mcp === "official").length },
+    { label: "Community MCP", n: R.filter(r => r.mcp === "community").length },
+    { label: "None found", n: R.filter(r => r.mcp === "none_found").length },
+  ];
+  const comp = [
+    { label: "In Composio", n: inComposioN },
+    { label: "Not in Composio", n: N - inComposioN },
+  ];
+  el.innerHTML = `<div id="mcpBars"></div><div style="height:10px"></div><div id="compBars"></div>`;
+  hBars(document.getElementById("mcpBars"), mcp, "var(--blue)", N);
+  hBars(document.getElementById("compBars"), comp, "var(--acc-trial)", N);
+})();
+
+/* ---------- table ---------- */
+const COLS = [
+  { key: "id", label: "#" },
+  { key: "name", label: "App" },
+  { key: "category", label: "Category" },
+  { key: "auth_methods", label: "Auth" },
+  { key: "access", label: "Access" },
+  { key: "api", label: "API" },
+  { key: "mcp", label: "MCP" },
+  { key: "composio", label: "Composio" },
+  { key: "buildable", label: "Verdict" },
+  { key: "confidence", label: "Conf." },
+];
+let sortKey = "id", sortDir = 1;
+
+function sortVal(r, key) {
+  switch (key) {
+    case "auth_methods": return (r.auth_methods || []).join(",");
+    case "access": return ACCESS_ORDER.indexOf(r.access);
+    case "api": return (r.api_type || []).join(",") + r.api_breadth;
+    case "composio": return composioById.get(r.id)?.in_composio ? 0 : 1;
+    case "buildable": return Object.keys(VERDICT_META).indexOf(r.buildable);
+    case "confidence": return ["high", "medium", "low"].indexOf(r.confidence);
+    default: return r[key];
+  }
+}
+
+function renderHead() {
+  document.getElementById("thead").innerHTML = "<tr>" + COLS.map(c =>
+    `<th data-k="${c.key}">${c.label}${sortKey === c.key ? (sortDir > 0 ? " ↑" : " ↓") : ""}</th>`).join("") + "</tr>";
+  document.querySelectorAll("th").forEach(th => th.onclick = () => {
+    const k = th.dataset.k;
+    if (sortKey === k) sortDir *= -1; else { sortKey = k; sortDir = 1; }
+    renderHead(); renderTable();
+  });
+}
+
+function detailHtml(r) {
+  const c = composioById.get(r.id);
+  const corrs = correctionsById.get(r.id) || [];
+  const ev = (r.evidence || []).map(e =>
+    `<li><a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(new URL(e.url, "https://x.invalid").hostname.replace("www.", ""))}↗</a> — ${esc(e.claim)}</li>`).join("");
+  return `<div class="cols">
+    <div><b>${esc(r.one_liner)}</b><br><br>
+      <b>Auth:</b> ${esc(r.auth_notes)}<br><br>
+      <b>Access:</b> ${esc(r.access_notes)}</div>
+    <div><b>API:</b> ${esc(r.api_notes)}<br><br>
+      <b>MCP:</b> ${esc(r.mcp_notes)}
+      ${r.blocker ? `<br><br><b>Blocker:</b> ${esc(r.blocker)}` : ""}
+      ${c && c.in_composio ? `<br><br><b>Composio:</b> toolkit <code>${esc(c.composio_slug)}</code>${c.composio_tools_count ? `, ${c.composio_tools_count} tools` : ""}${c.composio_auth_schemes?.length ? `, auth: ${esc(c.composio_auth_schemes.join(", "))}` : ""}` : ""}
+      ${corrs.length ? `<br><br><b>Corrected by verification:</b> ${corrs.map(x => `${esc(x.field)}: <span class="from">${esc(fmtVal(x.from))}</span> → <span class="to">${esc(fmtVal(x.to))}</span> (${x.source})`).join("; ")}` : ""}
+    </div>
+    <div style="grid-column:1/-1"><b>Evidence:</b><ul>${ev || "<li>none recorded</li>"}</ul></div>
+  </div>`;
+}
+
+function rowMatches(r, q, cat, acc, verd) {
+  if (cat && r.category !== cat) return false;
+  if (acc && r.access !== acc) return false;
+  if (verd && r.buildable !== verd) return false;
+  if (q) {
+    const hay = [r.name, r.one_liner, r.auth_notes, r.access_notes, r.api_notes, r.mcp_notes, r.blocker, r.blocker_tag]
+      .join(" ").toLowerCase();
+    if (!hay.includes(q)) return false;
+  }
+  return true;
+}
+
+function renderTable() {
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  const cat = document.getElementById("fCat").value;
+  const acc = document.getElementById("fAccess").value;
+  const verd = document.getElementById("fVerdict").value;
+  const rows = R.filter(r => rowMatches(r, q, cat, acc, verd))
+    .sort((a, b) => (sortVal(a, sortKey) > sortVal(b, sortKey) ? 1 : -1) * sortDir);
+  document.getElementById("rowCount").textContent = `${rows.length} of ${N}`;
+  document.getElementById("tbody").innerHTML = rows.map(r => {
+    const c = composioById.get(r.id);
+    const vm = VERDICT_META[r.buildable] || { label: r.buildable, ic: "•", color: "var(--muted)" };
+    const am = ACCESS_META[r.access] || { label: r.access, color: "var(--muted)" };
+    const corrected = correctionsById.has(r.id);
+    return `<tr class="approw" data-id="${r.id}">
+      <td class="conf">${r.id}</td>
+      <td><b>${esc(r.name)}</b>${corrected ? '<span class="fixed-badge">corrected</span>' : ""}</td>
+      <td style="white-space:nowrap">${esc(r.category)}</td>
+      <td class="chipset">${(r.auth_methods || []).map(a => `<span>${esc(a)}</span>`).join("") || "<span>—</span>"}</td>
+      <td style="white-space:nowrap"><span class="dot" style="background:${am.color}"></span>${am.label}</td>
+      <td style="white-space:nowrap">${(r.api_type || []).join(", ") || "—"} <span class="conf">· ${r.api_breadth}</span></td>
+      <td>${r.mcp === "official" ? "official" : r.mcp === "community" ? "community" : "—"}</td>
+      <td>${c?.in_composio ? "✓" : "—"}</td>
+      <td class="verdict"><span class="ic" style="color:${vm.color}">${vm.ic}</span>${vm.label}</td>
+      <td class="conf">${r.confidence}</td>
+    </tr>`;
+  }).join("");
+  document.querySelectorAll("tr.approw").forEach(tr => tr.onclick = () => {
+    const existing = tr.nextElementSibling;
+    if (existing && existing.classList.contains("detail")) { existing.remove(); return; }
+    document.querySelectorAll("tr.detail").forEach(d => d.remove());
+    const r = R.find(x => x.id === Number(tr.dataset.id));
+    const d = document.createElement("tr");
+    d.className = "detail";
+    d.innerHTML = `<td colspan="${COLS.length}">${detailHtml(r)}</td>`;
+    tr.after(d);
+  });
+}
+
+(function initFilters() {
+  const mk = (el, label, opts) => {
+    el.innerHTML = `<option value="">${label}</option>` + opts.map(o =>
+      `<option value="${esc(o.v)}">${esc(o.l)}</option>`).join("");
+    el.onchange = renderTable;
+  };
+  mk(document.getElementById("fCat"), "All categories", CATEGORIES.map(c => ({ v: c, l: c })));
+  mk(document.getElementById("fAccess"), "All access", ACCESS_ORDER.map(k => ({ v: k, l: ACCESS_META[k].label })));
+  mk(document.getElementById("fVerdict"), "All verdicts", Object.keys(VERDICT_META).map(k => ({ v: k, l: VERDICT_META[k].label })));
+  document.getElementById("q").oninput = renderTable;
+  renderHead(); renderTable();
+})();
+
+/* ---------- verification section ---------- */
+(function verification() {
+  const fv = v.field_verdicts;
+  const checked = fv.confirmed + fv.contradicted;
+  document.getElementById("verifLede").innerHTML =
+    `Two loops, then a human. The pass-2 verifier re-fetched the agent's own citations and judged ` +
+    `<b>${checked + fv.not_verifiable}</b> field-claims against them; a human then hand-checked ` +
+    `<b>${v.human_sample.sampled_ids.length}</b> randomly sampled apps against live docs. ` +
+    `Wrong answers were not deleted — they are listed below, struck through.`;
+  document.getElementById("verifTiles").innerHTML = [
+    { v: acc1, l: "pass-1 agent accuracy", d: `${fv.confirmed} of ${checked} machine-checkable field-claims confirmed` },
+    { v: String(v.corrections.length), l: "corrections applied", d: `${v.corrections.filter(c => c.source === "human").length} by human, ${v.corrections.filter(c => c.source === "verifier").length} by verifier` },
+    { v: accH, l: "accuracy after loops", d: `on the ${v.human_sample.sampled_ids.length}-app human sample (${v.human_sample.fields_checked} fields)` },
+    { v: String(fv.not_verifiable), l: "claims not machine-verifiable", d: "cited page fetchable but silent — escalated to human" },
+  ].map(t => `<div class="tile"><div class="v">${t.v}</div><div class="l">${t.l}</div><div class="d">${t.d}</div></div>`).join("");
+
+  document.getElementById("corrTable").innerHTML =
+    `<tr><th>App</th><th>Field</th><th>Change</th><th>By</th></tr>` +
+    (v.corrections.map(c => `<tr>
+      <td>${esc(c.name)}</td><td>${esc(c.field)}</td>
+      <td><span class="from">${esc(fmtVal(c.from))}</span> → <span class="to">${esc(fmtVal(c.to))}</span>
+      ${c.quote ? `<div class="conf">“${esc(String(c.quote).slice(0, 160))}”</div>` : ""}</td>
+      <td>${c.source}</td></tr>`).join("") || `<tr><td colspan="4" class="conf">No corrections needed.</td></tr>`);
+
+  const misses = [];
+  for (const u of v.unverifiable_apps) misses.push(`<li><b>${esc(u.name)}</b>: ${esc(u.reason)}</li>`);
+  for (const nte of v.human_notes) {
+    const r = R.find(x => x.id === nte.id);
+    misses.push(`<li><b>${esc(r ? r.name : "#" + nte.id)}</b>: ${esc(nte.note)}</li>`);
+  }
+  document.getElementById("missList").innerHTML = misses.join("") || "<li>None.</li>";
+})();
+</script>
+</body>
+</html>
